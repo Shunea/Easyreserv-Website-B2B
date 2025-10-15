@@ -6,7 +6,7 @@ const footerLinks = {
   column1: [
     { text: "About Us", href: "/about" },
     { text: "Solutions", href: "/solutions" },
-    { text: "Pricing", href: "#pricing" },
+    { text: "Pricing", href: "/pricing" },
     { text: "Contact", href: "#contact" },
     { text: "Terms & Conditions", href: "#terms" },
   ],
