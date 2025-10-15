@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Container } from "@/components/Container";
 
 const heroFeatures = [
   {
@@ -302,206 +303,204 @@ const socialLinks = [
 export const SolutionsContentSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-center">
-      <div className="flex flex-col items-center gap-5 px-0 py-[50px] w-full">
-        <div className="flex flex-col w-full max-w-[1082px] items-center justify-center gap-5 px-4">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-center gap-5 w-full">
-            <div className="flex flex-col items-start justify-center gap-5 flex-1">
-              <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
-                <span className="text-[#282828]">Drive Growth and </span>
-                <span className="text-[#fe9800]">Efficiency</span>
-                <span className="text-[#282828]">
-                  {" "}
-                  Across Multiple Industries.
-                </span>
-              </h1>
+      <Container className="py-[50px]">
+        <div className="col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
+          <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
+            <span className="text-[#282828]">Drive Growth and </span>
+            <span className="text-[#fe9800]">Efficiency</span>
+            <span className="text-[#282828]">
+              {" "}
+              Across Multiple Industries.
+            </span>
+          </h1>
 
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
-                Whether you run a restaurant, salon, or any other enterprise,
-                our solution adapts to your unique needs.
-              </p>
+          <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
+            Whether you run a restaurant, salon, or any other enterprise,
+            our solution adapts to your unique needs.
+          </p>
 
-              <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
-                <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                  Explore plans
-                </span>
-              </Button>
-            </div>
+          <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
+            <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
+              Explore plans
+            </span>
+          </Button>
+        </div>
 
-            <div className="flex items-start gap-5 flex-wrap lg:flex-nowrap">
-              <div className="flex flex-col items-start gap-5">
-                {heroFeatures.slice(0, 2).map((feature, index) => (
-                  <Card
-                    key={index}
-                    className={`w-[255px] ${feature.height} bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]`}
-                  >
-                    <CardContent className="flex flex-col items-start gap-2.5 p-5">
-                      <img
-                        className="w-[53px] h-[53px]"
-                        alt="Icon"
-                        src={feature.icon}
-                      />
-                      <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[26px]">
-                        {feature.title}
-                      </h3>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              <Card className="w-[255px] bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]">
+        <div className="col-span-12 md:col-span-6 flex items-start gap-5">
+          <div className="flex flex-col items-start gap-5">
+            {heroFeatures.slice(0, 2).map((feature, index) => (
+              <Card
+                key={index}
+                className={`w-[255px] ${feature.height} bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]`}
+              >
                 <CardContent className="flex flex-col items-start gap-2.5 p-5">
                   <img
                     className="w-[53px] h-[53px]"
                     alt="Icon"
-                    src={heroFeatures[2].icon}
+                    src={feature.icon}
                   />
                   <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[26px]">
-                    {heroFeatures[2].title}
+                    {feature.title}
                   </h3>
                   <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
-                    {heroFeatures[2].description}
+                    {feature.description}
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            ))}
           </div>
+
+          <Card className="w-[255px] bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]">
+            <CardContent className="flex flex-col items-start gap-2.5 p-5">
+              <img
+                className="w-[53px] h-[53px]"
+                alt="Icon"
+                src={heroFeatures[2].icon}
+              />
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[26px]">
+                {heroFeatures[2].title}
+              </h3>
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
+                {heroFeatures[2].description}
+              </p>
+            </CardContent>
+          </Card>
         </div>
-      </div>
+      </Container>
 
-      <div className="flex flex-col items-center gap-5 px-4 lg:px-[180px] py-[50px] w-full">
-        <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal] max-w-[1080px]">
-          Discover the features that set our platform apart for every business
-        </h2>
-
-        <div className="flex flex-wrap w-full max-w-[1080px] items-start gap-5">
-          <div className="flex flex-col items-start gap-5 flex-1 min-w-[300px]">
-            <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-              <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                  Employee and Business Management
-                </h3>
-
-                <div className="flex flex-col items-start gap-5 w-full">
-                  {employeeManagementFeatures.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-start px-0 py-5 w-full ${
-                        index < employeeManagementFeatures.length - 1
-                          ? "border-b border-[#cccccc]"
-                          : ""
-                      }`}
-                    >
-                      <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
-                        {feature.title}
-                      </h4>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-              <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                  Business Insights and Analytics
-                </h3>
-
-                <div className="flex flex-col items-start gap-5 w-full">
-                  {businessInsightsFeatures.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-start px-0 py-5 w-full ${
-                        index < businessInsightsFeatures.length - 1
-                          ? "border-b border-[#cccccc]"
-                          : ""
-                      }`}
-                    >
-                      <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
-                        {feature.title}
-                      </h4>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="flex flex-col items-start gap-5 flex-1 min-w-[300px]">
-            <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-              <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                  Inventory and Supply Chain Management
-                </h3>
-
-                <div className="flex flex-col items-start gap-5 w-full">
-                  {inventoryManagementFeatures.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-start px-0 py-5 w-full ${
-                        index < inventoryManagementFeatures.length - 1
-                          ? "border-b border-[#cccccc]"
-                          : ""
-                      }`}
-                    >
-                      <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
-                        {feature.title}
-                      </h4>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-              <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                  Customer Engagement and Marketing
-                </h3>
-
-                <div className="flex flex-col items-start gap-5 w-full">
-                  {customerEngagementFeatures.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`flex flex-col items-start px-0 py-5 w-full ${
-                        index < customerEngagementFeatures.length - 1
-                          ? "border-b border-[#cccccc]"
-                          : ""
-                      }`}
-                    >
-                      <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
-                        {feature.title}
-                      </h4>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+      <Container className="py-[50px]">
+        <div className="col-span-12">
+          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
+            Discover the features that set our platform apart for every business
+          </h2>
         </div>
-      </div>
 
-      <div className="flex flex-col items-center justify-center gap-5 px-4 lg:px-[180px] py-[50px] w-full bg-white">
-        <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-          How It Works
-        </h2>
+        <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-5">
+          <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
+            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+                Employee and Business Management
+              </h3>
 
-        <div className="flex flex-col items-center justify-center gap-5 w-full">
-          <div className="flex flex-col w-full max-w-[980px] items-start gap-2.5 p-2.5">
+              <div className="flex flex-col items-start gap-5 w-full">
+                {employeeManagementFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-start px-0 py-5 w-full ${
+                      index < employeeManagementFeatures.length - 1
+                        ? "border-b border-[#cccccc]"
+                        : ""
+                    }`}
+                  >
+                    <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
+                      {feature.title}
+                    </h4>
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
+            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+                Business Insights and Analytics
+              </h3>
+
+              <div className="flex flex-col items-start gap-5 w-full">
+                {businessInsightsFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-start px-0 py-5 w-full ${
+                      index < businessInsightsFeatures.length - 1
+                        ? "border-b border-[#cccccc]"
+                        : ""
+                    }`}
+                  >
+                    <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
+                      {feature.title}
+                    </h4>
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-5">
+          <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
+            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+                Inventory and Supply Chain Management
+              </h3>
+
+              <div className="flex flex-col items-start gap-5 w-full">
+                {inventoryManagementFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-start px-0 py-5 w-full ${
+                      index < inventoryManagementFeatures.length - 1
+                        ? "border-b border-[#cccccc]"
+                        : ""
+                    }`}
+                  >
+                    <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
+                      {feature.title}
+                    </h4>
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
+            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+                Customer Engagement and Marketing
+              </h3>
+
+              <div className="flex flex-col items-start gap-5 w-full">
+                {customerEngagementFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-start px-0 py-5 w-full ${
+                      index < customerEngagementFeatures.length - 1
+                        ? "border-b border-[#cccccc]"
+                        : ""
+                    }`}
+                  >
+                    <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-xl tracking-[0] leading-[22px]">
+                      {feature.title}
+                    </h4>
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[17.6px]">
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </Container>
+
+      <div className="flex flex-col items-center justify-center gap-5 py-[50px] w-full bg-white">
+        <Container>
+          <div className="col-span-12">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
+              How It Works
+            </h2>
+          </div>
+
+          <div className="col-span-12 flex flex-col items-center justify-center gap-5">
             <div className="flex items-center justify-between gap-4 w-full relative">
               <div className="absolute top-1/2 left-[40px] right-[40px] h-2 bg-[#2d2c65] -translate-y-1/2 hidden lg:block" />
 
@@ -514,10 +513,8 @@ export const SolutionsContentSection = (): JSX.Element => {
                 />
               ))}
             </div>
-          </div>
 
-          <div className="flex flex-col items-start gap-2.5 w-full max-w-[980px]">
-            <div className="flex flex-col lg:flex-row items-start gap-2.5 w-full">
+            <div className="flex flex-col md:flex-row items-start gap-2.5 w-full">
               {howItWorksSteps.map((step, index) => (
                 <div
                   key={index}
@@ -528,42 +525,37 @@ export const SolutionsContentSection = (): JSX.Element => {
               ))}
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
-      <div className="flex flex-col items-start gap-8 px-4 lg:px-[180px] py-[50px] w-full">
-        <div className="flex items-center justify-center w-full">
-          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal] max-w-[1080px]">
+      <Container className="py-[50px]">
+        <div className="col-span-12">
+          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
             What type of business do you own?
           </h2>
         </div>
 
-        <div className="flex flex-col items-start justify-center gap-5 w-full">
-          <div className="flex flex-wrap w-full max-w-[1080px] mx-auto items-start gap-5">
-            {businessTypes.map((business, index) => (
-              <Card
-                key={index}
-                className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] bg-white rounded-[20px] border-[#8aa2a980] shadow-[0px_13px_24px_#0000000d] overflow-hidden relative"
-              >
-                <CardContent className="flex flex-col items-start gap-4 p-8">
-                  <img className="w-12 h-12" alt="Frame" src={business.icon} />
-                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                    {business.name}
-                  </h3>
-                  <img
-                    className="absolute top-[93px] left-[199px] w-[148px] h-[66px]"
-                    alt="Frame"
-                    src={business.decorativeIcon}
-                  />
-                </CardContent>
-              </Card>
-            ))}
+        {businessTypes.map((business, index) => (
+          <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
+            <Card className="w-full bg-white rounded-[20px] border-[#8aa2a980] shadow-[0px_13px_24px_#0000000d] overflow-hidden relative">
+              <CardContent className="flex flex-col items-start gap-4 p-8">
+                <img className="w-12 h-12" alt="Frame" src={business.icon} />
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+                  {business.name}
+                </h3>
+                <img
+                  className="absolute top-[93px] left-[199px] w-[148px] h-[66px]"
+                  alt="Frame"
+                  src={business.decorativeIcon}
+                />
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </div>
+        ))}
+      </Container>
 
-      <div className="flex flex-col w-full items-start gap-8 px-4 lg:px-[180px] py-[50px]">
-        <div className="flex flex-col items-center justify-center gap-4 w-full">
+      <Container className="py-[50px]">
+        <div className="col-span-12">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[72px]">
             Simplify Your Operations,
             <br />
@@ -571,12 +563,9 @@ export const SolutionsContentSection = (): JSX.Element => {
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-5 w-full">
-          {benefitsRow1.map((benefit, index) => (
-            <Card
-              key={index}
-              className="flex-1 w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]"
-            >
+        {benefitsRow1.map((benefit, index) => (
+          <div key={index} className="col-span-12 md:col-span-4">
+            <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
               <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
                 <img
                   className="w-[58px] h-[58px]"
@@ -593,15 +582,12 @@ export const SolutionsContentSection = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </div>
+        ))}
 
-        <div className="flex flex-col lg:flex-row items-center gap-5 w-full">
-          {benefitsRow2.map((benefit, index) => (
-            <Card
-              key={index}
-              className="flex-1 w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]"
-            >
+        {benefitsRow2.map((benefit, index) => (
+          <div key={index} className="col-span-12 md:col-span-4">
+            <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
               <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
                 <img
                   className="w-[58px] h-[58px]"
@@ -618,13 +604,13 @@ export const SolutionsContentSection = (): JSX.Element => {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
-      </div>
+          </div>
+        ))}
+      </Container>
 
-      <div className="flex flex-col items-start gap-2.5 px-4 lg:px-[180px] py-[50px] w-full bg-[#282828]">
-        <div className="flex flex-col lg:flex-row gap-5 items-start w-full max-w-[1080px] mx-auto">
-          <div className="flex flex-col w-full lg:w-[530px] items-start gap-[33px]">
+      <div className="flex flex-col items-start gap-2.5 py-[50px] w-full bg-[#282828]">
+        <Container>
+          <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-[33px]">
             <h2 className="font-heading-1 font-[number:var(--heading-1-font-weight)] text-white text-[length:var(--heading-1-font-size)] tracking-[var(--heading-1-letter-spacing)] leading-[var(--heading-1-line-height)] [font-style:var(--heading-1-font-style)]">
               What is EasyReserv
             </h2>
@@ -639,7 +625,7 @@ export const SolutionsContentSection = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start w-full lg:w-[530px]">
+          <div className="col-span-12 md:col-span-6 flex flex-col items-start">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem
@@ -652,8 +638,7 @@ export const SolutionsContentSection = (): JSX.Element => {
                   </AccordionTrigger>
                   {item.answer && (
                     <AccordionContent
-                      className="font-[number:var(--description-font-weight)] text-white text-[length:var(--description-font-size)] leading-[var(--description-line-height)] font-description tracking-[var(--description-letter-spacing)] [font-
-style:var(--description-font-style)]"
+                      className="font-[number:var(--description-font-weight)] text-white text-[length:var(--description-font-size)] leading-[var(--description-line-height)] font-description tracking-[var(--description-letter-spacing)] [font-style:var(--description-font-style)]"
                     >
                       {item.answer}
                     </AccordionContent>
@@ -662,40 +647,42 @@ style:var(--description-font-style)]"
               ))}
             </Accordion>
           </div>
-        </div>
+        </Container>
       </div>
 
-      <div className="flex flex-col w-full items-start gap-2.5 px-4 lg:px-[180px] py-[50px]">
-        <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
-          <div className="flex flex-col items-start gap-4 w-full relative z-10">
-            <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-              Start Optimizing Your Business Today!
-            </h2>
+      <Container className="py-[50px]">
+        <div className="col-span-12">
+          <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
+            <div className="flex flex-col items-start gap-4 w-full relative z-10">
+              <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
+                Start Optimizing Your Business Today!
+              </h2>
+            </div>
+
+            <Button className="h-auto bg-white rounded-xl p-4 hover:bg-white/90 relative z-10">
+              <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-base tracking-[0] leading-4">
+                Become a partner
+              </span>
+            </Button>
+
+            <img
+              className="absolute -top-11 left-[772px] w-[367px] h-[366px]"
+              alt="Logo icon"
+              src="/figmaAssets/logo-icon.svg"
+            />
+
+            <img
+              className="absolute top-[calc(50.00%_-_108px)] right-6 w-[323px] h-[216px]"
+              alt="Group"
+              src="/figmaAssets/group.png"
+            />
           </div>
-
-          <Button className="h-auto bg-white rounded-xl p-4 hover:bg-white/90 relative z-10">
-            <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-base tracking-[0] leading-4">
-              Become a partner
-            </span>
-          </Button>
-
-          <img
-            className="absolute -top-11 left-[772px] w-[367px] h-[366px]"
-            alt="Logo icon"
-            src="/figmaAssets/logo-icon.svg"
-          />
-
-          <img
-            className="absolute top-[calc(50.00%_-_108px)] right-6 w-[323px] h-[216px]"
-            alt="Group"
-            src="/figmaAssets/group.png"
-          />
         </div>
-      </div>
+      </Container>
 
-      <footer className="flex flex-col w-full items-center justify-center gap-[53px] px-4 lg:px-[180px] py-[50px] bg-[#191a24]">
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-[43px] w-full max-w-[1080px]">
-          <div className="flex flex-col items-start gap-4 flex-1">
+      <footer className="flex flex-col w-full items-center justify-center gap-[53px] py-[50px] bg-[#191a24]">
+        <Container>
+          <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-4">
             <div className="flex items-center gap-4">
               <img
                 className="w-14 h-14"
@@ -714,7 +701,7 @@ style:var(--description-font-style)]"
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start justify-center gap-8 flex-1">
+          <div className="col-span-12 md:col-span-6 flex flex-col md:flex-row items-start justify-center gap-8">
             <nav className="flex flex-col items-start gap-4 flex-1">
               {footerLinks.map((link, index) => (
                 <a
@@ -746,30 +733,30 @@ style:var(--description-font-style)]"
               <img alt="Frame" src="/figmaAssets/frame-30297.svg" />
             </div>
           </div>
-        </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 w-full max-w-[1080px]">
-          <p className="[font-family:'Onest',Helvetica] font-normal text-grayswhite text-lg text-center leading-[18px]">
-            <span className="font-medium tracking-[-0.06px] text-white leading-7">
-              Developed by{" "}
-            </span>
-            <span className="font-medium text-white tracking-[-0.06px] leading-7 underline">
-              iShunea Tech Solutions
-            </span>
-          </p>
+          <div className="col-span-12 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="[font-family:'Onest',Helvetica] font-normal text-grayswhite text-lg text-center leading-[18px]">
+              <span className="font-medium tracking-[-0.06px] text-white leading-7">
+                Developed by{" "}
+              </span>
+              <span className="font-medium text-white tracking-[-0.06px] leading-7 underline">
+                iShunea Tech Solutions
+              </span>
+            </p>
 
-          <p className="opacity-50 [font-family:'Inter',Helvetica] font-normal text-grayswhite text-base text-center leading-4">
-            <span className="tracking-[-0.05px] text-white leading-7">
-              Developed by
-            </span>
-            <span className="font-medium text-white tracking-[0] leading-[0.1px]">
-              &nbsp;
-            </span>
-            <span className="font-bold text-white tracking-[-0.05px] leading-7 underline">
-              iShunea Tech Solutions
-            </span>
-          </p>
-        </div>
+            <p className="opacity-50 [font-family:'Inter',Helvetica] font-normal text-grayswhite text-base text-center leading-4">
+              <span className="tracking-[-0.05px] text-white leading-7">
+                Developed by
+              </span>
+              <span className="font-medium text-white tracking-[0] leading-[0.1px]">
+                &nbsp;
+              </span>
+              <span className="font-bold text-white tracking-[-0.05px] leading-7 underline">
+                iShunea Tech Solutions
+              </span>
+            </p>
+          </div>
+        </Container>
       </footer>
     </section>
   );
