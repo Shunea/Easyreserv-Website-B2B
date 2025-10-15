@@ -9,6 +9,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Container } from "@/components/Container";
 
 const pricingPlans = [
   {
@@ -349,58 +350,63 @@ const comparisonCategories = [
 
 export const ContentWrapperSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-center gap-8 w-full">
-      <div className="flex flex-col items-center gap-[43px] w-full max-w-[809px]">
-        <div className="flex items-center justify-center gap-6 w-full flex-wrap">
-          <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-            Subscription plans for
-          </h1>
+    <section className="flex flex-col items-center gap-8 w-full px-4 md:px-8 py-12">
+      {/* Header Section */}
+      <Container>
+        <div className="col-span-12 flex flex-col items-center gap-[43px]">
+          <div className="flex items-center justify-center gap-6 w-full flex-wrap">
+            <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-[normal]">
+              Subscription plans for
+            </h1>
 
-          <div className="inline-flex items-center gap-2.5 px-6 py-4 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833]">
-            <div className="inline-flex items-center gap-1">
-              <div className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-[32px] tracking-[0.64px] leading-[44.8px] whitespace-nowrap">
-                Restaurante
+            <div className="inline-flex items-center gap-2.5 px-6 py-4 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833]">
+              <div className="inline-flex items-center gap-1">
+                <div className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-2xl md:text-[32px] tracking-[0.64px] leading-[44.8px] whitespace-nowrap">
+                  Restaurante
+                </div>
+                <img
+                  className="w-8 h-8"
+                  alt="Icons"
+                  src="/figmaAssets/icons.svg"
+                />
               </div>
-              <img
-                className="w-8 h-8"
-                alt="Icons"
-                src="/figmaAssets/icons.svg"
-              />
             </div>
           </div>
-        </div>
 
-        <div className="inline-flex items-center justify-center gap-6 flex-wrap">
-          <div className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-            Save with annual billing
-          </div>
+          <div className="inline-flex items-center justify-center gap-6 flex-wrap">
+            <div className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
+              Save with annual billing
+            </div>
 
-          <div className="flex items-center justify-end px-1 py-0.5 bg-[#2d2c65] rounded-[100px] h-8 w-[52px]">
-            <div className="flex-1 self-stretch relative">
-              <div className="inline-flex items-center justify-center p-1 absolute top-1/2 -translate-y-1/2 -right-3">
-                <div className="inline-flex flex-col items-center justify-center gap-2 p-2 rounded-[100px]">
-                  <div className="inline-flex items-center justify-center p-[11px] bg-m3syslighton-primary rounded-3xl overflow-hidden">
-                    <div className="w-0.5 h-0.5 rounded-[23px]" />
+            <div className="flex items-center justify-end px-1 py-0.5 bg-[#2d2c65] rounded-[100px] h-8 w-[52px]">
+              <div className="flex-1 self-stretch relative">
+                <div className="inline-flex items-center justify-center p-1 absolute top-1/2 -translate-y-1/2 -right-3">
+                  <div className="inline-flex flex-col items-center justify-center gap-2 p-2 rounded-[100px]">
+                    <div className="inline-flex items-center justify-center p-[11px] bg-m3syslighton-primary rounded-3xl overflow-hidden">
+                      <div className="w-0.5 h-0.5 rounded-[23px]" />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <Badge className="inline-flex items-center justify-center gap-2.5 p-2.5 bg-[#282828] rounded-[10px] h-auto">
+              <span className="[font-family:'Inter',Helvetica] font-bold text-white text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
+                SAVE 10%
+              </span>
+            </Badge>
           </div>
-
-          <Badge className="inline-flex items-center justify-center gap-2.5 p-2.5 bg-[#282828] rounded-[10px] h-auto">
-            <span className="[font-family:'Inter',Helvetica] font-bold text-white text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-              SAVE 10%
-            </span>
-          </Badge>
         </div>
-      </div>
+      </Container>
 
-      <div className="flex flex-col items-center w-full">
-        <div className="flex items-start w-full">
+      {/* Pricing Plans Section */}
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-12 gap-0">
+          {/* Most Popular badges row */}
           {pricingPlans.map((plan, index) => (
             <div
-              key={index}
-              className={`flex h-8 items-center justify-center gap-1 px-2 py-1.5 flex-1 ${
+              key={`badge-${index}`}
+              className={`col-span-12 md:col-span-3 flex h-8 items-center justify-center gap-1 px-2 py-1.5 ${
                 plan.isPopular
                   ? "bg-[#2d2c65] rounded-[40px_40px_0px_0px]"
                   : "opacity-0 bg-[#2d2c65]"
@@ -414,80 +420,83 @@ export const ContentWrapperSection = (): JSX.Element => {
               )}
             </div>
           ))}
-        </div>
 
-        <div className="flex items-center w-full">
+          {/* Pricing Cards row */}
           {pricingPlans.map((plan, index) => (
-            <Card
-              key={index}
-              className={`flex-1 rounded-none ${
-                plan.isPopular
-                  ? "border-2 border-[#2d2c65]"
-                  : "border border-zinc-200"
-              }`}
-            >
-              <CardContent className="flex flex-col items-start gap-10 p-5">
-                <div className="flex flex-col items-start gap-1 w-full">
-                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
-                    {plan.name}
-                  </h3>
-                  <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[15px]">
-                    {plan.description}
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-[15px] w-full">
-                  <div className="inline-flex items-end gap-1">
-                    <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[55.2px] whitespace-nowrap">
-                      {plan.price}
-                    </span>
-                    <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                      {plan.period}
-                    </span>
-                  </div>
-                </div>
-
-                <Button
-                  variant={plan.buttonVariant}
-                  className={`w-full h-auto px-6 py-4 rounded-[5px] ${
-                    plan.isPopular
-                      ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
-                      : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
-                  }`}
-                >
-                  <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                    Start Free Trial
-                  </span>
-                </Button>
-
-                <div className="flex flex-col items-start gap-2 pl-2 pr-4 w-full">
-                  <div className="[font-family:'Onest',Helvetica] font-semibold text-[#909090] text-base tracking-[0] leading-[18.4px]">
-                    What you get
+            <div key={`plan-${index}`} className="col-span-12 md:col-span-3">
+              <Card
+                className={`h-full rounded-none ${
+                  plan.isPopular
+                    ? "border-2 border-[#2d2c65]"
+                    : "border border-zinc-200"
+                }`}
+              >
+                <CardContent className="flex flex-col items-start gap-6 p-5">
+                  <div className="flex flex-col items-start gap-1 w-full">
+                    <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
+                      {plan.name}
+                    </h3>
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[15px]">
+                      {plan.description}
+                    </p>
                   </div>
 
-                  {plan.features.map((feature, featureIndex) => (
-                    <div
-                      key={featureIndex}
-                      className="flex items-center gap-4 w-full"
-                    >
-                      <CheckIcon className="w-6 h-6 text-[#2d2c65]" />
-                      <div className="flex-1 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm tracking-[0] leading-[17.5px]">
-                        {feature}
-                      </div>
+                  <div className="flex items-start gap-[15px] w-full">
+                    <div className="inline-flex items-end gap-1">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[55.2px] whitespace-nowrap">
+                        {plan.price}
+                      </span>
+                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+                        {plan.period}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </div>
 
-        <button className="flex items-center justify-center gap-2 p-4 w-full bg-white border-r border-b border-l border-zinc-200 hover:bg-gray-50 transition-colors">
-          <span className="[font-family:'Onest',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[17.6px] whitespace-nowrap">
-            See all features
-          </span>
-          <ChevronDownIcon className="w-4 h-4" />
-        </button>
+                  <Button
+                    variant={plan.buttonVariant}
+                    className={`w-full h-auto px-6 py-4 rounded-[5px] ${
+                      plan.isPopular
+                        ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                        : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                    }`}
+                  >
+                    <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                      Start Free Trial
+                    </span>
+                  </Button>
+
+                  <div className="flex flex-col items-start gap-2 w-full">
+                    <div className="[font-family:'Onest',Helvetica] font-semibold text-[#909090] text-base tracking-[0] leading-[18.4px]">
+                      What you get
+                    </div>
+
+                    {plan.features.map((feature, featureIndex) => (
+                      <div
+                        key={featureIndex}
+                        className="flex items-center gap-2 w-full"
+                      >
+                        <CheckIcon className="w-5 h-5 text-[#2d2c65] flex-shrink-0" />
+                        <div className="flex-1 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm tracking-[0] leading-[17.5px]">
+                          {feature}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+
+          {/* See all features button */}
+          <div className="col-span-12">
+            <button className="flex items-center justify-center gap-2 p-4 w-full bg-white border border-zinc-200 hover:bg-gray-50 transition-colors">
+              <span className="[font-family:'Onest',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[17.6px] whitespace-nowrap">
+                See all features
+              </span>
+              <ChevronDownIcon className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col items-end gap-4 w-full">
