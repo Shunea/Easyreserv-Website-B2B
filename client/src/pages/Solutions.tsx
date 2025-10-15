@@ -1,6 +1,7 @@
 import React from "react";
 import { NavigationSection } from "./sections/NavigationSection";
 import { SolutionsContentSection } from "./sections/SolutionsContentSection";
+import { FooterSection } from "./sections/FooterSection";
 
 export function Solutions() {
   return (
@@ -43,6 +44,7 @@ export function Solutions() {
 
       <NavigationSection />
       <SolutionsContentSection />
+      <FooterSection />
     </div>
   );
 }

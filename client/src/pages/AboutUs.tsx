@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationSection } from "./sections/NavigationSection";
 import { MainContentSection } from "./sections/MainContentSection";
 import { InfoSection } from "./sections/InfoSection";
+import { FooterSection } from "./sections/FooterSection";
 
 export function AboutUs() {
   return (
@@ -9,6 +10,7 @@ export function AboutUs() {
       <NavigationSection />
       <MainContentSection />
       <InfoSection />
+      <FooterSection />
     </div>
   );
 }

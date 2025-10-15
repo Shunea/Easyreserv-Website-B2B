@@ -2,6 +2,7 @@ import React from "react";
 import { AboutSection } from "./sections/AboutSection";
 import { FeaturesSection } from "./sections/FeaturesSection";
 import { NavigationSection } from "./sections/NavigationSection";
+import { FooterSection } from "./sections/FooterSection";
 
 export const Homepage = (): JSX.Element => {
   return (
@@ -33,6 +34,7 @@ export const Homepage = (): JSX.Element => {
       <NavigationSection />
       <FeaturesSection />
       <AboutSection />
+      <FooterSection />
     </div>
   );
 };
