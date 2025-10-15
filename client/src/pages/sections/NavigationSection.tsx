@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 
 const navigationItems = [
-  { label: "About Us", hasDropdown: false },
-  { label: "Solutions", hasDropdown: true },
-  { label: "Pricing", hasDropdown: false },
-  { label: "Contact", hasDropdown: false },
-  { label: "Contact us", hasDropdown: false },
+  { label: "About Us", hasDropdown: false, href: "/about" },
+  { label: "Solutions", hasDropdown: true, href: "/solutions" },
+  { label: "Pricing", hasDropdown: false, href: "#pricing" },
+  { label: "Contact", hasDropdown: false, href: "#contact" },
 ];
 
 export const NavigationSection = (): JSX.Element => {
@@ -35,20 +34,9 @@ export const NavigationSection = (): JSX.Element => {
           {/* Navigation Items */}
           <div className="hidden lg:flex items-center gap-6">
             {navigationItems.map((item, index) => {
-              if (item.label === "About Us") {
+              if (item.href.startsWith('#')) {
                 return (
-                  <Link key={index} href="/about">
-                    <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
-                      <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
-                        {item.label}
-                      </div>
-                    </div>
-                  </Link>
-                );
-              }
-              if (item.label === "Solutions") {
-                return (
-                  <Link key={index} href="/solutions">
+                  <a key={index} href={item.href}>
                     <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
                       <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
                         {item.label}
@@ -57,18 +45,20 @@ export const NavigationSection = (): JSX.Element => {
                         <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
                       )}
                     </div>
-                  </Link>
+                  </a>
                 );
               }
               return (
-                <div key={index} className="flex items-center gap-1 cursor-pointer">
-                  <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
-                    {item.label}
+                <Link key={index} href={item.href}>
+                  <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+                    <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                      {item.label}
+                    </div>
+                    {item.hasDropdown && (
+                      <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
+                    )}
                   </div>
-                  {item.hasDropdown && (
-                    <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
-                  )}
-                </div>
+                </Link>
               );
             })}
           </div>
