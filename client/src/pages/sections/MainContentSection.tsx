@@ -7,13 +7,13 @@ export const MainContentSection = (): JSX.Element => {
       <img
         className="absolute top-0 left-0 w-[1044px] h-[879px]"
         alt="Vector"
-        src="/figmaAssets/vector-21.svg"
+        src="/figmaAssets/vector-25.svg"
       />
 
       <img
         className="absolute top-[51px] left-[1144px] w-[973px] h-[585px]"
         alt="Vector"
-        src="/figmaAssets/vector-22.svg"
+        src="/figmaAssets/vector-25.svg"
       />
 
       <img
@@ -25,7 +25,7 @@ export const MainContentSection = (): JSX.Element => {
       <img
         className="top-[299px] left-[983px] absolute w-[1512px] h-[416px]"
         alt="Vector"
-        src="/figmaAssets/vector-20-2.svg"
+        src="/figmaAssets/vector-20.svg"
       />
 
       <div className="flex flex-col items-center gap-5 absolute top-[136px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
