@@ -98,7 +98,7 @@ export const ContactFormSection = (): JSX.Element => {
 
                   {field.type === "select" ? (
                     <Select defaultValue={field.placeholder}>
-                      <SelectTrigger className="w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs h-auto">
+                      <SelectTrigger className="w-full h-11 bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus:outline-none focus:ring-0 focus:border-[#d2d6db]">
                         <SelectValue placeholder={field.placeholder} />
                       </SelectTrigger>
                       <SelectContent>
@@ -110,8 +110,8 @@ export const ContactFormSection = (): JSX.Element => {
                       </SelectContent>
                     </Select>
                   ) : field.type === "phone" ? (
-                    <div className="flex items-center w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs">
-                      <div className="flex gap-1 pl-3 pr-0 py-2 items-center">
+                    <div className="flex items-center h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus-within:outline-none">
+                      <div className="flex gap-1 pl-3 pr-0 items-center">
                         <img
                           className="w-6 h-6"
                           alt="Country flag"
@@ -126,15 +126,15 @@ export const ContactFormSection = (): JSX.Element => {
                       <Input
                         type="tel"
                         placeholder={field.placeholder}
-                        className="flex-1 border-0 shadow-none pl-2.5 pr-3 py-2 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]"
+                        className="flex-1 h-full border-0 shadow-none pl-2.5 pr-3 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus:outline-none focus:ring-0"
                       />
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 px-3 py-2 w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs">
+                    <div className="flex items-center gap-2 px-3 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus-within:outline-none">
                       <Input
                         type={field.type}
                         placeholder={field.placeholder}
-                        className="flex-1 border-0 shadow-none p-0 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]"
+                        className="flex-1 h-full border-0 shadow-none p-0 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus:outline-none focus:ring-0"
                       />
                       {field.icon === "mail" && (
                         <MailIcon className="w-5 h-5" />
