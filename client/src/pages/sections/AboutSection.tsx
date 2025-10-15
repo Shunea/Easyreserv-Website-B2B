@@ -10,59 +10,79 @@ import { Container } from "@/components/Container";
 
 const topStats = [
   {
-    label: "ESTABLISHED",
-    value: "2023",
+    label: "COMENZI PROCESATE LUNAR",
+    value: "5000+",
   },
   {
-    label: "OUTSTANDING PROFESSIONALS",
-    value: "15+",
+    label: "UPTIME GARANTAT",
+    value: ">99.9%",
   },
   {
-    label: "MONTHS OF DEVELOPMENT",
-    value: "8+",
-  },
-  {
-    label: "EASYRESERV WIDGES CREATED",
-    value: "101+",
+    label: "CONFORMITATE",
+    value: "Fiscal & 1C ready",
   },
 ];
 
-const features = [
+const industries = [
   {
-    id: "employee-management",
-    title: "Employee Management",
-    content: null,
+    id: "restaurante",
+    title: "Restaurante",
+    icon: "🍽️",
+    features: [
+      "Rezervări & comenzi integrate",
+      "POS cu bon fiscal instant",
+      "Gestionare mese & zone"
+    ],
   },
   {
-    id: "mobile-reservations",
-    title: "Mobile Reservations",
-    content:
-      "Allow your clients to make reservations easily through the mobile app, reducing no-shows and optimizing table turnover.",
+    id: "chirie-auto",
+    title: "Chirie Auto",
+    icon: "🚗",
+    features: [
+      "Tracking vehicule în timp real",
+      "Contract digital automat",
+      "Asigurări & documente"
+    ],
   },
   {
-    id: "business-insights",
-    title: "Business Insights",
-    content: null,
+    id: "fitness",
+    title: "Fitness & Wellness",
+    icon: "💪",
+    features: [
+      "Rezervări clase & antrenori",
+      "Abonamente & pachete",
+      "Check-in automat"
+    ],
   },
   {
-    id: "inventory-management",
-    title: "Inventory Management",
-    content: null,
+    id: "medical",
+    title: "Clinici Medicale",
+    icon: "🏥",
+    features: [
+      "Programări pacienți",
+      "Fișă medicală digitală",
+      "Reminder-uri automate"
+    ],
   },
   {
-    id: "multi-platform",
-    title: "Multi-Platfor Access",
-    content: null,
+    id: "retail",
+    title: "Retail",
+    icon: "🛍️",
+    features: [
+      "Inventar sincronizat live",
+      "Comenzi online & în magazin",
+      "Rapoarte vânzări detaliate"
+    ],
   },
   {
-    id: "crm",
-    title: "Customer Relationship Management",
-    content: null,
-  },
-  {
-    id: "online-payments",
-    title: "Online Payments",
-    content: null,
+    id: "hoteluri",
+    title: "Hoteluri",
+    icon: "🏨",
+    features: [
+      "Check-in/out digital",
+      "Gestionare camere",
+      "Servicii adiționale"
+    ],
   },
 ];
 
@@ -125,7 +145,7 @@ export const AboutSection = (): JSX.Element => {
           {topStats.map((stat, index) => (
             <div
               key={index}
-              className={`col-span-6 md:col-span-3 flex flex-col items-center justify-center gap-4 ${
+              className={`col-span-12 md:col-span-4 flex flex-col items-center justify-center gap-4 ${
                 index < topStats.length - 1
                   ? "md:border-r md:border-[#ffffff40]"
                   : ""
@@ -142,99 +162,100 @@ export const AboutSection = (): JSX.Element => {
         </Container>
       </div>
 
-      {/* Best Features Section */}
+      {/* Industrii & Module Section */}
       <div className="w-full py-16 md:py-24">
         <Container>
           <div className="col-span-12">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px] mb-12">
-              Best features
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px] mb-4">
+              Industrii & Module
             </h2>
+            <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg text-center tracking-[-0.36px] leading-7 mb-12 max-w-3xl mx-auto">
+              Soluții personalizate pentru fiecare tip de business
+            </p>
           </div>
 
-          <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
-            <div className="w-full max-w-[480px]">
-              <Accordion
-                type="single"
-                collapsible
-                defaultValue="mobile-reservations"
-                className="w-full"
-              >
-                {features.map((feature) => (
-                  <AccordionItem
-                    key={feature.id}
-                    value={feature.id}
-                    className={`border-b border-[#cccccc] ${
-                      !feature.content ? "opacity-50" : ""
-                    }`}
-                  >
-                    <AccordionTrigger className="px-0 py-5 hover:no-underline">
-                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xl tracking-[0.40px] leading-7">
-                        {feature.title}
+          {industries.map((industry) => (
+            <div key={industry.id} className="col-span-12 md:col-span-6 lg:col-span-4">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 h-full hover:shadow-lg transition-shadow duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="text-4xl">{industry.icon}</div>
+                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl">
+                    {industry.title}
+                  </h3>
+                </div>
+                
+                <ul className="space-y-3 mb-6">
+                  {industry.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <svg className="w-5 h-5 text-[#2d2c65] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                      </svg>
+                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm leading-6">
+                        {feature}
                       </span>
-                    </AccordionTrigger>
-                    {feature.content && (
-                      <AccordionContent className="px-0 pb-5">
-                        <div className="flex flex-col gap-6">
-                          <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base leading-6">
-                            {feature.content}
-                          </p>
-                          <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
-                            <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                              Request Demo
-                            </span>
-                          </Button>
-                        </div>
-                      </AccordionContent>
-                    )}
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button variant="outline" className="w-full h-auto border-[#2d2c65] hover:bg-[#2d2c65]/5 rounded-[5px] px-4 py-3">
+                  <span className="[font-family:'Onest',Helvetica] font-semibold text-[#2d2c65] text-sm">
+                    Află mai mult
+                  </span>
+                </Button>
+              </div>
             </div>
-          </div>
-
-          <div className="col-span-12 lg:col-span-6 flex items-center justify-center">
-            <img
-              className="w-full max-w-[530px] h-auto"
-              alt="Features illustration"
-              src="/figmaAssets/frame-39977.svg"
-            />
-          </div>
+          ))}
         </Container>
       </div>
 
-      {/* About Us Section */}
-      <div className="w-full py-16">
+      {/* POS Section */}
+      <div className="w-full py-16 bg-gradient-to-br from-[#2d2c65]/5 to-transparent">
         <Container>
           <div className="col-span-12 lg:col-span-6 flex items-center justify-center">
             <img
-              className="w-full max-w-[622px] h-auto rounded-[20px] object-cover"
-              alt="Restaurant interior"
+              className="w-full max-w-[622px] h-auto rounded-[20px] object-cover shadow-xl"
+              alt="POS interface"
               src="/figmaAssets/rectangle-435.png"
             />
           </div>
 
-          <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              About us
-            </h2>
-
-            <div className="flex flex-col gap-5">
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                EasyReserv is dedicated to revolutionizing business
-                management. Our journey began with a simple concept: to make
-                business operations simpler, more efficient, and profitable.
-              </p>
-
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Join us on this exciting journey and redefine the way you
-                manage your business.
-              </p>
+          <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#2d2c65] rounded-full w-fit">
+              <span className="[font-family:'Onest',Helvetica] font-bold text-white text-sm">
+                ✨ POS DISPONIBIL ACUM
+              </span>
             </div>
 
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+              Transformă tableta în casă de marcat
+            </h2>
+
+            <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-7">
+              Bon fiscal, split note, rabaturi, inventar live, mod offline. Integrare în &lt;15 minute, fără hardware exotic.
+            </p>
+
+            <ul className="space-y-4">
+              {[
+                "Print & bon fiscal automat",
+                "Interface touch rapid & intuitiv",
+                "Mod offline - funcționează fără internet",
+                "Roluri & permisiuni configurabile"
+              ].map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <svg className="w-6 h-6 text-[#2d2c65] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base leading-6">
+                    {feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
             <div>
-              <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
+              <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-8 py-4 shadow-sm">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                  Request Demo
+                  Cere activarea POS
                 </span>
               </Button>
             </div>
