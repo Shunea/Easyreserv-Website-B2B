@@ -95,10 +95,10 @@ export const FooterSection = (): JSX.Element => {
                   href="https://bit.ly/4c6yKJr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block hover:opacity-80 transition-opacity"
+                  className="inline-block hover:opacity-80 transition-opacity h-10"
                 >
                   <img
-                    className="h-10 w-auto"
+                    className="h-full w-auto"
                     alt="Download on the App Store"
                     src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1722556800"
                   />
@@ -107,10 +107,10 @@ export const FooterSection = (): JSX.Element => {
                   href="https://bit.ly/49Ce2Q1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block hover:opacity-80 transition-opacity"
+                  className="inline-block hover:opacity-80 transition-opacity h-10"
                 >
                   <img
-                    className="h-10 w-auto"
+                    className="h-full w-auto object-contain"
                     alt="Get it on Google Play"
                     src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                   />
