@@ -499,94 +499,80 @@ export const ContentWrapperSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex flex-col items-end gap-4 w-full">
-        <div className="relative w-full max-w-[756px]">
-          <div className="flex items-center justify-center w-full pt-[11px]">
-            {pricingPlans.map((plan, index) => (
-              <div
-                key={index}
-                className="flex-1 flex flex-col items-center justify-center gap-2"
-              >
-                <div className="inline-flex flex-col items-start gap-1">
-                  <div className="font-sementic-type-title-l font-[number:var(--sementic-type-title-l-font-weight)] text-[#282828] text-[length:var(--sementic-type-title-l-font-size)] tracking-[var(--sementic-type-title-l-letter-spacing)] leading-[var(--sementic-type-title-l-line-height)] whitespace-nowrap [font-style:var(--sementic-type-title-l-font-style)]">
-                    {plan.name}
-                  </div>
-                </div>
+      {/* Comparison Table */}
+      <div className="w-full max-w-7xl mx-auto px-4 mt-8">
+        <div className="grid grid-cols-12 gap-0">
+          {/* Table Header - Plan Names */}
+          <div className="col-span-4"></div>
+          {pricingPlans.map((plan, index) => (
+            <div
+              key={`header-${index}`}
+              className={`col-span-6 md:col-span-2 flex items-center justify-center py-3 border-b border-zinc-200 ${
+                index === 2 ? "bg-[#2d2c6512] border-4 border-[#2d2c6566]" : ""
+              }`}
+            >
+              <h4 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-base tracking-[0]">
+                {plan.name}
+              </h4>
+            </div>
+          ))}
+
+          {/* Comparison Categories */}
+          {comparisonCategories.map((category, categoryIndex) => (
+            <React.Fragment key={categoryIndex}>
+              {/* Category Header */}
+              <div className="col-span-12 px-4 py-4 bg-[#f9fbfc] border-t border-zinc-200">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
+                  {category.title}
+                </h3>
               </div>
-            ))}
-          </div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[190px] h-[45px] bg-[#2d2c6512] border-4 border-solid border-[#2d2c6566]" />
-        </div>
 
-        <div className="relative w-full">
-          <div className="flex flex-col items-start w-full rounded-[10px] overflow-hidden border border-solid border-zinc-200">
-            {comparisonCategories.map((category, categoryIndex) => (
-              <div
-                key={categoryIndex}
-                className="flex flex-col items-start w-full"
-              >
-                <div className="flex items-end gap-4 px-3 py-4 w-full bg-[#f9fbfc] border border-solid border-zinc-200">
-                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px] whitespace-nowrap">
-                    {category.title}
-                  </h3>
-                </div>
-
-                {category.features.map((feature, featureIndex) => (
-                  <div
-                    key={featureIndex}
-                    className="flex items-center justify-between pl-4 pr-0 py-0 w-full bg-white"
-                  >
-                    <div className="flex items-center gap-1 flex-1">
-                      <div className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[0] leading-[18.4px] whitespace-nowrap">
-                        {feature.name}
-                      </div>
-                      <HelpCircleIcon className="w-6 h-6 text-gray-400" />
+              {/* Category Features */}
+              {category.features.map((feature, featureIndex) => (
+                <React.Fragment key={featureIndex}>
+                  <div className="col-span-4 flex items-center gap-2 px-4 py-4 border-b border-zinc-200 bg-white">
+                    <div className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[0] leading-[18.4px]">
+                      {feature.name}
                     </div>
+                    <HelpCircleIcon className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                  </div>
 
-                    <div className="flex items-center justify-between w-[756px]">
-                      {feature.values.map((value, valueIndex) => (
+                  {feature.values.map((value, valueIndex) => (
+                    <div
+                      key={valueIndex}
+                      className={`col-span-6 md:col-span-2 flex items-center justify-center px-2 py-4 border-b border-l border-zinc-200 ${
+                        valueIndex === pricingPlans.length - 1 ? "border-r" : ""
+                      } ${valueIndex === 2 ? "bg-[#2d2c6505]" : "bg-white"}`}
+                    >
+                      {typeof value === "boolean" ? (
+                        value ? (
+                          <CheckIcon className="w-6 h-6 text-[#2d2c65]" />
+                        ) : (
+                          <XIcon className="w-6 h-6 text-gray-400" />
+                        )
+                      ) : (
                         <div
-                          key={valueIndex}
-                          className={`flex items-center justify-center gap-2.5 px-2 py-[18px] flex-1 border-l border-zinc-200 ${
-                            valueIndex === 3 ? "border-r" : ""
+                          className={`[font-family:'Inter',Helvetica] font-semibold text-base tracking-[0] leading-[18.4px] whitespace-nowrap ${
+                            feature.muted && feature.muted[valueIndex]
+                              ? "text-sementicscolorfgmuted"
+                              : "text-[#282828]"
                           }`}
                         >
-                          {typeof value === "boolean" ? (
-                            value ? (
-                              <CheckIcon className="w-6 h-6 text-[#2d2c65]" />
-                            ) : (
-                              <XIcon className="w-6 h-6 text-gray-400" />
-                            )
-                          ) : (
-                            <div
-                              className={`[font-family:'Inter',Helvetica] font-semibold text-base tracking-[0] leading-[18.4px] whitespace-nowrap ${
-                                feature.muted && feature.muted[valueIndex]
-                                  ? "text-sementicscolorfgmuted"
-                                  : "text-[#282828]"
-                              }`}
-                            >
-                              {value}
-                            </div>
-                          )}
+                          {value}
                         </div>
-                      ))}
+                      )}
                     </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+                  ))}
+                </React.Fragment>
+              ))}
+            </React.Fragment>
+          ))}
 
-          <div className="absolute top-0 left-[702px] w-[190px] h-full bg-[#2d2c6505] border-2 border-solid border-[#2d2c6566] pointer-events-none" />
-        </div>
-
-        <div className="relative w-full max-w-[756px]">
-          <div className="flex items-center w-full">
-            {pricingPlans.map((plan, index) => (
-              <Card
-                key={index}
-                className="flex-1 rounded-none border border-zinc-200"
-              >
+          {/* Bottom CTA Cards */}
+          <div className="col-span-4"></div>
+          {pricingPlans.map((plan, index) => (
+            <div key={`cta-${index}`} className="col-span-6 md:col-span-2">
+              <Card className={`h-full rounded-none border border-zinc-200 ${index === 2 ? "bg-[#2d2c6505]" : ""}`}>
                 <CardContent className="flex flex-col items-start gap-5 p-5">
                   <div className="flex flex-col items-start gap-1 w-full">
                     <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
@@ -622,9 +608,8 @@ export const ContentWrapperSection = (): JSX.Element => {
                   </Button>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-          <div className="absolute top-px left-[378px] w-[190px] h-[197px] bg-[#2d2c6505] border-2 border-solid border-[#2d2c6566] pointer-events-none" />
+            </div>
+          ))}
         </div>
       </div>
     </section>
