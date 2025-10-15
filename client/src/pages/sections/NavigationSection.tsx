@@ -17,7 +17,7 @@ export const NavigationSection = (): JSX.Element => {
       <Container>
         {/* Logo - Left side (3 columns) */}
         <div className="col-span-6 md:col-span-3 flex items-center gap-[11px]">
-          <Link href="/" className="flex items-center gap-[11px] cursor-pointer hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center gap-[11px] cursor-pointer hover:opacity-80 transition-opacity">
             <img
               className="w-[47px] h-[46px]"
               alt="Logo"
@@ -49,7 +49,7 @@ export const NavigationSection = (): JSX.Element => {
                 );
               }
               return (
-                <Link key={index} href={item.href}>
+                <Link key={index} to={item.href}>
                   <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
                     <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
                       {item.label}

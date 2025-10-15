@@ -22,7 +22,7 @@ export const FooterSection = (): JSX.Element => {
     <footer className="w-full py-16 bg-[#191a24]">
       <Container>
         <div className="col-span-12 lg:col-span-6 flex flex-col gap-4">
-          <Link href="/">
+          <Link to="/">
             <div className="inline-flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
               <img
                 className="w-14 h-14"
@@ -56,7 +56,7 @@ export const FooterSection = (): JSX.Element => {
                     {link.text}
                   </a>
                 ) : (
-                  <Link key={index} href={link.href}>
+                  <Link key={index} to={link.href}>
                     <span className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline cursor-pointer">
                       {link.text}
                     </span>
