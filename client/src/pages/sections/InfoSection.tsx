@@ -29,28 +29,28 @@ const statsData = [
 
 const whyChooseUsData = [
   {
-    icon: "/figmaAssets/arrow.svg",
+    icon: "/figmaAssets/icon-1.svg",
     title: "Simplify Operations",
     description:
       "We streamline and centralize all your booking needs, making your business more efficient.",
     number: "01",
   },
   {
-    icon: "/figmaAssets/chevron-down.svg",
+    icon: "/figmaAssets/icon-3.svg",
     title: "Attract Clients",
     description:
       "Our platform helps you build strong connections with customers, ensuring their loyalty.",
     number: "02",
   },
   {
-    icon: "/figmaAssets/arrow-3.svg",
+    icon: "/figmaAssets/icon-3.svg",
     title: "Outperform the Competition",
     description:
       "Leverage cutting-edge technologies to elevate your business management.",
     number: "03",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/icon-2.svg",
     title: "Unwavering Support",
     description:
       "We stand by your side, offering the assistance and expertise you need to succeed.",
@@ -60,37 +60,37 @@ const whyChooseUsData = [
 
 const featuresData = [
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/vuesax-broken-global.png",
     title: "Comprehensive Solution",
     description:
       "From booking to employee management, we offer an all-in-one solution for your business.",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/icon.svg",
     title: "Data Security",
     description:
       "Your data is our priority. We implement the most advanced security measures to ensure its safety.",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/innovation.png",
     title: "Innovation",
     description:
       "We continuously enhance our platform to stay ahead in the ever-evolving business environment.",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/vuesax-linear-profile.png",
     title: "User-Friendly Interface",
     description:
       "Our platform is designed to ensure seamless use for business owners and their customers.",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/vuesax-linear-status-up.png",
     title: "Scalability",
     description:
       "As your business grows, our platform grows with you. We are ready to support your expansion.",
   },
   {
-    icon: "/figmaAssets/logo-icon.svg",
+    icon: "/figmaAssets/vuesax-linear-heart.png",
     title: "24/7 Support",
     description:
       "Our dedicated support team is available 24/7 to assist you with any questions or concerns.",
