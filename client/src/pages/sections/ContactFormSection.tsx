@@ -11,6 +11,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+type FormField = {
+  label: string;
+  placeholder: string;
+  type: string;
+  icon?: string;
+  hasCountryCode?: boolean;
+  options?: string[];
+};
+
 const formFields = [
   {
     row: 1,
@@ -78,7 +87,7 @@ export const ContactFormSection = (): JSX.Element => {
         <div className="flex flex-col w-full items-start gap-5">
           {formFields.map((row) => (
             <div key={row.row} className="flex flex-col md:flex-row items-start gap-5 w-full">
-              {row.fields.map((field, index) => (
+              {row.fields.map((field: FormField, index) => (
                 <div
                   key={`${row.row}-${index}`}
                   className="flex flex-col items-start gap-1.5 flex-1 w-full"
