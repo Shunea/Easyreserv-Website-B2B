@@ -18,14 +18,16 @@ export const NavigationSection = (): JSX.Element => {
       <Container>
         {/* Logo - Left side (3 columns) */}
         <div className="col-span-6 md:col-span-3 flex items-center gap-[11px]">
-          <img
-            className="w-[47px] h-[46px]"
-            alt="Logo icon"
-            src="/figmaAssets/logo-icon.svg"
-          />
-          <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-semibold text-[#282828] text-2xl tracking-[0] leading-[33.6px] whitespace-nowrap">
-            EasyReserv.io
-          </div>
+          <Link href="/" className="flex items-center gap-[11px] cursor-pointer hover:opacity-80 transition-opacity">
+            <img
+              className="w-[47px] h-[46px]"
+              alt="Logo icon"
+              src="/figmaAssets/logo-icon.svg"
+            />
+            <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-semibold text-[#282828] text-2xl tracking-[0] leading-[33.6px] whitespace-nowrap">
+              EasyReserv.io
+            </div>
+          </Link>
         </div>
 
         {/* Navigation Items + Actions - Right side (9 columns) */}
