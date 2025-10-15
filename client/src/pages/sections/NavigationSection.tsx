@@ -20,8 +20,8 @@ export const NavigationSection = (): JSX.Element => {
           <Link href="/" className="flex items-center gap-[11px] cursor-pointer hover:opacity-80 transition-opacity">
             <img
               className="w-[47px] h-[46px]"
-              alt="Logo icon"
-              src="/figmaAssets/logo-icon.svg"
+              alt="Logo"
+              src="/figmaAssets/logo.svg"
             />
             <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-semibold text-[#282828] text-2xl tracking-[0] leading-[33.6px] whitespace-nowrap">
               EasyReserv.io
