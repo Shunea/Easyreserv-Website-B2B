@@ -64,13 +64,21 @@ export const PoliciesSection = (): JSX.Element => {
     setActivePolicy(hash);
   }, []);
 
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash || "#privacy-policy";
+      setActivePolicy(hash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   const handlePolicyClick = (anchor: string) => {
-    setActivePolicy(anchor);
-    const element = document.querySelector(anchor);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.hash = anchor;
   };
+
+  const currentPolicy = policies.find((p) => `#${p.id}` === activePolicy) || policies[0];
 
   return (
     <section className="flex flex-col lg:flex-row items-start gap-[35px] px-4 md:px-[10%] py-[100px]">
@@ -103,36 +111,28 @@ export const PoliciesSection = (): JSX.Element => {
         </CardContent>
       </Card>
 
-      <main className="flex flex-col w-full lg:w-[842px] gap-12">
-        {policies.map((policy, policyIndex) => (
-          <div key={policyIndex} id={policy.id} className="scroll-mt-24">
-            <h1 className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-[56px] text-center tracking-[0] leading-[67.2px] mb-8">
-              {policy.title}
-            </h1>
+      <main className="flex flex-col w-full lg:w-[842px]">
+        <h1 className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-[56px] text-center tracking-[0] leading-[67.2px] mb-8">
+          {currentPolicy.title}
+        </h1>
 
-            <div className="flex flex-col gap-8">
-              <p className="[font-family:'Inter',Helvetica] font-normal text-[#909090] text-lg tracking-[0] leading-[27px]">
-                {policy.intro}
+        <div className="flex flex-col gap-8">
+          <p className="[font-family:'Inter',Helvetica] font-normal text-[#909090] text-lg tracking-[0] leading-[27px]">
+            {currentPolicy.intro}
+          </p>
+
+          {currentPolicy.articles.map((article, index) => (
+            <div key={index} className="pt-6">
+              <h3 className="[font-family:'Inter',Helvetica] font-medium text-brandcharcoal text-4xl tracking-[0] leading-[46.8px] mb-4">
+                {article.number}
+              </h3>
+
+              <p className="[font-family:'Inter',Helvetica] font-normal text-brandcharcoal text-lg tracking-[0] leading-[31.5px] whitespace-pre-line">
+                {article.content}
               </p>
-
-              {policy.articles.map((article, index) => (
-                <div key={index} className="pt-6">
-                  <h3 className="[font-family:'Inter',Helvetica] font-medium text-brandcharcoal text-4xl tracking-[0] leading-[46.8px] mb-4">
-                    {article.number}
-                  </h3>
-
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-brandcharcoal text-lg tracking-[0] leading-[31.5px] whitespace-pre-line">
-                    {article.content}
-                  </p>
-                </div>
-              ))}
             </div>
-
-            {policyIndex < policies.length - 1 && (
-              <div className="mt-16 border-t border-gray-200 pt-8" />
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </main>
     </section>
   );
