@@ -48,7 +48,7 @@ export const FooterSection = (): JSX.Element => {
         </div>
 
         <div className="col-span-12 lg:col-span-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <nav className="flex flex-col gap-4">
               {footerLinks.column1.map((link, index) => (
                 <Link key={index} to={link.href}>
@@ -84,6 +84,31 @@ export const FooterSection = (): JSX.Element => {
                 </a>
               ))}
             </nav>
+
+            <div className="flex flex-col gap-4">
+              <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0]">
+                Available on
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <a
+                  href="https://bit.ly/4c6yKJr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
+                >
+                  📱 iOS App Store
+                </a>
+                <a
+                  href="https://bit.ly/49Ce2Q1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
+                >
+                  📱 Android Google Play
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
