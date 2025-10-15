@@ -421,11 +421,32 @@ export const AboutSection = (): JSX.Element => {
                 Available on
               </div>
 
-              <img
-                className="w-auto h-auto"
-                alt="App store badges"
-                src="/figmaAssets/frame-30297-1.svg"
-              />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://bit.ly/4c6yKJr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    className="h-12 w-auto"
+                    alt="Download on the App Store"
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1722556800"
+                  />
+                </a>
+                <a
+                  href="https://bit.ly/49Ce2Q1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    className="h-12 w-auto"
+                    alt="Get it on Google Play"
+                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </Container>
