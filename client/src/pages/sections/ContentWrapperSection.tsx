@@ -349,6 +349,10 @@ const comparisonCategories = [
 ];
 
 export const ContentWrapperSection = (): JSX.Element => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isAnnual, setIsAnnual] = React.useState(true);
+  const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
+
   return (
     <section className="flex flex-col items-center gap-8 w-full px-4 md:px-8 py-12">
       {/* Header Section */}
@@ -359,18 +363,20 @@ export const ContentWrapperSection = (): JSX.Element => {
               Subscription plans for
             </h1>
 
-            <div className="inline-flex items-center gap-2.5 px-6 py-4 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833]">
-              <div className="inline-flex items-center gap-1">
-                <div className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-2xl md:text-[32px] tracking-[0.64px] leading-[44.8px] whitespace-nowrap">
-                  Restaurante
-                </div>
-                <img
-                  className="w-8 h-8"
-                  alt="Icons"
-                  src="/figmaAssets/icons.svg"
-                />
-              </div>
-            </div>
+            <select 
+              value={selectedBusiness}
+              onChange={(e) => setSelectedBusiness(e.target.value)}
+              className="inline-flex items-center gap-2.5 px-6 py-4 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833] [font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-2xl md:text-[32px] tracking-[0.64px] leading-[44.8px] cursor-pointer appearance-none bg-no-repeat bg-right pr-12"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%232d2c65' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                backgroundPosition: 'right 1rem center'
+              }}
+            >
+              <option value="Restaurante">Restaurante</option>
+              <option value="Hoteluri">Hoteluri</option>
+              <option value="Sali de sport">Sali de sport</option>
+              <option value="Saloane">Saloane</option>
+            </select>
           </div>
 
           <div className="inline-flex items-center justify-center gap-6 flex-wrap">
@@ -378,17 +384,18 @@ export const ContentWrapperSection = (): JSX.Element => {
               Save with annual billing
             </div>
 
-            <div className="flex items-center justify-end px-1 py-0.5 bg-[#2d2c65] rounded-[100px] h-8 w-[52px]">
-              <div className="flex-1 self-stretch relative">
-                <div className="inline-flex items-center justify-center p-1 absolute top-1/2 -translate-y-1/2 -right-3">
-                  <div className="inline-flex flex-col items-center justify-center gap-2 p-2 rounded-[100px]">
-                    <div className="inline-flex items-center justify-center p-[11px] bg-m3syslighton-primary rounded-3xl overflow-hidden">
-                      <div className="w-0.5 h-0.5 rounded-[23px]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button
+              onClick={() => setIsAnnual(!isAnnual)}
+              className={`relative flex items-center px-1 py-0.5 rounded-[100px] h-8 w-[52px] transition-colors ${
+                isAnnual ? 'bg-[#2d2c65]' : 'bg-gray-300'
+              }`}
+            >
+              <div
+                className={`absolute w-6 h-6 bg-white rounded-full transition-transform duration-200 ease-in-out ${
+                  isAnnual ? 'translate-x-[22px]' : 'translate-x-1'
+                }`}
+              />
+            </button>
 
             <Badge className="inline-flex items-center justify-center gap-2.5 p-2.5 bg-[#282828] rounded-[10px] h-auto">
               <span className="[font-family:'Inter',Helvetica] font-bold text-white text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
@@ -489,17 +496,21 @@ export const ContentWrapperSection = (): JSX.Element => {
 
           {/* See all features button */}
           <div className="col-span-12">
-            <button className="flex items-center justify-center gap-2 p-4 w-full bg-white border border-zinc-200 hover:bg-gray-50 transition-colors">
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="flex items-center justify-center gap-2 p-4 w-full bg-white border border-zinc-200 hover:bg-gray-50 transition-colors"
+            >
               <span className="[font-family:'Onest',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[17.6px] whitespace-nowrap">
-                See all features
+                {isExpanded ? 'Hide features' : 'See all features'}
               </span>
-              <ChevronDownIcon className="w-4 h-4" />
+              <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
             </button>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Comparison Table */}
+      {isExpanded && (
       <div className="w-full max-w-7xl mx-auto px-4 mt-8">
         <div className="grid grid-cols-12 gap-0">
           {/* Table Header - Plan Names */}
@@ -612,6 +623,7 @@ export const ContentWrapperSection = (): JSX.Element => {
           ))}
         </div>
       </div>
+      )}
     </section>
   );
 };
