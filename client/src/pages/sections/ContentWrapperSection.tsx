@@ -507,7 +507,7 @@ export const ContentWrapperSection = (): JSX.Element => {
             </button>
           </div>
         </div>
-      </Container>
+      </div>
 
       {/* Comparison Table */}
       {isExpanded && (
