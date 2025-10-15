@@ -1,5 +1,6 @@
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 
@@ -31,16 +32,29 @@ export const NavigationSection = (): JSX.Element => {
         <div className="col-span-6 md:col-span-9 flex items-center justify-end gap-6">
           {/* Navigation Items */}
           <div className="hidden lg:flex items-center gap-6">
-            {navigationItems.map((item, index) => (
-              <div key={index} className="flex items-center gap-1 cursor-pointer">
-                <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
-                  {item.label}
+            {navigationItems.map((item, index) => {
+              if (item.label === "About Us") {
+                return (
+                  <Link key={index} href="/about">
+                    <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+                      <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                        {item.label}
+                      </div>
+                    </div>
+                  </Link>
+                );
+              }
+              return (
+                <div key={index} className="flex items-center gap-1 cursor-pointer">
+                  <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                    {item.label}
+                  </div>
+                  {item.hasDropdown && (
+                    <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
+                  )}
                 </div>
-                {item.hasDropdown && (
-                  <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Action Buttons */}
