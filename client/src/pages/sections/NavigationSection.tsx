@@ -46,6 +46,20 @@ export const NavigationSection = (): JSX.Element => {
                   </Link>
                 );
               }
+              if (item.label === "Solutions") {
+                return (
+                  <Link key={index} href="/solutions">
+                    <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition-opacity">
+                      <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
+                        {item.label}
+                      </div>
+                      {item.hasDropdown && (
+                        <ChevronDownIcon className="w-[18px] h-[18px] text-[#282828]" />
+                      )}
+                    </div>
+                  </Link>
+                );
+              }
               return (
                 <div key={index} className="flex items-center gap-1 cursor-pointer">
                   <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[22.4px] whitespace-nowrap">
