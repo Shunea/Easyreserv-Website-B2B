@@ -45,7 +45,7 @@ export const Contact = (): JSX.Element => {
 
       <div className="relative flex flex-col w-full">
         <NavigationSection />
-        <div className="flex flex-col items-center w-full px-[10%] gap-4">
+        <div className="flex flex-col items-center w-full px-[10%] py-16 gap-16">
           <ContactFormSection />
           <LocationInfoSection />
         </div>
