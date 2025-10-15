@@ -11,6 +11,7 @@ import { Solutions } from "@/pages/Solutions";
 import { Pricing } from "@/pages/Pricing";
 import { Contact } from "@/pages/Contact";
 import { Policies } from "@/pages/Policies";
+import { Blog } from "@/pages/Blog";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/pricing" component={Pricing} />
       <Route path="/contact" component={Contact} />
       <Route path="/policies" component={Policies} />
+      <Route path="/blog" component={Blog} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>
