@@ -1,35 +1,42 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/Container";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="flex w-full items-center justify-between gap-8 px-4">
-      <div className="inline-flex flex-col items-start gap-10 flex-1">
-        <h1 className="w-full max-w-[530px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-[56px] leading-[56px] tracking-[0]">
-          Manage Your Business Anytime, Anywhere
-        </h1>
+    <section className="w-full py-16 md:py-24">
+      <Container>
+        {/* Text Content - Left Side */}
+        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
+          <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl lg:text-[56px] leading-tight md:leading-[56px] tracking-[0]">
+            Manage Your Business Anytime, Anywhere
+          </h1>
 
-        <p className="w-full max-w-[532px] [font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[-0.32px] leading-6">
-          Discover the power of our ERP solution and take your business to new
-          heights with the freedom you&#39;ve always wanted. It&#39;s time to
-          redefine how you manage your business – the future is here, and
-          it&#39;s in your hands.
-        </p>
+          <p className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[-0.32px] leading-6">
+            Discover the power of our ERP solution and take your business to new
+            heights with the freedom you've always wanted. It's time to
+            redefine how you manage your business – the future is here, and
+            it's in your hands.
+          </p>
 
-        <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
-          <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-            Request Demo
-          </span>
-        </Button>
-      </div>
+          <div>
+            <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
+              <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
+                Request Demo
+              </span>
+            </Button>
+          </div>
+        </div>
 
-      <div className="flex-1 flex justify-end">
-        <img
-          className="w-full max-w-[561px] h-auto object-cover"
-          alt="Card"
-          src="/figmaAssets/card.png"
-        />
-      </div>
+        {/* Image - Right Side */}
+        <div className="col-span-12 lg:col-span-7 flex items-center justify-center lg:justify-end">
+          <img
+            className="w-full max-w-[561px] h-auto object-contain"
+            alt="Dashboard preview"
+            src="/figmaAssets/card.png"
+          />
+        </div>
+      </Container>
     </section>
   );
 };
