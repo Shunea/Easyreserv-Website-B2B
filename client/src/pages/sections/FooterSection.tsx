@@ -7,10 +7,14 @@ const footerLinks = {
     { text: "About Us", href: "/about" },
     { text: "Solutions", href: "/solutions" },
     { text: "Pricing", href: "/pricing" },
-    { text: "Contact", href: "#contact" },
-    { text: "Terms & Conditions", href: "#terms" },
+    { text: "Contact", href: "/contact" },
   ],
   column2: [
+    { text: "Privacy Policy", href: "/policies#privacy-policy" },
+    { text: "Cookies Policy", href: "/policies#cookies-policy" },
+    { text: "Terms & Conditions", href: "/policies#terms-and-conditions" },
+  ],
+  column3: [
     { text: "LinkedIn", href: "https://linkedin.com" },
     { text: "Facebook", href: "https://facebook.com" },
     { text: "Instagram", href: "https://instagram.com" },
@@ -47,26 +51,28 @@ export const FooterSection = (): JSX.Element => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <nav className="flex flex-col gap-4">
               {footerLinks.column1.map((link, index) => (
-                link.href.startsWith('#') ? (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
-                  >
+                <Link key={index} to={link.href}>
+                  <span className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline cursor-pointer">
                     {link.text}
-                  </a>
-                ) : (
-                  <Link key={index} to={link.href}>
-                    <span className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline cursor-pointer">
-                      {link.text}
-                    </span>
-                  </Link>
-                )
+                  </span>
+                </Link>
               ))}
             </nav>
 
             <nav className="flex flex-col gap-4">
               {footerLinks.column2.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
+                >
+                  {link.text}
+                </a>
+              ))}
+            </nav>
+
+            <nav className="flex flex-col gap-4">
+              {footerLinks.column3.map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
@@ -78,18 +84,6 @@ export const FooterSection = (): JSX.Element => {
                 </a>
               ))}
             </nav>
-
-            <div className="flex flex-col gap-2">
-              <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0]">
-                Available on
-              </div>
-
-              <img
-                className="w-auto h-auto"
-                alt="App store badges"
-                src="/figmaAssets/frame-30297.svg"
-              />
-            </div>
           </div>
         </div>
 
