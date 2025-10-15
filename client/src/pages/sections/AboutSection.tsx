@@ -267,31 +267,33 @@ export const AboutSection = (): JSX.Element => {
 
       {/* CTA Section 1 */}
       <div className="w-full py-16">
-        <Container grid={false}>
-          <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
-            <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
-              <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
-                Start Optimizing Your Business Today!
-              </h2>
+        <Container>
+          <div className="col-span-12">
+            <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
+              <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
+                <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
+                  Start Optimizing Your Business Today!
+                </h2>
 
-              <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
-                <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                  Become a partner
-                </span>
-              </Button>
+                <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
+                  <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
+                    Become a partner
+                  </span>
+                </Button>
+              </div>
+
+              <img
+                className="absolute -top-11 right-1/3 w-[367px] h-[366px] opacity-30"
+                alt="Logo icon"
+                src="/figmaAssets/logo-icon-1.svg"
+              />
+
+              <img
+                className="absolute top-1/2 -translate-y-1/2 right-6 w-[323px] h-[204px]"
+                alt="Group"
+                src="/figmaAssets/group.png"
+              />
             </div>
-
-            <img
-              className="absolute -top-11 right-1/3 w-[367px] h-[366px] opacity-30"
-              alt="Logo icon"
-              src="/figmaAssets/logo-icon-1.svg"
-            />
-
-            <img
-              className="absolute top-1/2 -translate-y-1/2 right-6 w-[323px] h-[204px]"
-              alt="Group"
-              src="/figmaAssets/group.png"
-            />
           </div>
         </Container>
       </div>
@@ -431,31 +433,33 @@ export const AboutSection = (): JSX.Element => {
 
       {/* CTA Section 2 */}
       <div className="w-full py-16">
-        <Container grid={false}>
-          <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
-            <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
-              <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
-                Start Optimizing Your Business Today!
-              </h2>
+        <Container>
+          <div className="col-span-12">
+            <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
+              <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
+                <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
+                  Start Optimizing Your Business Today!
+                </h2>
 
-              <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
-                <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                  Start your journey!
-                </span>
-              </Button>
+                <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
+                  <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
+                    Start your journey!
+                  </span>
+                </Button>
+              </div>
+
+              <img
+                className="absolute -top-11 right-1/3 w-[367px] h-[366px] opacity-30"
+                alt="Logo icon"
+                src="/figmaAssets/logo-icon-1.svg"
+              />
+
+              <img
+                className="absolute top-1/2 -translate-y-1/2 right-6 w-[323px] h-[204px]"
+                alt="Group"
+                src="/figmaAssets/group-1.png"
+              />
             </div>
-
-            <img
-              className="absolute -top-11 right-1/3 w-[367px] h-[366px] opacity-30"
-              alt="Logo icon"
-              src="/figmaAssets/logo-icon-1.svg"
-            />
-
-            <img
-              className="absolute top-1/2 -translate-y-1/2 right-6 w-[323px] h-[204px]"
-              alt="Group"
-              src="/figmaAssets/group-1.png"
-            />
           </div>
         </Container>
       </div>
