@@ -539,25 +539,27 @@ export const AboutSection = (): JSX.Element => {
     <section className="flex flex-col items-center w-full">
       {/* Top Stats Section */}
       <div className="w-full py-12 bg-[#282828]">
-        <div className="flex items-center justify-center gap-8 px-[180px]">
-          {topStats.map((stat, index) => (
-            <div
-              key={index}
-              className={`flex flex-col items-center justify-center gap-4 ${
-                index < topStats.length - 1
-                  ? "border-r border-[#ffffff40]"
-                  : ""
-              }`}
-            >
-              <div className="w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
-                {stat.label}
+        <Container>
+          <div className="col-span-12 flex flex-col md:flex-row items-center justify-center gap-8">
+            {topStats.map((stat, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center justify-center gap-4 ${
+                  index < topStats.length - 1
+                    ? "md:border-r border-[#ffffff40]"
+                    : ""
+                }`}
+              >
+                <div className="max-w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
+                  {stat.label}
+                </div>
+                <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px]">
+                  {stat.value}
+                </div>
               </div>
-              <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px]">
-                {stat.value}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Container>
       </div>
 
       {/* Best Features Section */}
@@ -681,25 +683,27 @@ export const AboutSection = (): JSX.Element => {
 
       {/* Bottom Stats Section */}
       <div className="w-full py-12 bg-[#282828]">
-        <div className="flex items-center justify-center gap-8 px-[180px]">
-          {bottomStats.map((stat, index) => (
-            <div
-              key={index}
-              className={`flex flex-col items-center justify-center gap-2.5 ${
-                index < bottomStats.length - 1
-                  ? "border-r border-[#ffffff40]"
-                  : ""
-              }`}
-            >
-              <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px] text-center">
-                {stat.value}
+        <Container>
+          <div className="col-span-12 flex flex-col md:flex-row items-center justify-center gap-8">
+            {bottomStats.map((stat, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center justify-center gap-2.5 ${
+                  index < bottomStats.length - 1
+                    ? "md:border-r border-[#ffffff40]"
+                    : ""
+                }`}
+              >
+                <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px] text-center">
+                  {stat.value}
+                </div>
+                <div className="max-w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
+                  {stat.label}
+                </div>
               </div>
-              <div className="w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Container>
       </div>
 
       {/* CTA Section 1 */}
