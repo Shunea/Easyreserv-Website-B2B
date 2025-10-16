@@ -38,14 +38,14 @@ const features = [
 
 export const PricingTableSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col items-start gap-8 px-[180px] py-[50px] w-full">
+    <section className="flex flex-col items-start gap-8 px-4 md:px-[180px] py-8 md:py-[50px] w-full">
       <header className="flex flex-col items-center justify-center gap-4 w-full">
-        <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[72px] whitespace-nowrap">
+        <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[72px] text-center">
           De Ce Să Ne Alegi?
         </h2>
       </header>
 
-      <div className="grid grid-cols-4 gap-5 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
         {features.map((feature, index) => (
           <Card
             key={index}

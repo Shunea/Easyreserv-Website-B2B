@@ -3037,9 +3037,13 @@ export const ContentWrapperSection = (): JSX.Element => {
               </div>
 
               {/* Categories with Accordions */}
-              <Accordion type="multiple" className="w-full mt-4">
-                {comparisonCategories.map((category, categoryIndex) => (
-                  <AccordionItem key={categoryIndex} value={`category-${categoryIndex}`}>
+              <div className="mt-6">
+                <p className="text-sm font-semibold text-[#282828] mb-3 pb-3 border-b border-zinc-200">
+                  Caracteristici incluse:
+                </p>
+                <Accordion type="multiple" className="w-full">
+                  {comparisonCategories.map((category, categoryIndex) => (
+                    <AccordionItem key={categoryIndex} value={`category-${categoryIndex}`}>
                     <AccordionTrigger className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-lg">
                       {category.title}
                     </AccordionTrigger>
@@ -3074,9 +3078,10 @@ export const ContentWrapperSection = (): JSX.Element => {
                         ))}
                       </div>
                     </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
 
               {/* CTA Button */}
               <div className="mt-6 pt-6 border-t border-zinc-200">
