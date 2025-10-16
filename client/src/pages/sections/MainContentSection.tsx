@@ -3,33 +3,33 @@ import { Link } from "wouter";
 
 export const MainContentSection = (): JSX.Element => {
   return (
-    <section className="relative w-full h-[580px] overflow-hidden">
+    <section className="relative w-full min-h-[500px] md:h-[580px] overflow-hidden">
       <img
-        className="absolute top-0 left-0 w-[1044px] h-[879px]"
+        className="hidden md:block absolute top-0 left-0 w-[1044px] h-[879px]"
         alt="Vector"
         src="/figmaAssets/vector-21.svg"
       />
 
       <img
-        className="absolute top-[51px] left-[1144px] w-[973px] h-[585px]"
+        className="hidden md:block absolute top-[51px] left-[1144px] w-[973px] h-[585px]"
         alt="Vector"
         src="/figmaAssets/vector-22.svg"
       />
 
       <img
-        className="absolute top-[205px] left-[-165px] w-[656px] h-[510px]"
+        className="hidden md:block absolute top-[205px] left-[-165px] w-[656px] h-[510px]"
         alt="Vector"
         src="/figmaAssets/vector-23.svg"
       />
 
       <img
-        className="top-[299px] left-[983px] absolute w-[1512px] h-[416px]"
+        className="hidden md:block top-[299px] left-[983px] absolute w-[1512px] h-[416px]"
         alt="Vector"
         src="/figmaAssets/vector-20-2.svg"
       />
 
-      <div className="flex flex-col items-center gap-5 absolute top-[90px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
-        <h1 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[56px] text-center leading-normal">
+      <div className="flex flex-col items-center gap-5 absolute top-[60px] md:top-[90px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
+        <h1 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-3xl md:text-[56px] text-center leading-tight md:leading-normal">
           <span className="text-[#282828]">Cum se diferențiază </span>
           <span className="text-[#fe9800]">EasyReserv</span>
           <span className="text-[#282828]"> pe piață?</span>

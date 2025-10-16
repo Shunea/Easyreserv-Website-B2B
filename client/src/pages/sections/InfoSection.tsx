@@ -267,39 +267,39 @@ export const InfoSection = (): JSX.Element => {
         </Container>
       </div>
 
-      <div className="flex w-full items-center justify-center gap-8 px-[180px] py-[50px] bg-[#282828]">
+      <div className="flex flex-col md:flex-row w-full items-center justify-center gap-6 md:gap-8 px-4 md:px-[180px] py-8 md:py-[50px] bg-[#282828]">
         {statsData.map((stat, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center justify-center gap-[15px] ${
-              index < statsData.length - 1 ? "border-r border-[#ffffff40]" : ""
+            className={`flex flex-col items-center justify-center gap-3 md:gap-[15px] ${
+              index < statsData.length - 1 ? "md:border-r border-[#ffffff40] md:pr-6" : ""
             }`}
           >
-            <div className="w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
+            <div className="max-w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
               {stat.label}
             </div>
 
-            <div className="w-60 [font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px] text-center">
+            <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-2xl md:text-[32px] tracking-[0] leading-[38.4px] text-center">
               {stat.value}
             </div>
           </div>
         ))}
       </div>
 
-      <div className="flex flex-col items-start gap-8 px-[180px] py-[50px] w-full max-w-[1440px]">
+      <div className="flex flex-col items-start gap-6 md:gap-8 px-4 md:px-[180px] py-8 md:py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-center justify-center gap-4 w-full">
-          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[72px]">
+          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[72px] text-center">
             De ce să ne alegi?
           </h2>
         </div>
 
-        <div className="flex items-center gap-5 w-full">
+        <div className="flex flex-col md:flex-row items-stretch gap-5 w-full">
           {whyChooseUsData.map((item, index) => (
             <Card
               key={index}
-              className="flex-1 h-[400px] bg-[#f0f4f5] rounded-[20px] border border-solid border-[#8aa2a980] shadow-[8px_28px_30px_#00000008] overflow-hidden"
+              className="flex-1 min-h-[350px] md:h-[400px] bg-[#f0f4f5] rounded-[20px] border border-solid border-[#8aa2a980] shadow-[8px_28px_30px_#00000008] overflow-hidden"
             >
-              <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10 h-full relative">
+              <CardContent className="flex flex-col items-start gap-4 px-6 md:pl-10 md:pr-8 py-8 md:py-10 h-full relative">
                 <img className="w-[58px] h-[58px]" alt="Icon" src={item.icon} />
 
                 <div className="flex flex-col items-start gap-1 w-full">
@@ -312,7 +312,7 @@ export const InfoSection = (): JSX.Element => {
                   </p>
                 </div>
 
-                <div className="absolute left-[calc(50%-104px)] bottom-[-100px] bg-[linear-gradient(180deg,rgba(138,162,169,0.5)_0%,rgba(255,255,255,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] opacity-20 [font-family:'Onest',Helvetica] font-bold text-transparent text-[200px] text-right tracking-[0] leading-[240.0px]">
+                <div className="hidden md:block absolute left-[calc(50%-104px)] bottom-[-100px] bg-[linear-gradient(180deg,rgba(138,162,169,0.5)_0%,rgba(255,255,255,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] opacity-20 [font-family:'Onest',Helvetica] font-bold text-transparent text-[200px] text-right tracking-[0] leading-[240.0px]">
                   {item.number}
                 </div>
               </CardContent>
@@ -321,12 +321,12 @@ export const InfoSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-5 px-0 py-[50px] w-full max-w-[1138px]">
-        <h2 className="w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
+      <div className="flex flex-col items-center gap-5 px-4 md:px-0 py-8 md:py-[50px] w-full max-w-[1138px]">
+        <h2 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
           Ești gata să-ți transformi afacerea?
         </h2>
 
-        <div className="flex flex-col items-start gap-2.5 w-[674px]">
+        <div className="flex flex-col items-start gap-2.5 w-full max-w-[674px]">
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base text-center tracking-[0] leading-[20.8px]">
             Alătură-te nouă și intră într-o nouă eră a eficienței și creșterii. Într-o lume în care schimbarea este singura constantă, să fii cu un pas înainte nu e o opțiune – e o necesitate.
           </p>
@@ -343,8 +343,8 @@ export const InfoSection = (): JSX.Element => {
         </Link>
       </div>
 
-      <div className="flex flex-col items-center gap-2.5 p-[50px] bg-neutral-950 rounded-[40px] mx-[180px]">
-        <div className="grid grid-cols-3 gap-[20px] w-full max-w-[1080px]">
+      <div className="flex flex-col items-center gap-2.5 p-6 md:p-[50px] bg-neutral-950 rounded-[40px] mx-4 md:mx-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-[20px] w-full max-w-[1080px]">
           {featuresData.map((feature, index) => (
             <Card
               key={index}
@@ -357,7 +357,7 @@ export const InfoSection = (): JSX.Element => {
                   src={feature.icon}
                 />
 
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-white text-2xl tracking-[0] leading-[31.2px]">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-white text-xl md:text-2xl tracking-[0] leading-[31.2px]">
                   {feature.title}
                 </h3>
 
@@ -370,10 +370,10 @@ export const InfoSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-center gap-5 px-[180px] py-[50px] w-full max-w-[1440px]">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-5 px-4 md:px-[180px] py-8 md:py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-start gap-10 flex-1">
-          <div className="flex flex-col items-start gap-4 w-[530px]">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[52.8px]">
+          <div className="flex flex-col items-start gap-4 w-full max-w-[530px]">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[52.8px]">
               Simte diferența
               <br />
               Astăzi!
@@ -388,7 +388,7 @@ export const InfoSection = (): JSX.Element => {
         </div>
 
         <img
-          className="w-[530px] h-[475.48px]"
+          className="w-full max-w-[530px] h-auto"
           alt="Element mobileapp"
           src="/figmaAssets/20901966-mobileapp-mockup1-copy-1.png"
         />
@@ -396,10 +396,10 @@ export const InfoSection = (): JSX.Element => {
 
       <FAQSection />
 
-      <div className="flex flex-col items-start gap-2.5 px-[180px] py-[50px] w-full max-w-[1440px]">
-        <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
+      <div className="flex flex-col items-start gap-2.5 px-4 md:px-[180px] py-8 md:py-[50px] w-full max-w-[1440px]">
+        <div className="flex flex-col items-start justify-center gap-8 p-6 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
           <div className="flex flex-col items-start gap-4 w-full z-10 max-w-xl">
-            <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
+            <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-2xl md:text-4xl tracking-[0] leading-tight md:leading-10">
               Începe să-ți optimizezi afacerea astăzi!
             </h2>
 
@@ -411,13 +411,13 @@ export const InfoSection = (): JSX.Element => {
           </div>
 
           <img
-            className="absolute -top-11 left-[772px] w-[367px] h-[366px] opacity-30"
+            className="hidden md:block absolute -top-11 left-[772px] w-[367px] h-[366px] opacity-30"
             alt="Logo icon"
             src="/figmaAssets/logo-icon-1.svg"
           />
 
           <img
-            className="absolute top-[calc(50%-102px)] right-6 w-[323px] h-[204px]"
+            className="hidden md:block absolute top-[calc(50%-102px)] right-6 w-[323px] h-[204px]"
             alt="Group"
             src="/figmaAssets/group.png"
           />
