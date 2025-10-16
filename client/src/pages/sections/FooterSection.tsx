@@ -15,9 +15,9 @@ const footerLinks = {
     { text: "Terms & Conditions", href: "/policies#terms-and-conditions" },
   ],
   column3: [
-    { text: "LinkedIn", href: "https://linkedin.com" },
-    { text: "Facebook", href: "https://facebook.com" },
-    { text: "Instagram", href: "https://instagram.com" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/company/easyreserv" },
+    { text: "Facebook", href: "https://www.facebook.com/easyreserv.io" },
+    { text: "Instagram", href: "https://www.instagram.com/easyreserv.io/" },
   ],
 };
 
