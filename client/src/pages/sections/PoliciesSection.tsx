@@ -241,26 +241,23 @@ Pentru mai multe informații și termeni completi, vă rugăm să vizitați webs
 ];
 
 export const PoliciesSection = (): JSX.Element => {
-  const scrollToPolicy = (anchor: string) => {
-    const element = document.querySelector(anchor);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [selectedPolicy, setSelectedPolicy] = React.useState("privacy-policy");
+
+  const currentPolicy = policies.find((p) => p.id === selectedPolicy);
 
   return (
-    <section className="flex flex-col w-full items-center gap-8 px-4 md:px-[10%] py-16">
-      <h1 className="w-full [font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-[56px] text-center tracking-[0] leading-normal">
-        Politici și Termeni
-      </h1>
-
-      <div className="flex flex-wrap gap-4 justify-center">
+    <section className="flex w-full items-start px-4 md:px-[10%] py-16 gap-8">
+      <div className="hidden md:flex flex-col gap-2 min-w-[250px]">
         {policyItems.map((item) => (
           <Button
             key={item.anchor}
-            onClick={() => scrollToPolicy(item.anchor)}
-            variant="outline"
-            className="bg-white text-[#282828] border-gray-200 hover:bg-gray-50 rounded-full px-6 py-2 h-auto"
+            onClick={() => setSelectedPolicy(item.anchor.replace("#", ""))}
+            variant={selectedPolicy === item.anchor.replace("#", "") ? "default" : "ghost"}
+            className={`justify-start ${
+              selectedPolicy === item.anchor.replace("#", "")
+                ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                : "text-[#282828] hover:bg-gray-100"
+            }`}
           >
             <span className="[font-family:'Onest',Helvetica] font-medium text-sm">
               {item.label}
@@ -269,22 +266,32 @@ export const PoliciesSection = (): JSX.Element => {
         ))}
       </div>
 
-      {policies.map((policy) => (
-        <Card
-          key={policy.id}
-          id={policy.id}
-          className="w-full border-0 shadow-sm"
+      <div className="md:hidden w-full mb-6">
+        <select
+          value={selectedPolicy}
+          onChange={(e) => setSelectedPolicy(e.target.value)}
+          className="w-full p-3 border border-gray-200 rounded-lg [font-family:'Onest',Helvetica] text-sm"
         >
+          {policyItems.map((item) => (
+            <option key={item.anchor} value={item.anchor.replace("#", "")}>
+              {item.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {currentPolicy && (
+        <Card className="flex-1 border-0 shadow-sm">
           <CardContent className="p-6 md:p-8">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl md:text-3xl mb-6 tracking-[0] leading-normal">
-              {policy.title}
+              {currentPolicy.title}
             </h2>
             <div className="[font-family:'Onest',Helvetica] text-[#282828] text-base leading-relaxed whitespace-pre-wrap">
-              {policy.content}
+              {currentPolicy.content}
             </div>
           </CardContent>
         </Card>
-      ))}
+      )}
     </section>
   );
 };
