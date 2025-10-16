@@ -348,46 +348,44 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </p>
                   </div>
 
-                  <div className="flex items-start gap-[15px] w-full">
-                    <div className="inline-flex items-end gap-1">
-                      <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
-                        plan.monthlyPrice === null 
-                          ? "text-2xl leading-[30px]" 
-                          : "text-4xl md:text-5xl leading-[55.2px] whitespace-nowrap"
-                      }`}>
-                        {calculatePrice(plan.monthlyPrice, isAnnual)}
+                  <div className="flex items-baseline gap-1 w-full">
+                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] whitespace-nowrap ${
+                      plan.monthlyPrice === null 
+                        ? "text-2xl leading-[30px]" 
+                        : "text-4xl md:text-5xl leading-[55.2px]"
+                    }`}>
+                      {calculatePrice(plan.monthlyPrice, isAnnual)}
+                    </span>
+                    {plan.monthlyPrice !== null && (
+                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+                        / lună
                       </span>
-                      {plan.monthlyPrice !== null && (
-                        <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                          / lună
-                        </span>
-                      )}
-                    </div>
+                    )}
                   </div>
 
                   {plan.planId ? (
                     <a
                       href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
-                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
                         Începe perioada de test gratuită
                       </span>
                     </a>
                   ) : (
                     <Link
                       href="/contact"
-                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
                         Contactează-ne
                       </span>
                     </Link>
