@@ -2073,7 +2073,7 @@ const getComparisonCategories = (industry: string) => {
           },
           {
             name: "Roluri acoperite",
-            values: ["Admin, Recepționer, Housekeeper", "Manager Operațiuni, Concierge", "Revenue Manager, F&B Link", "Toate + Integrări avansate"],
+            values: ["Admin, Recepționer, Housekeeper", "+ Manager Operațiuni, Concierge", "+ Revenue Manager, F&B", "Toate + Integrări avansate"],
             muted: [false, false, false, false],
           },
         ],
