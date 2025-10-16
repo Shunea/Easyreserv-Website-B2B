@@ -14,7 +14,7 @@ import { Container } from "@/components/Container";
 
 const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
   "Restaurante": { basic: 50, standard: 125, pro: 200 },
-  "Cafenele": { basic: 49, standard: 99, pro: 149 },
+  "Cafenele": { basic: 50, standard: 125, pro: 200 },
   "Saloane de frumusețe": { basic: 49, standard: 99, pro: 149 },
   "Barbershopuri": { basic: 49, standard: 99, pro: 149 },
   "Hotele & Pensiuni": { basic: 50, standard: 125, pro: 200 },
@@ -25,76 +25,317 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Spălătorii auto": { basic: 49, standard: 99, pro: 149 },
 };
 
-const getPricingPlans = (industry: string) => [
-  {
-    name: "Basic",
-    description: "Ideal pentru locații mici & simple",
-    monthlyPrice: industryPricing[industry]?.basic || 49,
-    isPopular: false,
-    buttonVariant: "outline" as const,
-    planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
-    features: [
-      "1 Admin, 1 Hostess",
-      "Accept/Reject rezervări",
-      "Create New/Modify rezervări",
-      "CRUD Employee",
-      "1 articol marketing/lună",
-      "Targeting Push/SMS",
-    ],
-  },
-  {
-    name: "Standard",
-    description: "Angajați multipli, dashboarduri, planificare ture, analize simple",
-    monthlyPrice: industryPricing[industry]?.standard || 99,
-    isPopular: false,
-    buttonVariant: "outline" as const,
-    planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
-    features: [
-      "Tot din Basic",
-      "2 Waiters",
-      "Calendar Access rezervări",
-      "Management mese + zone",
-      "QR Menu interactiv",
-    ],
-  },
-  {
-    name: "Pro",
-    description: "Control pe costuri, productivitate și campanii",
-    monthlyPrice: industryPricing[industry]?.pro || 149,
-    isPopular: true,
-    buttonVariant: "default" as const,
-    planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
-    features: [
-      "Tot din Standard",
-      "5 Waiters + 3 Cooks",
-      "Pre-order",
-      "Rețetar & scădere automată stocuri",
-      "Rapoarte vânzări & KPI angajați",
-      "Ture/vacanțe/pontaj & Intrare/Ieșire",
-      "2 articole marketing/lună",
-      "Segmentare avansată",
-    ],
-  },
-  {
-    name: "Enterprise",
-    description: "Pentru francize, cu module fiscale, multi-locație, transport, rute",
-    monthlyPrice: null,
-    isPopular: false,
-    buttonVariant: "outline" as const,
-    planId: null,
-    features: [
-      "Tot din Pro",
-      "Utilizatori nelimitați (Admin, Hostess, Waiter, Cook, Curier)",
-      "Multi-locații într-un singur cont",
-      "Comenzi livrare + Curier App",
-      "Rute & alocare curieri",
-      "Integrare completă sistem fiscal",
-      "2+ articole marketing/lună",
-    ],
-  },
-];
+const getPricingPlans = (industry: string) => {
+  if (industry === "Cafenele") {
+    return [
+      {
+        name: "Basic",
+        description: "Ideal pentru cafenele mici & simple",
+        monthlyPrice: 50,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "2 utilizatori incluși",
+          "POS Basic configurabil",
+          "Management încasări simplificat",
+          "Meniu digital static",
+          "Analiză & KPI simplu",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "Angajați multipli, planificare ture, analize",
+        monthlyPrice: 125,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "Utilizatori suplimentari (5€/user)",
+          "Management angajați & pontaj",
+          "POS layout personalizat",
+          "Meniu dinamic & variabile produse",
+          "Profiluri clienți & istoric comenzi",
+          "Marketing Push/SMS & Happy Hour",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "Control pe costuri, stocuri și automatizări",
+        monthlyPrice: 200,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "Management stocuri & rețetar",
+          "Scădere automată stoc",
+          "Alerte low stock & inventare",
+          "Rețetar băuturi & cost/porție",
+          "Segmentare avansată & cupoane",
+          "Rapoarte PDF & exporturi",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "Multi-locație, integrare fiscală, automatizări AI",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "2 utilizatori scalabili",
+          "Multi-locație & flotă curieri",
+          "Integrare 1C fiscalizat",
+          "Automatizări AI marketing",
+          "Backup extern & stocare extinsă",
+        ],
+      },
+    ];
+  }
+  
+  return [
+    {
+      name: "Basic",
+      description: "Ideal pentru locații mici & simple",
+      monthlyPrice: industryPricing[industry]?.basic || 49,
+      isPopular: false,
+      buttonVariant: "outline" as const,
+      planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+      features: [
+        "1 Admin, 1 Hostess",
+        "Accept/Reject rezervări",
+        "Create New/Modify rezervări",
+        "CRUD Employee",
+        "1 articol marketing/lună",
+        "Targeting Push/SMS",
+      ],
+    },
+    {
+      name: "Standard",
+      description: "Angajați multipli, dashboarduri, planificare ture, analize simple",
+      monthlyPrice: industryPricing[industry]?.standard || 99,
+      isPopular: false,
+      buttonVariant: "outline" as const,
+      planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+      features: [
+        "Tot din Basic",
+        "2 Waiters",
+        "Calendar Access rezervări",
+        "Management mese + zone",
+        "QR Menu interactiv",
+      ],
+    },
+    {
+      name: "Pro",
+      description: "Control pe costuri, productivitate și campanii",
+      monthlyPrice: industryPricing[industry]?.pro || 149,
+      isPopular: true,
+      buttonVariant: "default" as const,
+      planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+      features: [
+        "Tot din Standard",
+        "5 Waiters + 3 Cooks",
+        "Pre-order",
+        "Rețetar & scădere automată stocuri",
+        "Rapoarte vânzări & KPI angajați",
+        "Ture/vacanțe/pontaj & Intrare/Ieșire",
+        "2 articole marketing/lună",
+        "Segmentare avansată",
+      ],
+    },
+    {
+      name: "Enterprise",
+      description: "Pentru francize, cu module fiscale, multi-locație, transport, rute",
+      monthlyPrice: null,
+      isPopular: false,
+      buttonVariant: "outline" as const,
+      planId: null,
+      features: [
+        "Tot din Pro",
+        "Utilizatori nelimitați (Admin, Hostess, Waiter, Cook, Curier)",
+        "Multi-locații într-un singur cont",
+        "Comenzi livrare + Curier App",
+        "Rute & alocare curieri",
+        "Integrare completă sistem fiscal",
+        "2+ articole marketing/lună",
+      ],
+    },
+  ];
+};
 
-const comparisonCategories = [
+const getComparisonCategories = (industry: string) => {
+  if (industry === "Cafenele") {
+    return [
+      {
+        title: "Utilizatori & Personal",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["2", "2", "2", "2 (scalabil)"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["-", "5€/user", "5€/user", "La cerere"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Management angajați & pontaj",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Planificare ture",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Urmărire productivitate",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "POS & Încasări",
+        features: [
+          {
+            name: "Management încasări",
+            values: ["Simplificat", "Standard", "Avansat", "Integrabil 1C"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Istoric plăți / Reconcilieri",
+            values: ["Parțial", true, true, true],
+          },
+          {
+            name: "POS configurabil",
+            values: ["Basic", "Layout personalizat", "Preseturi rapide", "Fiscalizat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri & permisiuni",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Shortcut-uri vânzare rapidă",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Meniu & Produse",
+        features: [
+          {
+            name: "Meniu digital",
+            values: ["Static", "Dinamic", "Pe momente zi", "Multi-locație"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Variabile produse (mărime, sirop)",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Clienți & Comenzi",
+        features: [
+          {
+            name: "Profiluri clienți (CRM)",
+            values: [false, true, true, "Avansat"],
+          },
+          {
+            name: "Istoric comenzi / preferințe",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Comenzi rapide (pickup)",
+            values: [false, true, true, "Cu orar programabil"],
+          },
+          {
+            name: "Confirmare ready for pickup",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Stocuri & Rețetar",
+        features: [
+          {
+            name: "Management stocuri",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Scădere automată stoc",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Alerte low stock / inventare",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Rețetar băuturi & cost/porție",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Marketing & Retenție",
+        features: [
+          {
+            name: "Marketing & campanii",
+            values: ["-", "Push/SMS", "Segmente + Cupoane", "Automatizări AI"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Campanii happy hour",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Cupoane personalizate",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Analiză & Rapoarte",
+        features: [
+          {
+            name: "Analiză & KPI",
+            values: ["Simplu", "Mediu", "Avansat", "Personalizat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Vânzări pe oră/zi/top produse",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Marjă / cost / productivitate",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Exporturi / rapoarte PDF",
+            values: [false, true, true, "Integrabil 1C"],
+          },
+          {
+            name: "Stocare documente",
+            values: [false, true, true, "Backup extern"],
+          },
+        ],
+      },
+      {
+        title: "Multi-locație & Avansate",
+        features: [
+          {
+            name: "Multi-locație & flotă curieri",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+    ];
+  }
+
+  return [
   {
     title: "Roluri Utilizatori",
     features: [
@@ -229,6 +470,7 @@ const comparisonCategories = [
     ],
   },
 ];
+};
 
 export const ContentWrapperSection = (): JSX.Element => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -236,6 +478,7 @@ export const ContentWrapperSection = (): JSX.Element => {
   const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
 
   const pricingPlans = getPricingPlans(selectedBusiness);
+  const comparisonCategories = getComparisonCategories(selectedBusiness);
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {
