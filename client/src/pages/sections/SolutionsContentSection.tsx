@@ -1260,13 +1260,13 @@ export const SolutionsContentSection = (): JSX.Element => {
           <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
             <div className="flex flex-col items-start gap-4 w-full relative z-10">
               <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-                Start Optimizing Your Business Today!
+                Începe să-ți optimizezi afacerea astăzi!
               </h2>
             </div>
 
             <Button className="h-auto bg-white rounded-xl p-4 hover:bg-white/90 relative z-10">
               <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-base tracking-[0] leading-4">
-                Become a partner
+                Devino partener
               </span>
             </Button>
 
