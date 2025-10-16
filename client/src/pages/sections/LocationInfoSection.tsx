@@ -11,9 +11,7 @@ const locationData = [
   },
   {
     country: "România",
-    address: "Strada Elena Farago 5, București",
-    hours: "Luni – Vineri, 09:00 – 18:00",
-    phone: "+40 (744) 708 925",
+    message: "În curând vom fi disponibili și în România",
     image: "/figmaAssets/image-1.png",
   },
 ];
@@ -41,18 +39,28 @@ export const LocationInfoSection = (): JSX.Element => {
                   {location.country}
                 </h3>
 
-                <p className="w-[280px] font-normal text-brandsnowy [font-family:'Onest',Helvetica] text-base tracking-[0] leading-6">
-                  {location.address}
-                  <br />
-                  {location.hours}
-                </p>
+                {location.message ? (
+                  <p className="w-[280px] font-normal text-brandsnowy [font-family:'Onest',Helvetica] text-base tracking-[0] leading-6">
+                    {location.message}
+                  </p>
+                ) : (
+                  <>
+                    <p className="w-[280px] font-normal text-brandsnowy [font-family:'Onest',Helvetica] text-base tracking-[0] leading-6">
+                      {location.address}
+                      <br />
+                      {location.hours}
+                    </p>
 
-                <a
-                  href={`tel:${location.phone.replace(/\s/g, "")}`}
-                  className="bg-[linear-gradient(226deg,rgba(251,223,6,1)_0%,rgba(254,183,0,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-medium [font-family:'Onest',Helvetica] text-base tracking-[0] leading-6"
-                >
-                  {location.phone}
-                </a>
+                    {location.phone && (
+                      <a
+                        href={`tel:${location.phone.replace(/\s/g, "")}`}
+                        className="bg-[linear-gradient(226deg,rgba(251,223,6,1)_0%,rgba(254,183,0,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] font-medium [font-family:'Onest',Helvetica] text-base tracking-[0] leading-6"
+                      >
+                        {location.phone}
+                      </a>
+                    )}
+                  </>
+                )}
               </div>
             </CardContent>
           </Card>
