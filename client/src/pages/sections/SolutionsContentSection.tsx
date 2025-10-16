@@ -704,23 +704,23 @@ const getFeaturesByIndustry = (industry: string) => {
 const howItWorksSteps = [
   {
     icon: "/figmaAssets/frame-1894.svg",
-    title: "Select Your  Business",
+    title: "Alege-ți afacerea",
   },
   {
     icon: "/figmaAssets/frame-2147223393.svg",
-    title: "Select Your  Subscription Module",
+    title: "Alege modulul de abonament",
   },
   {
     icon: "/figmaAssets/frame-2147223396.svg",
-    title: "Business Setup Made Easy",
+    title: "Configurare simplă a afacerii",
   },
   {
     icon: "/figmaAssets/frame-2147223394.svg",
-    title: "Reservation Capabilities",
+    title: "Capabilități de rezervare",
   },
   {
     icon: "/figmaAssets/frame-2147223395.svg",
-    title: "Employee Access and Management",
+    title: "Acces și management pentru angajați",
   },
 ];
 
@@ -1119,7 +1119,7 @@ export const SolutionsContentSection = (): JSX.Element => {
         <Container>
           <div className="col-span-12">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-              How It Works
+              Cum funcționează
             </h2>
           </div>
 
@@ -1154,7 +1154,7 @@ export const SolutionsContentSection = (): JSX.Element => {
       <Container className="py-[50px]">
         <div className="col-span-12">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-            What type of business do you own?
+            Ce tip de afacere ai?
           </h2>
         </div>
 
