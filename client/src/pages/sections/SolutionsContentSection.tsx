@@ -895,11 +895,12 @@ export const SolutionsContentSection = (): JSX.Element => {
     { value: "cafenele", label: "Cafenele" },
     { value: "saloane", label: "Saloane de frumusețe" },
     { value: "barbershop", label: "Barbershopuri" },
-    { value: "hotel", label: "Hotele & Pensiuni" },
+    { value: "hoteluri", label: "Hotele & Pensiuni" },
     { value: "chirii-auto", label: "Chirii auto" },
     { value: "fitness", label: "Fitness" },
     { value: "medical", label: "Medical" },
     { value: "retail", label: "Retail" },
+    { value: "spalatorii-auto", label: "Spălătorii auto" },
   ];
 
   const currentFeatures = getFeaturesByIndustry(selectedIndustry);
