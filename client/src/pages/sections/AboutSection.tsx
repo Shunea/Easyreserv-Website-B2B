@@ -774,8 +774,8 @@ export const AboutSection = (): JSX.Element => {
 
       {/* FAQ Section */}
       <div className="w-full py-16 bg-[#282828]">
-        <div className="flex items-start gap-5 px-[180px] max-w-[1440px] mx-auto">
-          <div className="flex flex-col w-[530px] gap-8">
+        <Container>
+          <div className="col-span-12 lg:col-span-4 flex flex-col gap-8">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
               Ce este EasyReserv?
             </h2>
@@ -785,14 +785,14 @@ export const AboutSection = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="flex flex-col w-[530px]">
+          <div className="col-span-12 lg:col-span-4">
             <Accordion
               type="single"
               collapsible
               defaultValue="faq-0"
               className="w-full"
             >
-              {faqItems.map((item, index) => (
+              {faqItems.slice(0, 7).map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`faq-${index}`}
@@ -814,7 +814,36 @@ export const AboutSection = (): JSX.Element => {
               ))}
             </Accordion>
           </div>
-        </div>
+
+          <div className="col-span-12 lg:col-span-4">
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full"
+            >
+              {faqItems.slice(7).map((item, index) => (
+                <AccordionItem
+                  key={index + 7}
+                  value={`faq-${index + 7}`}
+                  className="border-b border-[#3f4e5b]"
+                >
+                  <AccordionTrigger className="px-0 py-5 hover:no-underline">
+                    <span className="text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px]">
+                      {item.question}
+                    </span>
+                  </AccordionTrigger>
+                  {item.answer && (
+                    <AccordionContent className="px-0 pb-5">
+                      <p className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0]">
+                        {item.answer}
+                      </p>
+                    </AccordionContent>
+                  )}
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </Container>
       </div>
 
       {/* Download App Section */}
