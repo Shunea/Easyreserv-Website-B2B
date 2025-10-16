@@ -849,44 +849,6 @@ const benefitsRow2 = [
   },
 ];
 
-const faqItems = [
-  {
-    question: "Can I access EasyReserv on both the web and mobile devices?",
-    answer:
-      "Lorem ipsum dolor sit amet consectetur. Viverra ut tincidunt lectus sem sit sed augue a. Sed nec nulla facilisis ut congue amet diam id ipsum. Arcu aenean in tellus aliquet in morbi. Justo ridiculus accumsan montes in in arcu fermentum ac vitae.",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur. Rutrum lectus ac.",
-    answer: "",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur. Condimentum ac.",
-    answer: "",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur. Et gravida.",
-    answer: "",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet consectetur. Etiam sagittis.",
-    answer: "",
-  },
-];
-
-const footerLinks = [
-  { text: "About Us" },
-  { text: "Solutions" },
-  { text: "Pricing" },
-  { text: "Contact" },
-  { text: "Terms & Conditions" },
-];
-
-const socialLinks = [
-  { text: "LinkedIn" },
-  { text: "Facebook" },
-  { text: "Instagram" },
-];
-
 export const SolutionsContentSection = (): JSX.Element => {
   const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
 
@@ -1227,43 +1189,67 @@ export const SolutionsContentSection = (): JSX.Element => {
         ))}
       </Container>
 
-      <div className="flex flex-col items-start gap-2.5 py-[50px] w-full bg-[#282828]">
+      <div className="w-full py-16 bg-[#282828]">
         <Container>
-          <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-[33px]">
-            <h2 className="font-heading-1 font-[number:var(--heading-1-font-weight)] text-white text-[length:var(--heading-1-font-size)] tracking-[var(--heading-1-letter-spacing)] leading-[var(--heading-1-line-height)] [font-style:var(--heading-1-font-style)]">
-              What is EasyReserv
+          <div className="col-span-12 lg:col-span-6 flex flex-col items-start gap-8">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+              Ce este EasyReserv?
             </h2>
 
-            <p className="font-body-large font-[number:var(--body-large-font-weight)] text-white text-[length:var(--body-large-font-size)] tracking-[var(--body-large-letter-spacing)] leading-[var(--body-large-line-height)] [font-style:var(--body-large-font-style)]">
-              EasyReserv is a comprehensive solution for managing and optimizing
-              your business. Mobile reservations, employee management, business
-              insights, inventory management, and other features are available.
-              You can save time, increase revenue, improve the client
-              experience, cut costs, and increase productivity by utilizing our
-              platform.
+            <p className="[font-family:'Onest',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-[27px]">
+              EasyReserv este o soluție completă pentru gestionarea și optimizarea afacerii tale. Rezervări mobile, management angajați, rapoarte business, management inventar și multe alte funcționalități sunt disponibile. Poți economisi timp, crește vânzările, îmbunătăți experiența clienților, reduce costurile și crește productivitatea folosind platforma noastră.
             </p>
           </div>
 
-          <div className="col-span-12 md:col-span-6 flex flex-col items-start">
+          <div className="col-span-12 lg:col-span-6 flex flex-col items-start">
             <Accordion type="single" collapsible className="w-full">
-              {faqItems.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="border-b border-[#3f4e5b]"
-                >
-                  <AccordionTrigger className="font-[number:var(--body-large-font-weight)] text-white text-[length:var(--body-large-font-size)] leading-[var(--body-large-line-height)] font-body-large tracking-[var(--body-large-letter-spacing)] [font-style:var(--body-large-font-style)] hover:no-underline text-left">
-                    {item.question}
-                  </AccordionTrigger>
-                  {item.answer && (
-                    <AccordionContent
-                      className="font-[number:var(--description-font-weight)] text-white text-[length:var(--description-font-size)] leading-[var(--description-line-height)] font-description tracking-[var(--description-letter-spacing)] [font-style:var(--description-font-style)]"
-                    >
-                      {item.answer}
-                    </AccordionContent>
-                  )}
-                </AccordionItem>
-              ))}
+              <AccordionItem
+                value="item-1"
+                className="border-b border-[#3f4e5b]"
+              >
+                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
+                  Pot accesa EasyReserv atât pe web cât și pe dispozitive mobile?
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
+                  Da, EasyReserv este disponibil atât ca aplicație web (desktop și tabletă) cât și ca aplicație mobilă nativă pentru iOS și Android. Poți accesa toate funcționalitățile platformei de pe orice dispozitiv, cu sincronizare în timp real între toate device-urile tale.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="border-b border-[#3f4e5b]"
+              >
+                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
+                  Cât durează implementarea platformei EasyReserv?
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
+                  Implementarea EasyReserv durează între 2-5 zile în funcție de complexitatea afacerii tale. Echipa noastră te asistă la fiecare pas: configurare inițială, import date, training echipă și go-live. Nu trebuie să schimbi hardware-ul existent.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="border-b border-[#3f4e5b]"
+              >
+                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
+                  Se integrează EasyReserv cu sistemul meu de contabilitate?
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
+                  Da, EasyReserv se integrează nativ cu principalele sisteme de contabilitate precum 1C, SAP și alte soluții populare. Exportul de facturi, vânzări și rapoarte financiare se face automat, eliminând introducerea manuală a datelor.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="border-b border-[#3f4e5b]"
+              >
+                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
+                  Oferă EasyReserv suport tehnic și training pentru echipa mea?
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
+                  Absolut! Oferim suport tehnic 24/7 prin chat, email și telefon. La implementare, includem sesiuni de training pentru întreaga echipă: manageri, casieri, ospătari și bucătari. Plus acces la baza noastră de cunoștințe și tutoriale video.
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
         </Container>
