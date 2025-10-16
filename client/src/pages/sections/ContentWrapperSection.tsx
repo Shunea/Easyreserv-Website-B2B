@@ -311,6 +311,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Fitness") {
+    return [
+      {
+        name: "Basic",
+        description: "Studio mic până la ~100 membri",
+        monthlyPrice: 49,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "2 utilizatori incluși",
+          "Programări clase & PT",
+          "Check-in membru (cod/QR)",
+          "Abonamente & carduri",
+          "Profil membru & istoric",
+          "POS recepție & facturare",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "100-250 membri activi",
+        monthlyPrice: 99,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "5 utilizatori + 5€/user suplimentar",
+          "Orar antrenori & pontaj",
+          "Reamintiri SMS & segmente membri",
+          "Recurență card auto-renew",
+          "Stoc produse & alerte",
+          "Rapoarte MRR/ARR & performanță",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "250-500 membri activi",
+        monthlyPrice: 149,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "10 utilizatori incluși",
+          "Liste așteptare & anti-fraud",
+          "Calcul comisioane PT/clasă",
+          "Dunning automat & retry plăți",
+          "App membru cu branding",
+          "Rapoarte churn & cohortă",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "500+ membri/multi-locație",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "Utilizatori nelimitat",
+          "Multi-locație & SSO",
+          "App white-label (brandul sălii)",
+          "AI scoring risc churn",
+          "Dashboard multi-locație/țară",
+          "API prioritar & DRM video",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -382,6 +454,220 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Fitness") {
+    return [
+      {
+        title: "Utilizatori & Acces",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["2", "5", "10", "Nelimitat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["5€/user", "5€/user", "5€/user", "Inclus"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri acoperite",
+            values: ["Admin, Recepție", "+ Antrenor, Manager", "+ Coordonator Clase, Contabil", "Toate + Integrare avansată"],
+            muted: [false, false, false, false],
+          },
+        ],
+      },
+      {
+        title: "Operațiuni & Programări",
+        features: [
+          {
+            name: "Programări clase & PT",
+            values: [true, true, "Cu liste așteptare", "Multi-locație"],
+          },
+          {
+            name: "Check-in membru",
+            values: ["Cod/QR", "Cod/QR", "Anti-fraud geofence", "SSO"],
+          },
+          {
+            name: "Abonamente & carduri",
+            values: [true, true, "Prorata & freeze", "Corporate"],
+          },
+          {
+            name: "Pachete clase (5/10/20)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Politici anulare/no-show",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Acces zone/lockers (turnicheți)",
+            values: [false, "Add-on", "Add-on", "Inclus"],
+          },
+        ],
+      },
+      {
+        title: "Membri & CRM",
+        features: [
+          {
+            name: "Profil membru & istoric",
+            values: [true, true, "Note sănătate", true],
+          },
+          {
+            name: "Reamintiri (expirare, clasă, PT)",
+            values: ["Email", "Email + SMS", "Push/app", "Omni-channel"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Segmente (nou, inactiv, churn)",
+            values: [false, true, true, "AI scoring"],
+          },
+          {
+            name: "Loialitate & cupoane",
+            values: [false, true, "Avansat", "Multi-brand"],
+          },
+          {
+            name: "Chestionare NPS & feedback",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Instructori & Salarizare",
+        features: [
+          {
+            name: "Orar antrenori/clase",
+            values: [true, true, "Rotație automată", true],
+          },
+          {
+            name: "Pontaj & aprobări ore",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Ținte pe clasă (ocupare, rating)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Calcul comisioane PT/clasă",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Evaluare performanță",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Plăți & Facturare",
+        features: [
+          {
+            name: "POS recepție & factură",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Recurență card (auto-renew)",
+            values: [false, true, "Retry automat", "Reguli custom"],
+          },
+          {
+            name: "Prorata, freeze, transfer abon.",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Dunning (eșec plată)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Produse & Stoc (retail)",
+        features: [
+          {
+            name: "Catalog produse & POS",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Stoc & alerte low-stock",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Rețetar & marjă (shake, bar)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Multi-depozit (locații)",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analytics",
+        features: [
+          {
+            name: "Attendance & ocupare clase",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Vânzări, MRR/ARR, ARPU",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Churn, retenție, cohortă",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Performanță instructori",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Dashboard multi-locație",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+      {
+        title: "Digital & Conținut",
+        features: [
+          {
+            name: "Pagina publică clase",
+            values: [true, true, true, true],
+          },
+          {
+            name: "App membru (branding EasyReserv)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "App white-label (brandul sălii)",
+            values: [false, false, "Add-on", "Inclus"],
+          },
+          {
+            name: "Bibliotecă video (on-demand/live)",
+            values: [false, false, "Add-on", "Inclus + DRM"],
+          },
+        ],
+      },
+      {
+        title: "Integrări & API",
+        features: [
+          {
+            name: "Integrare procesator plăți",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Integrare contabilitate/1C",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Wearables (Apple/Google Fit)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "API extern & Webhooks",
+            values: [false, false, "Add-on", "Prioritar"],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Chirii auto") {
     return [
       {
