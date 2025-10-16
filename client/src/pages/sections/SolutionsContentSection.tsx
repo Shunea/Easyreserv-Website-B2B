@@ -13,22 +13,22 @@ import { Container } from "@/components/Container";
 const heroFeatures = [
   {
     icon: "/figmaAssets/icon-5.svg",
-    title: "Time Efficiency",
-    description: "Focus on delivering high-quality services",
+    title: "Eficiență în timp",
+    description: "Concentrează-te pe livrarea serviciilor de calitate. Noi automatizăm pașii repetitivi și scurtăm timpii operaționali.",
     height: "h-[200px]",
   },
   {
     icon: "/figmaAssets/icon-5.svg",
-    title: "Accesibility",
+    title: "Accesibilitate",
     description:
-      "Reach a broader audience, including people with disabilities.",
+      "Ajungi la un public mai larg, inclusiv la persoane cu dizabilități, cu interfețe moderne și procese simple de rezervare.",
     height: "h-[221px]",
   },
   {
     icon: "/figmaAssets/icon-5.svg",
-    title: "Access Control",
+    title: "Control acces",
     description:
-      "Control employee access to the system, ensuring data security and privacy",
+      "Controlează accesul angajaților în sistem prin roluri și permisiuni. Datele rămân în siguranță și respectă confidențialitatea.",
     height: "h-auto",
   },
 ];
@@ -307,22 +307,21 @@ export const SolutionsContentSection = (): JSX.Element => {
       <Container className="py-[50px]">
         <div className="relative z-20 col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
-            <span className="text-[#282828]">Drive Growth and </span>
-            <span className="text-[#fe9800]">Efficiency</span>
+            <span className="text-[#282828]">Crește-ți afacerea și </span>
+            <span className="text-[#fe9800]">eficiența</span>
             <span className="text-[#282828]">
               {" "}
-              Across Multiple Industries.
+              în multiple industrii
             </span>
           </h1>
 
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
-            Whether you run a restaurant, salon, or any other enterprise,
-            our solution adapts to your unique needs.
+            Fie că ai un restaurant, un salon sau orice alt tip de business, EasyReserv se adaptează nevoilor tale: rezervări, POS, stocuri, rapoarte și automatizări – totul într-o singură platformă.
           </p>
 
-          <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
+          <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center" data-testid="button-explore-plans">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-              Explore plans
+              Explorează planurile
             </span>
           </Link>
         </div>
