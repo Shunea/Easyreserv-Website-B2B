@@ -17,7 +17,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Cafenele": { basic: 50, standard: 125, pro: 200 },
   "Saloane de frumusețe": { basic: 49, standard: 99, pro: 149 },
   "Barbershopuri": { basic: 49, standard: 99, pro: 149 },
-  "Hotele & Pensiuni": { basic: 50, standard: 125, pro: 200 },
+  "Hotele & Pensiuni": { basic: 79, standard: 149, pro: 249 },
   "Chirii auto": { basic: 50, standard: 125, pro: 200 },
   "Fitness": { basic: 49, standard: 99, pro: 149 },
   "Medical": { basic: 49, standard: 99, pro: 149 },
@@ -167,6 +167,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Hotele & Pensiuni") {
+    return [
+      {
+        name: "Basic",
+        description: "Pensiuni/Boutique ≤ 20 camere",
+        monthlyPrice: 79,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "3 utilizatori incluși",
+          "Calendar disponibilitate & room matrix",
+          "Check-in/Check-out cu folio",
+          "Tipuri camere & tarife de bază",
+          "Housekeeping: status cameră & taskuri",
+          "POS front desk & facturare",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "Hotel mic-mediu 21-60 camere",
+        monthlyPrice: 149,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "6 utilizatori + 5€/user suplimentar",
+          "Split/merge rezervări & room move",
+          "Pachete (cazare + servicii)",
+          "App mobil Housekeeping",
+          "CRM & marketing email/SMS",
+          "ADR, RevPAR & rapoarte avansate",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "Hotel 61-150 camere",
+        monthlyPrice: 249,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "10 utilizatori incluși",
+          "Booking Engine pe site",
+          "Ticketing mentenanță cu SLA",
+          "Garanții pe card/preautorizări",
+          "Pick-up, pace & forecast",
+          "Segmentare & campanii automate",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "150+ camere sau Multi-property",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "Utilizatori nelimitat",
+          "Channel Manager (OTA integrat)",
+          "AI-assist recomandări dinamice",
+          "Dashboard multi-property",
+          "SSO, audit avansat & API webhooks",
+          "Control chei & self check-in kiosk",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -238,6 +310,264 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Hotele & Pensiuni") {
+    return [
+      {
+        title: "Utilizatori & Acces",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["3", "6", "10", "Nelimitat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["5€/user", "5€/user", "5€/user", "Inclus"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri acoperite",
+            values: ["Admin, Recepționer, Housekeeper", "Manager Operațiuni, Concierge", "Revenue Manager, F&B Link", "Toate + Integrări avansate"],
+            muted: [false, false, false, false],
+          },
+        ],
+      },
+      {
+        title: "PMS - Management Rezervări",
+        features: [
+          {
+            name: "Calendar disponibilitate",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Check-in/Check-out cu folio",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Tipuri camere & tarife",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Split/merge rezervări",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Early check-in/late check-out",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pachete (cazare + servicii)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Inventar camere",
+            values: [true, true, true, true],
+          },
+          {
+            name: "City tax & valute multiple",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Housekeeping & Mentenanță",
+        features: [
+          {
+            name: "Status cameră (Clean/Dirty)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Listă taskuri menaj",
+            values: [true, true, true, true],
+          },
+          {
+            name: "App mobil Housekeeping",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Turndown/Lost & Found",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Ticketing mentenanță cu SLA",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Raport productivitate",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Plăți & Facturare",
+        features: [
+          {
+            name: "POS front desk & folio",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Facturi & proforme",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Semnături digitale/PDF",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Integrare 1C fiscalizat",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Garanții card/preautorizări",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Vânzare Directă & Canale",
+        features: [
+          {
+            name: "Booking Engine pe site",
+            values: ["Add-on", "Add-on", true, true],
+          },
+          {
+            name: "Coduri promo/corporate rates",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Vouchere cadou",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Channel Manager (OTA)",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Paritate tarife/stop-sell",
+            values: [false, "Add-on", "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "Revenue & Rate Management",
+        features: [
+          {
+            name: "Sezoane & rate plans",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Restricții (CTA, CTD, LOS)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Calendar tarife & bulk update",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pick-up, pace, forecast",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Recomandări dinamice (AI)",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+      {
+        title: "F&B & Upsell",
+        features: [
+          {
+            name: "Room service (bridge Restaurant)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Mini-bar: stoc & folio",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Mese/Evenimente (săli)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Spa/Wellness programări",
+            values: [false, "Add-on", "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "CRM & Marketing",
+        features: [
+          {
+            name: "Profil client & istoric",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Email/SMS pre/post-stay",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Upsell (upgrade, late checkout)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Segmente (corporate, OTA)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Campanii automate & cupoane",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analitice",
+        features: [
+          {
+            name: "Arrivals/Departures, Occupancy",
+            values: [true, true, true, true],
+          },
+          {
+            name: "ADR, RevPAR, Segmentation",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Forecast & Pace",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Export CSV/PDF, 1C bridge",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Dashboard multi-property",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+      {
+        title: "Integrări & Control Avansat",
+        features: [
+          {
+            name: "Control chei (card/keycode)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Self check-in kiosk",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "API extern/Webhooks",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "SSO & audit avansat",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Spălătorii auto") {
     return [
       {
