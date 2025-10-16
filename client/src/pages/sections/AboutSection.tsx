@@ -867,21 +867,16 @@ export const AboutSection = (): JSX.Element => {
 
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10 order-1 lg:order-2">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              Download the EasyReserv App
+              Aplicația mobilă EasyReserv
             </h2>
 
             <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-              Experience the convenience of managing your business on the go
-              with the EasyReserv mobile app. Seamlessly handle reservations,
-              track inventory, and access business insights anytime, anywhere.
-              Empower your team and enhance customer satisfaction with just a
-              few taps. Download now and unlock a world of efficiency at your
-              fingertips!
+              Ia operațiunile cu tine, în teren sau în sală. Procesezi rezervări, emiți bonuri, urmărești comenzi și inventar, iar dashboard-urile îți arată vânzările și KPI-urile în timp real. Notificările te anunță când sunt întârzieri, comenzi gata sau stocuri pe cale să se termine. Funcționează pe iOS și Android, cu permisiuni pe roluri pentru ospătari, casieri, manageri sau tehnicieni.
             </p>
 
             <div className="flex flex-col gap-4">
               <div className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-xl tracking-[0]">
-                Available on
+                Disponibil pe
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
