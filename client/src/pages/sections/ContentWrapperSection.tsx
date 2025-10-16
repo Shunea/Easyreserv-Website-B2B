@@ -11,6 +11,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/Container";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
   "Restaurante": { basic: 50, standard: 125, pro: 200 },
@@ -2997,7 +3003,118 @@ export const ContentWrapperSection = (): JSX.Element => {
 
       {/* Comparison Table */}
       {isExpanded && (
-      <div className="w-full max-w-7xl mx-auto px-4 mt-8">
+      <>
+      {/* Mobile Version - Card-uri verticale */}
+      <div className="block md:hidden w-full px-4 mt-8 space-y-6">
+        {pricingPlans.map((plan, planIndex) => (
+          <Card key={planIndex} className={`${plan.isPopular ? 'border-2 border-[#2d2c65]' : 'border border-zinc-200'}`}>
+            <CardContent className="p-6">
+              {/* Plan Header */}
+              <div className="flex flex-col gap-4 pb-6 border-b border-zinc-200">
+                <div className="flex items-center justify-between">
+                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl">
+                    {plan.name}
+                  </h3>
+                  {plan.isPopular && (
+                    <Badge className="bg-[#2d2c65] text-white">Popular</Badge>
+                  )}
+                </div>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm">
+                  {plan.description}
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] ${
+                    plan.monthlyPrice === null ? "text-xl" : "text-3xl"
+                  }`}>
+                    {calculatePrice(plan.monthlyPrice, isAnnual)}
+                  </span>
+                  {plan.monthlyPrice !== null && (
+                    <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm">
+                      / lună
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Categories with Accordions */}
+              <Accordion type="multiple" className="w-full mt-4">
+                {comparisonCategories.map((category, categoryIndex) => (
+                  <AccordionItem key={categoryIndex} value={`category-${categoryIndex}`}>
+                    <AccordionTrigger className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-lg">
+                      {category.title}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="space-y-3 pt-2">
+                        {category.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center justify-between py-2">
+                            <div className="flex items-center gap-2 flex-1">
+                              <span className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-sm">
+                                {feature.name}
+                              </span>
+                              <HelpCircleIcon className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                            </div>
+                            <div className="flex items-center justify-end min-w-[80px]">
+                              {typeof feature.values[planIndex] === "boolean" ? (
+                                feature.values[planIndex] ? (
+                                  <CheckIcon className="w-5 h-5 text-[#2d2c65]" />
+                                ) : (
+                                  <XIcon className="w-5 h-5 text-gray-400" />
+                                )
+                              ) : (
+                                <span className={`[font-family:'Inter',Helvetica] font-semibold text-sm text-right ${
+                                  feature.muted && feature.muted[planIndex]
+                                    ? "text-gray-400"
+                                    : "text-[#282828]"
+                                }`}>
+                                  {feature.values[planIndex]}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              {/* CTA Button */}
+              <div className="mt-6 pt-6 border-t border-zinc-200">
+                {plan.planId ? (
+                  <a
+                    href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
+                    className={`w-full h-auto px-6 py-3 rounded-[5px] inline-flex items-center justify-center text-center ${
+                      plan.isPopular
+                        ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                        : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                    }`}
+                  >
+                    <span className="[font-family:'Onest',Helvetica] font-bold text-sm">
+                      Începe perioada de test gratuită
+                    </span>
+                  </a>
+                ) : (
+                  <Link
+                    href="/contact"
+                    className={`w-full h-auto px-6 py-3 rounded-[5px] inline-flex items-center justify-center text-center ${
+                      plan.isPopular
+                        ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                        : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                    }`}
+                  >
+                    <span className="[font-family:'Onest',Helvetica] font-bold text-sm">
+                      Contactează-ne
+                    </span>
+                  </Link>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+
+      {/* Desktop Version - Tabel clasic */}
+      <div className="hidden md:block w-full max-w-7xl mx-auto px-4 mt-8">
         <div className="grid grid-cols-12 gap-0">
           {/* Table Header - Plan Names */}
           <div className="col-span-4"></div>
@@ -3128,6 +3245,7 @@ export const ContentWrapperSection = (): JSX.Element => {
           ))}
         </div>
       </div>
+      </>
       )}
     </section>
   );
