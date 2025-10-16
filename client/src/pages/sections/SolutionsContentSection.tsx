@@ -172,6 +172,138 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    saloane: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Planifici programul pe specialiști (stilist, colorist, barber, cosmetician), ture, pontaj și comision. Ținte/bonusuri și vizibilitate pe performanță.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închidere de zi corectă, evidență încasări/plăți, vânzări pe servicii & produse retail, rapoarte pe comisioane.",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "Istoric vizite, tehnici & nuanțe folosite, alergeni, poze înainte/după, preferințe. Experiență personalizată la fiecare revenire.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Servicii, durate, timpi tampon, resurse (scaun/sală/aparat), prețuri diferențiate pe specialist. Roluri & permisiuni.",
+        },
+        {
+          title: "Meniu de servicii & pachete",
+          description: "Coafor, colorare, tratamente, manichiură/pedichiură, barbering, epilare, cosmetică – cu pachete și opționale (tratament, masaj scalp etc.).",
+        },
+        {
+          title: "Stocare facilă documente",
+          description: "Contracte, consimțăminte, fișe client, facturi – stocate sigur, acces rapid când ai nevoie.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Venit/oră pe specialist, rata de ocupare, servicii profitabile, vânzare retail, CLV & frecvență vizite. Decizii pe date, nu pe intuiție.",
+        },
+        {
+          title: "Flux comenzi/servicii fluent",
+          description: "Programare → confirmare → execuție → încasare → recomandare/următoarea vizită. Mai puține întârzieri, clienți mai mulțumiți.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Consum pe serviciu (rețetar)",
+          description: "Scădere automată pentru vopsele, oxidant, tratamente, consumabile. Alerte 'low stock', inventare ghidate.",
+        },
+        {
+          title: "Managementul furnizorilor",
+          description: "Liste de prețuri, comenzi, recepții – ai materiale la timp și costuri sub control.",
+        },
+        {
+          title: "Logistică internă (multi-locație)",
+          description: "Transfer produse între saloane, trasabilitate lot/expirare pentru siguranță și conformitate.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Programări & remindere automate",
+          description: "Confirmări prin SMS/Email/Push, reamintiri inteligente, reprogramare rapidă. No-show ↓ semnificativ.",
+        },
+        {
+          title: "Abonamente & pachete",
+          description: "Ședințe recurente (coafor, manichiură, tratamente), carduri cadou, punch-card. Recurență și venit stabil.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Campanii pe segmente (serviciu preferat, frecvență, zile scurse), recomandări post-serviciu, review & before/after.",
+        },
+      ],
+    },
+    barbershop: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Planifici programul pe specialiști (stilist, colorist, barber, cosmetician), ture, pontaj și comision. Ținte/bonusuri și vizibilitate pe performanță.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închidere de zi corectă, evidență încasări/plăți, vânzări pe servicii & produse retail, rapoarte pe comisioane.",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "Istoric vizite, tehnici & nuanțe folosite, alergeni, poze înainte/după, preferințe. Experiență personalizată la fiecare revenire.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Servicii, durate, timpi tampon, resurse (scaun/sală/aparat), prețuri diferențiate pe specialist. Roluri & permisiuni.",
+        },
+        {
+          title: "Meniu de servicii & pachete",
+          description: "Coafor, colorare, tratamente, manichiură/pedichiură, barbering, epilare, cosmetică – cu pachete și opționale (tratament, masaj scalp etc.).",
+        },
+        {
+          title: "Stocare facilă documente",
+          description: "Contracte, consimțăminte, fișe client, facturi – stocate sigur, acces rapid când ai nevoie.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Venit/oră pe specialist, rata de ocupare, servicii profitabile, vânzare retail, CLV & frecvență vizite. Decizii pe date, nu pe intuiție.",
+        },
+        {
+          title: "Flux comenzi/servicii fluent",
+          description: "Programare → confirmare → execuție → încasare → recomandare/următoarea vizită. Mai puține întârzieri, clienți mai mulțumiți.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Consum pe serviciu (rețetar)",
+          description: "Scădere automată pentru vopsele, oxidant, tratamente, consumabile. Alerte 'low stock', inventare ghidate.",
+        },
+        {
+          title: "Managementul furnizorilor",
+          description: "Liste de prețuri, comenzi, recepții – ai materiale la timp și costuri sub control.",
+        },
+        {
+          title: "Logistică internă (multi-locație)",
+          description: "Transfer produse între saloane, trasabilitate lot/expirare pentru siguranță și conformitate.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Programări & remindere automate",
+          description: "Confirmări prin SMS/Email/Push, reamintiri inteligente, reprogramare rapidă. No-show ↓ semnificativ.",
+        },
+        {
+          title: "Abonamente & pachete",
+          description: "Ședințe recurente (coafor, manichiură, tratamente), carduri cadou, punch-card. Recurență și venit stabil.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Campanii pe segmente (serviciu preferat, frecvență, zile scurse), recomandări post-serviciu, review & before/after.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
