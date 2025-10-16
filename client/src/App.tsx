@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import NotFound from "@/pages/not-found";
 
 import { Homepage } from "@/pages/Homepage";
@@ -16,19 +17,22 @@ import { BlogArticle } from "@/pages/BlogArticle";
 
 function Router() {
   return (
-    <Switch>
-      {/* Add pages below */}
-      <Route path="/" component={Homepage} />
-      <Route path="/about" component={AboutUs} />
-      <Route path="/solutions" component={Solutions} />
-      <Route path="/pricing" component={Pricing} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/policies" component={Policies} />
-      <Route path="/blog" component={Blog} />
-      <Route path="/blog/:slug" component={BlogArticle} />
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        {/* Add pages below */}
+        <Route path="/" component={Homepage} />
+        <Route path="/about" component={AboutUs} />
+        <Route path="/solutions" component={Solutions} />
+        <Route path="/pricing" component={Pricing} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/policies" component={Policies} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogArticle} />
+        {/* Fallback to 404 */}
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
