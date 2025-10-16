@@ -101,12 +101,12 @@ const comparisonCategories = [
       {
         name: "Admin",
         values: ["1", "1", "1", "Nelimitat"],
-        muted: [true, false, false, false],
+        muted: [false, false, false, false],
       },
       {
         name: "Hostess",
         values: ["1", "1", "1", "Nelimitat"],
-        muted: [true, false, false, false],
+        muted: [false, false, false, false],
       },
       {
         name: "Waiter",
@@ -116,11 +116,11 @@ const comparisonCategories = [
       {
         name: "Cook",
         values: ["-", "-", "3", "Nelimitat"],
-        muted: [true, false, false, false],
+        muted: [true, true, false, false],
       },
       {
         name: "Curier",
-        values: ["-", "-", "-", "Nelimitat"],
+        values: ["-", "-", "-", "Nelimitat (inclus cu Curier App)"],
         muted: [true, true, true, false],
       },
     ],
@@ -134,7 +134,7 @@ const comparisonCategories = [
       },
       {
         name: "Calendar Access",
-        values: ["-", true, true, true],
+        values: [false, true, true, true],
       },
       {
         name: "Create New/Modify",
@@ -142,7 +142,7 @@ const comparisonCategories = [
       },
       {
         name: "Pre-order",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
     ],
   },
@@ -151,11 +151,11 @@ const comparisonCategories = [
     features: [
       {
         name: "Rețetar/scădere automată",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
       {
         name: "CRUD Supplier/Order/History",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
     ],
   },
@@ -164,15 +164,15 @@ const comparisonCategories = [
     features: [
       {
         name: "Vânzări & rezervări",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
       {
         name: "KPI angajați/productivitate",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
       {
         name: "Cost/Marjă produs",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
     ],
   },
@@ -185,28 +185,28 @@ const comparisonCategories = [
       },
       {
         name: "Ture/vacanțe/pontaj",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
       {
         name: "Intrare/Ieșire",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
     ],
   },
   {
-    title: "Livrare & Transport",
+    title: "Livrare & Transport (inclus în Enterprise)",
     features: [
       {
         name: "Comenzi livrare",
-        values: ["-", "-", "-", true],
+        values: [false, false, false, true],
       },
       {
         name: "Curier App",
-        values: ["-", "-", "-", true],
+        values: [false, false, false, true],
       },
       {
         name: "Rute/alocare curieri",
-        values: ["-", "-", "-", true],
+        values: [false, false, false, true],
       },
     ],
   },
@@ -216,7 +216,7 @@ const comparisonCategories = [
       {
         name: "CRUD Articole",
         values: ["1/lună", "1/lună", "2/lună", "2+/lună"],
-        muted: [true, true, true, true],
+        muted: [false, false, false, false],
       },
       {
         name: "Targeting Push/SMS",
@@ -224,7 +224,7 @@ const comparisonCategories = [
       },
       {
         name: "Segmentare avansată",
-        values: ["-", "-", true, true],
+        values: [false, false, true, true],
       },
     ],
   },
