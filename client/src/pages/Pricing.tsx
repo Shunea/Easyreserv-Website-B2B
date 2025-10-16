@@ -1,7 +1,6 @@
 import React from "react";
 import { CallToActionSection } from "./sections/CallToActionSection";
 import { ContentWrapperSection } from "./sections/ContentWrapperSection";
-import { DescriptionTextSection } from "./sections/DescriptionTextSection";
 import { FeatureImageSection } from "./sections/FeatureImageSection";
 import { FooterSection } from "./sections/FooterSection";
 import { PricingHeroSection } from "./sections/PricingHeroSection";
@@ -63,7 +62,6 @@ export const Pricing = (): JSX.Element => {
       <SubscriptionOptionsSection />
       <PricingTableSection />
       <WhatIsEasyReservSection />
-      <DescriptionTextSection />
       <FeatureImageSection />
       <FooterSection />
     </div>
