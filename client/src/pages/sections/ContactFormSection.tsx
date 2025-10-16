@@ -1,5 +1,5 @@
 import { MailIcon } from "lucide-react";
-import React from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,6 +11,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+type Country = {
+  code: string;
+  name: string;
+  prefix: string;
+  flag: string;
+};
+
+const countries: Country[] = [
+  { code: "MD", name: "Moldova", prefix: "+373", flag: "🇲🇩" },
+  { code: "RO", name: "România", prefix: "+40", flag: "🇷🇴" },
+  { code: "IT", name: "Italia", prefix: "+39", flag: "🇮🇹" },
+  { code: "ES", name: "Spania", prefix: "+34", flag: "🇪🇸" },
+  { code: "FR", name: "Franța", prefix: "+33", flag: "🇫🇷" },
+  { code: "DE", name: "Germania", prefix: "+49", flag: "🇩🇪" },
+  { code: "UK", name: "Regatul Unit", prefix: "+44", flag: "🇬🇧" },
+  { code: "US", name: "SUA", prefix: "+1", flag: "🇺🇸" },
+];
 
 type FormField = {
   label: string;
@@ -73,6 +91,8 @@ const formFields = [
 ];
 
 export const ContactFormSection = (): JSX.Element => {
+  const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
+
   return (
     <section className="flex flex-col w-full max-w-[1138px] mx-auto items-center gap-5 px-0 py-[50px] bg-white rounded-[10px] border border-solid border-zinc-200 shadow-[8px_28px_30px_#00000008]">
       <h2 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
@@ -110,23 +130,37 @@ export const ContactFormSection = (): JSX.Element => {
                       </SelectContent>
                     </Select>
                   ) : field.type === "phone" ? (
-                    <div className="flex items-center h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
-                      <div className="flex gap-1 pl-3 pr-0 items-center">
-                        <img
-                          className="w-6 h-6"
-                          alt="Country flag"
-                          src="/figmaAssets/md.svg"
-                        />
-                        <img
-                          className="w-5 h-5"
-                          alt="Chevron down"
-                          src="/figmaAssets/chevron-down.svg"
-                        />
-                      </div>
+                    <div className="flex items-center gap-2 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
+                      <Select 
+                        value={selectedCountry.code} 
+                        onValueChange={(value) => {
+                          const country = countries.find(c => c.code === value);
+                          if (country) setSelectedCountry(country);
+                        }}
+                      >
+                        <SelectTrigger className="w-auto h-full border-0 gap-1 px-3 focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0">
+                          <span className="text-2xl leading-none">
+                            {selectedCountry.flag}
+                          </span>
+                        </SelectTrigger>
+                        <SelectContent>
+                          {countries.map((country) => (
+                            <SelectItem key={country.code} value={country.code}>
+                              <div className="flex items-center gap-2">
+                                <span className="text-xl">{country.flag}</span>
+                                <span>{country.name} ({country.prefix})</span>
+                              </div>
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <span className="font-text-md-regular text-black">
+                        {selectedCountry.prefix}
+                      </span>
                       <Input
                         type="tel"
-                        placeholder={field.placeholder}
-                        className="flex-1 h-full border-0 shadow-none pl-2.5 pr-3 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
+                        placeholder="XX XXX XXX"
+                        className="flex-1 h-full border-0 shadow-none pr-3 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
                       />
                     </div>
                   ) : (
