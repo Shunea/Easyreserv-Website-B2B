@@ -10,21 +10,21 @@ export const PricingHeroSection = (): JSX.Element => {
           <div className="flex flex-col items-start gap-4 w-full">
             <h1 className="[font-family:'Onest',Helvetica] font-bold text-4xl md:text-5xl tracking-[0] leading-tight">
               <span className="text-[#282828]">
-                Choose Excellence.
+                Alege excelența.
                 <br />
-                Choose{" "}
+                Alege{" "}
               </span>
               <span className="text-[#fe9800]">EasyReserv.io</span>
             </h1>
 
             <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-              Try the free trial and find the perfect subscription for your needs.
+              Încearcă perioada de test gratuită și găsește abonamentul perfect pentru nevoile tale.
             </p>
           </div>
 
           <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 inline-flex items-center justify-center">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-              Start now
+              Începe acum
             </span>
           </Link>
         </div>
