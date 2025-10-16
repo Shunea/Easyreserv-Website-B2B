@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { WhatIsEasyReservSection } from "./WhatIsEasyReservSection";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -307,8 +306,6 @@ export const InfoSection = (): JSX.Element => {
           src="/figmaAssets/20901966-mobileapp-mockup1-copy-1.png"
         />
       </div>
-
-      <WhatIsEasyReservSection />
 
       <div className="flex flex-col items-start gap-2.5 px-[180px] py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
