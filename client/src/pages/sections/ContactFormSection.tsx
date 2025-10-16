@@ -98,7 +98,7 @@ export const ContactFormSection = (): JSX.Element => {
 
                   {field.type === "select" ? (
                     <Select defaultValue={field.placeholder}>
-                      <SelectTrigger className="w-full h-11 bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db]">
+                      <SelectTrigger className="w-full h-11 bg-white rounded-lg border border-solid border-[#d2d6db] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db]">
                         <SelectValue placeholder={field.placeholder} />
                       </SelectTrigger>
                       <SelectContent>
@@ -110,7 +110,7 @@ export const ContactFormSection = (): JSX.Element => {
                       </SelectContent>
                     </Select>
                   ) : field.type === "phone" ? (
-                    <div className="flex items-center h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
+                    <div className="flex items-center h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
                       <div className="flex gap-1 pl-3 pr-0 items-center">
                         <img
                           className="w-6 h-6"
@@ -130,7 +130,7 @@ export const ContactFormSection = (): JSX.Element => {
                       />
                     </div>
                   ) : (
-                    <div className="flex items-center gap-2 px-3 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
+                    <div className="flex items-center gap-2 px-3 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
                       <Input
                         type={field.type}
                         placeholder={field.placeholder}
@@ -153,7 +153,7 @@ export const ContactFormSection = (): JSX.Element => {
           </Label>
           <Textarea
             placeholder="Scrie-ți mesajul Dumneavoastră aici"
-            className="w-full min-h-[120px] bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs px-3 py-2.5 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db] resize-none"
+            className="w-full min-h-[120px] bg-white rounded-lg border border-solid border-[#d2d6db] px-3 py-2.5 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db] resize-none"
           />
         </div>
 
