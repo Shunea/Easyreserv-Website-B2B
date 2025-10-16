@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
 
 export const MainContentSection = (): JSX.Element => {
   return (
