@@ -427,15 +427,19 @@ const getFeaturesByIndustry = (industry: string) => {
 const bottomStats = [
   {
     value: "400",
-    label: "PLACES USED OUR PRODUCT IN THE FIRST YEAR",
+    label: "LOCAȚII AU FOLOSIT PRODUSUL ÎN PRIMUL AN",
   },
   {
-    value: "30%",
-    label: "OR MORE OF YOUR EMPLOYEES' TIME CAN BE OPTIMIZED",
+    value: "30%+",
+    label: "DIN TIMPUL ANGAJAȚILOR POATE FI OPTIMIZAT",
   },
   {
     value: "80,000",
-    label: "NOTIFICATIONS ARE SENT MONTHLY",
+    label: "NOTIFICĂRI SUNT TRIMISE LUNAR",
+  },
+  {
+    value: "4,600+",
+    label: "UTILIZATORI ÎN PLATFORMĂ",
   },
 ];
 
