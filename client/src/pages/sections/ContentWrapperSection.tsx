@@ -12,11 +12,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/Container";
 
-const pricingPlans = [
+const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
+  "Restaurante": { basic: 50, standard: 125, pro: 200 },
+  "Cafenele": { basic: 49, standard: 99, pro: 149 },
+  "Saloane de frumusețe": { basic: 49, standard: 99, pro: 149 },
+  "Barbershopuri": { basic: 49, standard: 99, pro: 149 },
+  "Hotele & Pensiuni": { basic: 50, standard: 125, pro: 200 },
+  "Chirii auto": { basic: 50, standard: 125, pro: 200 },
+  "Fitness": { basic: 49, standard: 99, pro: 149 },
+  "Medical": { basic: 49, standard: 99, pro: 149 },
+  "Retail": { basic: 49, standard: 99, pro: 149 },
+  "Spălătorii auto": { basic: 49, standard: 99, pro: 149 },
+};
+
+const getPricingPlans = (industry: string) => [
   {
     name: "Basic",
     description: "Ideal pentru locații mici & simple",
-    monthlyPrice: 49,
+    monthlyPrice: industryPricing[industry]?.basic || 49,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
@@ -32,7 +45,7 @@ const pricingPlans = [
   {
     name: "Standard",
     description: "Angajați multipli, dashboarduri, planificare ture, analize simple",
-    monthlyPrice: 99,
+    monthlyPrice: industryPricing[industry]?.standard || 99,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
@@ -47,7 +60,7 @@ const pricingPlans = [
   {
     name: "Pro",
     description: "Control pe costuri, productivitate și campanii",
-    monthlyPrice: 149,
+    monthlyPrice: industryPricing[industry]?.pro || 149,
     isPopular: true,
     buttonVariant: "default" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
@@ -57,7 +70,7 @@ const pricingPlans = [
       "Pre-order",
       "Rețetar & scădere automată stocuri",
       "Rapoarte vânzări & KPI angajați",
-      "Ture/vacanțe/pontaj & CheckIn/Out",
+      "Ture/vacanțe/pontaj & Intrare/Ieșire",
       "2 articole marketing/lună",
       "Segmentare avansată",
     ],
@@ -83,124 +96,83 @@ const pricingPlans = [
 
 const comparisonCategories = [
   {
-    title: "User Types",
+    title: "Roluri Utilizatori",
     features: [
       {
         name: "Admin",
-        values: ["1", "1", "1", "Unlimited"],
+        values: ["1", "1", "1", "Nelimitat"],
         muted: [true, false, false, false],
       },
       {
         name: "Hostess",
-        values: ["1", "1", "1", "Unlimited"],
+        values: ["1", "1", "1", "Nelimitat"],
         muted: [true, false, false, false],
       },
       {
         name: "Waiter",
-        values: ["-", "2", "5", "Unlimited"],
+        values: ["-", "2", "5", "Nelimitat"],
         muted: [true, false, false, false],
       },
       {
         name: "Cook",
-        values: ["-", "-", "3", "Unlimited"],
+        values: ["-", "-", "3", "Nelimitat"],
         muted: [true, false, false, false],
       },
-    ],
-  },
-  {
-    title: "Business Setup",
-    features: [
       {
-        name: "Working Hours Setup",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Booking Duration Setup",
-        values: [true, true, true, true],
-      },
-      {
-        name: "10 Gallery Photo",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Point on Map Setup",
-        values: [true, true, true, true],
+        name: "Curier",
+        values: ["-", "-", "-", "Nelimitat"],
+        muted: [true, true, true, false],
       },
     ],
   },
   {
-    title: "Place Setup",
+    title: "Rezervări & Mese",
     features: [
       {
-        name: "CRUD Place",
-        values: [true, true, true, true],
-      },
-      {
-        name: "CRUD Tables",
-        values: [true, true, true, true],
-      },
-    ],
-  },
-  {
-    title: "Menu",
-    features: [
-      {
-        name: "CRUD Menu",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Import Menu Items",
-        values: [false, false, true, true],
-      },
-    ],
-  },
-  {
-    title: "Reservations",
-    features: [
-      {
-        name: "Accept / Reject",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Reservation Tracking",
+        name: "Accept/Reject rezervări",
         values: [true, true, true, true],
       },
       {
         name: "Calendar Access",
+        values: ["-", true, true, true],
+      },
+      {
+        name: "Create New/Modify",
         values: [true, true, true, true],
       },
       {
-        name: "View Client Reviews",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Modify Reservations",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Create New Reservations",
-        values: [true, true, true, true],
-      },
-      {
-        name: "Create a Pre-Order / Order",
-        values: [false, false, true, true],
+        name: "Pre-order",
+        values: ["-", "-", true, true],
       },
     ],
   },
   {
-    title: "Order Management",
+    title: "Management Stocuri",
     features: [
       {
-        name: "Confirm / Reject",
-        values: [false, false, true, true],
+        name: "Rețetar/scădere automată",
+        values: ["-", "-", true, true],
       },
       {
-        name: "To deliver",
-        values: [false, false, true, true],
+        name: "CRUD Supplier/Order/History",
+        values: ["-", "-", true, true],
+      },
+    ],
+  },
+  {
+    title: "Rapoarte",
+    features: [
+      {
+        name: "Vânzări & rezervări",
+        values: ["-", "-", true, true],
       },
       {
-        name: "Notifications",
-        values: [false, false, true, true],
+        name: "KPI angajați/productivitate",
+        values: ["-", "-", true, true],
+      },
+      {
+        name: "Cost/Marjă produs",
+        values: ["-", "-", true, true],
       },
     ],
   },
@@ -208,49 +180,33 @@ const comparisonCategories = [
     title: "Staff Management",
     features: [
       {
-        name: "CRUD Empoyee",
+        name: "CRUD Employee",
         values: [true, true, true, true],
       },
       {
-        name: "Working Schedule Setup",
-        values: [true, true, true, true],
+        name: "Ture/vacanțe/pontaj",
+        values: ["-", "-", true, true],
       },
       {
-        name: "Manage Vacations / Days off",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Document Storage and Management",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Staff Calendar Overview",
-        values: [false, false, true, true],
-      },
-      {
-        name: "CheckIcon IN/CheckIcon OUT",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Employee Worked Timetable",
-        values: [false, false, true, true],
+        name: "Intrare/Ieșire",
+        values: ["-", "-", true, true],
       },
     ],
   },
   {
-    title: "Clients Management",
+    title: "Livrare & Transport",
     features: [
       {
-        name: "Client List",
-        values: [false, false, true, true],
+        name: "Comenzi livrare",
+        values: ["-", "-", "-", true],
       },
       {
-        name: "Client Details",
-        values: [false, false, true, true],
+        name: "Curier App",
+        values: ["-", "-", "-", true],
       },
       {
-        name: "Reservation Details per Client",
-        values: [false, false, true, true],
+        name: "Rute/alocare curieri",
+        values: ["-", "-", "-", true],
       },
     ],
   },
@@ -258,102 +214,17 @@ const comparisonCategories = [
     title: "Marketing Tools",
     features: [
       {
-        name: "CRUD Article",
-        values: ["1/month", "1/month", "2/month", "2/month"],
+        name: "CRUD Articole",
+        values: ["1/lună", "1/lună", "2/lună", "2+/lună"],
         muted: [true, true, true, true],
       },
       {
-        name: "Targeting",
+        name: "Targeting Push/SMS",
         values: [true, true, true, true],
       },
-    ],
-  },
-  {
-    title: "Reports",
-    features: [
       {
-        name: "Dashboard Acces",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Reservation Reports",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Client Reports",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Business Rating Reports",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Sales Reports",
-        values: [false, false, true, true],
-      },
-    ],
-  },
-  {
-    title: "Stock Management",
-    features: [
-      {
-        name: "CRUD Supplier",
-        values: [false, false, true, true],
-      },
-      {
-        name: "CRUD Order",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Order History",
-        values: [false, false, true, true],
-      },
-    ],
-  },
-  {
-    title: "Transport Park",
-    features: [
-      {
-        name: "Transport List",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Assign Transport Employee",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Order History",
-        values: [false, false, true, true],
-      },
-    ],
-  },
-  {
-    title: "Task Planning",
-    features: [
-      {
-        name: "CRUD Project",
-        values: [false, false, true, true],
-      },
-      {
-        name: "CRUD Task",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Task Assignment",
-        values: [false, false, true, true],
-      },
-      {
-        name: "Progress Tracking",
-        values: [false, false, true, true],
-      },
-    ],
-  },
-  {
-    title: "Financial Management",
-    features: [
-      {
-        name: "Debit/Credit",
-        values: [false, false, false, true],
+        name: "Segmentare avansată",
+        values: ["-", "-", true, true],
       },
     ],
   },
@@ -363,6 +234,8 @@ export const ContentWrapperSection = (): JSX.Element => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [isAnnual, setIsAnnual] = React.useState(false);
   const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
+
+  const pricingPlans = getPricingPlans(selectedBusiness);
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {
