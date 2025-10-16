@@ -588,7 +588,7 @@ export const AboutSection = (): JSX.Element => {
                           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base leading-6">
                             {feature.content}
                           </p>
-                          <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
+                          <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-5 py-2.5 shadow-sm inline-flex items-center justify-center w-fit">
                             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
                               Solicită Demo
                             </span>
