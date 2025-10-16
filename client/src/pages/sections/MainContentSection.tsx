@@ -3,7 +3,7 @@ import { Link } from "wouter";
 
 export const MainContentSection = (): JSX.Element => {
   return (
-    <section className="relative w-full h-[508px] overflow-hidden">
+    <section className="relative w-full h-[580px] overflow-hidden">
       <img
         className="absolute top-0 left-0 w-[1044px] h-[879px]"
         alt="Vector"
@@ -28,7 +28,7 @@ export const MainContentSection = (): JSX.Element => {
         src="/figmaAssets/vector-20-2.svg"
       />
 
-      <div className="flex flex-col items-center gap-5 absolute top-[136px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
+      <div className="flex flex-col items-center gap-5 absolute top-[90px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
         <h1 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[56px] text-center leading-normal">
           <span className="text-[#282828]">Cum se diferențiază </span>
           <span className="text-[#fe9800]">EasyReserv</span>
