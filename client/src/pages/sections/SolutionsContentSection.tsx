@@ -739,81 +739,97 @@ const businessTypes = [
     icon: "/figmaAssets/frame-12.svg",
     name: "IT Company",
     decorativeIcon: "/figmaAssets/frame-6.svg",
+    pricingIndustry: "Retail",
   },
   {
     icon: "/figmaAssets/frame-2.svg",
     name: "Beauty Clinic",
     decorativeIcon: "/figmaAssets/frame-1.svg",
+    pricingIndustry: "Saloane de frumusețe",
   },
   {
     icon: "/figmaAssets/frame.svg",
     name: "Medical Clinic",
     decorativeIcon: "/figmaAssets/frame.svg",
+    pricingIndustry: "Medical",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Restaurant",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Restaurante",
   },
   {
     icon: "/figmaAssets/frame-12.svg",
     name: "Catering",
     decorativeIcon: "/figmaAssets/frame-6.svg",
+    pricingIndustry: "Restaurante",
   },
   {
     icon: "/figmaAssets/frame-2.svg",
     name: "Entertainment",
     decorativeIcon: "/figmaAssets/frame-1.svg",
+    pricingIndustry: "Tenis/Padel/Fotbal",
   },
   {
     icon: "/figmaAssets/frame.svg",
     name: "Beauty Salon",
     decorativeIcon: "/figmaAssets/frame.svg",
+    pricingIndustry: "Saloane de frumusețe",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Dental Clinic",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Medical",
   },
   {
     icon: "/figmaAssets/frame-12.svg",
     name: "Barbershop",
     decorativeIcon: "/figmaAssets/frame-6.svg",
+    pricingIndustry: "Barbershopuri",
   },
   {
     icon: "/figmaAssets/frame-2.svg",
     name: "Co-Working Space Rent",
     decorativeIcon: "/figmaAssets/frame-1.svg",
+    pricingIndustry: "Retail",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Accounting Firm",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Retail",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Hotel",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Hotele & Pensiuni",
   },
   {
     icon: "/figmaAssets/frame-12.svg",
     name: "Pet Grooming Service",
     decorativeIcon: "/figmaAssets/frame-6.svg",
+    pricingIndustry: "Saloane de frumusețe",
   },
   {
     icon: "/figmaAssets/frame-2.svg",
     name: "Conference Hall Rent",
     decorativeIcon: "/figmaAssets/frame-1.svg",
+    pricingIndustry: "Retail",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Fitness Center",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Fitness",
   },
   {
     icon: "/figmaAssets/frame-4.svg",
     name: "Wellness Center",
     decorativeIcon: "/figmaAssets/frame-7.svg",
+    pricingIndustry: "Fitness",
   },
 ];
 
@@ -1130,8 +1146,12 @@ export const SolutionsContentSection = (): JSX.Element => {
         </div>
 
         {businessTypes.map((business, index) => (
-          <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
-            <Card className="w-full bg-white rounded-[20px] border-[#8aa2a980] shadow-[0px_13px_24px_#0000000d] overflow-hidden relative">
+          <Link 
+            key={index} 
+            href={`/pricing?industry=${encodeURIComponent(business.pricingIndustry)}`}
+            className="col-span-12 md:col-span-6 lg:col-span-4"
+          >
+            <Card className="w-full bg-white rounded-[20px] border-[#8aa2a980] shadow-[0px_13px_24px_#0000000d] overflow-hidden relative hover:shadow-[0px_13px_24px_#0000001a] transition-shadow cursor-pointer">
               <CardContent className="flex flex-col items-start gap-4 p-8">
                 <img className="w-12 h-12" alt="Frame" src={business.icon} />
                 <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
@@ -1144,7 +1164,7 @@ export const SolutionsContentSection = (): JSX.Element => {
                 />
               </CardContent>
             </Card>
-          </div>
+          </Link>
         ))}
       </Container>
 

@@ -2795,7 +2795,10 @@ const getComparisonCategories = (industry: string) => {
 export const ContentWrapperSection = (): JSX.Element => {
   const [isExpanded, setIsExpanded] = React.useState(true);
   const [isAnnual, setIsAnnual] = React.useState(false);
-  const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
+  
+  const searchParams = new URLSearchParams(window.location.search);
+  const industryFromUrl = searchParams.get('industry');
+  const [selectedBusiness, setSelectedBusiness] = React.useState(industryFromUrl || "Restaurante");
 
   const pricingPlans = getPricingPlans(selectedBusiness);
   const comparisonCategories = getComparisonCategories(selectedBusiness);
