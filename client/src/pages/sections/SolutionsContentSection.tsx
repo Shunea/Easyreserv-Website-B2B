@@ -432,6 +432,72 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    fitness: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Gestionezi antrenorii, instructorii, recepționerii și terapeuții. Creezi ture, stabilești comisioane, urmărești participarea și performanța individuală.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Controlezi toate încasările: abonamente, servicii unice, extra-uri și vânzări retail (suplimente, echipamente). Rapoarte zilnice și închideri automate pe POS.",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "Vizualizezi istoricul antrenamentelor, abonamentele active, tipurile de clase preferate, obiectivele și progresul fiecărui client. Personalizarea devine simplă.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Definire locații, săli, tipuri de clase, antrenori, servicii, abonamente, tarife și reguli de acces. Platforma se adaptează tipului tău de business: sală de fitness, wellness studio sau centru sportiv complet.",
+        },
+        {
+          title: "Documente și contracte",
+          description: "Contracte de membru, acorduri medicale și consimțăminte — generate automat și stocate electronic, accesibile instant.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Vezi în timp real vânzările, abonamentele expirate, frecvența vizitelor și ratele de retenție. Rapoartele te ajută să ajustezi programul, tarifele și campaniile.",
+        },
+        {
+          title: "Flux operațional fluent",
+          description: "De la prima înscriere până la reînnoirea abonamentului, totul se face digital: contract, plată, acces, raport. Timpul de procesare scade, satisfacția crește.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Stocuri și produse retail",
+          description: "Gestionezi vânzarea de suplimente, echipamente, accesorii și băuturi. Ai vizibilitate pe stocuri, alerte 'low stock' și inventare rapide.",
+        },
+        {
+          title: "Furnizori & achiziții",
+          description: "Ții evidența comenzilor și recepțiilor pentru consumabile (prosoape, soluții curățare, echipamente). Costuri predictibile și aprovizionare fără întreruperi.",
+        },
+        {
+          title: "Întreținerea echipamentelor",
+          description: "Planifici mentenanța și reviziile pe aparate, monitorizezi durata de utilizare și intervențiile efectuate.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Programări & rezervări automate",
+          description: "Clienții rezervă locul la clase sau antrenamente 1:1 direct din aplicație. Confirmări și remindere automate — sălile se umplu, anulările scad.",
+        },
+        {
+          title: "Abonamente & freeze flexibil",
+          description: "Creezi abonamente adaptate: lunar, zilnic, pachet ședințe, acces full sau pe ore. Opțiune 'pauză' (freeze) și reactivare automată.",
+        },
+        {
+          title: "Loyalty & campanii de retenție",
+          description: "Recompense pentru participare constantă, puncte convertibile, oferte de reînnoire. Campanii de 'win-back' pentru membrii inactivi.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Campanii pe segmente: începători, avansați, femei, familii, wellness. Notificări push sau e-mail cu oferte personalizate și noutăți.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
