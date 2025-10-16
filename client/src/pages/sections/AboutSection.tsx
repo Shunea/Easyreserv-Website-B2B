@@ -584,14 +584,16 @@ export const AboutSection = (): JSX.Element => {
       {/* About Us Section */}
       <div className="w-full py-16">
         <Container>
-          <div className="col-span-12">
+          <div className="col-span-12 lg:col-span-6 flex items-start justify-center">
             <img
-              className="w-full max-w-[622px] h-auto rounded-[20px] object-cover mb-6 lg:float-left lg:mr-8 lg:mb-0"
+              className="w-full max-w-[622px] h-auto rounded-[20px] object-cover"
               alt="EasyReserv Co-Founders presentation"
               src="/figmaAssets/about-founders.jpg"
             />
-            
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px] mb-10">
+          </div>
+
+          <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
               Despre EasyReserv
             </h2>
 
@@ -609,8 +611,8 @@ export const AboutSection = (): JSX.Element => {
               </p>
             </div>
 
-            <div className="mt-10 clear-both">
-              <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
+            <div>
+              <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
                   Solicită Demo
                 </span>
