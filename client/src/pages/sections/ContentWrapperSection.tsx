@@ -18,7 +18,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Saloane de frumusețe": { basic: 49, standard: 99, pro: 149 },
   "Barbershopuri": { basic: 49, standard: 99, pro: 149 },
   "Hotele & Pensiuni": { basic: 79, standard: 149, pro: 249 },
-  "Chirii auto": { basic: 50, standard: 125, pro: 200 },
+  "Chirii auto": { basic: 59, standard: 119, pro: 199 },
   "Fitness": { basic: 49, standard: 99, pro: 149 },
   "Medical": { basic: 49, standard: 99, pro: 149 },
   "Retail": { basic: 49, standard: 99, pro: 149 },
@@ -239,6 +239,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Chirii auto") {
+    return [
+      {
+        name: "Basic",
+        description: "Micro/local ≤ 25 auto",
+        monthlyPrice: 59,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "2 utilizatori incluși",
+          "Rezervări web/telefon & calendar",
+          "Contracte cu e-semnătură",
+          "Tarife sezoniere simple",
+          "Catalog vehicule & status",
+          "Facturi & chitanțe",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "26-80 auto",
+        monthlyPrice: 119,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "5 utilizatori + 5€/user suplimentar",
+          "Depozite & pre-autorizări card",
+          "Service & mentenanță programată",
+          "Check-in/out cu poze & checklist",
+          "Booking Engine pe site",
+          "CRM & e-mail/SMS reminder",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "81-250 auto",
+        monthlyPrice: 199,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "10 utilizatori incluși",
+          "Dynamic pricing & forecast",
+          "Paritate tarife & allotment",
+          "Telematică/GPS tracking (add-on)",
+          "Campanii segmentate B2B/B2C",
+          "Rapoarte yield per class",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "250+ auto/multi-sediu",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "Utilizatori nelimitat",
+          "Channel Manager OTA integrat",
+          "AI-assist dynamic pricing",
+          "Telematică/GPS inclus",
+          "Dashboard multi-sediu/țară",
+          "API/Integrations & ERP",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -310,6 +382,195 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Chirii auto") {
+    return [
+      {
+        title: "Utilizatori & Acces",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["2", "5", "10", "Nelimitat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["5€/user", "5€/user", "5€/user", "Inclus"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri acoperite",
+            values: ["Admin, Agent Front Desk", "+ Fleet Manager, Contabil", "+ Service/Mecanic, Claims", "Toate + Integrări avansate"],
+            muted: [false, false, false, false],
+          },
+        ],
+      },
+      {
+        title: "Operațiuni & Rezervări",
+        features: [
+          {
+            name: "Rezervări web/telefon & calendar",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Contracte cu e-semnătură",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Depozite & pre-autorizări card",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Tarife sezoniere & extraopțiuni",
+            values: ["Simplu", "Avansat", "Pachete", "Multi-brand"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Politici combustibil/kilometraj",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Predare/Preluare cu orar",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Check-in/out cu poze & checklist",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Flotă & Telematică",
+        features: [
+          {
+            name: "Catalog vehicule & status",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Service & mentenanță programată",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Management daune & asigurare",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Amenzi, rovinietă, taxe drum",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Telematică/GPS tracking",
+            values: [false, false, "Add-on", "Inclus"],
+          },
+        ],
+      },
+      {
+        title: "Plăți & Facturare",
+        features: [
+          {
+            name: "Facturi, proforme, chitanțe",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Split plăți & multi-valută",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Integrare 1C/ERP",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Refund depozit & reconciliere",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Canale & Distribuție",
+        features: [
+          {
+            name: "Booking Engine pe site",
+            values: ["Add-on", true, true, true],
+          },
+          {
+            name: "Channel Manager (OTA)",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Paritate tarife & stop-sell",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Revenue & Pricing",
+        features: [
+          {
+            name: "Sezoane & liste preț",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Dynamic pricing",
+            values: [false, false, true, "AI assist"],
+          },
+          {
+            name: "Forecast & yield per class",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "CRM & Marketing B2B",
+        features: [
+          {
+            name: "Profil client & istoric",
+            values: [true, true, true, true],
+          },
+          {
+            name: "E-mail/SMS reminder & extensii",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Cupon/cod corporate & rate B2B",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Campanii segmentate (RFV)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analitice",
+        features: [
+          {
+            name: "Utilizare flotă",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Venit/auto, ADR, RevPAC",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Daune & costuri service",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Forecast cerere & lead time",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Export CSV/PDF, 1C bridge",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Dashboard multi-sediu/țară",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Hotele & Pensiuni") {
     return [
       {
