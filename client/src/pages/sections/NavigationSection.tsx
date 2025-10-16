@@ -14,7 +14,7 @@ const navigationItems = [
 
 export const NavigationSection = (): JSX.Element => {
   return (
-    <nav className="w-full py-5 bg-white">
+    <nav className="relative z-50 w-full py-5 bg-white">
       <Container>
         {/* Logo - Left side (3 columns) */}
         <div className="col-span-6 md:col-span-3 flex items-center gap-[11px]">

@@ -303,9 +303,9 @@ const socialLinks = [
 
 export const SolutionsContentSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center">
+    <section className="relative z-10 flex flex-col w-full items-center">
       <Container className="py-[50px]">
-        <div className="col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
+        <div className="relative z-20 col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
             <span className="text-[#282828]">Drive Growth and </span>
             <span className="text-[#fe9800]">Efficiency</span>
