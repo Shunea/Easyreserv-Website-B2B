@@ -706,6 +706,95 @@ export const AboutSection = (): JSX.Element => {
         </Container>
       </div>
 
+      {/* Partners Section */}
+      <div className="w-full py-16 md:py-24">
+        <Container>
+          <div className="col-span-12 flex flex-col items-center gap-12">
+            <div className="flex flex-col items-center gap-4 text-center">
+              <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+                Partenerii noștri
+              </h2>
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px] max-w-3xl">
+                Un ecosistem de încredere pentru plăți, contabilitate, hardware fiscal și comunicare.
+              </p>
+            </div>
+
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/pegas-logo.png"
+                  alt="Pegas Restaurant"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/royal-ranch-logo.jpg"
+                  alt="Royal Ranch"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/atypic-logo.jpg"
+                  alt="Atypic - Taste that matters"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/chateau-vartely-logo.jpg"
+                  alt="Chateau Vartely"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/mojo-restobar-logo.jpg"
+                  alt="MOJO Restobar"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/osho-logo.jpg"
+                  alt="Osho Bar and Kitchen"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/anchiano-logo.jpg"
+                  alt="Restaurant Anchiano"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/puar-logo.jpg"
+                  alt="PUER"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/wtf-logo.jpg"
+                  alt="What The Food?"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="flex items-center justify-center p-4">
+                <img
+                  src="/figmaAssets/513-logo.png"
+                  alt="513"
+                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+
       {/* CTA Section 1 */}
       <div className="w-full py-16">
         <Container>
