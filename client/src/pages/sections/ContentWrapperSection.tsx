@@ -355,7 +355,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {
-      return "Contact US";
+      return "Custom";
     }
     
     const price = isAnnual ? monthlyPrice * 0.9 : monthlyPrice;
