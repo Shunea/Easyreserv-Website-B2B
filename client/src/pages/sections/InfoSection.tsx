@@ -76,39 +76,39 @@ const whyChooseUsData = [
 const featuresData = [
   {
     icon: "/figmaAssets/vuesax-broken-global.png",
-    title: "Comprehensive Solution",
+    title: "Soluție completă",
     description:
-      "From booking to employee management, we offer an all-in-one solution for your business.",
+      "De la rezervări la managementul echipei, îți oferim o soluție all-in-one pentru businessul tău.",
   },
   {
     icon: "/figmaAssets/icon.svg",
-    title: "Data Security",
+    title: "Securitatea datelor",
     description:
-      "Your data is our priority. We implement the most advanced security measures to ensure its safety.",
+      "Datele tale sunt prioritatea noastră. Implementăm măsuri avansate de securitate pentru a le proteja.",
   },
   {
     icon: "/figmaAssets/innovation.png",
-    title: "Innovation",
+    title: "Inovație",
     description:
-      "We continuously enhance our platform to stay ahead in the ever-evolving business environment.",
+      "Îmbunătățim constant platforma pentru a rămâne înaintea schimbărilor din mediul de afaceri.",
   },
   {
     icon: "/figmaAssets/vuesax-linear-profile.png",
-    title: "User-Friendly Interface",
+    title: "Interfață prietenoasă",
     description:
-      "Our platform is designed to ensure seamless use for business owners and their customers.",
+      "Platforma este concepută pentru utilizare fără fricțiuni, atât de către proprietari, cât și de către clienții lor.",
   },
   {
     icon: "/figmaAssets/vuesax-linear-status-up.png",
-    title: "Scalability",
+    title: "Scalabilitate",
     description:
-      "As your business grows, our platform grows with you. We are ready to support your expansion.",
+      "Pe măsură ce afacerea ta crește, crește și platforma. Suntem pregătiți să-ți susținem expansiunea.",
   },
   {
     icon: "/figmaAssets/vuesax-linear-heart.png",
-    title: "24/7 Support",
+    title: "Suport 24/7",
     description:
-      "Our dedicated support team is available 24/7 to assist you with any questions or concerns.",
+      "Echipa noastră de suport este disponibilă non-stop pentru orice întrebare sau nelămurire.",
   },
 ];
 
@@ -323,24 +323,22 @@ export const InfoSection = (): JSX.Element => {
 
       <div className="flex flex-col items-center gap-5 px-0 py-[50px] w-full max-w-[1138px]">
         <h2 className="w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-          Ready to transform your business?
+          Ești gata să-ți transformi afacerea?
         </h2>
 
         <div className="flex flex-col items-start gap-2.5 w-[674px]">
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base text-center tracking-[0] leading-[20.8px]">
-            Join us today and experience a new era of efficiency and growth. In
-            a world where change is the only constant, staying ahead is not an
-            option - it's a necessity.
+            Alătură-te nouă și intră într-o nouă eră a eficienței și creșterii. Într-o lume în care schimbarea este singura constantă, să fii cu un pas înainte nu e o opțiune – e o necesitate.
           </p>
 
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base text-center tracking-[0] leading-[20.8px]">
-            Let's build a better future for your business, together.
+            Hai să construim împreună un viitor mai bun pentru afacerea ta.
           </p>
         </div>
 
         <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
           <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-            Learn more
+            Află mai multe
           </span>
         </Link>
       </div>
