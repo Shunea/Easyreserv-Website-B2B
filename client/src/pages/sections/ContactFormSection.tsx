@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -144,6 +145,16 @@ export const ContactFormSection = (): JSX.Element => {
               ))}
             </div>
           ))}
+        </div>
+
+        <div className="flex flex-col items-start gap-1.5 w-full">
+          <Label className="font-text-sm-medium text-[#384250] text-[length:var(--text-sm-medium-font-size)] leading-[var(--text-sm-medium-line-height)] font-[number:var(--text-sm-medium-font-weight)] tracking-[var(--text-sm-medium-letter-spacing)]">
+            Mesaj
+          </Label>
+          <Textarea
+            placeholder="Scrie-ți mesajul Dumneavoastră aici"
+            className="w-full min-h-[120px] bg-white rounded-lg border border-solid border-[#d2d6db] shadow-shadows-shadow-xs px-3 py-2.5 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus:outline-none focus:ring-0 focus:border-[#d2d6db] resize-none"
+          />
         </div>
 
         <div className="w-full max-w-[880px] [font-family:'Inter',Helvetica] font-normal text-transparent text-sm leading-[14px]">
