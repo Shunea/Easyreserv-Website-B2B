@@ -704,23 +704,33 @@ const getFeaturesByIndustry = (industry: string) => {
 const howItWorksSteps = [
   {
     icon: "/figmaAssets/frame-1894.svg",
-    title: "Alege-ți afacerea",
+    number: "1",
+    title: "Selectează tipul afacerii tale",
+    description: "Alege industria în care activezi: restaurant, salon, fitness, hotel sau altele",
   },
   {
     icon: "/figmaAssets/frame-2147223393.svg",
+    number: "2",
     title: "Alege modulul de abonament",
+    description: "Configurează pachetul potrivit pentru nevoile tale: Basic, Professional sau Enterprise",
   },
   {
     icon: "/figmaAssets/frame-2147223396.svg",
-    title: "Configurare simplă a afacerii",
+    number: "3",
+    title: "Configurare simplificată",
+    description: "Setup rapid în câțiva pași: locații, servicii, personal și prețuri",
   },
   {
     icon: "/figmaAssets/frame-2147223394.svg",
-    title: "Capabilități de rezervare",
+    number: "4",
+    title: "Activează rezervările online",
+    description: "Pornește sistemul de rezervări pentru clienții tăi prin web și aplicație mobilă",
   },
   {
     icon: "/figmaAssets/frame-2147223395.svg",
-    title: "Acces și management pentru angajați",
+    number: "5",
+    title: "Gestionează echipa",
+    description: "Adaugă angajați, setează roluri și urmărește performanța în timp real",
   },
 ];
 
@@ -1086,21 +1096,24 @@ export const SolutionsContentSection = (): JSX.Element => {
           </div>
 
           <div className="col-span-12 flex flex-col items-center justify-center gap-5">
-            <div className="flex items-start justify-between gap-4 w-full relative">
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-4 w-full relative">
               <div className="absolute top-[40px] left-[40px] right-[40px] h-2 bg-[#2d2c65] hidden lg:block" />
 
               {howItWorksSteps.map((step, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-4 flex-1"
+                  className="flex flex-col items-center gap-4 flex-1 max-w-full lg:max-w-[200px]"
                 >
                   <img
                     className="relative w-20 h-20 z-10"
                     alt="Frame"
                     src={step.icon}
                   />
-                  <p className="[font-family:'Inter',Helvetica] font-bold text-[#282828] text-xl text-center tracking-[0] leading-[26px]">
+                  <h3 className="[font-family:'Inter',Helvetica] font-bold text-[#282828] text-lg md:text-xl text-center tracking-[0] leading-tight md:leading-[26px]">
                     {step.title}
+                  </h3>
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#282828] text-sm md:text-base text-center tracking-[0] leading-relaxed opacity-70">
+                    {step.description}
                   </p>
                 </div>
               ))}
