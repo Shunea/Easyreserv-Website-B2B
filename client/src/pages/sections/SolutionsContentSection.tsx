@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import { Link } from "wouter";
 import {
   Accordion,
@@ -9,91 +9,28 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/Container";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { CheckCircle2 } from "lucide-react";
 
-const industryFeatures: Record<string, Array<{ title: string; description: string }>> = {
-  "restaurante": [
-    { title: "Rezervări & Waitlist", description: "Booking online cu hartă mese, confirmări/remindere anti no-show, alocare inteligentă. Rotația meselor crește, iar golurile se reduc." },
-    { title: "POS fiscal & comenzi", description: "Bon fiscal, split note, reduceri, meniuri/combos, imprimante multiple. Viteză la încasare și mai puține erori la casă." },
-    { title: "Bucătărie digitală (KDS) & Timere", description: "Tichete pe ecran, countdown per fel, alerte 'late', prioritate automată. Timpul de servire scade vizibil." },
-    { title: "Stocuri & Rețetare (COGS)", description: "Scădere automată la vânzare, rețetar per produs, inventar ghidat și alerte 'low stock'. Ții costurile sub control." },
-    { title: "Rapoarte & KPI", description: "Vânzări, marje, rotație mese, timpi de pregătire, productivitate staff, comparații pe locații. Decizi pe date reale, nu pe presupuneri." },
-    { title: "Automatizări & Notificări", description: "Remindere clienți, 'ready for pickup', alerte de întârziere și taskuri operaționale. Mai puține întârzieri, mai multă satisfacție." }
-  ],
-  "cafenele": [
-    { title: "Preset-uri POS & comenzi rapide", description: "Produse favorite, bon în câteva secunde, cozi mai scurte la orele de vârf." },
-    { title: "Rețetar simplu pe ingrediente", description: "Dozare la gram, alerte 'low stock', control al pierderilor." },
-    { title: "Pre-comenzi & ridicare programată", description: "Clienții comandă din timp, tu netezești vârfurile de trafic." },
-    { title: "Rapoarte pe oră & SKU", description: "Vânzări pe intervale, top produse, productivitate pe casier." },
-    { title: "Loyalty & cupoane", description: "Card de puncte, campanii push în off-peak, reveniri mai dese." },
-    { title: "Integrare plăți & reconciliere", description: "Închideri de zi corecte, rapoarte clare către contabilitate." }
-  ],
-  "saloane": [
-    { title: "Programări cu specialist & resurse", description: "Sloturi curate, servicii combinate, alocare scaun/sală. No-show scade, planificarea devine transparentă." },
-    { title: "Abonamente & pachete", description: "Recurență previzibilă, oferte personalizate, venit stabil." },
-    { title: "CRM clienți", description: "Istoric, preferințe, notițe, recomandări de servicii. CLV crește." },
-    { title: "POS & retail", description: "Servicii + produse pe același bon, discounturi controlate, rapoarte mixte." },
-    { title: "Rapoarte pe specialist", description: "Venit/oră, ocupare, servicii profitabile, targeturi." },
-    { title: "Remindere & follow-up", description: "Reamintiri automate înainte/după vizită, recenzii, reprogramări rapide." }
-  ],
-  "hoteluri": [
-    { title: "Calendar camere & restricții smart", description: "Min-stay, late checkout, blocări sezoniere; ocupare crescută și management simplu." },
-    { title: "Check-in/Check-out fluid", description: "Tarife, taxe locale, garanții, extra-servicii pe notă din POS." },
-    { title: "Pachete & upsell", description: "Mic dejun, SPA, transfer; venitul pe cameră crește natural." },
-    { title: "Rapoarte ADR/RevPAR", description: "Tarife, canale, pachete – vezi clar ce funcționează." },
-    { title: "Automatizări oaspeți", description: "Pre-check-in, mesaje în timpul sejurului, review post-check-out." },
-    { title: "Integrare plăți", description: "Preautorizări, deblocări, reconciliere, închideri corecte." }
-  ],
-  "chirie-auto": [
-    { title: "Rezervări pe interval & tarifare dinamică", description: "Disponibilitate în timp real, tarife pe sezon/zi, add-ons (scaun copil, GPS)." },
-    { title: "Mentenanță & daune", description: "Dosare vehicul, alerte revizii/ITP, istoric intervenții. Cost/km sub control." },
-    { title: "Facturare cu depozit", description: "Garanții, extra-kilometri, accesorii pe linie – totul transparent." },
-    { title: "Contracte & documente", description: "Generare, semnare și stocare sigură." },
-    { title: "Rapoarte pe vehicul", description: "Utilizare, venit, downtime, profitabilitate." },
-    { title: "Notificări ridicare/return", description: "Disciplina fluxul și reduci întârzierile." }
-  ],
-  "fitness": [
-    { title: "Programări clase & waitlist", description: "Locuri limitate, eliberări automate, confirmări & remindere. Clasele se umplu corect." },
-    { title: "Abonamente & freeze", description: "Tipuri flexibile, pauze controlate, retenție sănătoasă." },
-    { title: "Acces controlat", description: "QR/NFC pentru intrare, statistici prezență." },
-    { title: "POS & pro-shop", description: "Suplimente, echipament, servicii extra (PT, masaj)." },
-    { title: "Rapoarte de retenție", description: "Cohorte, frecvență, rata de anulare – vezi clar unde intervii." },
-    { title: "Campanii de reactivare", description: "Win-back bazat pe segmente și comportament." }
-  ],
-  "medical": [
-    { title: "Calendar resurse fără suprapuneri", description: "Medic, sală, aparat; sloturi curate, flux ordonat." },
-    { title: "Reception → încasare clară", description: "POS, factură/chitanță, servicii compuse și coplată." },
-    { title: "Dosare & documente", description: "Fişe, acorduri, atașamente – stocate securizat." },
-    { title: "Rapoarte pe servicii/medic", description: "Venit, timp mediu, profitabilitate, încărcare." },
-    { title: "Remindere & pregătire", description: "Mesaje pentru analize, pregătire proceduri, no-show scăzut." },
-    { title: "Export către contabilitate", description: "Flux simplu către 1C; închideri precise." }
-  ],
-  "retail": [
-    { title: "POS rapid & promo", description: "Bundle-uri, reduceri, retururi/schimb – operare clară pentru casieri." },
-    { title: "Coduri de bare & inventare", description: "Recepții rapide, FIFO, inventare parțiale ghidate." },
-    { title: "Rapoarte pe SKU/marjă/rotație", description: "Decizii corecte de listă și aprovizionare." },
-    { title: "Campanii & cupoane", description: "Trafic targetat, conversie monitorizată." },
-    { title: "Stocuri multi-locație", description: "Vizibilitate centrală, transferuri între puncte." },
-    { title: "Permisiuni & audit", description: "Acces pe roluri, acțiuni urmărite." }
-  ]
-};
-
-const industries = [
-  { value: "restaurante", label: "Restaurante" },
-  { value: "cafenele", label: "Cafenele / Kiosk" },
-  { value: "saloane", label: "Saloane & Barbershop" },
-  { value: "hoteluri", label: "Hoteluri & Pensiuni" },
-  { value: "chirie-auto", label: "Chirie Auto" },
-  { value: "fitness", label: "Fitness & Wellness" },
-  { value: "medical", label: "Medical (clinici/cabinete)" },
-  { value: "retail", label: "Retail (magazine mici)" }
+const heroFeatures = [
+  {
+    icon: "/figmaAssets/icon-5.svg",
+    title: "Eficiență în timp",
+    description: "Concentrează-te pe livrarea serviciilor de calitate. Noi automatizăm pașii repetitivi și scurtăm timpii operaționali.",
+    height: "h-auto min-h-[200px]",
+  },
+  {
+    icon: "/figmaAssets/icon-5.svg",
+    title: "Accesibilitate",
+    description:
+      "Ajungi la un public mai larg, inclusiv la persoane cu dizabilități, cu interfețe moderne și procese simple de rezervare.",
+    height: "h-auto min-h-[221px]",
+  },
+  {
+    icon: "/figmaAssets/icon-5.svg",
+    title: "Control acces",
+    description:
+      "Controlează accesul angajaților în sistem prin roluri și permisiuni. Datele rămân în siguranță și respectă confidențialitatea.",
+    height: "h-auto",
+  },
 ];
 
 const employeeManagementFeatures = [
@@ -365,100 +302,69 @@ const socialLinks = [
 ];
 
 export const SolutionsContentSection = (): JSX.Element => {
-  const [selectedIndustry, setSelectedIndustry] = useState<string>("");
-  const selectedIndustryLabel = industries.find(i => i.value === selectedIndustry)?.label || "";
-  const features = selectedIndustry ? industryFeatures[selectedIndustry] : [];
-
   return (
     <section className="relative z-10 flex flex-col w-full items-center">
       <Container className="py-[50px]">
-        <div className="col-span-12 flex flex-col items-center justify-center gap-8 text-center">
+        <div className="relative z-20 col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
-            <span className="text-[#282828]">Descoperă funcționalitățile care contează în </span>
-            <span className="text-[#fe9800]">industria ta</span>
+            <span className="text-[#282828]">Crește-ți afacerea și </span>
+            <span className="text-[#fe9800]">eficiența</span>
+            <span className="text-[#282828]">
+              {" "}
+              în multiple industrii
+            </span>
           </h1>
 
-          <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[0] leading-[28px] max-w-4xl">
-            EasyReserv conectează rezervările cu POS, stocuri, rapoarte și automatizări. Alege industria și vezi ce optimizări livrăm din prima zi.
+          <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
+            Fie că ai un restaurant, un salon sau orice alt tip de business, EasyReserv se adaptează nevoilor tale: rezervări, POS, stocuri, rapoarte și automatizări – totul într-o singură platformă.
           </p>
 
-          <div className="w-full max-w-md">
-            <label className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-base mb-3 block text-left">
-              Alege industria
-            </label>
-            <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-              <SelectTrigger 
-                className="w-full h-14 text-lg border-2 border-[#2d2c65] focus:ring-2 focus:ring-[#fe9800]" 
-                data-testid="select-industry"
-              >
-                <SelectValue placeholder="Selectează o industrie pentru a vedea funcționalitățile relevante" />
-              </SelectTrigger>
-              <SelectContent>
-                {industries.map((industry) => (
-                  <SelectItem key={industry.value} value={industry.value} data-testid={`industry-${industry.value}`}>
-                    {industry.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {selectedIndustry && (
-            <div className="w-full mt-4">
-              <p className="[font-family:'Onest',Helvetica] font-medium text-[#2d2c65] text-sm mb-6">
-                Aceste funcționalități sunt optimizate pentru {selectedIndustryLabel}
-              </p>
-            </div>
-          )}
-        </div>
-
-        {selectedIndustry && features.length > 0 && (
-          <div className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="bg-[#2d2c651a] rounded-[20px] border-[#2d2c65] hover:shadow-lg transition-shadow"
-                data-testid={`feature-card-${index}`}
-              >
-                <CardContent className="flex flex-col items-start gap-4 p-6">
-                  <div className="flex items-start gap-3 w-full">
-                    <CheckCircle2 className="w-6 h-6 text-[#fe9800] flex-shrink-0 mt-1" />
-                    <div className="flex-1">
-                      <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-lg tracking-[0] leading-[24px] mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-sm tracking-[0] leading-[20px] opacity-90">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-
-        {!selectedIndustry && (
-          <div className="col-span-12 flex items-center justify-center py-16">
-            <div className="text-center max-w-md">
-              <div className="w-24 h-24 bg-[#2d2c651a] rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg className="w-12 h-12 text-[#2d2c65]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <p className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-lg opacity-60">
-                Selectează o industrie pentru a vedea funcționalitățile relevante
-              </p>
-            </div>
-          </div>
-        )}
-
-        <div className="col-span-12 flex justify-center mt-8">
-          <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-8 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center" data-testid="button-explore-plans">
+          <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center" data-testid="button-explore-plans">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
               Explorează planurile
             </span>
           </Link>
+        </div>
+
+        <div className="col-span-12 md:col-span-6 flex items-start gap-5">
+          <div className="flex flex-col items-start gap-5">
+            {heroFeatures.slice(0, 2).map((feature, index) => (
+              <Card
+                key={index}
+                className={`w-[255px] ${feature.height} bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]`}
+              >
+                <CardContent className="flex flex-col items-start gap-2.5 p-5">
+                  <img
+                    className="w-[53px] h-[53px]"
+                    alt="Icon"
+                    src={feature.icon}
+                  />
+                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[26px]">
+                    {feature.title}
+                  </h3>
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <Card className="w-[255px] bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]">
+            <CardContent className="flex flex-col items-start gap-2.5 p-5">
+              <img
+                className="w-[53px] h-[53px]"
+                alt="Icon"
+                src={heroFeatures[2].icon}
+              />
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[26px]">
+                {heroFeatures[2].title}
+              </h3>
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
+                {heroFeatures[2].description}
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </Container>
 
