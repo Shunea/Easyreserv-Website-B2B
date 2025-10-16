@@ -41,9 +41,7 @@ export const FooterSection = (): JSX.Element => {
           </Link>
 
           <p className="opacity-75 [font-family:'Inter',Helvetica] font-normal text-white text-sm tracking-[0] leading-normal max-w-md">
-            EasyReserv is a versatile online booking system that enables
-            businesses across various industries to manage appointments and
-            reservations seamlessly, all for free.
+            EasyReserv este o platformă All-in-One pentru rezervări, POS fiscal, operațiuni și rapoarte — optimizată pentru restaurante, cafenele, beauty, hoteluri & pensiuni, chirii auto, fitness, medical și retail. Conectează echipa și datele într-un singur loc, cu integrări 1C și plăți.
           </p>
         </div>
 
@@ -87,7 +85,7 @@ export const FooterSection = (): JSX.Element => {
 
             <div className="flex flex-col gap-4">
               <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0]">
-                Available on
+                Disponibil pe
               </div>
 
               <div className="flex flex-col gap-3">
