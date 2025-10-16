@@ -159,7 +159,77 @@ export const InfoSection = (): JSX.Element => {
           <div className="flex flex-col items-start gap-10">
             <div className="flex flex-col items-start gap-5">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul: „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?" Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate. Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
+                Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul:
+                „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
+              </p>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
+              </p>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
+              </p>
+
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mt-4">
+                Cronologie
+              </h3>
+              
+              <div className="flex flex-col gap-3">
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Ziua 1</span> — Primul flow de rezervare (solicitare → confirmare).
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 3</span> — Începem web app-ul care centralizează datele (în paralel cu dezvoltarea mobile).
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 8</span> — Prima versiune de Mobile App (beta) pentru clienți pilot.
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 13 (1 martie 2024)</span> — Mobile App în producție; în primele 48h, intrăm în Top 2 la rating în categoria ei.
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 14</span> — Integrare POS fiscal: bon, split note, reduceri, imprimante.
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 18</span> — Primul restaurant full-cycle în ecosistem (rezervări → POS → KDS → stocuri → rapoarte) cu ~30.000 € profit suplimentar după lansare.
+                </p>
+                <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                  <span className="font-semibold">Luna 20</span> — Extindem cu KDS & Timere, Stocuri & Rețetare (COGS), Rapoarte live, Automatizări & Notificări și integrări locale.
+                </p>
+              </div>
+
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mt-4">
+                Cine suntem azi
+              </h3>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                EasyReserv este o platformă All-in-One care unește rezervări, POS, comenzi/KDS, stocuri & rețetare, rapoarte în timp real și automatizări — plus o platformă publică de listare a partenerilor & booking B2C, ca utilizatorii să descopere și să rezerve direct.
+                Go-live în zile, nu luni, integrare 1C și plăți, compatibilitate cu hardware existent.
+              </p>
+
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mt-4">
+                Optimizări pe industrie
+              </h3>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Restaurante & cafenele/kiosk, saloane & barbershop, hoteluri & pensiuni, chirii auto, fitness & wellness, medical (clinici/cabinete), retail — fiecare cu fluxuri și KPI dedicate (timere KDS, abonamente, tarife pe interval, ocupare resurse, loturi/expirări, coduri de bare etc.).
+              </p>
+
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mt-4">
+                Impact
+              </h3>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                400 locații în primul an • 4.600+ utilizatori • 80.000+ notificări/lună • 30%+ timp optimizat pentru echipe • 99.9% uptime.
+              </p>
+
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mt-4">
+                Misiune
+              </h3>
+              
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Să simplificăm operațiunile și să creștem profitabilitatea, legând rezervările de procesele zilnice și automatizând repetitivul, cu vizibilitate în timp real pentru decizii pe date — nu pe presupuneri.
               </p>
             </div>
 
