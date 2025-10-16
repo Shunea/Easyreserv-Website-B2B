@@ -21,22 +21,23 @@ export const FeaturesSection = (): JSX.Element => {
         {/* Text Content - Left Side */}
         <div className="relative z-20 col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl lg:text-[56px] leading-tight md:leading-[56px] tracking-[0]">
-            Manage Your Business Anytime, Anywhere
+            De la Rezervări la POS, Rapoarte și Automatizări — într-o singură platformă
           </h1>
 
           <p className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[-0.32px] leading-6">
-            Discover the power of our ERP solution and take your business to new
-            heights with the freedom you've always wanted. It's time to
-            redefine how you manage your business – the future is here, and
-            it's in your hands.
+            O singură platformă pentru rezervări, POS, operațiuni și analitică — creată pentru restaurante, cafenele, saloane de frumusețe, barbershopuri, hotele, pensiuni, chirii auto, fitness, medical, retail. Configurezi roluri, meniuri/servicii și pornești fluxurile cu go-live rapid. Automatizările reduc timpii și cresc conversiile, iar dashboardurile îți arată situația pe loc, pe zi sau pe lună. Integrezi contabilitatea, plățile și notificările fără a schimba hardware-ul.
           </p>
 
-          <div>
-            <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
+          <div className="flex flex-col gap-4">
+            <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center w-fit">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-                Request Demo
+                Începe perioada de probă
               </span>
             </Link>
+            
+            <div className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-sm tracking-[0] leading-5">
+              All-in-One • POS disponibil • Fiscal ready • Go-live rapid
+            </div>
           </div>
         </div>
 
