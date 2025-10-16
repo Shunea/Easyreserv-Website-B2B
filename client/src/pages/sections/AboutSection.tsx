@@ -427,7 +427,7 @@ const getFeaturesByIndustry = (industry: string) => {
 
 const bottomStats = [
   {
-    value: "400",
+    value: "40",
     label: "LOCAȚII AU FOLOSIT PRODUSUL ÎN PRIMUL AN",
   },
   {
@@ -599,11 +599,15 @@ export const AboutSection = (): JSX.Element => {
 
             <div className="flex flex-col gap-5">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Am început cu o întrebare simplă: de ce e atât de complicat să faci o rezervare online? Când am conectat primul formular la un restaurant, am realizat că rezervarea e doar vârful aisbergului. Lipseau legăturile dintre rezervări, casă (POS), bucătărie, stocuri, contabilitate și rapoarte.
+                Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul: „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
               </p>
 
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                De aici a pornit EasyReserv: o platformă All-in-One care aduce totul la un loc — rezervări și waitlist, POS fiscal, comenzi & KDS, stocuri & rețetare (COGS), rapoarte în timp real și automatizări. Am construit-o pentru echipe reale, cu go-live în zile, nu luni, integrare cu 1C și plăți, fără să schimbi hardware-ul.
+                Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
+              </p>
+
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
               </p>
 
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
