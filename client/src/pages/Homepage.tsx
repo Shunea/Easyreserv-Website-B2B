@@ -14,13 +14,13 @@ export const Homepage = (): JSX.Element => {
       />
 
       <img
-        className="absolute top-[205px] left-[-165px] w-[656px] h-[510px] -z-10 pointer-events-none"
+        className="absolute top-[205px] left-[-165px] w-[656px] h-[510px] z-0 pointer-events-none"
         alt="Vector"
         src="/figmaAssets/vector-23.svg"
       />
 
       <img
-        className="absolute top-[299px] left-[983px] w-[1512px] h-[416px] -z-10 pointer-events-none"
+        className="absolute top-[299px] left-[983px] w-[1512px] h-[416px] z-0 pointer-events-none"
         alt="Vector"
         src="/figmaAssets/vector-20.svg"
       />

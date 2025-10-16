@@ -7,7 +7,7 @@ export const FeaturesSection = (): JSX.Element => {
     <section className="relative z-10 w-full py-16 md:py-24">
       <Container>
         {/* Text Content - Left Side */}
-        <div className="col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
+        <div className="relative z-20 col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl lg:text-[56px] leading-tight md:leading-[56px] tracking-[0]">
             Manage Your Business Anytime, Anywhere
           </h1>
