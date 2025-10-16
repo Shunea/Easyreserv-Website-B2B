@@ -19,10 +19,9 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
   };
 
-  const shareOnTwitter = () => {
-    const url = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent(article.title);
-    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+  const shareOnInstagram = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert('Link-ul a fost copiat! Poți să-l lipești acum pe Instagram.');
   };
   return (
     <article className="flex w-full items-start px-4 md:px-0">
@@ -155,10 +154,10 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
             </button>
 
             <button 
-              onClick={shareOnTwitter}
+              onClick={shareOnInstagram}
               className="hover:opacity-70 transition-opacity cursor-pointer"
-              aria-label="Distribuie pe Twitter"
-              data-testid="button-share-twitter"
+              aria-label="Distribuie pe Instagram"
+              data-testid="button-share-instagram"
             >
               <img
                 className="w-10 h-10"
