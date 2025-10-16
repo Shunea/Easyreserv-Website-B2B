@@ -41,40 +41,64 @@ const topStats = [
 
 const features = [
   {
-    id: "employee-management",
-    title: "Employee Management",
-    content: null,
-  },
-  {
-    id: "mobile-reservations",
-    title: "Mobile Reservations",
+    id: "smart-reservations",
+    title: "Rezervări inteligente (Web & Mobile)",
     content:
-      "Allow your clients to make reservations easily through the mobile app, reducing no-shows and optimizing table turnover.",
+      "Booking online + hartă mese, waitlist, confirmări automate și prevenire no-show. Impact: −20–35% no-shows, rotație mese mai rapidă.",
   },
   {
-    id: "business-insights",
-    title: "Business Insights",
-    content: null,
+    id: "fiscal-pos",
+    title: "POS fiscal & comenzi rapide",
+    content:
+      "Bon fiscal, split note, reduceri, meniuri combo, mod offline, imprimante multiple. Impact: +10–15% viteză la încasare, mai puține erori la casă.",
   },
   {
-    id: "inventory-management",
-    title: "Inventory Management",
-    content: null,
+    id: "digital-kitchen",
+    title: "Bucătărie digitală & Timere (KDS)",
+    content:
+      "Tichete pe ecran, countdown per fel, alerte \"late\", prioritizare automată. Impact: −25% timp de servire, transparență între sală și bucătărie.",
+  },
+  {
+    id: "inventory-cogs",
+    title: "Stocuri & Rețetare (COGS)",
+    content:
+      "Scădere automată la vânzare, rețetar pe produs, alerte \"low stock\", inventar. Impact: −1.5–3% pierderi lunare, marjă controlată pe fiecare articol.",
+  },
+  {
+    id: "real-time-reports",
+    title: "Rapoarte & KPI în timp real",
+    content:
+      "Vânzări, marje, rotație mese, productivitate staff, comparații pe locații/intervale. Impact: decizii zilnice pe date, fără exporturi manuale.",
+  },
+  {
+    id: "automations",
+    title: "Automatizări & Notificări",
+    content:
+      "SMS/Push pentru confirmări, remindere, \"5 min rămase\", stoc scăzut, taskuri. Impact: mai puține întârzieri, mai multe reveniri ale clienților.",
+  },
+  {
+    id: "team-management",
+    title: "Management echipă & permisiuni",
+    content:
+      "Roluri, ture, targeturi, audit log; onboarding rapid pentru noi angajați. Impact: 0 \"acces greșit\", timp mai mic de instruire.",
+  },
+  {
+    id: "payments-accounting",
+    title: "Plăți & Integrare contabilă (1C)",
+    content:
+      "Plăți card/online, export în 1C, reconciliere, documente fiscale. Impact: închideri de zi corecte, mai puțin timp la contabilitate.",
   },
   {
     id: "multi-platform",
-    title: "Multi-Platfor Access",
-    content: null,
+    title: "Multi-platformă & multi-locație",
+    content:
+      "Web, iOS, Android (+ smartwatch pentru ospătari); grupare pe rețea. Impact: control centralizat, operațiuni unitare pe toate punctele.",
   },
   {
-    id: "crm",
-    title: "Customer Relationship Management",
-    content: null,
-  },
-  {
-    id: "online-payments",
-    title: "Online Payments",
-    content: null,
+    id: "marketing-loyalty",
+    title: "Marketing, Loyalty & Referral",
+    content:
+      "Cupoane, puncte, campanii, segmente; linkuri de recomandare și bonusuri. Impact: +8–12% frecvență vizite, CLV mai mare.",
   },
 ];
 
@@ -159,7 +183,7 @@ export const AboutSection = (): JSX.Element => {
         <Container>
           <div className="col-span-12">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px] mb-12">
-              Best features
+              Cele mai bune funcționalități
             </h2>
           </div>
 
@@ -192,7 +216,7 @@ export const AboutSection = (): JSX.Element => {
                           </p>
                           <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                              Request Demo
+                              Solicită Demo
                             </span>
                           </Link>
                         </div>
