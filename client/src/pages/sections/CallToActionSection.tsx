@@ -12,19 +12,18 @@ export const CallToActionSection = (): JSX.Element => {
             <CardContent className="flex flex-col items-start justify-center gap-8 px-8 py-12">
               <div className="flex flex-col items-start gap-4 w-full">
                 <h2 className="w-full [font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-                  Act Before It&apos;s Too Late!
+                  Acționează Înainte Să Fie Prea Târziu!
                 </h2>
 
                 <p className="w-full [font-family:'Onest',Helvetica] font-normal text-white text-base tracking-[0] leading-6">
-                  A good idiom for kids is &#34;It&#39;s raining cats and
-                  dogs.&#34; Kids know what both cats and dogs are from an early
-                  age.
+                  Alătură-te miilor de afaceri care și-au transformat deja operațiunile cu EasyReserv. 
+                  Începe astăzi și beneficiază de toate funcționalitățile premium!
                 </p>
               </div>
 
-              <Button className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] px-6 py-4 rounded-[5px]">
+              <Button className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] px-6 py-4 rounded-[5px]" data-testid="button-get-started">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-base text-center tracking-[0] leading-5">
-                  Get Started
+                  Începe Acum
                 </span>
               </Button>
             </CardContent>

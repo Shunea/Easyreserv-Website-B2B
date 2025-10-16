@@ -4,33 +4,33 @@ import { Card, CardContent } from "@/components/ui/card";
 const features = [
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Simplify Operations",
+    title: "Simplifică Operațiunile",
     description:
-      "We streamline and centralize all your booking needs, making your business more efficient.",
+      "Centralizăm și eficientizăm toate nevoile tale de rezervări, făcând afacerea ta mai eficientă.",
     number: "01",
     numberLeft: "left-[calc(50.00%_-_104px)]",
   },
   {
     icon: "/figmaAssets/icon.svg",
-    title: "Attract Clients",
+    title: "Atrage Clienți",
     description:
-      "Our platform helps you build strong connections with customers, ensuring their loyalty.",
+      "Platforma noastră te ajută să construiești relații puternice cu clienții, asigurând loialitatea lor.",
     number: "02",
     numberLeft: "left-[calc(50.00%_-_120px)]",
   },
   {
     icon: "/figmaAssets/icon.svg",
-    title: "Outperform the Competition",
+    title: "Depășește Competiția",
     description:
-      "Leverage cutting-edge technologies to elevate your business management.",
+      "Folosește tehnologii de ultimă generație pentru a ridica managementul afacerii tale.",
     number: "03",
     numberLeft: "left-[calc(50.00%_-_120px)]",
   },
   {
     icon: "/figmaAssets/icon-3.svg",
-    title: "Unwavering Support",
+    title: "Suport Dedicat",
     description:
-      "We stand by your side, offering the assistance and expertise you need to succeed.",
+      "Suntem alături de tine, oferind asistența și expertiza de care ai nevoie pentru a avea succes.",
     number: "04",
     numberLeft: "left-[calc(50.00%_-_130px)]",
   },
@@ -41,7 +41,7 @@ export const PricingTableSection = (): JSX.Element => {
     <section className="flex flex-col items-start gap-8 px-[180px] py-[50px] w-full">
       <header className="flex flex-col items-center justify-center gap-4 w-full">
         <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[72px] whitespace-nowrap">
-          Why choose us?
+          De Ce Să Ne Alegi?
         </h2>
       </header>
 
