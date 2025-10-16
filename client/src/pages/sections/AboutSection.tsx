@@ -687,12 +687,12 @@ export const AboutSection = (): JSX.Element => {
             <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
               <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
                 <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
-                  Start Optimizing Your Business Today!
+                  Optimizează-ți afacerea chiar azi!
                 </h2>
 
                 <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                   <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                    Become a partner
+                    Devino partener
                   </span>
                 </Link>
               </div>
@@ -717,28 +717,25 @@ export const AboutSection = (): JSX.Element => {
       <div className="w-full py-16">
         <Container>
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              Unlock the Future of Business Management
-            </h2>
+            <div className="flex flex-col gap-4">
+              <p className="[font-family:'Onest',Helvetica] font-semibold text-[#fe9800] text-lg tracking-[0] leading-6">
+                All-in-One & rezultate
+              </p>
+              <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+                Dezleagă viitorul managementului de business
+              </h2>
+            </div>
 
             <div className="flex flex-col gap-4">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-                Take a leap towards efficiency, profitability, and success. Join
-                the growing community of businesses transforming the way they
-                operate. Embrace innovation, enhance your customer experience,
-                and elevate your business to new heights.
-              </p>
-
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-                Are you ready to optimize your business and outperform the
-                competition?
+                Treci la o platformă All-in-One pentru rezervări, POS, stocuri, rapoarte și automatizări. Simplifici fluxurile, reduci timpii morți și iei decizii pe date reale. Alătură-te companiilor care și-au crescut veniturile și controlul operațional cu EasyReserv.
               </p>
             </div>
 
             <div>
               <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                  Start your journey!
+                  Începe călătoria ta
                 </span>
               </Link>
             </div>
