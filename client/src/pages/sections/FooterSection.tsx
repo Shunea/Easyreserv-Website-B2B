@@ -22,6 +22,8 @@ const footerLinks = {
 };
 
 export const FooterSection = (): JSX.Element => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="w-full py-16 bg-[#191a24]">
       <Container>
@@ -120,7 +122,7 @@ export const FooterSection = (): JSX.Element => {
 
         <div className="col-span-12 flex flex-col md:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-[#ffffff20]">
           <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base text-center tracking-[-0.32px] leading-7">
-            © EasyReserv.io 2023. All rights reserved.
+            © EasyReserv.io {currentYear}. All rights reserved.
           </div>
 
           <div className="opacity-50 [font-family:'Inter',Helvetica] font-normal text-white text-base text-center">
@@ -130,9 +132,14 @@ export const FooterSection = (): JSX.Element => {
             <span className="font-medium tracking-[0]">
               &nbsp;
             </span>
-            <span className="font-bold tracking-[-0.05px] leading-7 underline">
+            <a 
+              href="https://ishunea.io/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-bold tracking-[-0.05px] leading-7 underline hover:opacity-80 transition-opacity"
+            >
               iShunea Tech Solutions
-            </span>
+            </a>
           </div>
         </div>
       </Container>
