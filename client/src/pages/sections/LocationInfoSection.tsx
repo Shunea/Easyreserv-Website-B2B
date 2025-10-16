@@ -4,15 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 const locationData = [
   {
     country: "Moldova",
-    address: "Sarmizegetusa 53 Street, Chisinau",
-    hours: "Monday – Friday, 09:00 – 18:00",
+    address: "Strada Sarmizegetusa 53, Chișinău",
+    hours: "Luni – Vineri, 09:00 – 18:00",
     phone: "+373 (78) 113 378",
     image: "/figmaAssets/image.png",
   },
   {
-    country: "Romania",
-    address: "Elena Farago Street 5, Bucharest",
-    hours: "Monday – Friday, 09:00 – 18:00",
+    country: "România",
+    address: "Strada Elena Farago 5, București",
+    hours: "Luni – Vineri, 09:00 – 18:00",
     phone: "+40 (744) 708 925",
     image: "/figmaAssets/image-1.png",
   },

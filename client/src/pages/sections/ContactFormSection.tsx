@@ -24,8 +24,8 @@ const formFields = [
   {
     row: 1,
     fields: [
-      { label: "First name", placeholder: "ex: Giorgio Marshal", type: "text" },
-      { label: "Last name", placeholder: "ex: Giorgio Marshal", type: "text" },
+      { label: "Prenume", placeholder: "ex: Giorgio Marshal", type: "text" },
+      { label: "Nume", placeholder: "ex: Giorgio Marshal", type: "text" },
     ],
   },
   {
@@ -38,7 +38,7 @@ const formFields = [
         icon: "mail",
       },
       {
-        label: "Phone",
+        label: "Telefon",
         placeholder: "+373 XX XXX XXX",
         type: "phone",
         hasCountryCode: true,
@@ -49,20 +49,20 @@ const formFields = [
     row: 3,
     fields: [
       {
-        label: "Type of business",
+        label: "Tipul afacerii",
         placeholder: "Restaurant",
         type: "select",
-        options: ["Restaurant", "Hotel", "Gym", "Salon"],
+        options: ["Restaurant", "Hotel", "Sală Fitness", "Salon"],
       },
-      { label: "Company name", placeholder: "ishunearestaurant", type: "text" },
+      { label: "Numele companiei", placeholder: "ishunearestaurant", type: "text" },
     ],
   },
   {
     row: 4,
     fields: [
-      { label: "Your Role", placeholder: "CEO", type: "text" },
+      { label: "Rolul tău", placeholder: "CEO", type: "text" },
       {
-        label: "Company size",
+        label: "Dimensiunea companiei",
         placeholder: "10 - 50",
         type: "select",
         options: ["1 - 10", "10 - 50", "50 - 100", "100+"],
@@ -75,12 +75,11 @@ export const ContactFormSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full max-w-[1138px] mx-auto items-center gap-5 px-0 py-[50px] bg-white rounded-[10px] border border-solid border-zinc-200 shadow-[8px_28px_30px_#00000008]">
       <h2 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-        Tell us about your business
+        Spune-ne despre afacerea ta
       </h2>
 
       <p className="w-full max-w-[674px] [font-family:'Onest',Helvetica] font-normal text-textblack text-base text-center tracking-[0] leading-[20.8px]">
-        Please take a moment to fill out the contact form below so we can better
-        understand your needs.
+        Te rugăm să completezi formularul de mai jos pentru ca noi să înțelegem mai bine nevoile tale.
       </p>
 
       <div className="inline-flex flex-col items-start justify-center gap-5 w-full max-w-[974px] px-4">
@@ -149,31 +148,29 @@ export const ContactFormSection = (): JSX.Element => {
 
         <div className="w-full max-w-[880px] [font-family:'Inter',Helvetica] font-normal text-transparent text-sm leading-[14px]">
           <span className="text-[#282828] tracking-[0] leading-[20.5px]">
-            By submitting this information, you agree the following terms:
+            Prin trimiterea acestor informații, ești de acord cu următorii termeni:
             <br />
-            EasyReserv&#39;s{" "}
+            {" "}
           </span>
 
           <span className="text-[#282828] tracking-[-0.04px] leading-[20.5px] underline">
-            Privacy Policy
+            Politica de Confidențialitate
           </span>
 
           <span className="text-[#282828] tracking-[0] leading-[20.5px]">
             {" "}
-            will govern the use of services you receive and the personal data
-            you provide, respectively.
+            EasyReserv va reglementa utilizarea serviciilor pe care le primești și datele personale pe care le furnizezi.
             <br />
-            You also consent to receive marketing communications from EasyReserv
-            about news, events, promotions, and monthly newsletters.
+            De asemenea, consimți să primești comunicări de marketing de la EasyReserv despre noutăți, evenimente, promoții și buletine informative lunare.
             <br />
-            You can unsubscribe from EasyReserv emails at any time.
+            Te poți dezabona oricând de la email-urile EasyReserv.
           </span>
         </div>
       </div>
 
-      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
+      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" data-testid="button-send-contact">
         <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-          Send
+          Trimite
         </span>
       </Button>
     </section>
