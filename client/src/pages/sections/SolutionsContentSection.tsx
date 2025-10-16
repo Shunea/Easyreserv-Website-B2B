@@ -366,6 +366,72 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    'chirii-auto': {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Planifici ture pentru agenți, operatori parcare și șoferi (delivery/pick-up), cu pontaj, roluri & permisiuni și targeturi pe locație.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închideri de zi corecte, avansuri și depozite gestionate clar, facturi și chitanțe, reconciliere plăți și rapoarte pe centre de profit (închirieri, extra-servicii, penalități).",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "KYC, date permis/pașaport, istoricul închirierilor, preferințe, incidente/penalități. Verificări rapide și sigure.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Locații multiple, clase auto, politici (vârstă minimă, perioadă, franchise), tarife sezoniere/dinamice, roluri & permisiuni.",
+        },
+        {
+          title: "Documente & contracte",
+          description: "Contracte de închiriere, proces-verbal predare/primire, împuterniciri, polițe — generate, semnate electronic și stocate în siguranță.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Grad de utilizare pe vehicul/clasă, venit/km, cost/km, downtime, top extra-servicii, canale de rezervare, pierderi & debite. Decizii pe date, nu pe intuiție.",
+        },
+        {
+          title: "Flux comenzi fluent",
+          description: "Rezervare → preautorizare/depozit → predare (check-out) → monitorizare → return (check-in) → facturare/închidere. Mai puține blocaje, timp de operare mai mic.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Rezervări pe interval & tarifare dinamică",
+          description: "Disponibilitate în timp real, tarife pe sezon/zi/ore, kilometraj inclus, livrare/colecție, taxe de locație. Calendar clar de ocupare.",
+        },
+        {
+          title: "Mentenanță & daune",
+          description: "Planuri de revizie/ITP, alerte service, evidență piese/consumabile; dosare de daună cu poze/video, constatări și costuri. Cost/km sub control.",
+        },
+        {
+          title: "Consumabile & accesorii",
+          description: "Scaun copil, lanțuri, GPS, Wi-Fi — stocuri/transferuri, tarif pe zi și pe rezervare, inventar la predare și la return.",
+        },
+        {
+          title: "Telemetrie (opțional)",
+          description: "Integrare GPS pentru poziție, kilometraj, viteză/alerte; datele intră în fișa rezervării.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Rezervări & confirmări",
+          description: "Booking online cu selecție de perioadă, clasă, asigurări și extra-opțiuni. Confirmări/remindere prin SMS/Email/Push, instrucțiuni de preluare.",
+        },
+        {
+          title: "Up-sell & cross-sell",
+          description: "Asigurări (CDW/LDW/Super), șofer adițional, roaming, livrare la adresă, fuel/full-to-full — adăugate simplu, pe notă.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Campanii pe segmente (corporate, turiști, local), cupoane și oferte sezoniere; follow-up pentru review și reînchiriere.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
