@@ -544,7 +544,7 @@ export const AboutSection = (): JSX.Element => {
             {topStats.map((stat, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center justify-center gap-4 ${
+                className={`flex flex-col items-center justify-center gap-4 px-6 ${
                   index < topStats.length - 1
                     ? "md:border-r border-[#ffffff40]"
                     : ""
@@ -688,7 +688,7 @@ export const AboutSection = (): JSX.Element => {
             {bottomStats.map((stat, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center justify-center gap-2.5 ${
+                className={`flex flex-col items-center justify-center gap-2.5 px-6 ${
                   index < bottomStats.length - 1
                     ? "md:border-r border-[#ffffff40]"
                     : ""
