@@ -1,9 +1,6 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Article } from "@/data/articles";
-import facebookIcon from "@assets/facebook-icon.png";
-import linkedinIcon from "@assets/linkedin-icon.png";
-import instagramIcon from "@assets/instagram-icon.png";
 
 interface BlogArticleSectionProps {
   article: Article;
@@ -140,7 +137,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               <img
                 className="w-10 h-10"
                 alt="Distribuie pe Facebook"
-                src={facebookIcon}
+                src="/figmaAssets/fb.svg"
               />
             </button>
 
@@ -153,7 +150,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               <img
                 className="w-10 h-10"
                 alt="Distribuie pe LinkedIn"
-                src={linkedinIcon}
+                src="/figmaAssets/Linkedin.svg"
               />
             </button>
 
@@ -166,7 +163,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               <img
                 className="w-10 h-10"
                 alt="Distribuie pe Instagram"
-                src={instagramIcon}
+                src="/figmaAssets/insta.svg"
               />
             </button>
           </div>
