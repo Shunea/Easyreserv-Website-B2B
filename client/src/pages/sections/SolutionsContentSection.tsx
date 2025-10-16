@@ -630,6 +630,72 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    'spalatorii-auto': {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Gestionezi ușor echipa — spălători, operatori, casieri, manageri. Planifici ture, urmărești productivitatea și bonurile pe angajat. Pontaj automat și raport de performanță per schimb.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Controlezi încasările zilnice, plățile cash sau card, serviciile gratuite/promo și costurile consumabilelor. Închidere de zi automată, raport fiscal și integrare cu 1C.",
+        },
+        {
+          title: "Profiluri clienți și flote corporate",
+          description: "Istoric comenzi, tipuri de servicii, vehicule, preferințe, frecvență. Pentru partenerii corporate — facturare lunară automată și rapoarte de utilizare pe flotă.",
+        },
+        {
+          title: "Configurare flexibilă a locației",
+          description: "Definire linii de spălare, tipuri de servicii (interior, exterior, complet, detailing), pachete și durate. Suport pentru abonamente, carduri preplătite și puncte de fidelitate.",
+        },
+        {
+          title: "Documente & contracte",
+          description: "Contracte corporate, procese-verbale, fișe de inspecție, rapoarte de lucru — generate și stocate digital.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Rapoarte zilnice, săptămânale sau lunare: număr de comenzi, venituri, costuri de consumabile, profit/linie, timpul mediu per mașină, reveniri și clienți noi.",
+        },
+        {
+          title: "Optimizarea fluxului operațional",
+          description: "Vizibilitate în timp real asupra stării fiecărei linii (liberă, ocupată, în așteptare). Reducere timpi morți, coordonare eficientă între recepție și echipă.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Consumabile & stocuri",
+          description: "Monitorizezi automat consumul de soluții, detergenți, lavete și accesorii. Alerte 'low stock', inventar ghidat, raport de pierderi și trasabilitate completă.",
+        },
+        {
+          title: "Furnizori & achiziții",
+          description: "Comenzi automate către furnizori pe baza consumului mediu. Urmărești prețuri, termene și facturi într-un singur loc.",
+        },
+        {
+          title: "Întreținerea echipamentelor",
+          description: "Programare revizii, inspecții tehnice, filtre, pompe, perii — sistem de mentenanță preventivă cu notificări automate.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Rezervări online & programări rapide",
+          description: "Clienții aleg data, ora și tipul serviciului direct din aplicație sau website. Confirmări automate, remindere și notificări la finalizarea serviciului.",
+        },
+        {
+          title: "Abonamente & carduri preplătite",
+          description: "Vânzare de abonamente flexibile (5, 10 sau 20 spălări) cu evidență automată a utilizărilor și discounturi de fidelitate.",
+        },
+        {
+          title: "Marketing & oferte dinamice",
+          description: "Campanii automate în orele mai libere (happy hour), oferte sezoniere (toamnă/iarna) și mesaje personalizate pentru clienți inactivi.",
+        },
+        {
+          title: "Feedback & recenzii",
+          description: "Formular de feedback direct în aplicație sau pe bonul fiscal. Rapoarte pe ratinguri și timpi de reacție.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
