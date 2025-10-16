@@ -121,17 +121,17 @@ export const AboutSection = (): JSX.Element => {
     <section className="flex flex-col items-center w-full">
       {/* Top Stats Section */}
       <div className="w-full py-12 bg-[#282828]">
-        <Container>
+        <div className="flex items-center justify-center gap-8 px-[180px]">
           {topStats.map((stat, index) => (
             <div
               key={index}
-              className={`col-span-6 md:col-span-3 flex flex-col items-center justify-center gap-4 ${
+              className={`flex flex-col items-center justify-center gap-4 ${
                 index < topStats.length - 1
-                  ? "md:border-r md:border-[#ffffff40]"
+                  ? "border-r border-[#ffffff40]"
                   : ""
               }`}
             >
-              <div className="[font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
+              <div className="w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
                 {stat.label}
               </div>
               <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px]">
@@ -139,7 +139,7 @@ export const AboutSection = (): JSX.Element => {
               </div>
             </div>
           ))}
-        </Container>
+        </div>
       </div>
 
       {/* Best Features Section */}
@@ -244,25 +244,25 @@ export const AboutSection = (): JSX.Element => {
 
       {/* Bottom Stats Section */}
       <div className="w-full py-12 bg-[#282828]">
-        <Container>
+        <div className="flex items-center justify-center gap-8 px-[180px]">
           {bottomStats.map((stat, index) => (
             <div
               key={index}
-              className={`col-span-12 md:col-span-4 flex flex-col items-center justify-center gap-2.5 ${
+              className={`flex flex-col items-center justify-center gap-2.5 ${
                 index < bottomStats.length - 1
-                  ? "md:border-r md:border-[#ffffff40]"
+                  ? "border-r border-[#ffffff40]"
                   : ""
               }`}
             >
               <div className="[font-family:'Inter',Helvetica] font-semibold text-white text-[32px] tracking-[0] leading-[38.4px] text-center">
                 {stat.value}
               </div>
-              <div className="[font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center max-w-[240px]">
+              <div className="w-60 [font-family:'Inter',Helvetica] font-medium text-white text-sm tracking-[0] leading-[18.2px] text-center">
                 {stat.label}
               </div>
             </div>
           ))}
-        </Container>
+        </div>
       </div>
 
       {/* CTA Section 1 */}
@@ -341,25 +341,23 @@ export const AboutSection = (): JSX.Element => {
 
       {/* FAQ Section */}
       <div className="w-full py-16 bg-[#282828]">
-        <Container>
-          <div className="col-span-12 lg:col-span-6">
-            <div className="flex flex-col gap-8">
-              <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-                What is EasyReserv
-              </h2>
+        <div className="flex items-start gap-5 px-[180px] max-w-[1440px] mx-auto">
+          <div className="flex flex-col w-[530px] gap-8">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+              What is EasyReserv
+            </h2>
 
-              <p className="[font-family:'Onest',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-[27px]">
-                EasyReserv is a comprehensive solution for managing and optimizing
-                your business. Mobile reservations, employee management, business
-                insights, inventory management, and other features are available.
-                You can save time, increase revenue, improve the client
-                experience, cut costs, and increase productivity by utilizing our
-                platform.
-              </p>
-            </div>
+            <p className="[font-family:'Onest',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-[27px]">
+              EasyReserv is a comprehensive solution for managing and optimizing
+              your business. Mobile reservations, employee management, business
+              insights, inventory management, and other features are available.
+              You can save time, increase revenue, improve the client
+              experience, cut costs, and increase productivity by utilizing our
+              platform.
+            </p>
           </div>
 
-          <div className="col-span-12 lg:col-span-6">
+          <div className="flex flex-col w-[530px]">
             <Accordion
               type="single"
               collapsible
@@ -388,7 +386,7 @@ export const AboutSection = (): JSX.Element => {
               ))}
             </Accordion>
           </div>
-        </Container>
+        </div>
       </div>
 
       {/* Download App Section */}
