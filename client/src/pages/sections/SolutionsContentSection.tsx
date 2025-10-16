@@ -304,6 +304,68 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    hoteluri: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Planifici turele pentru recepție, housekeeping, restaurant/bar și mentenanță. Pontaj, roluri & permisiuni, task-uri zilnice și urmărirea performanței.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închidere de zi, evidență încasări/plăți, taxe locale, rapoarte pe centre de profit (camere, mic dejun, SPA, bar/restaurant). Control pe solduri, avansuri și garanții.",
+        },
+        {
+          title: "Profiluri complete de oaspeți",
+          description: "Istoric sejururi, preferințe (tip pat, etaj, alergeni), observații speciale, motive de călătorie. Personalizare la check-in și oferte relevante la următoarea vizită.",
+        },
+        {
+          title: "Configurare flexibilă a proprietății",
+          description: "Tipuri de camere, tarife, politici (min-stay, late checkout), pachete (HB/FB), roluri & permisiuni pe echipă. Suport pentru multiple spații: camere, apartamente, săli, SPA.",
+        },
+        {
+          title: "Documente & contracte",
+          description: "Generare/stocare contracte corporate, facturi proforme, acorduri GDPR, fișe de cazare, declarații taxe — totul organizat și ușor de găsit.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Ocupare, ADR, RevPAR, venit/cameră, mix tarife, cheltuieli operaționale, performanță pe canale interne, segmentări (corporate, leisure, grupuri). Decizii zilnice pe date reale.",
+        },
+        {
+          title: "Flux comenzi/servicii fluent",
+          description: "De la rezervare la check-in, extra-servicii, consum minibar/restaurant, până la check-out și facturare — flux cap-coadă fără blocaje.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Consumabile & minibar",
+          description: "Stocuri pe cameră și pe punct de lucru (housekeeping, bar, bucătărie). Rețetar/consum pe produs, alerte 'low stock', transferuri între puncte, inventare ghidate.",
+        },
+        {
+          title: "Furnizori & achiziții",
+          description: "Liste de prețuri, comenzi, recepții, trasabilitate — ai consumabilele și produsele la timp, cu costuri ținute sub control.",
+        },
+        {
+          title: "Mentenanță & intervenții",
+          description: "Ticketing pentru defecțiuni, planări de revizii, istoric intervenții pe cameră/echipament. Timpul de remediere scade, experiența oaspeților crește.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Rezervări & confirmări",
+          description: "Booking online direct, e-mailuri/SMS de confirmare și remindere, informări înainte de sosire (ore check-in, parcare, acces). No-show redus, oaspeți informați.",
+        },
+        {
+          title: "Pachete & upsell",
+          description: "Mic dejun, SPA, transfer, late checkout, decor aniversar — ca extra-servicii adăugate pe notă. Venitul pe cameră crește fără fricțiune.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Campanii pe segmente (corporate, cupluri, familii), voucher cadou, follow-up după plecare pentru review. Recurență și recomandări naturale.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
