@@ -166,7 +166,7 @@ export const InfoSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex w-full max-w-[1440px] items-center justify-center gap-8 px-[180px] py-[50px] bg-[#282828]">
+      <div className="flex w-full items-center justify-center gap-8 px-[180px] py-[50px] bg-[#282828]">
         {statsData.map((stat, index) => (
           <div
             key={index}
@@ -295,8 +295,8 @@ export const InfoSection = (): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col items-start gap-2.5 px-[180px] py-[50px] w-full max-w-[1440px] bg-[#282828]">
-        <div className="flex items-start gap-5 w-full">
+      <div className="flex flex-col items-center gap-2.5 px-[180px] py-[50px] w-full bg-[#282828]">
+        <div className="flex items-start gap-5 w-full max-w-[1440px]">
           <div className="flex flex-col w-[530px] items-start gap-[33px]">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-5xl tracking-[0] leading-[52.8px]">
               What is EasyReserv
