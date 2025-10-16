@@ -7,12 +7,12 @@ export const FeatureImageSection = (): JSX.Element => {
       <div className="flex flex-col items-start justify-center gap-8 p-12 relative self-stretch w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)]">
         <div className="flex flex-col items-start gap-4 relative self-stretch w-full">
           <h2 className="relative self-stretch mt-[-1.00px] [font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-            Your Success Story Starts Today!
+            Povestea Ta de Succes Începe Astăzi!
           </h2>
         </div>
 
-        <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] font-bold text-base px-6 py-4 rounded-[5px] inline-flex items-center justify-center">
-          Become a partner
+        <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] font-bold text-base px-6 py-4 rounded-[5px] inline-flex items-center justify-center" data-testid="button-become-partner">
+          Devino Partener
         </Link>
 
         <img
