@@ -245,11 +245,11 @@ export const InfoSection = (): JSX.Element => {
       </div>
 
       <div className="flex flex-col items-center gap-2.5 p-[50px] bg-neutral-950 rounded-[40px] mx-[180px]">
-        <div className="flex flex-wrap w-full max-w-[1080px] items-start gap-[20px] justify-center">
+        <div className="grid grid-cols-3 gap-[20px] w-full max-w-[1080px]">
           {featuresData.map((feature, index) => (
             <Card
               key={index}
-              className="w-[347px] bg-[#282828] rounded-[20px] border-0"
+              className="bg-[#282828] rounded-[20px] border-0"
             >
               <CardContent className="flex flex-col items-start justify-center gap-6 p-6">
                 <img
