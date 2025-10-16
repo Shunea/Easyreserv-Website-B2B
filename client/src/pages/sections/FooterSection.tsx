@@ -7,6 +7,7 @@ const footerLinks = {
     { text: "About Us", href: "/about" },
     { text: "Solutions", href: "/solutions" },
     { text: "Pricing", href: "/pricing" },
+    { text: "Blog", href: "/blog" },
     { text: "Contact", href: "/contact" },
   ],
   column2: [
