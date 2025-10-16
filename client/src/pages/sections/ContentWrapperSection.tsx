@@ -16,7 +16,7 @@ const pricingPlans = [
   {
     name: "Basic",
     description: "Ideal pentru locații mici & simple",
-    monthlyPrice: 50,
+    monthlyPrice: 49,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
@@ -30,8 +30,8 @@ const pricingPlans = [
   },
   {
     name: "Standard",
-    description: "Pentru restaurante cu trafic mediu și mai multe zone de servire",
-    monthlyPrice: 125,
+    description: "Angajați multipli, dashboarduri, planificare ture, analize simple",
+    monthlyPrice: 99,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
@@ -46,8 +46,8 @@ const pricingPlans = [
   },
   {
     name: "Pro",
-    description: "Pentru locații full service, cu echipă extinsă",
-    monthlyPrice: 200,
+    description: "Control pe costuri, productivitate și campanii",
+    monthlyPrice: 149,
     isPopular: true,
     buttonVariant: "default" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
@@ -62,7 +62,7 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    description: "Pentru lanțuri, hoteluri sau grupuri de locații",
+    description: "Pentru francize, cu module fiscale, multi-locație, transport, rute",
     monthlyPrice: null,
     isPopular: false,
     buttonVariant: "outline" as const,
@@ -390,9 +390,15 @@ export const ContentWrapperSection = (): JSX.Element => {
               }}
             >
               <option value="Restaurante">Restaurante</option>
-              <option value="Hoteluri">Hoteluri</option>
-              <option value="Sali de sport">Sali de sport</option>
-              <option value="Saloane">Saloane</option>
+              <option value="Cafenele">Cafenele</option>
+              <option value="Saloane de frumusețe">Saloane de frumusețe</option>
+              <option value="Barbershopuri">Barbershopuri</option>
+              <option value="Hotele & Pensiuni">Hotele & Pensiuni</option>
+              <option value="Chirii auto">Chirii auto</option>
+              <option value="Fitness">Fitness</option>
+              <option value="Medical">Medical</option>
+              <option value="Retail">Retail</option>
+              <option value="Spălătorii auto">Spălătorii auto</option>
             </select>
           </div>
 
