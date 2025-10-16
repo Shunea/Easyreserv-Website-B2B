@@ -153,26 +153,27 @@ export const InfoSection = (): JSX.Element => {
 
         <div className="flex flex-col items-start gap-4 flex-1">
           <h2 className="self-stretch [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[52.8px]">
-            Our Mission
+            Povestea noastră
           </h2>
 
           <div className="flex flex-col items-start gap-10">
             <div className="flex flex-col items-start gap-5">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                At EasyReserv, our mission is clear: To provide B2B businesses
-                with a cutting-edge ERP solution that optimizes operations,
-                increases revenue, and enhances customer experiences.
+                Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul: „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
               </p>
 
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                We're committed to simplifying your business processes, one
-                module at a time.
+                Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
+              </p>
+
+              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
               </p>
             </div>
 
-            <Link href="/contact" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
+            <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                Request Demo
+                Începe călătoria ta
               </span>
             </Link>
           </div>
