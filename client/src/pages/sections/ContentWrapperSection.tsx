@@ -194,7 +194,7 @@ const comparisonCategories = [
     ],
   },
   {
-    title: "Livrare & Transport (inclus în Enterprise)",
+    title: "Livrare & Transport",
     features: [
       {
         name: "Comenzi livrare",
@@ -503,8 +503,8 @@ export const ContentWrapperSection = (): JSX.Element => {
           {pricingPlans.map((plan, index) => (
             <div key={`cta-${index}`} className="col-span-6 md:col-span-2">
               <Card className={`h-full rounded-none border border-zinc-200 ${index === 2 ? "bg-[#2d2c6505]" : ""}`}>
-                <CardContent className="flex flex-col items-start gap-5 p-5">
-                  <div className="flex flex-col items-start gap-1 w-full">
+                <CardContent className="flex flex-col items-start gap-4 p-5">
+                  <div className="flex flex-col items-start gap-1 w-full min-h-[65px]">
                     <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
                       {plan.name}
                     </h3>
@@ -513,7 +513,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </p>
                   </div>
 
-                  <div className="flex items-baseline gap-1 w-full">
+                  <div className="flex items-baseline gap-1 w-full min-h-[40px]">
                     <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] whitespace-nowrap ${
                       plan.monthlyPrice === null 
                         ? "text-xl leading-[28px]" 
@@ -531,26 +531,26 @@ export const ContentWrapperSection = (): JSX.Element => {
                   {plan.planId ? (
                     <a
                       href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
-                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-3 py-2.5 rounded-[5px] inline-flex items-center justify-center text-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-xs tracking-[0] leading-[16px]">
                         Începe perioada de test gratuită
                       </span>
                     </a>
                   ) : (
                     <Link
                       href="/contact"
-                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-3 py-2.5 rounded-[5px] inline-flex items-center justify-center text-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-xs tracking-[0] leading-[16px]">
                         Contactează-ne
                       </span>
                     </Link>
