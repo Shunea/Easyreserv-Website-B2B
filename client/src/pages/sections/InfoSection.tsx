@@ -241,7 +241,7 @@ export const InfoSection = (): JSX.Element => {
                 </h3>
                 
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  400 locații în primul an • 4.600+ utilizatori • 80.000+ notificări/lună • 30%+ timp optimizat pentru echipe • 99.9% uptime.
+                  40 locații în primul an • 4.600+ utilizatori • 80.000+ notificări/lună • 30%+ timp optimizat pentru echipe • 99.9% uptime.
                 </p>
               </div>
 
