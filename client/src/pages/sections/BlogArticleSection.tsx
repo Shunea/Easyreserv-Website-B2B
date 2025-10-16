@@ -1,6 +1,9 @@
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Article } from "@/data/articles";
+import facebookIcon from "@assets/facebook-icon.png";
+import linkedinIcon from "@assets/linkedin-icon.png";
+import instagramIcon from "@assets/instagram-icon.png";
 
 interface BlogArticleSectionProps {
   article: Article;
@@ -8,6 +11,22 @@ interface BlogArticleSectionProps {
 
 export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.Element => {
   const sections = article.content.sections;
+  
+  const shareOnFacebook = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+  };
+
+  const shareOnLinkedIn = () => {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+  };
+
+  const shareOnTwitter = () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(article.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+  };
   return (
     <article className="flex w-full items-start px-4 md:px-0">
       <div className="flex flex-col items-start justify-center gap-8 w-full max-w-[1080px] mx-auto py-12">
@@ -112,13 +131,44 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
           </span>
 
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:opacity-80 transition-opacity">
+            <button 
+              onClick={shareOnFacebook}
+              className="hover:opacity-70 transition-opacity cursor-pointer"
+              aria-label="Distribuie pe Facebook"
+              data-testid="button-share-facebook"
+            >
               <img
-                className="w-8 h-8"
-                alt="Share on Facebook"
-                src="/figmaAssets/frame-2147223550.svg"
+                className="w-10 h-10"
+                alt="Distribuie pe Facebook"
+                src={facebookIcon}
               />
-            </a>
+            </button>
+
+            <button 
+              onClick={shareOnLinkedIn}
+              className="hover:opacity-70 transition-opacity cursor-pointer"
+              aria-label="Distribuie pe LinkedIn"
+              data-testid="button-share-linkedin"
+            >
+              <img
+                className="w-10 h-10"
+                alt="Distribuie pe LinkedIn"
+                src={linkedinIcon}
+              />
+            </button>
+
+            <button 
+              onClick={shareOnTwitter}
+              className="hover:opacity-70 transition-opacity cursor-pointer"
+              aria-label="Distribuie pe Twitter"
+              data-testid="button-share-twitter"
+            >
+              <img
+                className="w-10 h-10"
+                alt="Distribuie pe Instagram"
+                src={instagramIcon}
+              />
+            </button>
           </div>
         </footer>
       </div>
