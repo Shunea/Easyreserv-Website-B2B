@@ -810,42 +810,42 @@ const businessTypes = [
 const benefitsRow1 = [
   {
     icon: "/figmaAssets/icon.svg",
-    title: "Time Efficiency",
+    title: "Eficiență în timp",
     description:
-      "With mobile reservations and automated employee management, businesses can save hours of administrative work, allowing staff to focus on delivering excellent service.",
+      "Cu rezervări mobile și management automat al angajaților, afacerea ta economisește ore întregi de muncă administrativă, permițând echipei să se concentreze pe oferirea unei experiențe excelente clienților.",
   },
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Increase Revenue",
+    title: "Creștere a veniturilor",
     description:
-      "The insights provided by our platform help identify opportunities for revenue growth, such as optimizing pricing strategies and enhancing the customer experience to encourage repeat business.",
+      "Datele și analizele din platformă te ajută să identifici noi oportunități de profit — de la optimizarea strategiilor de preț până la îmbunătățirea experienței clienților pentru a stimula revenirea acestora.",
   },
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Enhance Client Experience",
+    title: "Experiență îmbunătățită pentru clienți",
     description:
-      "By offering a user-friendly mobile app for reservations and payments, you improve customer convenience and satisfaction. Personalized service through CRM strengthens client relationships.",
+      "Prin aplicația mobilă intuitivă pentru rezervări și plăți, le oferi clienților tăi mai mult confort și satisfacție. Serviciile personalizate prin CRM consolidează relațiile și loialitatea.",
   },
 ];
 
 const benefitsRow2 = [
   {
     icon: "/figmaAssets/icon.svg",
-    title: "Inventory Management",
+    title: "Managementul stocurilor",
     description:
-      "Keep track of inventory levels, order supplies efficiently, and minimize wastage to control costs effectively.",
+      "Urmărește nivelul stocurilor în timp real, gestionează comenzile de aprovizionare și reducerea pierderilor, pentru a menține costurile sub control.",
   },
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Multi-Platform Access",
+    title: "Acces multiplatformă",
     description:
-      "Access your ERP system from both web and mobile, providing flexibility and convenience for you and your clients.",
+      "Accesează sistemul tău ERP atât din versiunea web, cât și din aplicația mobilă — flexibilitate completă pentru tine și pentru clienții tăi.",
   },
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Online  Payments",
+    title: "Plăți online integrate",
     description:
-      "Streamline transactions with integrated online payment options, making it easy for clients to pay for services directly through the app.",
+      "Simplifică tranzacțiile prin opțiuni de plată online direct din aplicație, oferind clienților o metodă rapidă și sigură de a achita serviciile.",
   },
 ];
 
@@ -1180,9 +1180,9 @@ export const SolutionsContentSection = (): JSX.Element => {
       <Container className="py-[50px]">
         <div className="col-span-12">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[72px]">
-            Simplify Your Operations,
+            Simplifică-ți operațiunile,
             <br />
-            Amplify Your Success
+            Amplifică-ți succesul
           </h2>
         </div>
 
