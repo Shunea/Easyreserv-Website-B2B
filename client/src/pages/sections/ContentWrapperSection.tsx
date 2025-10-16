@@ -21,7 +21,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Chirii auto": { basic: 59, standard: 119, pro: 199 },
   "Fitness": { basic: 49, standard: 99, pro: 149 },
   "Medical": { basic: 49, standard: 99, pro: 199 },
-  "Retail": { basic: 49, standard: 99, pro: 149 },
+  "Retail": { basic: 49, standard: 99, pro: 159 },
   "Spălătorii auto": { basic: 35, standard: 75, pro: 125 },
   "Tenis/Padel/Fotbal": { basic: 39, standard: 79, pro: 129 },
 };
@@ -600,6 +600,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Retail") {
+    return [
+      {
+        name: "Basic",
+        description: "Boutique/shop unic (până la 1 POS)",
+        monthlyPrice: 49,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "2 utilizatori (Admin, Casier)",
+          "POS vânzare & bon fiscal",
+          "Retururi, schimburi, storno",
+          "Reduceri simple",
+          "Catalog produse (SKU, variante)",
+          "Profil client & istoric cumpărări",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "Magazin mic-mediu (1-3 POS)",
+        monthlyPrice: 99,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "5 utilizatori + 5€/user suplimentar",
+          "Multi-POS (max 3) & mod offline",
+          "Recepții marfă & comenzi furnizori",
+          "Transfer între locații & inventar",
+          "Card fidelitate & campanii SMS/Email",
+          "Top SKU, marje, coș mediu",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "Magazin mare/multi-POS (4-8 POS)",
+        monthlyPrice: 159,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "10 utilizatori incluși",
+          "Multi-POS (max 8) & FIFO/LOT",
+          "Click & Collect, stoc unificat",
+          "Segmente RFM & cupoane personalizate",
+          "Pontaj, ture, targeturi vânzare",
+          "Forecast cerere & dashboard avansat",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "Rețea multi-magazin/omnichannel",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "Utilizatori nelimitat",
+          "POS nelimitat & WMS light",
+          "Marketplaces (eMAG, Amazon)",
+          "Integrare curieri & AWB centralizat",
+          "SSO, audit avansat & API prioritar",
+          "Dashboard multi-magazin & 1C/ERP",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -671,6 +743,242 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Retail") {
+    return [
+      {
+        title: "Vânzare & POS",
+        features: [
+          {
+            name: "POS vânzare (cash/card), bon fiscal",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Retururi, schimburi, storno",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Reduceri, cupoane, vouchere",
+            values: ["Simplu", "Cu reguli", "Avansat", "Omnichannel"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Prețuri promo (per perioadă/ore)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Multi-POS pe locație",
+            values: ["-", "Max 3", "Max 8", "Nelimitat"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Mod offline (buffer vânzări)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Etichete preț/coduri de bare",
+            values: [true, true, "Auto-lot", "Centralizat"],
+          },
+        ],
+      },
+      {
+        title: "Stocuri, Achiziții & Furnizori",
+        features: [
+          {
+            name: "Catalog produse (SKU, variante, lot)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Recepții marfă, NIR",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Comenzi către furnizori (PO)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Transfer între locații",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Inventar periodic/ghidat",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Alerte low-stock/rupturi stoc",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Cost achiziție, marjă, markup",
+            values: [false, true, true, true],
+          },
+          {
+            name: "FIFO/LOT/expirabil",
+            values: [false, false, true, true],
+          },
+          {
+            name: "WMS light (recepție cu scanner)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Omnichannel & E-commerce",
+        features: [
+          {
+            name: "Catalog online (widget/mini-shop)",
+            values: ["-", "Add-on", true, true],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Click & Collect/Reserve & Pickup",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Stoc unificat online+offline",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Marketplaces (eMAG, Amazon)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Integrare curieri/AWB",
+            values: [false, false, "Add-on", "Centralizat"],
+          },
+        ],
+      },
+      {
+        title: "CRM, Loialitate & Marketing",
+        features: [
+          {
+            name: "Profil client, istoric cumpărări",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Card fidelitate/puncte",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Segmente (RFM: recență/frecvență)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Campanii SMS/Email/Push",
+            values: [false, true, "Avansat", "Multi-brand"],
+          },
+          {
+            name: "Cupoane personalizate per segment",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Plăți, Fiscal & Contabilitate",
+        features: [
+          {
+            name: "POS card (gateway plăți)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Facturi, proforme, chitanțe",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Case de marcat/1C/ERP",
+            values: ["Add-on", "Add-on", "Add-on", true],
+          },
+          {
+            name: "Multivalută/taxe locale",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Dunning (comenzi online neplătite)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Personal, Ture & Permisiuni",
+        features: [
+          {
+            name: "Roluri: Admin, Casier, Manager",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Depozitier, Contabil, E-commerce",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pontaj, ture, targeturi vânzare",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Audit acțiuni (log per utilizator)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "SSO/IP allowlist",
+            values: [false, false, "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analytics",
+        features: [
+          {
+            name: "Vânzări pe zi/POS/produs",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Top SKU, marje, coș mediu",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Rupturi stoc, rotație, pierderi",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Forecast cerere/promo impact",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Dashboard multi-magazin",
+            values: [false, false, false, true],
+          },
+          {
+            name: "Export CSV/PDF, 1C bridge",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Integrări & API",
+        features: [
+          {
+            name: "Procesatori plăți",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Contabilitate/1C/ERP",
+            values: ["Add-on", "Add-on", "Add-on", true],
+          },
+          {
+            name: "Curieri (ShipX, Fan, DHL)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Marketplaces",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "API extern & Webhooks",
+            values: [false, false, "Add-on", "Prioritar"],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Saloane de frumusețe" || industry === "Barbershopuri") {
     return [
       {
