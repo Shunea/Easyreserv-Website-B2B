@@ -18,6 +18,7 @@ const pricingPlans = [
     monthlyPrice: 50,
     isPopular: false,
     buttonVariant: "outline" as const,
+    planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
     features: [
       "Users Included: 2",
       "Business Setup",
@@ -31,6 +32,7 @@ const pricingPlans = [
     monthlyPrice: 125,
     isPopular: false,
     buttonVariant: "outline" as const,
+    planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
     features: [
       "Users Included: 2",
       "Business Setup",
@@ -44,6 +46,7 @@ const pricingPlans = [
     monthlyPrice: 200,
     isPopular: true,
     buttonVariant: "default" as const,
+    planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
     features: [
       "Users Included: 2",
       "Business Setup",
@@ -57,6 +60,7 @@ const pricingPlans = [
     monthlyPrice: null,
     isPopular: false,
     buttonVariant: "outline" as const,
+    planId: null,
     features: [
       "Users Included: 2",
       "Business Setup",
