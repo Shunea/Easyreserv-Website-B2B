@@ -498,6 +498,72 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    medical: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Gestionezi programul medicilor, asistenților și personalului administrativ. Planifici ture, stabilești comisioane, vizibilitate completă pe ocupare și performanță.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închideri de zi, evidență încasări/plăți, plăți parțiale, restanțe și reconciliere pe servicii, medici sau departamente. Integrare directă cu 1C pentru contabilitate fiscală.",
+        },
+        {
+          title: "Profiluri complete de pacienți",
+          description: "Fișe medicale digitale, istoric consultații, tratamente, rezultate de laborator, prescripții și observații. Totul centralizat într-un singur loc, cu acces controlat pe roluri.",
+        },
+        {
+          title: "Configurare flexibilă a clinicii",
+          description: "Definești cabinete, specializări, servicii medicale, durate și resurse (ecograf, laborator, echipă). Roluri și permisiuni personalizate pentru medici, recepție, laborator și contabilitate.",
+        },
+        {
+          title: "Documente și consimțăminte",
+          description: "Contracte, fișe de consimțământ, acorduri GDPR, trimiteri și rapoarte medicale — generate și stocate automat.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Accesezi rapoarte în timp real: număr consultații, venituri pe medic, grad de ocupare, servicii profitabile, frecvență pacienți și timp mediu de vizită.",
+        },
+        {
+          title: "Flux pacienți optimizat",
+          description: "De la programare online la confirmare, consultație, plată și emiterea documentelor medicale. Fără suprapuneri, fără întârzieri, fără fișe pierdute.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Evidență consum medical",
+          description: "Monitorizezi consumabilele pe serviciu, scădere automată la utilizare (seringi, mănuși, reactivi). Inventar ghidat și alerte 'low stock'.",
+        },
+        {
+          title: "Management furnizori și achiziții",
+          description: "Comenzi, recepții, facturi și trasabilitate completă pe produse medicale, cu respectarea normelor sanitare.",
+        },
+        {
+          title: "Trasabilitate & siguranță",
+          description: "Serii, loturi și date de expirare vizibile în sistem — conformitate totală la inspecții.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Programări & notificări automate",
+          description: "Pacienții se programează online, aleg medicul, ora și serviciul. Confirmări și remindere automate prin SMS, e-mail sau notificări push.",
+        },
+        {
+          title: "Formulare & fișe digitale",
+          description: "Formulare de anamneză, chestionare de sănătate și fișe digitale completate înainte de consultație — reduc timpul petrecut la recepție.",
+        },
+        {
+          title: "Abonamente medicale & pachete",
+          description: "Crează pachete corporate, abonamente recurente sau pachete de analize — cu raportare automată și reînnoiri programate.",
+        },
+        {
+          title: "Campanii personalizate",
+          description: "Mesaje și notificări pentru controale periodice, vaccinări, analize preventive sau servicii noi. Crește retenția pacienților și gradul de revenire.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
