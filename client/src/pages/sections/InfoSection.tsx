@@ -308,6 +308,8 @@ export const InfoSection = (): JSX.Element => {
         />
       </div>
 
+      <FAQSection />
+
       <div className="flex flex-col items-start gap-2.5 px-[180px] py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
           <div className="flex flex-col items-start gap-4 w-full z-10 max-w-xl">
@@ -335,8 +337,6 @@ export const InfoSection = (): JSX.Element => {
           />
         </div>
       </div>
-
-      <FAQSection />
     </section>
   );
 };
