@@ -276,11 +276,11 @@ export const AboutSection = (): JSX.Element => {
                   Start Optimizing Your Business Today!
                 </h2>
 
-                <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
+                <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                   <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
                     Become a partner
                   </span>
-                </Button>
+                </Link>
               </div>
 
               <img
@@ -463,11 +463,11 @@ export const AboutSection = (): JSX.Element => {
                   Start Optimizing Your Business Today!
                 </h2>
 
-                <Button className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm">
+                <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                   <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
                     Start your journey!
                   </span>
-                </Button>
+                </Link>
               </div>
 
               <img

@@ -237,11 +237,11 @@ export const InfoSection = (): JSX.Element => {
           </p>
         </div>
 
-        <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
+        <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
           <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
             Learn more
           </span>
-        </Button>
+        </Link>
       </div>
 
       <div className="flex flex-col items-center gap-2.5 p-[50px] bg-neutral-950 rounded-[40px] mx-[180px]">
@@ -280,11 +280,11 @@ export const InfoSection = (): JSX.Element => {
               Today!
             </h2>
 
-            <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
+            <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
                 Get started
               </span>
-            </Button>
+            </Link>
           </div>
         </div>
 
@@ -353,11 +353,11 @@ export const InfoSection = (): JSX.Element => {
               Start Optimizing Your Business Today!
             </h2>
 
-            <Button className="h-auto bg-white rounded-[5px] px-6 py-4 hover:bg-white/90">
+            <Link href="/pricing" className="h-auto bg-white rounded-[5px] px-6 py-4 hover:bg-white/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base tracking-[0] leading-5">
                 Become a partner
               </span>
-            </Button>
+            </Link>
           </div>
 
           <img
