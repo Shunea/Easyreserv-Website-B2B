@@ -84,9 +84,9 @@ const features = [
   },
   {
     id: "payments-accounting",
-    title: "Plăți & Integrare contabilă (1C)",
+    title: "Plăți & Integrare soft de contabilitate",
     content:
-      "Plăți card/online, export în 1C, reconciliere, documente fiscale. Impact: închideri de zi corecte, mai puțin timp la contabilitate.",
+      "Plăți card/online, export în soft de contabilitate, reconciliere, documente fiscale. Impact: închideri de zi corecte, mai puțin timp la contabilitate.",
   },
   {
     id: "multi-platform",
