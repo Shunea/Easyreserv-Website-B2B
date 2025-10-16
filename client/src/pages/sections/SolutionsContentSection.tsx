@@ -564,6 +564,72 @@ const getFeaturesByIndustry = (industry: string) => {
         },
       ],
     },
+    retail: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Gestionezi casierii, vânzătorii și responsabilii de stoc. Creezi ture, pontaje și accese personalizate, cu vizibilitate completă pe vânzări per angajat și productivitate.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Control total asupra încasărilor, retururilor și discounturilor. Închidere de zi automată, evidență clară pentru numerar și plăți digitale, reconciliere integrată cu contabilitatea.",
+        },
+        {
+          title: "Profiluri de clienți și fidelizare",
+          description: "Creezi fișe de client cu istoric cumpărături, preferințe și cupoane active. Poți aplica reduceri personalizate, puncte de loialitate și campanii automate.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Magazine single sau multi-locație, vânzare pe categorii, liste de prețuri și promoții dinamice. Setezi roluri, permisiuni și acces la nivel de echipă și produs.",
+        },
+        {
+          title: "Documente și facturare",
+          description: "Facturi, chitanțe, note de transfer, avize și NIR-uri — toate generate automat, fiscalizate și stocate în siguranță.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Vânzări pe produs, categorie, perioadă, marjă și adaos comercial. Rapoarte în timp real pe profit, pierderi, costuri de achiziție și rotația stocurilor.",
+        },
+        {
+          title: "Analitică avansată & predicție vânzări",
+          description: "Vizualizezi tendințele zilnice sau sezoniere, estimezi cererea și optimizezi achizițiile. Reduceri planificate strategic, nu instinctiv.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Inventar & stocuri în timp real",
+          description: "Monitorizare automată la vânzare și aprovizionare. Alerte 'low stock', transferuri între puncte și inventare rapide cu scanner.",
+        },
+        {
+          title: "Furnizori & achiziții",
+          description: "Gestionare completă a relațiilor cu furnizorii — comenzi, recepții, facturi și termene de plată. Ai vizibilitate totală pe costuri și livrări.",
+        },
+        {
+          title: "Traseabilitate completă",
+          description: "Serii, loturi, date de expirare și trasabilitate pe produs — ideal pentru retail alimentar, farmacii sau cosmetice.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Campanii promoționale & oferte dinamice",
+          description: "Creezi promoții automate: 2+1, bundle-uri, discounturi sezoniere, happy hour sau reduceri pe stocuri care expiră.",
+        },
+        {
+          title: "Loyalty & puncte de recompensă",
+          description: "Sistem de fidelitate integrat — puncte, cupoane, carduri de membru. Clienții revin, tu crești valoarea medie a coșului.",
+        },
+        {
+          title: "Notificări și comunicare directă",
+          description: "SMS, e-mail sau push pentru oferte, produse noi și re-stocări. Automatizări care cresc revenirea în magazin.",
+        },
+        {
+          title: "Programări & click & collect",
+          description: "Pentru magazinele cu produse personalizate sau service: rezervare produs, ridicare la oră stabilită, flux integrat de comandă.",
+        },
+      ],
+    },
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
