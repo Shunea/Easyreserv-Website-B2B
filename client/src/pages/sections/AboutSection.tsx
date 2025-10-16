@@ -8,6 +8,18 @@ import {
 } from "@/components/ui/accordion";
 import { Container } from "@/components/Container";
 
+const calculateYearsSince2023 = (): string => {
+  const startDate = new Date(2023, 0, 1); // January 2023
+  const currentDate = new Date();
+  
+  const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - startDate.getMonth();
+  
+  const totalYears = yearsDiff + monthsDiff / 12;
+  
+  return totalYears.toFixed(1) + "+";
+};
+
 const topStats = [
   {
     label: "ESTABLISHED",
@@ -18,8 +30,8 @@ const topStats = [
     value: "15+",
   },
   {
-    label: "MONTHS OF DEVELOPMENT",
-    value: "8+",
+    label: "YEARS",
+    value: calculateYearsSince2023(),
   },
   {
     label: "EASYRESERV WIDGES CREATED",

@@ -9,6 +9,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+const calculateYearsSince2023 = (): string => {
+  const startDate = new Date(2023, 0, 1); // January 2023
+  const currentDate = new Date();
+  
+  const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - startDate.getMonth();
+  
+  const totalYears = yearsDiff + monthsDiff / 12;
+  
+  return totalYears.toFixed(1) + "+";
+};
+
 const statsData = [
   {
     label: "ESTABLISHED",
@@ -19,8 +31,8 @@ const statsData = [
     value: "15+",
   },
   {
-    label: "MONTHS OF DEVELOPMENT",
-    value: "8+",
+    label: "YEARS",
+    value: calculateYearsSince2023(),
   },
   {
     label: "EASYRESERV WIDGES CREATED",
