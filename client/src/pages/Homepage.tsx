@@ -13,17 +13,6 @@ export const Homepage = (): JSX.Element => {
         src="/figmaAssets/vector-25.svg"
       />
 
-      <img
-        className="absolute top-[205px] left-[-165px] w-[656px] h-[510px] z-0 pointer-events-none"
-        alt="Vector"
-        src="/figmaAssets/vector-23.svg"
-      />
-
-      <img
-        className="absolute top-[299px] left-[983px] w-[1512px] h-[416px] z-0 pointer-events-none"
-        alt="Vector"
-        src="/figmaAssets/vector-20.svg"
-      />
 
       <img
         className="absolute top-[3951px] left-[1005px] w-[634px] h-[517px] -z-10 pointer-events-none"

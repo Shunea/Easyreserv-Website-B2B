@@ -4,7 +4,19 @@ import { Container } from "@/components/Container";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="relative z-10 w-full py-16 md:py-24">
+    <section className="relative w-full py-16 md:py-24">
+      {/* Decorative vectors */}
+      <img
+        className="absolute top-0 left-[-165px] w-[656px] h-[510px] z-10 pointer-events-none"
+        alt="Vector"
+        src="/figmaAssets/vector-23.svg"
+      />
+      <img
+        className="absolute top-20 right-0 w-[1512px] h-[416px] z-10 pointer-events-none"
+        alt="Vector"
+        src="/figmaAssets/vector-20.svg"
+      />
+      
       <Container>
         {/* Text Content - Left Side */}
         <div className="relative z-20 col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
