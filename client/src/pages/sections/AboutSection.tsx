@@ -476,6 +476,7 @@ const footerLinks = {
 
 export const AboutSection = (): JSX.Element => {
   const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
+  const [openAccordion, setOpenAccordion] = React.useState("smart-reservations");
 
   const industries = [
     { value: "restaurante", label: "Restaurante" },
@@ -488,6 +489,11 @@ export const AboutSection = (): JSX.Element => {
     { value: "medical", label: "Medical" },
     { value: "retail", label: "Retail" },
   ];
+
+  const handleIndustryChange = (value: string) => {
+    setSelectedIndustry(value);
+    setOpenAccordion("smart-reservations");
+  };
 
   return (
     <section className="flex flex-col items-center w-full">
@@ -524,7 +530,7 @@ export const AboutSection = (): JSX.Element => {
             <div className="relative">
               <select
                 value={selectedIndustry}
-                onChange={(e) => setSelectedIndustry(e.target.value)}
+                onChange={(e) => handleIndustryChange(e.target.value)}
                 className="appearance-none bg-white border border-[#cccccc] rounded-lg px-6 py-3 pr-10 [font-family:'Onest',Helvetica] font-medium text-[#282828] text-lg cursor-pointer hover:border-[#2d2c65] focus:outline-none focus:ring-2 focus:ring-[#2d2c65] focus:border-transparent transition-colors"
               >
                 {industries.map((industry) => (
@@ -557,7 +563,8 @@ export const AboutSection = (): JSX.Element => {
               <Accordion
                 type="single"
                 collapsible
-                defaultValue="smart-reservations"
+                value={openAccordion}
+                onValueChange={setOpenAccordion}
                 className="w-full"
               >
                 {getFeaturesByIndustry(selectedIndustry).map((feature) => (
@@ -569,7 +576,9 @@ export const AboutSection = (): JSX.Element => {
                     }`}
                   >
                     <AccordionTrigger className="px-0 py-5 hover:no-underline">
-                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xl tracking-[0.40px] leading-7">
+                      <span className={`[font-family:'Onest',Helvetica] font-normal text-xl tracking-[0.40px] leading-7 transition-colors ${
+                        openAccordion === feature.id ? 'text-[#282828]' : 'text-[#999999]'
+                      }`}>
                         {feature.title}
                       </span>
                     </AccordionTrigger>
