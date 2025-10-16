@@ -1124,26 +1124,22 @@ export const SolutionsContentSection = (): JSX.Element => {
           </div>
 
           <div className="col-span-12 flex flex-col items-center justify-center gap-5">
-            <div className="flex items-center justify-between gap-4 w-full relative">
-              <div className="absolute top-1/2 left-[40px] right-[40px] h-2 bg-[#2d2c65] -translate-y-1/2 hidden lg:block" />
+            <div className="flex items-start justify-between gap-4 w-full relative">
+              <div className="absolute top-[40px] left-[40px] right-[40px] h-2 bg-[#2d2c65] hidden lg:block" />
 
-              {howItWorksSteps.map((step, index) => (
-                <img
-                  key={index}
-                  className="relative w-20 h-20 z-10"
-                  alt="Frame"
-                  src={step.icon}
-                />
-              ))}
-            </div>
-
-            <div className="flex flex-col md:flex-row items-start gap-2.5 w-full">
               {howItWorksSteps.map((step, index) => (
                 <div
                   key={index}
-                  className="flex-1 [font-family:'Inter',Helvetica] font-bold text-[#282828] text-xl text-center tracking-[0] leading-[26px]"
+                  className="flex flex-col items-center gap-4 flex-1"
                 >
-                  {step.title}
+                  <img
+                    className="relative w-20 h-20 z-10"
+                    alt="Frame"
+                    src={step.icon}
+                  />
+                  <p className="[font-family:'Inter',Helvetica] font-bold text-[#282828] text-xl text-center tracking-[0] leading-[26px]">
+                    {step.title}
+                  </p>
                 </div>
               ))}
             </div>
