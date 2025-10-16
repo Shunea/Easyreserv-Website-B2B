@@ -15,14 +15,14 @@ const heroFeatures = [
     icon: "/figmaAssets/icon-5.svg",
     title: "Eficiență în timp",
     description: "Concentrează-te pe livrarea serviciilor de calitate. Noi automatizăm pașii repetitivi și scurtăm timpii operaționali.",
-    height: "h-[200px]",
+    height: "h-auto min-h-[200px]",
   },
   {
     icon: "/figmaAssets/icon-5.svg",
     title: "Accesibilitate",
     description:
       "Ajungi la un public mai larg, inclusiv la persoane cu dizabilități, cu interfețe moderne și procese simple de rezervare.",
-    height: "h-[221px]",
+    height: "h-auto min-h-[221px]",
   },
   {
     icon: "/figmaAssets/icon-5.svg",
