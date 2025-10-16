@@ -45,30 +45,30 @@ const statsData = [
 const whyChooseUsData = [
   {
     icon: "/figmaAssets/icon-1.svg",
-    title: "Simplify Operations",
+    title: "Simplificăm operațiunile",
     description:
-      "We streamline and centralize all your booking needs, making your business more efficient.",
+      "All-in-One pentru rezervări, POS, KDS, stocuri, rapoarte și automatizări. Mai puține sisteme, mai puține erori, −30% timp operațional.",
     number: "01",
   },
   {
     icon: "/figmaAssets/icon-3.svg",
-    title: "Attract Clients",
+    title: "Atragere & conversie clienți",
     description:
-      "Our platform helps you build strong connections with customers, ensuring their loyalty.",
+      "Platformă publică de listare & booking B2C, remindere anti no-show, loyalty și campanii. Mai multe rezervări, reveniri și vânzări.",
     number: "02",
   },
   {
     icon: "/figmaAssets/icon-3.svg",
-    title: "Outperform the Competition",
+    title: "Decizii pe date reale",
     description:
-      "Leverage cutting-edge technologies to elevate your business management.",
+      "KPI live (vânzări, COGS, timpi, rotație), alerte 'late'/'low stock' și rapoarte pe locații. Vizibilitate completă, acțiuni rapide.",
     number: "03",
   },
   {
     icon: "/figmaAssets/icon-2.svg",
-    title: "Unwavering Support",
+    title: "Implementare rapidă & suport local",
     description:
-      "We stand by your side, offering the assistance and expertise you need to succeed.",
+      "Go-live în zile, integrare 1C & plăți, compatibil cu hardware existent. Suport dedicat — de la onboarding la scalare.",
     number: "04",
   },
 ];
@@ -289,7 +289,7 @@ export const InfoSection = (): JSX.Element => {
       <div className="flex flex-col items-start gap-8 px-[180px] py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-center justify-center gap-4 w-full">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[72px]">
-            Why choose us?
+            De ce să ne alegi?
           </h2>
         </div>
 
