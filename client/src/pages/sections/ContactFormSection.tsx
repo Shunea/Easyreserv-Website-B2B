@@ -312,7 +312,7 @@ export const ContactFormSection = (): JSX.Element => {
                         }}
                       >
                         <SelectTrigger className="w-auto h-full border-0 gap-1 px-3 focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0">
-                          <span className="text-2xl leading-none">
+                          <span className="text-lg leading-none">
                             {selectedCountry.flag}
                           </span>
                         </SelectTrigger>
@@ -320,14 +320,14 @@ export const ContactFormSection = (): JSX.Element => {
                           {countries.map((country) => (
                             <SelectItem key={country.code} value={country.code}>
                               <div className="flex items-center gap-2">
-                                <span className="text-xl">{country.flag}</span>
+                                <span className="text-base">{country.flag}</span>
                                 <span>{country.name} ({country.prefix})</span>
                               </div>
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
-                      <span className="font-text-md-regular text-black">
+                      <span className="font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]">
                         {selectedCountry.prefix}
                       </span>
                       <Input
