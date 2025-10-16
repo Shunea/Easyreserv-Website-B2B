@@ -22,19 +22,19 @@ const calculateYearsSince2023 = (): string => {
 
 const topStats = [
   {
-    label: "ESTABLISHED",
+    label: "ÎNFIINȚAT",
     value: "2023",
   },
   {
-    label: "OUTSTANDING PROFESSIONALS",
+    label: "PROFESIONIȘTI DE RENUME",
     value: "15+",
   },
   {
-    label: "YEARS",
+    label: "ANI",
     value: calculateYearsSince2023(),
   },
   {
-    label: "EASYRESERV WIDGES CREATED",
+    label: "WIDGETURI EASYRESERV CREATE",
     value: "101+",
   },
 ];
