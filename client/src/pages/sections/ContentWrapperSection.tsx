@@ -23,6 +23,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Medical": { basic: 49, standard: 99, pro: 149 },
   "Retail": { basic: 49, standard: 99, pro: 149 },
   "Spălătorii auto": { basic: 35, standard: 75, pro: 125 },
+  "Tenis/Padel/Fotbal": { basic: 39, standard: 79, pro: 129 },
 };
 
 const getPricingPlans = (industry: string) => {
@@ -383,6 +384,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Tenis/Padel/Fotbal") {
+    return [
+      {
+        name: "Basic",
+        description: "1-2 terenuri/sală mică",
+        monthlyPrice: 39,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "2 utilizatori incluși",
+          "Rezervare pe sloturi flexibile",
+          "Configurări sport-specific",
+          "Profil membru & istoric",
+          "Plăți online & facturare",
+          "Widget rezervare pe site",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "3-6 terenuri",
+        monthlyPrice: 79,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "5 utilizatori + 5€/user suplimentar",
+          "Prețuri peak/off-peak",
+          "Rezervări recurente & abonamente",
+          "Închiriere echipament",
+          "Programări antrenor & comisioane",
+          "Calendar mentenanță teren",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "7-12 terenuri/multi-sport",
+        monthlyPrice: 129,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "10 utilizatori incluși",
+          "Liste așteptare & auto-umplere",
+          "Re-programare meteo automată",
+          "Matching partener & pachete multi-sport",
+          "Organizare turnee & ligi",
+          "App jucători cu branding",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "12+ terenuri/multi-locație",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "Utilizatori nelimitat",
+          "Control acces & lumini IoT",
+          "App white-label (brand club)",
+          "Rapoarte heatmap multi-site",
+          "Integrare fiscală & ERP",
+          "API prioritar & webhooks",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -454,6 +527,253 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Tenis/Padel/Fotbal") {
+    return [
+      {
+        title: "Utilizatori & Acces",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["2", "5", "10", "Nelimitat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["5€/user", "5€/user", "5€/user", "Inclus"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri acoperite",
+            values: ["Admin, Recepție", "+ Manager, Antrenor", "+ Organizator Comp., Groundkeeper", "Toate + Integrări avansate"],
+            muted: [false, false, false, false],
+          },
+        ],
+      },
+      {
+        title: "Rezervări & Sloturi",
+        features: [
+          {
+            name: "Rezervare pe sloturi",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Durate flexibile per sport",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Prețuri peak/off-peak",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Indoor/outdoor/nocturnă",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Rezervări recurente/abonamente",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Politici anulare/no-show",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Liste așteptare & auto-umplere",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Re-programare meteo",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Sport-Specific",
+        features: [
+          {
+            name: "Tenis: single/dublu",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Padel: 2v2, tarif per teren",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Fotbal: 5v5/7v7/11v11",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Tenis de masă: slot 30'/45'",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Închiriere echipament",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pachete multi-sport/teren",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Membri & Antrenori",
+        features: [
+          {
+            name: "Profil membru & istoric",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Matching partener (nivel)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Gestionare echipe & roster",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Programări antrenor & comisioane",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pachete lecții/vouchere",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Carduri membru/abonamente",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Competiții & Turnee",
+        features: [
+          {
+            name: "Ladder/league (tenis/padel)",
+            values: [false, "Add-on", true, true],
+          },
+          {
+            name: "Organizare turneu & tablouri",
+            values: [false, "Add-on", true, true],
+          },
+          {
+            name: "Taxe înscriere & scor live",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Operațiuni & Mentenanță",
+        features: [
+          {
+            name: "Calendar mentenanță teren",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Taskuri groundkeeping",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Control iluminat/acces (IoT)",
+            values: [false, "Add-on", "Add-on", "Inclus"],
+          },
+        ],
+      },
+      {
+        title: "Plăți & POS",
+        features: [
+          {
+            name: "Plăți online & facturi",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Depozit/pre-autorizare card",
+            values: [false, true, true, true],
+          },
+          {
+            name: "POS bar/shop (apă, mingi)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Integrare fiscală/1C/ERP",
+            values: [false, "Add-on", "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "Marketing & Comunicare",
+        features: [
+          {
+            name: "Reminder rezervare",
+            values: ["Email", "Email + SMS", "Push/app", "Omni-channel"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Campanii off-peak & bundle",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Segmente (frecvenți, echipe)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analytics",
+        features: [
+          {
+            name: "Grad ocupare teren/oră",
+            values: [true, true, "Heatmap", "Multi-site"],
+          },
+          {
+            name: "Venit pe oră/teren/sport",
+            values: [false, true, true, true],
+          },
+          {
+            name: "No-show/anulare, impact meteo",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Performanță antrenori & ligi",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Export CSV/PDF, 1C bridge",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Integrări & Digital",
+        features: [
+          {
+            name: "Widget rezervare pe site",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Integrare plăți/calendare",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Control acces & lumini (IoT)",
+            values: [false, "Add-on", "Add-on", "Inclus"],
+          },
+          {
+            name: "API extern & Webhooks",
+            values: [false, false, "Add-on", "Prioritar"],
+          },
+          {
+            name: "App jucători (brand EasyReserv)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "App white-label (brand club)",
+            values: [false, false, "Add-on", "Inclus"],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Fitness") {
     return [
       {
@@ -1640,6 +1960,7 @@ export const ContentWrapperSection = (): JSX.Element => {
               <option value="Medical">Medical</option>
               <option value="Retail">Retail</option>
               <option value="Spălătorii auto">Spălătorii auto</option>
+              <option value="Tenis/Padel/Fotbal">Tenis/Padel/Fotbal</option>
             </select>
           </div>
 
