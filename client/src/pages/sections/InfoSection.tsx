@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { WhatIsEasyReservSection } from "./WhatIsEasyReservSection";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -307,56 +308,7 @@ export const InfoSection = (): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col items-center gap-2.5 px-[180px] py-[50px] w-full bg-[#282828]">
-        <div className="flex items-start gap-5 w-full max-w-[1440px]">
-          <div className="flex flex-col w-[530px] items-start gap-[33px]">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-5xl tracking-[0] leading-[52.8px]">
-              What is EasyReserv
-            </h2>
-
-            <p className="[font-family:'Onest',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-[27px]">
-              EasyReserv is a comprehensive solution for managing and optimizing
-              your business. Mobile reservations, employee management, business
-              insights, inventory management, and other features are available.
-              You can save time, increase revenue, improve the client
-              experience, cut costs, and increase productivity by utilizing our
-              platform.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-start w-[530px]">
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem
-                value="item-1"
-                className="border-b border-[#3f4e5b]"
-              >
-                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline">
-                  Can I access EasyReserv on both the web and mobile devices?
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0]">
-                  Lorem ipsum dolor sit amet consectetur. Viverra ut tincidunt
-                  lectus sem sit sed augue a. Sed nec nulla facilisis ut congue
-                  amet diam id ipsum. Arcu aenean in tellus aliquet in morbi.
-                  Justo ridiculus accumsan montes in in arcu fermentum ac vitae.
-                </AccordionContent>
-              </AccordionItem>
-
-              {faqData.map((faq, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index + 2}`}
-                  className="border-b border-[#3f4e5b]"
-                >
-                  <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </div>
+      <WhatIsEasyReservSection />
 
       <div className="flex flex-col items-start gap-2.5 px-[180px] py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
