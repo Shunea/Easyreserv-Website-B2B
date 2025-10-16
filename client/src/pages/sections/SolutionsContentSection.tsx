@@ -873,9 +873,9 @@ export const SolutionsContentSection = (): JSX.Element => {
 
   return (
     <section className="relative z-10 flex flex-col w-full items-center">
-      <Container className="py-[50px]">
+      <Container className="py-8 md:py-[50px]">
         <div className="relative z-20 col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
-          <h1 className="[font-family:'Onest',Helvetica] font-bold text-5xl tracking-[0] leading-[normal]">
+          <h1 className="[font-family:'Onest',Helvetica] font-bold text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[normal]">
             <span className="text-[#282828]">Crește-ți afacerea și </span>
             <span className="text-[#fe9800]">eficiența</span>
             <span className="text-[#282828]">
@@ -895,12 +895,12 @@ export const SolutionsContentSection = (): JSX.Element => {
           </Link>
         </div>
 
-        <div className="col-span-12 md:col-span-6 flex items-start gap-5">
-          <div className="flex flex-col items-start gap-5">
+        <div className="col-span-12 md:col-span-6 flex flex-col md:flex-row items-start gap-5">
+          <div className="flex flex-col items-start gap-5 w-full md:w-auto">
             {heroFeatures.slice(0, 2).map((feature, index) => (
               <Card
                 key={index}
-                className={`w-[255px] ${feature.height} bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]`}
+                className={`w-full md:w-[255px] ${feature.height} bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]`}
               >
                 <CardContent className="flex flex-col items-start gap-2.5 p-5">
                   <img
@@ -919,7 +919,7 @@ export const SolutionsContentSection = (): JSX.Element => {
             ))}
           </div>
 
-          <Card className="w-[255px] bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]">
+          <Card className="w-full md:w-[255px] bg-[#2d2c651a] rounded-[20px] border-[#2d2c65]">
             <CardContent className="flex flex-col items-start gap-2.5 p-5">
               <img
                 className="w-[53px] h-[53px]"
@@ -937,15 +937,15 @@ export const SolutionsContentSection = (): JSX.Element => {
         </div>
       </Container>
 
-      <Container className="py-[50px]">
-        <div className="col-span-12 flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
-          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-[normal]">
+      <Container className="py-8 md:py-[50px]">
+        <div className="col-span-12 flex flex-col items-center justify-center gap-4 md:gap-6 mb-8">
+          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
             Descoperă funcționalitățile care ne diferențiază pentru
           </h2>
           <select
             value={selectedIndustry}
             onChange={(e) => setSelectedIndustry(e.target.value)}
-            className="inline-flex items-center gap-2.5 px-6 py-3 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833] [font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-lg md:text-2xl cursor-pointer appearance-none bg-no-repeat bg-right pr-12"
+            className="inline-flex items-center gap-2.5 px-6 py-3 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833] [font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-lg md:text-2xl cursor-pointer appearance-none bg-no-repeat bg-right pr-12 w-full md:w-auto"
             style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%232d2c65' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
               backgroundPosition: 'right 1rem center'
@@ -962,8 +962,8 @@ export const SolutionsContentSection = (): JSX.Element => {
 
         <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-5">
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+            <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
                 Managementul angajaților și al afacerii
               </h3>
 
@@ -990,8 +990,8 @@ export const SolutionsContentSection = (): JSX.Element => {
           </Card>
 
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+            <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
                 Perspective de business și analitice
               </h3>
 
@@ -1020,8 +1020,8 @@ export const SolutionsContentSection = (): JSX.Element => {
 
         <div className="col-span-12 md:col-span-6 flex flex-col items-start gap-5">
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+            <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
                 Managementul stocurilor și al lanțului de aprovizionare
               </h3>
 
@@ -1048,8 +1048,8 @@ export const SolutionsContentSection = (): JSX.Element => {
           </Card>
 
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
-            <CardContent className="flex flex-col items-start gap-6 p-[50px]">
-              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
+            <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
                 Implicarea clienților și marketing
               </h3>
 
