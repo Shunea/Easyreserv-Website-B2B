@@ -15,58 +15,64 @@ import { Container } from "@/components/Container";
 const pricingPlans = [
   {
     name: "Basic",
-    description: "Best for Small Businesses",
+    description: "Ideal pentru locații mici & simple",
     monthlyPrice: 50,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
     features: [
-      "Users Included: 2",
-      "Business Setup",
-      "Create Place",
-      "Reservations",
+      "2 utilizatori incluși",
+      "Configurare inițială afacere",
+      "Creare locație unică",
+      "Modul de rezervări simple",
+      "Notificări e-mail & push pentru rezervări",
     ],
   },
   {
     name: "Standard",
-    description: "Best for Small Businesses",
+    description: "Pentru restaurante cu trafic mediu și mai multe zone de servire",
     monthlyPrice: 125,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
     features: [
-      "Users Included: 2",
-      "Business Setup",
-      "Create Place",
-      "Reservations",
+      "Tot din pachetul Basic",
+      "Management mese + zone",
+      "Lista de așteptare digitală",
+      "QR Menu interactiv",
+      "Rapoarte de bază (număr rezervări, ore de vârf)",
+      "1 integrare POS extern (dacă e nevoie)",
     ],
   },
   {
     name: "Pro",
-    description: "Best for Small Businesses",
+    description: "Pentru locații full service, cu echipă extinsă",
     monthlyPrice: 200,
     isPopular: true,
     buttonVariant: "default" as const,
     planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
     features: [
-      "Users Included: 2",
-      "Business Setup",
-      "Create Place",
-      "Reservations",
+      "Tot din Standard",
+      "Modul rotație chelneri / ospătari",
+      "Alocare automată mese",
+      "Notificări întârziere / alertă bucătărie",
+      "Feedback clienți după vizită",
+      "Dashboard avansat (KPI personal, venituri pe oră, etc.)",
     ],
   },
   {
     name: "Enterprise",
-    description: "Best for Small Businesses",
+    description: "Pentru lanțuri, hoteluri sau grupuri de locații",
     monthlyPrice: null,
     isPopular: false,
     buttonVariant: "outline" as const,
     planId: null,
     features: [
-      "Users Included: 2",
-      "Business Setup",
-      "Create Place",
-      "Reservations",
+      "Tot din Pro",
+      "Multi-locații într-un singur cont",
+      "Integrare completă cu sistemul fiscal",
+      "Suport prioritar & cont manager dedicat",
+      "Integrări API / CRM externe",
     ],
   },
 ];
@@ -356,7 +362,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {
-      return "Custom";
+      return "Preț personalizat";
     }
     
     const price = isAnnual ? monthlyPrice * 0.9 : monthlyPrice;
@@ -371,7 +377,7 @@ export const ContentWrapperSection = (): JSX.Element => {
         <div className="col-span-12 flex flex-col items-center gap-[43px]">
           <div className="flex items-center justify-center gap-6 w-full flex-wrap">
             <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-[normal]">
-              Subscription plans for
+              Planuri de abonament pentru
             </h1>
 
             <select 
@@ -392,7 +398,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
           <div className="inline-flex items-center justify-center gap-6 flex-wrap">
             <div className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-              Save with annual billing
+              Economisește cu plata anuală
             </div>
 
             <button
@@ -410,7 +416,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
             <Badge className="inline-flex items-center justify-center gap-2.5 p-2.5 bg-[#282828] rounded-[10px] h-auto">
               <span className="[font-family:'Inter',Helvetica] font-bold text-white text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-                SAVE 10%
+                ECONOMISEȘTE 10%
               </span>
             </Badge>
           </div>
@@ -431,7 +437,7 @@ export const ContentWrapperSection = (): JSX.Element => {
               }`}
             >
               <div className="[font-family:'Onest',Helvetica] font-semibold text-sementicscolorfgon-accent text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                Most Popular
+                Cel mai popular
               </div>
               {plan.isPopular && (
                 <SparklesIcon className="w-3.5 h-3.5 text-sementicscolorfgon-accent" />
@@ -466,7 +472,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       </span>
                       {plan.monthlyPrice !== null && (
                         <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                          /month
+                          / lună
                         </span>
                       )}
                     </div>
@@ -482,7 +488,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                        Start Free Trial
+                        Începe perioada de test gratuită
                       </span>
                     </a>
                   ) : (
@@ -495,14 +501,14 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                        Contact Us!
+                        Contactează-ne
                       </span>
                     </Link>
                   )}
 
                   <div className="flex flex-col items-start gap-2 w-full">
                     <div className="[font-family:'Onest',Helvetica] font-semibold text-[#909090] text-base tracking-[0] leading-[18.4px]">
-                      What you get
+                      Ce primești
                     </div>
 
                     {plan.features.map((feature, featureIndex) => (
@@ -529,7 +535,7 @@ export const ContentWrapperSection = (): JSX.Element => {
               className="flex items-center justify-center gap-2 p-4 w-full bg-white border border-zinc-200 hover:bg-gray-50 transition-colors"
             >
               <span className="[font-family:'Onest',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[17.6px] whitespace-nowrap">
-                {isExpanded ? 'Hide features' : 'See all features'}
+                {isExpanded ? 'Ascunde caracteristicile' : 'Vezi toate caracteristicile'}
               </span>
               <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
             </button>
@@ -629,7 +635,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       </span>
                       {plan.monthlyPrice !== null && (
                         <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                          /month
+                          / lună
                         </span>
                       )}
                     </div>
@@ -645,7 +651,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                        Start Free Trial
+                        Începe perioada de test gratuită
                       </span>
                     </a>
                   ) : (
@@ -658,7 +664,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                        Contact Us!
+                        Contactează-ne
                       </span>
                     </Link>
                   )}
