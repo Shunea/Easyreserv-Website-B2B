@@ -35,83 +35,83 @@ const heroFeatures = [
 
 const employeeManagementFeatures = [
   {
-    title: "Efficient Staff Management",
+    title: "Management eficient al personalului",
     description:
-      "We provide you with the tools to manage your workforce effortlessly. From scheduling shifts to tracking performance, you'll have full control.",
+      "Îți oferim instrumente ca să-ți gestionezi ușor echipa: planificarea turelor (ospătari, bucătari, bar), pontaj, performanță. Ai control complet.",
   },
   {
-    title: "Accurate Financial Management",
+    title: "Management financiar precis",
     description:
-      "Stay on top of your financials with features for debit and credit management, keeping your business in great financial health.",
+      "Rămâi la zi cu încasările și plățile: gestiune de debit/credit, închideri corecte de zi, sănătate financiară clară pe locație.",
   },
   {
-    title: "Comprehensive Client Profiles",
+    title: "Profiluri complete de clienți",
     description:
-      "Get to know your customers better and provide them with tailored experiences by maintaining detailed client profiles.",
+      "Cunoaște-ți oaspeții și personalizează experiența: istoric rezervări, preferințe (mese, alergeni, vinuri), note pentru servire.",
   },
   {
-    title: "Flexible Business Setup",
+    title: "Configurare flexibilă a afacerii",
     description:
-      "Easily configure your business, whether it's a restaurant, barbershop, salon, or any other type. Our platform is customized to your specific needs.",
+      "Configurezi rapid restaurantul tău: săli/terase, plan de mese, roluri/permisiuni, fluxuri de lucru. Platforma se adaptează nevoilor tale.",
   },
   {
-    title: "Menu and Service Management",
+    title: "Management meniuri și servicii",
     description:
-      "Create and manage menus and services with ease, ensuring your offerings are always up-to-date and attractive.",
+      "Creezi și actualizezi meniurile cu ușurință: categorii, prețuri, meniuri de prânz/promo, variante și opționale. Totul mereu la zi și atrăgător.",
   },
   {
-    title: "Effortless Document Storage",
+    title: "Stocare facilă a documentelor",
     description:
-      "Securely store important documents, such as invoices and employee records, making your administrative tasks a breeze.",
+      "Stochezi în siguranță documente importante: facturi, NIR-uri, contracte, dosare angajați. Task-urile administrative devin simple.",
   },
 ];
 
 const businessInsightsFeatures = [
   {
-    title: "Data-Driven Business Insights",
+    title: "Insights bazate pe date",
     description:
-      "Gain valuable insights into your business operations. Make informed decisions based on data, helping your business grow and succeed.",
+      "Vezi clar ce se întâmplă în restaurant: vânzări, marje, rotația meselor, timpi de servire, productivitate. Iei decizii pe date reale.",
   },
   {
-    title: "Seamless Order Handling",
+    title: "Gestionare fluentă a comenzilor",
     description:
-      "Streamline your order management process to deliver efficient service and enhance customer satisfaction.",
+      "Optimizezi fluxul de comenzi din sală și livrare: preluare, transmitere la bucătărie/bar, urmărire status, predare rapidă — satisfacție mai mare a clienților.",
   },
 ];
 
 const inventoryManagementFeatures = [
   {
-    title: "Efficient Staff Management",
+    title: "Management eficient al stocurilor",
     description:
-      "Keep track of your inventory effortlessly, ensuring that you always have the right products in stock.",
+      "Monitorizezi ingredientele fără efort: rețetar, scădere automată la vânzare, alerte 'low stock', inventare ghidate. Ai mereu ce trebuie pe stoc.",
   },
   {
-    title: "Supplier Management",
+    title: "Managementul furnizorilor",
     description:
-      "Manage your relationships with suppliers and streamline the procurement process for a smooth supply chain operation.",
+      "Administrezi relațiile cu furnizorii și comanda de aprovizionare: liste de prețuri, comenzi, recepții — lanț de aprovizionare fluent.",
   },
   {
-    title: "Transport Park Management",
+    title: "Managementul flotei de transport",
     description:
-      "If you rely on transportation for your business, our platform helps you manage your fleet effectively, keeping your operations running smoothly.",
+      "Dacă livrezi la domiciliu sau între locații, gestionezi eficient mașinile/curierii, astfel încât operațiunile să meargă lin.",
   },
 ];
 
 const customerEngagementFeatures = [
   {
-    title: "Powerful Marketing Tool",
+    title: "Instrument de marketing puternic",
     description:
-      "Engage your customers and boost sales through our mobile app's marketing features. Send offers, sales, and updates directly to your customers' smartphones.",
+      "Crește vânzările cu funcțiile de marketing din aplicația mobilă: oferte, promoții, noutăți trimise direct pe telefonul clienților.",
   },
   {
-    title: "Targeted Marketing",
+    title: "Marketing țintit",
     description:
-      "Leverage data to target specific customer demographics. Send personalized messages based on age, interests, and preferences to drive customer engagement.",
+      "Folosești datele pentru a segmenta publicul (vârstă, interese, preferințe) și trimiți mesaje personalizate care cresc engagementul.",
   },
   {
-    title: "Streamlined Reservations",
+    title: "Rezervări simplificate",
     description:
-      "Simplify the process of managing reservations, ensuring a seamless experience for both your business and your customers.",
+      "Administrezi rezervările ușor — atât pentru restaurant, cât și pentru clienți: confirmări, remindere, alocare la masă, experiență fluidă cap-coadă.",
   },
 ];
 
@@ -409,7 +409,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                Employee and Business Management
+                Managementul angajaților și al afacerii
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -437,7 +437,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                Business Insights and Analytics
+                Perspective de business și analitice
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -467,7 +467,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                Inventory and Supply Chain Management
+                Managementul stocurilor și al lanțului de aprovizionare
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -495,7 +495,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                Customer Engagement and Marketing
+                Implicarea clienților și marketing
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
