@@ -33,87 +33,149 @@ const heroFeatures = [
   },
 ];
 
-const employeeManagementFeatures = [
-  {
-    title: "Management eficient al personalului",
-    description:
-      "Îți oferim instrumente ca să-ți gestionezi ușor echipa: planificarea turelor (ospătari, bucătari, bar), pontaj, performanță. Ai control complet.",
-  },
-  {
-    title: "Management financiar precis",
-    description:
-      "Rămâi la zi cu încasările și plățile: gestiune de debit/credit, închideri corecte de zi, sănătate financiară clară pe locație.",
-  },
-  {
-    title: "Profiluri complete de clienți",
-    description:
-      "Cunoaște-ți oaspeții și personalizează experiența: istoric rezervări, preferințe (mese, alergeni, vinuri), note pentru servire.",
-  },
-  {
-    title: "Configurare flexibilă a afacerii",
-    description:
-      "Configurezi rapid restaurantul tău: săli/terase, plan de mese, roluri/permisiuni, fluxuri de lucru. Platforma se adaptează nevoilor tale.",
-  },
-  {
-    title: "Management meniuri și servicii",
-    description:
-      "Creezi și actualizezi meniurile cu ușurință: categorii, prețuri, meniuri de prânz/promo, variante și opționale. Totul mereu la zi și atrăgător.",
-  },
-  {
-    title: "Stocare facilă a documentelor",
-    description:
-      "Stochezi în siguranță documente importante: facturi, NIR-uri, contracte, dosare angajați. Task-urile administrative devin simple.",
-  },
-];
+const getFeaturesByIndustry = (industry: string) => {
+  const featuresByIndustry: Record<string, {
+    employeeManagement: Array<{title: string, description: string}>,
+    businessInsights: Array<{title: string, description: string}>,
+    inventoryManagement: Array<{title: string, description: string}>,
+    customerEngagement: Array<{title: string, description: string}>
+  }> = {
+    restaurante: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Îți oferim instrumente ca să-ți gestionezi ușor echipa: planificarea turelor (ospătari, bucătari, bar), pontaj, performanță. Ai control complet.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Rămâi la zi cu încasările și plățile: gestiune de debit/credit, închideri corecte de zi, sănătate financiară clară pe locație.",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "Cunoaște-ți oaspeții și personalizează experiența: istoric rezervări, preferințe (mese, alergeni, vinuri), note pentru servire.",
+        },
+        {
+          title: "Configurare flexibilă a afacerii",
+          description: "Configurezi rapid restaurantul tău: săli/terase, plan de mese, roluri/permisiuni, fluxuri de lucru. Platforma se adaptează nevoilor tale.",
+        },
+        {
+          title: "Management meniuri și servicii",
+          description: "Creezi și actualizezi meniurile cu ușurință: categorii, prețuri, meniuri de prânz/promo, variante și opționale. Totul mereu la zi și atrăgător.",
+        },
+        {
+          title: "Stocare facilă a documentelor",
+          description: "Stochezi în siguranță documente importante: facturi, NIR-uri, contracte, dosare angajați. Task-urile administrative devin simple.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Vezi clar ce se întâmplă în restaurant: vânzări, marje, rotația meselor, timpi de servire, productivitate. Iei decizii pe date reale.",
+        },
+        {
+          title: "Gestionare fluentă a comenzilor",
+          description: "Optimizezi fluxul de comenzi din sală și livrare: preluare, transmitere la bucătărie/bar, urmărire status, predare rapidă — satisfacție mai mare a clienților.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Management eficient al stocurilor",
+          description: "Monitorizezi ingredientele fără efort: rețetar, scădere automată la vânzare, alerte 'low stock', inventare ghidate. Ai mereu ce trebuie pe stoc.",
+        },
+        {
+          title: "Managementul furnizorilor",
+          description: "Administrezi relațiile cu furnizorii și comanda de aprovizionare: liste de prețuri, comenzi, recepții — lanț de aprovizionare fluent.",
+        },
+        {
+          title: "Managementul flotei de transport",
+          description: "Dacă livrezi la domiciliu sau între locații, gestionezi eficient mașinile/curierii, astfel încât operațiunile să meargă lin.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Instrument de marketing puternic",
+          description: "Crește vânzările cu funcțiile de marketing din aplicația mobilă: oferte, promoții, noutăți trimise direct pe telefonul clienților.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Folosești datele pentru a segmenta publicul (vârstă, interese, preferințe) și trimiți mesaje personalizate care cresc engagementul.",
+        },
+        {
+          title: "Rezervări simplificate",
+          description: "Administrezi rezervările ușor — atât pentru restaurant, cât și pentru clienți: confirmări, remindere, alocare la masă, experiență fluidă cap-coadă.",
+        },
+      ],
+    },
+    cafenele: {
+      employeeManagement: [
+        {
+          title: "Management eficient al personalului",
+          description: "Planifici turele barista/casier, pontaj și targeturi pe oră. Vizibilitate pe productivitate și timpi de servire în orele de vârf.",
+        },
+        {
+          title: "Management financiar precis",
+          description: "Închidere de zi corectă, evidență încasări/plăți, reconcilieri rapide. Vezi marja pe produs și costul ingredientelor în timp real.",
+        },
+        {
+          title: "Profiluri complete de clienți",
+          description: "Istoric comenzi (tip cafea, lapte, siropuri), preferințe & alergeni. Experiență personalizată la următoarea vizită.",
+        },
+        {
+          title: "Configurare flexibilă a punctului de vânzare",
+          description: "Case rapide, roluri & permisiuni, layout de produse pe ecran, preset-uri și shortcut-uri pentru top vânzări.",
+        },
+        {
+          title: "Meniu & servicii",
+          description: "Meniuri pe momente ale zilei (morning/afternoon), variante (mărime, lapte, shot extra), bundle-uri și oferte.",
+        },
+        {
+          title: "Stocare facilă documente",
+          description: "Facturi, NIR-uri, contracte furnizori și dosare angajați — păstrate sigur, ușor de găsit.",
+        },
+      ],
+      businessInsights: [
+        {
+          title: "Insights bazate pe date",
+          description: "Vânzări pe oră/zi, top SKU, cost băutură, marjă, productivitate pe casier/barista. Decizii rapide pentru program și sortiment.",
+        },
+        {
+          title: "Gestionare fluentă a comenzilor",
+          description: "Flux sală–bar clar: comandă → preparare → 'ready for pickup'. Cozi mai scurte, predare rapidă, clienți mai mulțumiți.",
+        },
+      ],
+      inventoryManagement: [
+        {
+          title: "Management eficient al stocurilor",
+          description: "Rețetar pe băuturi, scădere automată la vânzare, alerte 'low stock', inventare ghidate. Ții pierderile sub control.",
+        },
+        {
+          title: "Managementul furnizorilor",
+          description: "Comenzi de aprovizionare, liste de prețuri, recepții și trasabilitate. Ai ingredientele potrivite la timp.",
+        },
+        {
+          title: "Management flotă/transport (opțional)",
+          description: "Pentru locații multiple sau livrări: gestiune curieri, rute și transferuri între puncte.",
+        },
+      ],
+      customerEngagement: [
+        {
+          title: "Instrument de marketing puternic",
+          description: "Promoții 'happy hour', campanii în orele mai libere, push/SMS cu oferte și noutăți — direct pe telefonul clientului.",
+        },
+        {
+          title: "Marketing țintit",
+          description: "Segmente pe frecvență, preferințe (espresso, latte, alternative vegane), cupoane personalizate care aduc reveniri.",
+        },
+        {
+          title: "Pre-comenzi & ridicare programată",
+          description: "Clientul comandă din timp și ridică la oră; tu netezești vârfurile și reduci aglomerația la tejghea.",
+        },
+      ],
+    },
+  };
 
-const businessInsightsFeatures = [
-  {
-    title: "Insights bazate pe date",
-    description:
-      "Vezi clar ce se întâmplă în restaurant: vânzări, marje, rotația meselor, timpi de servire, productivitate. Iei decizii pe date reale.",
-  },
-  {
-    title: "Gestionare fluentă a comenzilor",
-    description:
-      "Optimizezi fluxul de comenzi din sală și livrare: preluare, transmitere la bucătărie/bar, urmărire status, predare rapidă — satisfacție mai mare a clienților.",
-  },
-];
-
-const inventoryManagementFeatures = [
-  {
-    title: "Management eficient al stocurilor",
-    description:
-      "Monitorizezi ingredientele fără efort: rețetar, scădere automată la vânzare, alerte 'low stock', inventare ghidate. Ai mereu ce trebuie pe stoc.",
-  },
-  {
-    title: "Managementul furnizorilor",
-    description:
-      "Administrezi relațiile cu furnizorii și comanda de aprovizionare: liste de prețuri, comenzi, recepții — lanț de aprovizionare fluent.",
-  },
-  {
-    title: "Managementul flotei de transport",
-    description:
-      "Dacă livrezi la domiciliu sau între locații, gestionezi eficient mașinile/curierii, astfel încât operațiunile să meargă lin.",
-  },
-];
-
-const customerEngagementFeatures = [
-  {
-    title: "Instrument de marketing puternic",
-    description:
-      "Crește vânzările cu funcțiile de marketing din aplicația mobilă: oferte, promoții, noutăți trimise direct pe telefonul clienților.",
-  },
-  {
-    title: "Marketing țintit",
-    description:
-      "Folosești datele pentru a segmenta publicul (vârstă, interese, preferințe) și trimiți mesaje personalizate care cresc engagementul.",
-  },
-  {
-    title: "Rezervări simplificate",
-    description:
-      "Administrezi rezervările ușor — atât pentru restaurant, cât și pentru clienți: confirmări, remindere, alocare la masă, experiență fluidă cap-coadă.",
-  },
-];
+  return featuresByIndustry[industry] || featuresByIndustry.restaurante;
+};
 
 const howItWorksSteps = [
   {
@@ -315,6 +377,12 @@ export const SolutionsContentSection = (): JSX.Element => {
     { value: "medical", label: "Medical" },
     { value: "retail", label: "Retail" },
   ];
+
+  const currentFeatures = getFeaturesByIndustry(selectedIndustry);
+  const employeeManagementFeatures = currentFeatures.employeeManagement;
+  const businessInsightsFeatures = currentFeatures.businessInsights;
+  const inventoryManagementFeatures = currentFeatures.inventoryManagement;
+  const customerEngagementFeatures = currentFeatures.customerEngagement;
 
   return (
     <section className="relative z-10 flex flex-col w-full items-center">
