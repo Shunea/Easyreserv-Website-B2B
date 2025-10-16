@@ -15,8 +15,7 @@ const pricingPlans = [
   {
     name: "Basic",
     description: "Best for Small Businesses",
-    price: "€85",
-    period: "/month",
+    monthlyPrice: 50,
     isPopular: false,
     buttonVariant: "outline" as const,
     features: [
@@ -29,8 +28,7 @@ const pricingPlans = [
   {
     name: "Standard",
     description: "Best for Small Businesses",
-    price: "€85",
-    period: "/month",
+    monthlyPrice: 125,
     isPopular: false,
     buttonVariant: "outline" as const,
     features: [
@@ -43,8 +41,7 @@ const pricingPlans = [
   {
     name: "Pro",
     description: "Best for Small Businesses",
-    price: "€85",
-    period: "/month",
+    monthlyPrice: 200,
     isPopular: true,
     buttonVariant: "default" as const,
     features: [
@@ -57,8 +54,7 @@ const pricingPlans = [
   {
     name: "Enterprise",
     description: "Best for Small Businesses",
-    price: "€85",
-    period: "/month",
+    monthlyPrice: null,
     isPopular: false,
     buttonVariant: "outline" as const,
     features: [
@@ -350,8 +346,17 @@ const comparisonCategories = [
 
 export const ContentWrapperSection = (): JSX.Element => {
   const [isExpanded, setIsExpanded] = React.useState(false);
-  const [isAnnual, setIsAnnual] = React.useState(true);
+  const [isAnnual, setIsAnnual] = React.useState(false);
   const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
+
+  const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
+    if (monthlyPrice === null) {
+      return "Contact US";
+    }
+    
+    const price = isAnnual ? monthlyPrice * 0.9 : monthlyPrice;
+    return `€${Math.round(price)}`;
+  };
 
   return (
     <section className="flex flex-col items-center gap-8 w-full px-4 md:px-8 py-12">
@@ -451,11 +456,13 @@ export const ContentWrapperSection = (): JSX.Element => {
                   <div className="flex items-start gap-[15px] w-full">
                     <div className="inline-flex items-end gap-1">
                       <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[55.2px] whitespace-nowrap">
-                        {plan.price}
+                        {calculatePrice(plan.monthlyPrice, isAnnual)}
                       </span>
-                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                        {plan.period}
-                      </span>
+                      {plan.monthlyPrice !== null && (
+                        <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+                          /month
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -597,11 +604,13 @@ export const ContentWrapperSection = (): JSX.Element => {
                   <div className="flex items-start gap-[15px] w-full">
                     <div className="inline-flex items-end gap-1">
                       <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-[32px] tracking-[0] leading-[36.8px] whitespace-nowrap">
-                        {plan.price}
+                        {calculatePrice(plan.monthlyPrice, isAnnual)}
                       </span>
-                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                        {plan.period}
-                      </span>
+                      {plan.monthlyPrice !== null && (
+                        <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+                          /month
+                        </span>
+                      )}
                     </div>
                   </div>
 
