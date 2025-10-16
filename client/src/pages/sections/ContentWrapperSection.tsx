@@ -355,7 +355,8 @@ export const ContentWrapperSection = (): JSX.Element => {
     }
     
     const price = isAnnual ? monthlyPrice * 0.9 : monthlyPrice;
-    return `€${Math.round(price)}`;
+    const formattedPrice = price % 1 === 0 ? price.toFixed(0) : price.toFixed(2);
+    return `€${formattedPrice}`;
   };
 
   return (
