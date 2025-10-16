@@ -30,29 +30,20 @@ export const MainContentSection = (): JSX.Element => {
 
       <div className="flex flex-col items-center gap-5 absolute top-[136px] left-1/2 -translate-x-1/2 w-full max-w-[1138px] px-4">
         <h1 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[56px] text-center leading-normal">
-          <span className="text-[#282828]">How does </span>
+          <span className="text-[#282828]">Cum se diferențiază </span>
           <span className="text-[#fe9800]">EasyReserv</span>
-          <span className="text-[#282828]">
-            {" "}
-            differentiate itself in the market?
-          </span>
+          <span className="text-[#282828]"> pe piață?</span>
         </h1>
 
-        <div className="w-full max-w-[674px] flex flex-col items-start gap-2.5">
+        <div className="w-full max-w-[860px] flex flex-col items-start gap-2.5">
           <p className="w-full [font-family:'Onest',Helvetica] font-normal text-[#282727] text-base text-center leading-[20.8px]">
-            At EasyReserv, we aren't just innovators, we're your
-            partners in progress. With a dedicated team of experts, EasyReserv
-            redefines what's possible in business management.
-          </p>
-
-          <p className="w-full [font-family:'Onest',Helvetica] font-normal text-[#282727] text-base text-center leading-[20.8px]">
-            Your success is not just a goal for us - it is our passion.
+            Am pornit de la o idee simplă — rezervări online ușoare — și am construit o platformă All-in-One care leagă rezervările de POS, stocuri, rapoarte și automatizări. Optimizăm fluxurile pe industrie (restaurante, cafenele, beauty, hoteluri, chirii auto, fitness, medical, retail) ca echipele să lucreze mai rapid și cu mai puține erori. Go-live în zile, nu luni, integrare 1C și plăți, fără hardware exotic. În plus, EasyReserv nu este doar un sistem de management: avem și o platformă publică de listare a partenerilor și booking B2C, astfel încât utilizatorii să poată descoperi, rezerva și interacționa direct cu afacerile tale. Rezultatul: timpi mai mici, costuri reduse și decizii pe date reale.
           </p>
         </div>
 
         <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 inline-flex items-center justify-center">
           <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-            Request Demo
+            Solicită Demo
           </span>
         </Link>
       </div>
