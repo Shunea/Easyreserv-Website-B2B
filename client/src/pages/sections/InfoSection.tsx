@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FAQSection } from "./FAQSection";
+import { Container } from "@/components/Container";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -144,67 +145,77 @@ const footerLinks = {
 export const InfoSection = (): JSX.Element => {
   return (
     <section className="flex flex-col items-center w-full">
-      <div className="flex items-center gap-5 px-[180px] py-[50px] w-full max-w-[1440px]">
-        <img
-          className="w-[622px] h-[434px] rounded-[20px] object-cover"
-          alt="Rectangle"
-          src="/figmaAssets/rectangle-435.png"
-        />
+      {/* Povestea Noastră Section */}
+      <div className="w-full py-16">
+        <Container>
+          <div className="col-span-12 flex flex-col gap-8">
+            {/* Header cu imagine mică și titlu/text */}
+            <div className="flex flex-col lg:flex-row items-start gap-8">
+              <div className="w-full lg:w-auto shrink-0">
+                <img
+                  className="w-full lg:w-[300px] h-auto rounded-[20px] object-cover"
+                  alt="EasyReserv Story"
+                  src="/figmaAssets/rectangle-435.png"
+                />
+              </div>
 
-        <div className="flex flex-col items-start gap-4 flex-1">
-          <h2 className="self-stretch [font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[52.8px]">
-            Povestea noastră
-          </h2>
+              <div className="flex-1 flex flex-col gap-6">
+                <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
+                  Povestea noastră
+                </h2>
 
-          <div className="flex flex-col items-start gap-8">
-            <div className="flex flex-col items-start gap-4">
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul:
-                „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
-              </p>
-              
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
-              </p>
-              
-              <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
-              </p>
+                <div className="flex flex-col gap-4">
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                    Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul:
+                    „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
+                  </p>
+                  
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                    Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
+                  </p>
+                  
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                    Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-4 w-full">
-              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8">
+            {/* Card Cronologie */}
+            <div className="bg-gray-50 rounded-[20px] p-8 border border-gray-200">
+              <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-6">
                 Cronologie
               </h3>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Ziua 1</span> — Primul flow de rezervare (solicitare → confirmare).
+                  <span className="font-semibold text-[#fe9800]">Ziua 1</span> — Primul flow de rezervare (solicitare → confirmare).
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Luna 3</span> — Începem web app-ul care centralizează datele (în paralel cu dezvoltarea mobile).
+                  <span className="font-semibold text-[#fe9800]">Luna 3</span> — Începem web app-ul care centralizează datele (în paralel cu dezvoltarea mobile).
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Luna 8</span> — Prima versiune de Mobile App (beta) pentru clienți pilot.
+                  <span className="font-semibold text-[#fe9800]">Luna 8</span> — Prima versiune de Mobile App (beta) pentru clienți pilot.
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Luna 13 (1 martie 2024)</span> — Mobile App în producție; în primele 48h, intrăm în Top 2 la rating în categoria ei.
+                  <span className="font-semibold text-[#fe9800]">Luna 13 (1 martie 2024)</span> — Mobile App în producție; în primele 48h, intrăm în Top 2 la rating în categoria ei.
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Luna 14</span> — Integrare POS fiscal: bon, split note, reduceri, imprimante.
+                  <span className="font-semibold text-[#fe9800]">Luna 14</span> — Integrare POS fiscal: bon, split note, reduceri, imprimante.
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold">Luna 18</span> — Primul restaurant full-cycle în ecosistem (rezervări → POS → KDS → stocuri → rapoarte) cu ~30.000 € profit suplimentar după lansare.
+                  <span className="font-semibold text-[#fe9800]">Luna 18</span> — Primul restaurant full-cycle în ecosistem (rezervări → POS → KDS → stocuri → rapoarte) cu ~30.000 € profit suplimentar după lansare.
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6 lg:col-span-2">
-                  <span className="font-semibold">Luna 20</span> — Extindem cu KDS & Timere, Stocuri & Rețetare (COGS), Rapoarte live, Automatizări & Notificări și integrări locale.
+                  <span className="font-semibold text-[#fe9800]">Luna 20</span> — Extindem cu KDS & Timere, Stocuri & Rețetare (COGS), Rapoarte live, Automatizări & Notificări și integrări locale.
                 </p>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-6 w-full">
-              <div className="flex flex-col gap-3">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8">
+            {/* Grid 2x2 pentru subsecțiuni ca carduri */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+              <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
                   Cine suntem azi
                 </h3>
                 
@@ -214,8 +225,8 @@ export const InfoSection = (): JSX.Element => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8">
+              <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
                   Optimizări pe industrie
                 </h3>
                 
@@ -224,8 +235,8 @@ export const InfoSection = (): JSX.Element => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8">
+              <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
                   Impact
                 </h3>
                 
@@ -234,8 +245,8 @@ export const InfoSection = (): JSX.Element => {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3">
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8">
+              <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
                   Misiune
                 </h3>
                 
@@ -245,13 +256,15 @@ export const InfoSection = (): JSX.Element => {
               </div>
             </div>
 
-            <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
-              <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                Începe călătoria ta
-              </span>
-            </Link>
+            <div className="flex justify-center mt-4">
+              <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-8 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center shadow-sm">
+                <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
+                  Începe călătoria ta
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
+        </Container>
       </div>
 
       <div className="flex w-full items-center justify-center gap-8 px-[180px] py-[50px] bg-[#282828]">
