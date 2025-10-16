@@ -120,7 +120,7 @@ const comparisonCategories = [
       },
       {
         name: "Curier",
-        values: ["-", "-", "-", "Nelimitat (inclus cu Curier App)"],
+        values: ["-", "-", "-", "Nelimitat"],
         muted: [true, true, true, false],
       },
     ],
@@ -319,11 +319,11 @@ export const ContentWrapperSection = (): JSX.Element => {
                   : "opacity-0 bg-[#2d2c65]"
               }`}
             >
-              <div className="[font-family:'Onest',Helvetica] font-semibold text-sementicscolorfgon-accent text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+              <div className="[font-family:'Onest',Helvetica] font-semibold text-white text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
                 Cel mai popular
               </div>
               {plan.isPopular && (
-                <SparklesIcon className="w-3.5 h-3.5 text-sementicscolorfgon-accent" />
+                <SparklesIcon className="w-3.5 h-3.5 text-white" />
               )}
             </div>
           ))}
@@ -338,8 +338,8 @@ export const ContentWrapperSection = (): JSX.Element => {
                     : "border border-zinc-200"
                 }`}
               >
-                <CardContent className="flex flex-col items-start gap-6 p-5">
-                  <div className="flex flex-col items-start gap-1 w-full">
+                <CardContent className="flex flex-col items-start gap-4 p-5">
+                  <div className="flex flex-col items-start gap-1 w-full min-h-[60px]">
                     <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
                       {plan.name}
                     </h3>
@@ -513,46 +513,44 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </p>
                   </div>
 
-                  <div className="flex items-start gap-[15px] w-full">
-                    <div className="inline-flex items-end gap-1">
-                      <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
-                        plan.monthlyPrice === null 
-                          ? "text-xl leading-[28px]" 
-                          : "text-[32px] leading-[36.8px] whitespace-nowrap"
-                      }`}>
-                        {calculatePrice(plan.monthlyPrice, isAnnual)}
+                  <div className="flex items-baseline gap-1 w-full">
+                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] whitespace-nowrap ${
+                      plan.monthlyPrice === null 
+                        ? "text-xl leading-[28px]" 
+                        : "text-[32px] leading-[36.8px]"
+                    }`}>
+                      {calculatePrice(plan.monthlyPrice, isAnnual)}
+                    </span>
+                    {plan.monthlyPrice !== null && (
+                      <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
+                        / lună
                       </span>
-                      {plan.monthlyPrice !== null && (
-                        <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                          / lună
-                        </span>
-                      )}
-                    </div>
+                    )}
                   </div>
 
                   {plan.planId ? (
                     <a
                       href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
-                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
                         Începe perioada de test gratuită
                       </span>
                     </a>
                   ) : (
                     <Link
                       href="/contact"
-                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                      className={`w-full h-auto px-4 py-3 rounded-[5px] inline-flex items-center justify-center ${
                         plan.isPopular
                           ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                           : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
                       }`}
                     >
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
                         Contactează-ne
                       </span>
                     </Link>
