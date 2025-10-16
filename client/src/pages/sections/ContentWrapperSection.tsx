@@ -22,7 +22,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Fitness": { basic: 49, standard: 99, pro: 149 },
   "Medical": { basic: 49, standard: 99, pro: 149 },
   "Retail": { basic: 49, standard: 99, pro: 149 },
-  "Spălătorii auto": { basic: 49, standard: 99, pro: 149 },
+  "Spălătorii auto": { basic: 35, standard: 75, pro: 125 },
 };
 
 const getPricingPlans = (industry: string) => {
@@ -91,6 +91,77 @@ const getPricingPlans = (industry: string) => {
           "Integrare 1C fiscalizat",
           "Automatizări AI marketing",
           "Backup extern & stocare extinsă",
+        ],
+      },
+    ];
+  }
+  
+  if (industry === "Spălătorii auto") {
+    return [
+      {
+        name: "Basic",
+        description: "Pentru spălătorii auto mici",
+        monthlyPrice: 35,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "1 utilizator inclus",
+          "Rezervări online & walk-in Basic",
+          "Servicii configurabile statice",
+          "Management financiar simplificat",
+          "Rapoarte simple",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "Management echipe & clienți",
+        monthlyPrice: 75,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "2 utilizatori + 5€/user suplimentar",
+          "Management angajați & pontaj",
+          "Rezervări cu calendar",
+          "Prețuri pe caroserie/lucrări",
+          "CRM clienți & istoric mașină",
+          "SMS promoționale & Reminder",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "Stocuri, comenzi mobile & automatizări",
+        monthlyPrice: 125,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "3 utilizatori incluși",
+          "Rezervări cu prioritizare",
+          "Pachete promoționale & upsell",
+          "Comenzi Pickup/mobil cu geolocalizare",
+          "Stocuri consumabile & alerte",
+          "Push, Reminder & segmentare",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "Flotă mobilă, integrare fiscală, AI",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "3+ utilizatori scalabili",
+          "Auto-redistribuire rezervări",
+          "Gestionare flotă mobilă & rute",
+          "AI Suggest prețuri",
+          "Integrare 1C & PowerBI",
+          "Campanii cu trigger & loyalty",
         ],
       },
     ];
@@ -167,6 +238,179 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Spălătorii auto") {
+    return [
+      {
+        title: "Utilizatori & Personal",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["1", "2", "3", "3+ (scalabil)"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["-", "5€/user", "5€/user", "La cerere"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Management angajați & pontaj",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Planificare ture/echipe",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Targetare timpi/tipuri lucrări",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rezervări & Programări",
+        features: [
+          {
+            name: "Rezervări online & walk-in",
+            values: ["Basic", "Cu calendar", "Cu prioritizare", "Auto-redistribuire"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Formulare personalizabile",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Confirmare automată/manuală",
+            values: ["Manuală", true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Servicii & Prețuri",
+        features: [
+          {
+            name: "Prețuri pe caroserie/lucrări",
+            values: ["-", true, "Avansat", "AI Suggest"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Servicii configurabile",
+            values: ["Static", "Cu variații", "Pachete & upsell", "Bundle dinamic"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Lucrări extra (ceară, motor)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Pachete promoționale",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Management Financiar",
+        features: [
+          {
+            name: "Închidere de zi",
+            values: ["Simplificat", true, "Avansat", "Integrabil 1C"],
+          },
+          {
+            name: "Istoric plăți & reconciliere",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "CRM & Clienți",
+        features: [
+          {
+            name: "CRM clienți",
+            values: [false, true, true, "Integrat loyalty"],
+          },
+          {
+            name: "Istoric mașină/preferințe",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Alerte revizii/spălare periodică",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Comenzi Mobile & Flotă",
+        features: [
+          {
+            name: "Comenzi Pickup/mobil",
+            values: [false, false, true, "Cu geolocalizare"],
+          },
+          {
+            name: "Gestionare flotă mobilă/rute",
+            values: [false, false, false, true],
+          },
+        ],
+      },
+      {
+        title: "Stocuri & Consumabile",
+        features: [
+          {
+            name: "Stocuri consumabile",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Alerte low stock/inventar",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Costuri materiale/marjă",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Marketing & Campanii",
+        features: [
+          {
+            name: "Campanii marketing",
+            values: ["-", "SMS promoționale", "Push, Reminder", "Segmente & trigger"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Reminder spălare/alertă vreme",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Promoții happy hour",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analiză",
+        features: [
+          {
+            name: "Rapoarte & analitice",
+            values: ["Simplu", "Avansat", "Customizabil", "PowerBI"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Venituri/orar/tip mașină",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Vânzări pe lucrări/echipe",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Export PDF, CSV, 1C",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Cafenele") {
     return [
       {
