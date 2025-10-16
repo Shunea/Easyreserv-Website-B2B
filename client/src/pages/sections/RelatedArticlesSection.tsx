@@ -15,7 +15,7 @@ export const RelatedArticlesSection = ({ currentSlug }: RelatedArticlesSectionPr
   return (
     <section className="flex flex-col w-full items-start gap-10 px-4 md:px-[10%] py-16 bg-[#f8f9fa]">
       <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-[56px] tracking-[0] leading-normal">
-        Keep reading
+        Continuă să citești
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">

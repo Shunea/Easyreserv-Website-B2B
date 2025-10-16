@@ -97,7 +97,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
         <section className="items-start gap-12 flex flex-col w-full">
           <div className="flex-col gap-4 flex items-start w-full">
             <h2 className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-2xl tracking-[0] leading-normal w-full">
-              Conclusion:
+              Concluzie:
             </h2>
 
             <p className="w-full [font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[0] leading-[1.8]">
@@ -108,7 +108,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
 
         <footer className="inline-flex items-center gap-8 flex-wrap">
           <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-normal">
-            Share on
+            Distribuie pe
           </span>
 
           <div className="flex items-center gap-4">
