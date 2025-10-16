@@ -622,8 +622,8 @@ export const AboutSection = (): JSX.Element => {
           <div className="col-span-12 lg:col-span-6 flex items-center justify-center">
             <img
               className="w-full max-w-[622px] h-auto rounded-[20px] object-cover"
-              alt="Restaurant interior"
-              src="/figmaAssets/rectangle-435.png"
+              alt="EasyReserv Co-Founders presentation"
+              src="/figmaAssets/about-founders.jpg"
             />
           </div>
 
