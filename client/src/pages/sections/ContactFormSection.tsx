@@ -1,4 +1,4 @@
-import { MailIcon } from "lucide-react";
+import { MailIcon, ChevronsUpDown, Check } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,6 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 type Country = {
   code: string;
@@ -265,6 +279,7 @@ const formFields = [
 
 export const ContactFormSection = (): JSX.Element => {
   const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
+  const [open, setOpen] = useState(false);
 
   return (
     <section className="flex flex-col w-full max-w-[1138px] mx-auto items-center gap-5 px-0 py-[50px] bg-white rounded-[10px] border border-solid border-zinc-200 shadow-[8px_28px_30px_#00000008]">
@@ -304,29 +319,52 @@ export const ContactFormSection = (): JSX.Element => {
                     </Select>
                   ) : field.type === "phone" ? (
                     <div className="flex items-center gap-2 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
-                      <Select 
-                        value={selectedCountry.code} 
-                        onValueChange={(value) => {
-                          const country = countries.find(c => c.code === value);
-                          if (country) setSelectedCountry(country);
-                        }}
-                      >
-                        <SelectTrigger className="w-auto h-full border-0 gap-1 px-3 focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0">
-                          <span className="text-lg leading-none">
-                            {selectedCountry.flag}
-                          </span>
-                        </SelectTrigger>
-                        <SelectContent>
-                          {countries.map((country) => (
-                            <SelectItem key={country.code} value={country.code}>
-                              <div className="flex items-center gap-2">
-                                <span className="text-base">{country.flag}</span>
-                                <span>{country.name} ({country.prefix})</span>
-                              </div>
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <Popover open={open} onOpenChange={setOpen}>
+                        <PopoverTrigger asChild>
+                          <Button
+                            variant="ghost"
+                            role="combobox"
+                            aria-expanded={open}
+                            className="w-auto h-full border-0 gap-1 px-3 hover:bg-transparent focus-visible:outline-none focus-visible:ring-0"
+                          >
+                            <span className="text-lg leading-none">
+                              {selectedCountry.flag}
+                            </span>
+                            <ChevronsUpDown className="ml-1 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[300px] p-0" align="start">
+                          <Command>
+                            <CommandInput placeholder="Caută țară..." />
+                            <CommandList>
+                              <CommandEmpty>Nicio țară găsită.</CommandEmpty>
+                              <CommandGroup>
+                                {countries.map((country) => (
+                                  <CommandItem
+                                    key={country.code}
+                                    value={`${country.name} ${country.prefix}`}
+                                    onSelect={() => {
+                                      setSelectedCountry(country);
+                                      setOpen(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={cn(
+                                        "mr-2 h-4 w-4",
+                                        selectedCountry.code === country.code
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      )}
+                                    />
+                                    <span className="text-base mr-2">{country.flag}</span>
+                                    <span>{country.name} ({country.prefix})</span>
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </PopoverContent>
+                      </Popover>
                       <span className="font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]">
                         {selectedCountry.prefix}
                       </span>
