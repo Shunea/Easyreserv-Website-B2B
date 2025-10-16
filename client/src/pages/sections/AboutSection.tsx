@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Container } from "@/components/Container";
-import { WhatIsEasyReservSection } from "./WhatIsEasyReservSection";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -693,9 +692,6 @@ export const AboutSection = (): JSX.Element => {
           </div>
         </Container>
       </div>
-
-      {/* What is EasyReserv Section */}
-      <WhatIsEasyReservSection />
 
       {/* Bottom Stats Section */}
       <div className="w-full py-12 bg-[#282828]">
