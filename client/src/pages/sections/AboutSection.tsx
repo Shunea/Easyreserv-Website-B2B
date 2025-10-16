@@ -153,6 +153,20 @@ const footerLinks = {
 };
 
 export const AboutSection = (): JSX.Element => {
+  const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
+
+  const industries = [
+    { value: "restaurante", label: "Restaurante" },
+    { value: "cafenele", label: "Cafenele" },
+    { value: "saloane", label: "Saloane de frumusețe" },
+    { value: "barbershop", label: "Barbershopuri" },
+    { value: "hotel", label: "Hotele & Pensiuni" },
+    { value: "chirii-auto", label: "Chirii auto" },
+    { value: "fitness", label: "Fitness" },
+    { value: "medical", label: "Medical" },
+    { value: "retail", label: "Retail" },
+  ];
+
   return (
     <section className="flex flex-col items-center w-full">
       {/* Top Stats Section */}
@@ -181,10 +195,39 @@ export const AboutSection = (): JSX.Element => {
       {/* Best Features Section */}
       <div className="w-full py-16 md:py-24">
         <Container>
-          <div className="col-span-12">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px] mb-12">
+          <div className="col-span-12 flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px]">
               Cele mai bune funcționalități
             </h2>
+            <div className="relative">
+              <select
+                value={selectedIndustry}
+                onChange={(e) => setSelectedIndustry(e.target.value)}
+                className="appearance-none bg-white border border-[#cccccc] rounded-lg px-6 py-3 pr-10 [font-family:'Onest',Helvetica] font-medium text-[#282828] text-lg cursor-pointer hover:border-[#2d2c65] focus:outline-none focus:ring-2 focus:ring-[#2d2c65] focus:border-transparent transition-colors"
+              >
+                {industries.map((industry) => (
+                  <option key={industry.value} value={industry.value}>
+                    {industry.label}
+                  </option>
+                ))}
+              </select>
+              <svg
+                className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 7.5L10 12.5L15 7.5"
+                  stroke="#282828"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </div>
 
           <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
