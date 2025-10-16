@@ -20,7 +20,7 @@ const industryPricing: Record<string, { basic: number; standard: number; pro: nu
   "Hotele & Pensiuni": { basic: 79, standard: 149, pro: 249 },
   "Chirii auto": { basic: 59, standard: 119, pro: 199 },
   "Fitness": { basic: 49, standard: 99, pro: 149 },
-  "Medical": { basic: 49, standard: 99, pro: 149 },
+  "Medical": { basic: 49, standard: 99, pro: 199 },
   "Retail": { basic: 49, standard: 99, pro: 149 },
   "Spălătorii auto": { basic: 35, standard: 75, pro: 125 },
   "Tenis/Padel/Fotbal": { basic: 39, standard: 79, pro: 129 },
@@ -456,6 +456,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Medical") {
+    return [
+      {
+        name: "Starter",
+        description: "Cabinet individual/micro-clinică (1-3 medici)",
+        monthlyPrice: 49,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "3 utilizatori incluși",
+          "Programări online/telefon",
+          "Calendar multi-medic",
+          "Fișă pacient & anamneză",
+          "POS recepție & facturare",
+          "Confirmări email",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "Clinică mică (4-10 medici)",
+        monthlyPrice: 99,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Starter",
+          "6 utilizatori + 5€/user suplimentar",
+          "Template-uri per specialitate",
+          "Rețete & bilete trimitere",
+          "Check-in cabinet & remindere SMS",
+          "CRM pacienți & campanii recall",
+          "Solicitări analize & rezultate",
+        ],
+      },
+      {
+        name: "Business",
+        description: "Clinică medie (11-30 medici)",
+        monthlyPrice: 199,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "12 utilizatori incluși",
+          "Decontări corporate/asiguratori",
+          "Pontaj ture & comisioane",
+          "Dunning automat & pachete medicale",
+          "Portal rezultate pacient",
+          "Ecrane sală așteptare",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "Rețea/Spital privat (31+ medici)",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Business",
+          "Utilizatori nelimitat",
+          "Integrare LIS (HL7) & PACS (DICOM)",
+          "e-Prescripție & SIUI/CNAS",
+          "App pacient white-label",
+          "SSO, backup extern & audit avansat",
+          "API prioritar & webhooks",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -527,6 +599,248 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Medical") {
+    return [
+      {
+        title: "Utilizatori & Acces",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["3", "6", "12", "Nelimitat"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["5€/user", "5€/user", "5€/user", "Inclus"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Roluri acoperite",
+            values: ["Admin, Recepție, Medic", "+ Asistent, Contabil", "+ Manager Clinică, Laborant", "Toate + Integrări avansate"],
+            muted: [false, false, false, false],
+          },
+        ],
+      },
+      {
+        title: "Programări & Flux Pacienți",
+        features: [
+          {
+            name: "Programări online/call center",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Calendar multi-medic/specialitate",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Politici anulare/no-show",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Liste așteptare/overbooking",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Confirmări & remindere",
+            values: ["Email", "Email+SMS", "Email+SMS+Push", "Omni-channel"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Flow check-in & chemare cabinet",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Ecrane sală așteptare",
+            values: [false, false, "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "EMR / Dossier Pacient",
+        features: [
+          {
+            name: "Fișă pacient, anamneză, alergii",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Template-uri per specialitate",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Plan tratament & atașamente",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Rețete/recomandări/bilete",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Consimțăminte digitale",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Istoric vizite & scheme",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Restricții rol (confidențialitate)",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Plăți & Facturare",
+        features: [
+          {
+            name: "Facturi, chitanțe, proforme",
+            values: [true, true, true, true],
+          },
+          {
+            name: "POS recepție/plăți online",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Pachete/abonamente medicale",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Devize stomatologice",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Decontări corporate/asiguratori",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Integrare casă marcat/1C/ERP",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "Dunning (eșec plată)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Laborator & Imagistică",
+        features: [
+          {
+            name: "Solicitări analize & rezultate",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Paneluri investigații & prețuri",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Integrare LIS (laborator) - HL7",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Integrare PACS/RIS (DICOM)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Link rezultat către pacient",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Personal & HR",
+        features: [
+          {
+            name: "Pontaj/ture/concedii",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Ținte per medic (programări, NPS)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Comisioane per serviciu",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Evaluare performanță",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Marketing & Retenție",
+        features: [
+          {
+            name: "CRM pacienți & segmente",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Campanii SMS/Email (recall)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Recenzii post-vizită/NPS",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Cupoane/pachete promo",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Securitate & GDPR",
+        features: [
+          {
+            name: "Control acces pe rol (RBAC)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Jurnal acces fișe (audit)",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Consimțăminte & retenție date",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Criptare rest & in-transit",
+            values: [true, true, true, true],
+          },
+          {
+            name: "SSO/IP allowlist/backup extern",
+            values: [false, false, "Add-on", true],
+          },
+        ],
+      },
+      {
+        title: "Integrări & API",
+        features: [
+          {
+            name: "Procesatori plăți",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Contabilitate/1C/ERP",
+            values: [false, "Add-on", "Add-on", true],
+          },
+          {
+            name: "e-Prescripție/SIUI/CNAS",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "API extern & Webhooks",
+            values: [false, false, "Add-on", "Prioritar"],
+          },
+          {
+            name: "App pacient (programări/documente)",
+            values: [false, false, "Add-on", "White-label"],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Tenis/Padel/Fotbal") {
     return [
       {
