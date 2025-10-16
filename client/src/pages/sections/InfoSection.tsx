@@ -374,14 +374,14 @@ export const InfoSection = (): JSX.Element => {
         <div className="flex flex-col items-start gap-10 flex-1">
           <div className="flex flex-col items-start gap-4 w-[530px]">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl tracking-[0] leading-[52.8px]">
-              Experience the Difference
+              Simte diferența
               <br />
-              Today!
+              Astăzi!
             </h2>
 
             <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                Get started
+                Începe acum
               </span>
             </Link>
           </div>
@@ -400,12 +400,12 @@ export const InfoSection = (): JSX.Element => {
         <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
           <div className="flex flex-col items-start gap-4 w-full z-10 max-w-xl">
             <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-              Start Optimizing Your Business Today!
+              Începe să-ți optimizezi afacerea astăzi!
             </h2>
 
             <Link href="/pricing" className="h-auto bg-white rounded-[5px] px-6 py-4 hover:bg-white/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base tracking-[0] leading-5">
-                Become a partner
+                Devino partener
               </span>
             </Link>
           </div>
