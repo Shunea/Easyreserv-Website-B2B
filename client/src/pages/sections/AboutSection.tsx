@@ -531,35 +531,21 @@ export const AboutSection = (): JSX.Element => {
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px]">
               Cele mai bune funcționalități
             </h2>
-            <div className="relative">
-              <select
-                value={selectedIndustry}
-                onChange={(e) => handleIndustryChange(e.target.value)}
-                className="appearance-none bg-white border border-[#cccccc] rounded-lg px-6 py-3 pr-10 [font-family:'Onest',Helvetica] font-medium text-[#282828] text-lg cursor-pointer hover:border-[#2d2c65] focus:outline-none focus:ring-2 focus:ring-[#2d2c65] focus:border-transparent transition-colors"
-              >
-                {industries.map((industry) => (
-                  <option key={industry.value} value={industry.value}>
-                    {industry.label}
-                  </option>
-                ))}
-              </select>
-              <svg
-                className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 7.5L10 12.5L15 7.5"
-                  stroke="#282828"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+            <select
+              value={selectedIndustry}
+              onChange={(e) => handleIndustryChange(e.target.value)}
+              className="inline-flex items-center gap-2.5 px-6 py-3 bg-[#2d2c650d] rounded-[5px] border border-solid border-[#28282833] [font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-lg cursor-pointer appearance-none bg-no-repeat bg-right pr-12"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9L12 15L18 9' stroke='%232d2c65' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                backgroundPosition: 'right 1rem center'
+              }}
+            >
+              {industries.map((industry) => (
+                <option key={industry.value} value={industry.value}>
+                  {industry.label}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="col-span-12 lg:col-span-6 flex justify-center lg:justify-start">
