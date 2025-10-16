@@ -2,72 +2,73 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
+import blogImage from "@assets/blog-test-image.png";
 
 const featuredArticle = {
-  title: "3 must-try dishes at Nashville's Chinese-meets-Southern hotspot Choy",
-  slug: "nashville-choy-dishes",
-  date: "August 20, 2022",
-  image: "/figmaAssets/rectangle-38-9.png",
-  excerpt: "The local dining scene has just been heating up year after year, and one of the hottest new players on the scene is Choy in Nashville, dubbed one of The Infatuation's best new restaurants in 2024.",
+  title: "Cum să îți transformi restaurantul într-un business de succes în 2025",
+  slug: "transformare-restaurant-business-succes",
+  date: "20 August 2024",
+  image: blogImage,
+  excerpt: "Descoperă cele mai eficiente strategii și tehnici moderne pentru a-ți dezvolta afacerea din industria HoReCa. De la digitalizare până la optimizarea experienței clienților, află cum să rămâi competitiv pe piața actuală.",
 };
 
 const articles = [
   {
     title:
-      "3 must-try dishes at Nashville's Chinese-meets-Southern hotspot Choy",
-    slug: "nashville-choy-dishes",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
+      "Cum să îți transformi restaurantul într-un business de succes în 2025",
+    slug: "transformare-restaurant-business-succes",
+    date: "20 August 2024",
+    image: blogImage,
   },
   {
-    title: "Must-Know Restaurant Terms for 2025",
-    slug: "restaurant-terms-2025",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
-  },
-  {
-    title:
-      "The Impact of Technology on the Workplace: How Technology is Changing",
-    slug: "technology-workplace-impact",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
-  },
-  {
-    title: "Restaurant Loyalty Segmentation - What It Is, How To Do It",
-    slug: "restaurant-loyalty-segmentation",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
-  },
-  {
-    title: "Reducing Plate Waste With Portion Control - A 5-Step Guide",
-    slug: "reducing-plate-waste-portion-control",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
-  },
-  {
-    title: "How to Ensure Your Restaurant Fails - 5 Key Steps",
-    slug: "restaurant-fails-key-steps",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
+    title: "Termeni esențiali pentru industria HoReCa în 2025",
+    slug: "termeni-horeca-2025",
+    date: "15 August 2024",
+    image: blogImage,
   },
   {
     title:
-      "Generation Sell - Engaging and Retaining Zoomers at Your Restaurant",
-    slug: "generation-sell-engaging-zoomers",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
+      "Impactul tehnologiei asupra afacerii: Cum tehnologia schimbă industria",
+    slug: "impact-tehnologie-afacere",
+    date: "10 August 2024",
+    image: blogImage,
   },
   {
-    title: "Cloud-Based Tech – A More Sustainable Solution for Your Restaurant",
-    slug: "cloud-based-tech-sustainable-solution",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
+    title: "Programele de fidelizare - Ce sunt și cum le implementezi",
+    slug: "programe-fidelizare-implementare",
+    date: "5 August 2024",
+    image: blogImage,
   },
   {
-    title: "Morale and Motivation - Improving Staff Retention With Syrve",
-    slug: "morale-motivation-staff-retention",
-    date: "August 20, 2022",
-    image: "/figmaAssets/rectangle-38-9.png",
+    title: "Reducerea risipei alimentare prin control al porțiilor - Ghid în 5 pași",
+    slug: "reducere-risipa-control-portii",
+    date: "1 August 2024",
+    image: blogImage,
+  },
+  {
+    title: "5 greșeli care pot duce la eșecul restaurantului tău",
+    slug: "greseli-esec-restaurant",
+    date: "28 Iulie 2024",
+    image: blogImage,
+  },
+  {
+    title:
+      "Generația Z - Cum să atragi și să reții tinerii angajați în restaurant",
+    slug: "generatia-z-angajati-restaurant",
+    date: "25 Iulie 2024",
+    image: blogImage,
+  },
+  {
+    title: "Tehnologia Cloud - O soluție sustenabilă pentru restaurantul tău",
+    slug: "tehnologie-cloud-solutie-sustenabila",
+    date: "20 Iulie 2024",
+    image: blogImage,
+  },
+  {
+    title: "Moralul și Motivația - Îmbunătățirea retenției angajaților",
+    slug: "moral-motivatie-retentie-angajati",
+    date: "15 Iulie 2024",
+    image: blogImage,
   },
 ];
 
@@ -75,7 +76,7 @@ export const BlogSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-center gap-6 px-4 md:px-[10%] py-16">
       <h1 className="w-full [font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-[56px] text-center tracking-[0] leading-normal">
-        Our best stories
+        Poveștile noastre
       </h1>
 
       <Link to={`/blog/${featuredArticle.slug}`}>
@@ -140,7 +141,7 @@ export const BlogSection = (): JSX.Element => {
 
       <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
         <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-          Load more
+          Încarcă mai multe
         </span>
       </Button>
     </section>
