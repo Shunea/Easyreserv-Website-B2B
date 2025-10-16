@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 export const FeatureImageSection = (): JSX.Element => {
@@ -11,9 +12,9 @@ export const FeatureImageSection = (): JSX.Element => {
           </h2>
         </div>
 
-        <Button className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] font-bold text-base px-6 py-4 rounded-[5px]">
+        <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] font-bold text-base px-6 py-4 rounded-[5px] inline-flex items-center justify-center">
           Become a partner
-        </Button>
+        </Link>
 
         <img
           className="absolute -top-11 left-[772px] w-[367px] h-[366px]"

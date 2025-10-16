@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 export const MainContentSection = (): JSX.Element => {
@@ -50,11 +51,11 @@ export const MainContentSection = (): JSX.Element => {
           </p>
         </div>
 
-        <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
+        <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 inline-flex items-center justify-center">
           <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
             Request Demo
           </span>
-        </Button>
+        </Link>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 
@@ -22,11 +23,11 @@ export const PricingHeroSection = (): JSX.Element => {
             </p>
           </div>
 
-          <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
+          <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 inline-flex items-center justify-center">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
               Start now
             </span>
-          </Button>
+          </Link>
         </div>
 
         <div className="col-span-12 md:col-span-6 flex items-center justify-center">

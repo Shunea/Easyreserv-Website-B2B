@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -178,11 +179,11 @@ export const AboutSection = (): JSX.Element => {
                           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base leading-6">
                             {feature.content}
                           </p>
-                          <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
+                          <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
                               Request Demo
                             </span>
-                          </Button>
+                          </Link>
                         </div>
                       </AccordionContent>
                     )}
@@ -232,11 +233,11 @@ export const AboutSection = (): JSX.Element => {
             </div>
 
             <div>
-              <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
+              <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
                   Request Demo
                 </span>
-              </Button>
+              </Link>
             </div>
           </div>
         </Container>
@@ -321,11 +322,11 @@ export const AboutSection = (): JSX.Element => {
             </div>
 
             <div>
-              <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm">
+              <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
                   Start your journey!
                 </span>
-              </Button>
+              </Link>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -156,11 +157,11 @@ export const InfoSection = (): JSX.Element => {
               </p>
             </div>
 
-            <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
+            <Link href="/contact" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
                 Request Demo
               </span>
-            </Button>
+            </Link>
           </div>
         </div>
       </div>

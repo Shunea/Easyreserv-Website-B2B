@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -319,11 +320,11 @@ export const SolutionsContentSection = (): JSX.Element => {
             our solution adapts to your unique needs.
           </p>
 
-          <Button className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90">
+          <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
               Explore plans
             </span>
-          </Button>
+          </Link>
         </div>
 
         <div className="col-span-12 md:col-span-6 flex items-start gap-5">
