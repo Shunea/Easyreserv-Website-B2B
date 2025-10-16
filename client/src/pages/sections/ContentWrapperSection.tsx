@@ -473,7 +473,7 @@ const getComparisonCategories = (industry: string) => {
 };
 
 export const ContentWrapperSection = (): JSX.Element => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(true);
   const [isAnnual, setIsAnnual] = React.useState(false);
   const [selectedBusiness, setSelectedBusiness] = React.useState("Restaurante");
 
