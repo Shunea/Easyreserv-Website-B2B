@@ -446,6 +446,22 @@ const bottomStats = [
 
 const faqItems = [
   {
+    question: "Pot accesa EasyReserv atât pe web cât și pe dispozitive mobile?",
+    answer: "Da, EasyReserv este disponibil atât ca aplicație web (desktop și tabletă) cât și ca aplicație mobilă nativă pentru iOS și Android. Poți accesa toate funcționalitățile platformei de pe orice dispozitiv, cu sincronizare în timp real între toate device-urile tale.",
+  },
+  {
+    question: "Cât durează implementarea platformei EasyReserv?",
+    answer: "Implementarea EasyReserv durează între 2-5 zile în funcție de complexitatea afacerii tale. Echipa noastră te asistă la fiecare pas: configurare inițială, import date, training echipă și go-live. Nu trebuie să schimbi hardware-ul existent.",
+  },
+  {
+    question: "Se integrează EasyReserv cu sistemul meu de contabilitate?",
+    answer: "Da, EasyReserv se integrează nativ cu principalele sisteme de contabilitate precum 1C, SAP și alte soluții populare. Exportul de facturi, vânzări și rapoarte financiare se face automat, eliminând introducerea manuală a datelor.",
+  },
+  {
+    question: "Oferă EasyReserv suport tehnic și training pentru echipa mea?",
+    answer: "Absolut! Oferim suport tehnic 24/7 prin chat, email și telefon. La implementare, includem sesiuni de training pentru întreaga echipă: manageri, casieri, ospătari și bucătari. Plus acces la baza noastră de cunoștințe și tutoriale video.",
+  },
+  {
     question: "Pe ce dispozitive pot folosi EasyReserv?",
     answer: "Web (desktop/laptop) și mobil (iOS/Android). Avem și extensii dedicate (ex. smartwatch pentru ospătari) și suport pentru imprimante/scanere compatibile.",
   },
@@ -456,10 +472,6 @@ const faqItems = [
   {
     question: "Cum mă ajută pe industria mea?",
     answer: "Avem optimizări pe industrie: de la timere KDS și rotație mese în restaurante, la abonamente & programări în beauty/fitness, ocupare camere în hoteluri, tarifare pe interval la chirii auto, loturi/expirări în medical și coduri de bare în retail.",
-  },
-  {
-    question: "Cât durează implementarea (go-live)?",
-    answer: "De la 1 zi pentru o singură locație până la 1–2 săptămâni pentru rețele (import meniuri/servicii, utilizatori, stocuri, training).",
   },
   {
     question: "Trebuie să schimb hardware-ul?",
@@ -921,7 +933,7 @@ export const AboutSection = (): JSX.Element => {
               onValueChange={setOpenFaqAccordion}
               className="w-full"
             >
-              {faqItems.slice(0, 7).map((item, index) => (
+              {faqItems.slice(0, 9).map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`faq-${index}`}
@@ -954,15 +966,15 @@ export const AboutSection = (): JSX.Element => {
               onValueChange={setOpenFaqAccordion}
               className="w-full"
             >
-              {faqItems.slice(7).map((item, index) => (
+              {faqItems.slice(9).map((item, index) => (
                 <AccordionItem
-                  key={index + 7}
-                  value={`faq-${index + 7}`}
+                  key={index + 9}
+                  value={`faq-${index + 9}`}
                   className="border-b border-[#3f4e5b]"
                 >
                   <AccordionTrigger className="px-0 py-5 hover:no-underline">
                     <span className={`text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal tracking-[-0.36px] transition-colors ${
-                      openFaqAccordion === `faq-${index + 7}` ? 'text-white' : 'text-[#999999]'
+                      openFaqAccordion === `faq-${index + 9}` ? 'text-white' : 'text-[#999999]'
                     }`}>
                       {item.question}
                     </span>
