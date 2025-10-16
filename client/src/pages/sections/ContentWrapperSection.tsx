@@ -471,18 +471,34 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </div>
                   </div>
 
-                  <Button
-                    variant={plan.buttonVariant}
-                    className={`w-full h-auto px-6 py-4 rounded-[5px] ${
-                      plan.isPopular
-                        ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
-                        : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
-                    }`}
-                  >
-                    <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                      Start Free Trial
-                    </span>
-                  </Button>
+                  {plan.planId ? (
+                    <a
+                      href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
+                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                        plan.isPopular
+                          ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                          : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                      }`}
+                    >
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                        Start Free Trial
+                      </span>
+                    </a>
+                  ) : (
+                    <Button
+                      variant={plan.buttonVariant}
+                      className={`w-full h-auto px-6 py-4 rounded-[5px] ${
+                        plan.isPopular
+                          ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                          : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                      }`}
+                      disabled
+                    >
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                        Contact Us
+                      </span>
+                    </Button>
+                  )}
 
                   <div className="flex flex-col items-start gap-2 w-full">
                     <div className="[font-family:'Onest',Helvetica] font-semibold text-[#909090] text-base tracking-[0] leading-[18.4px]">
@@ -619,18 +635,34 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </div>
                   </div>
 
-                  <Button
-                    variant={plan.buttonVariant}
-                    className={`w-full h-auto px-6 py-4 rounded-[5px] ${
-                      plan.isPopular
-                        ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
-                        : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
-                    }`}
-                  >
-                    <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
-                      Start Free Trial
-                    </span>
-                  </Button>
+                  {plan.planId ? (
+                    <a
+                      href={`https://app.easyreserv.io/register?planId=${plan.planId}`}
+                      className={`w-full h-auto px-6 py-4 rounded-[5px] inline-flex items-center justify-center ${
+                        plan.isPopular
+                          ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                          : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                      }`}
+                    >
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                        Start Free Trial
+                      </span>
+                    </a>
+                  ) : (
+                    <Button
+                      variant={plan.buttonVariant}
+                      className={`w-full h-auto px-6 py-4 rounded-[5px] ${
+                        plan.isPopular
+                          ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
+                          : "bg-neutral-50 border border-[#2d2c65] text-[#2d2c65] hover:bg-neutral-100"
+                      }`}
+                      disabled
+                    >
+                      <span className="[font-family:'Onest',Helvetica] font-bold text-base tracking-[0] leading-5">
+                        Contact Us
+                      </span>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </div>
