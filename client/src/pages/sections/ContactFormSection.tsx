@@ -256,9 +256,21 @@ const formFields = [
     fields: [
       {
         label: "Tipul afacerii",
-        placeholder: "Restaurant",
+        placeholder: "Restaurante",
         type: "select",
-        options: ["Restaurant", "Hotel", "Sală Fitness", "Salon"],
+        options: [
+          "Restaurante",
+          "Cafenele",
+          "Saloane de frumusețe",
+          "Barbershopuri",
+          "Hotele & Pensiuni",
+          "Chirii auto",
+          "Fitness",
+          "Medical",
+          "Retail",
+          "Spălătorii auto",
+          "Tenis/Padel/Fotbal"
+        ],
       },
       { label: "Numele companiei", placeholder: "ishunearestaurant", type: "text" },
     ],
@@ -280,6 +292,75 @@ const formFields = [
 export const ContactFormSection = (): JSX.Element => {
   const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
   const [open, setOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    businessType: "",
+    companyName: "",
+    role: "",
+    companySize: "",
+    message: ""
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const getFieldName = (label: string): string => {
+    const mapping: Record<string, string> = {
+      "Prenume": "firstName",
+      "Nume": "lastName",
+      "Email": "email",
+      "Telefon": "phone",
+      "Tipul afacerii": "businessType",
+      "Numele companiei": "companyName",
+      "Rolul tău": "role",
+      "Dimensiunea companiei": "companySize"
+    };
+    return mapping[label] || "";
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email.includes("@")) {
+      return "Email-ul trebuie să conțină @";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone: string) => {
+    if (phone && !/^\d+$/.test(phone)) {
+      return "Numărul de telefon trebuie să conțină doar cifre";
+    }
+    return "";
+  };
+
+  const handleInputChange = (fieldName: string, value: string) => {
+    setFormData(prev => ({ ...prev, [fieldName]: value }));
+    
+    if (fieldName === "email") {
+      const error = validateEmail(value);
+      setErrors(prev => ({ ...prev, email: error }));
+    } else if (fieldName === "phone") {
+      const error = validatePhone(value);
+      setErrors(prev => ({ ...prev, phone: error }));
+    }
+  };
+
+  const handleSubmit = () => {
+    const newErrors: Record<string, string> = {};
+    
+    if (!formData.email.includes("@")) {
+      newErrors.email = "Email-ul trebuie să conțină @";
+    }
+    if (formData.phone && !/^\d+$/.test(formData.phone)) {
+      newErrors.phone = "Numărul de telefon trebuie să conțină doar cifre";
+    }
+    
+    setErrors(newErrors);
+    
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Form submitted:", formData);
+    }
+  };
 
   return (
     <section className="flex flex-col w-full max-w-[1138px] mx-auto items-center gap-5 px-0 py-[50px] bg-white rounded-[10px] border border-solid border-zinc-200 shadow-[8px_28px_30px_#00000008]">
@@ -305,86 +386,108 @@ export const ContactFormSection = (): JSX.Element => {
                   </Label>
 
                   {field.type === "select" ? (
-                    <Select defaultValue={field.placeholder}>
-                      <SelectTrigger className="w-full h-11 bg-white rounded-lg border border-solid border-[#d2d6db] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db]">
-                        <SelectValue placeholder={field.placeholder} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {field.options?.map((option) => (
-                          <SelectItem key={option} value={option}>
-                            {option}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  ) : field.type === "phone" ? (
-                    <div className="flex items-center gap-2 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
-                      <Popover open={open} onOpenChange={setOpen}>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="ghost"
-                            role="combobox"
-                            aria-expanded={open}
-                            className="w-auto h-full border-0 gap-1 px-3 hover:bg-transparent focus-visible:outline-none focus-visible:ring-0"
-                          >
-                            <span className="text-lg leading-none">
-                              {selectedCountry.flag}
-                            </span>
-                            <ChevronsUpDown className="ml-1 h-4 w-4 shrink-0 opacity-50" />
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-[300px] p-0" align="start">
-                          <Command>
-                            <CommandInput placeholder="Caută țară..." />
-                            <CommandList>
-                              <CommandEmpty>Nicio țară găsită.</CommandEmpty>
-                              <CommandGroup>
-                                {countries.map((country) => (
-                                  <CommandItem
-                                    key={country.code}
-                                    value={`${country.name} ${country.prefix}`}
-                                    onSelect={() => {
-                                      setSelectedCountry(country);
-                                      setOpen(false);
-                                    }}
-                                  >
-                                    <Check
-                                      className={cn(
-                                        "mr-2 h-4 w-4",
-                                        selectedCountry.code === country.code
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                    <span className="text-base mr-2">{country.flag}</span>
-                                    <span>{country.name} ({country.prefix})</span>
-                                  </CommandItem>
-                                ))}
-                              </CommandGroup>
-                            </CommandList>
-                          </Command>
-                        </PopoverContent>
-                      </Popover>
-                      <span className="font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]">
-                        {selectedCountry.prefix}
-                      </span>
-                      <Input
-                        type="tel"
-                        placeholder="XX XXX XXX"
-                        className="flex-1 h-full border-0 shadow-none pr-3 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-2 px-3 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
-                      <Input
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        className="flex-1 h-full border-0 shadow-none p-0 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
-                      />
-                      {field.icon === "mail" && (
-                        <MailIcon className="w-5 h-5" />
+                    <>
+                      <Select 
+                        value={formData[getFieldName(field.label) as keyof typeof formData]} 
+                        onValueChange={(value) => handleInputChange(getFieldName(field.label), value)}
+                      >
+                        <SelectTrigger className="w-full h-11 bg-white rounded-lg border border-solid border-[#d2d6db] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db]">
+                          <SelectValue placeholder={field.placeholder} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {field.options?.map((option) => (
+                            <SelectItem key={option} value={option}>
+                              {option}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      {errors[getFieldName(field.label)] && (
+                        <p className="text-red-500 text-sm">{errors[getFieldName(field.label)]}</p>
                       )}
-                    </div>
+                    </>
+                  ) : field.type === "phone" ? (
+                    <>
+                      <div className="flex items-center gap-2 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
+                        <Popover open={open} onOpenChange={setOpen}>
+                          <PopoverTrigger asChild>
+                            <Button
+                              variant="ghost"
+                              role="combobox"
+                              aria-expanded={open}
+                              className="w-auto h-full border-0 gap-1 px-3 hover:bg-transparent focus-visible:outline-none focus-visible:ring-0"
+                            >
+                              <span className="text-lg leading-none">
+                                {selectedCountry.flag}
+                              </span>
+                              <ChevronsUpDown className="ml-1 h-4 w-4 shrink-0 opacity-50" />
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-[300px] p-0" align="start">
+                            <Command>
+                              <CommandInput placeholder="Caută țară..." />
+                              <CommandList>
+                                <CommandEmpty>Nicio țară găsită.</CommandEmpty>
+                                <CommandGroup>
+                                  {countries.map((country) => (
+                                    <CommandItem
+                                      key={country.code}
+                                      value={`${country.name} ${country.prefix}`}
+                                      onSelect={() => {
+                                        setSelectedCountry(country);
+                                        setOpen(false);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          selectedCountry.code === country.code
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      <span className="text-base mr-2">{country.flag}</span>
+                                      <span>{country.name} ({country.prefix})</span>
+                                    </CommandItem>
+                                  ))}
+                                </CommandGroup>
+                              </CommandList>
+                            </Command>
+                          </PopoverContent>
+                        </Popover>
+                        <span className="font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)]">
+                          {selectedCountry.prefix}
+                        </span>
+                        <Input
+                          type="tel"
+                          placeholder="XX XXX XXX"
+                          value={formData.phone}
+                          onChange={(e) => handleInputChange("phone", e.target.value)}
+                          className="flex-1 h-full border-0 shadow-none pr-3 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
+                        />
+                      </div>
+                      {errors.phone && (
+                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-2 px-3 h-11 w-full bg-white rounded-lg border border-solid border-[#d2d6db] focus-within:border-[#d2d6db] focus-within:ring-0 focus-within:outline-none">
+                        <Input
+                          type={field.type}
+                          placeholder={field.placeholder}
+                          value={formData[getFieldName(field.label) as keyof typeof formData]}
+                          onChange={(e) => handleInputChange(getFieldName(field.label), e.target.value)}
+                          className="flex-1 h-full border-0 shadow-none p-0 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
+                        />
+                        {field.icon === "mail" && (
+                          <MailIcon className="w-5 h-5" />
+                        )}
+                      </div>
+                      {errors[getFieldName(field.label)] && (
+                        <p className="text-red-500 text-sm mt-1">{errors[getFieldName(field.label)]}</p>
+                      )}
+                    </>
                   )}
                 </div>
               ))}
@@ -398,6 +501,8 @@ export const ContactFormSection = (): JSX.Element => {
           </Label>
           <Textarea
             placeholder="Scrie-ți mesajul Dumneavoastră aici"
+            value={formData.message}
+            onChange={(e) => handleInputChange("message", e.target.value)}
             className="w-full min-h-[120px] bg-white rounded-lg border border-solid border-[#d2d6db] px-3 py-2.5 font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0 focus:border-[#d2d6db] resize-none"
           />
         </div>
@@ -424,7 +529,11 @@ export const ContactFormSection = (): JSX.Element => {
         </div>
       </div>
 
-      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" data-testid="button-send-contact">
+      <Button 
+        onClick={handleSubmit}
+        className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" 
+        data-testid="button-send-contact"
+      >
         <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
           Trimite
         </span>
