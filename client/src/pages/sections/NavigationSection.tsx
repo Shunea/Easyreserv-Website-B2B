@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 
 const navigationItems = [
-  { label: "About Us", hasDropdown: false, href: "/about" },
-  { label: "Solutions", hasDropdown: true, href: "/solutions" },
-  { label: "Pricing", hasDropdown: false, href: "/pricing" },
+  { label: "Despre noi", hasDropdown: false, href: "/about" },
+  { label: "Soluții", hasDropdown: true, href: "/solutions" },
+  { label: "Prețuri", hasDropdown: false, href: "/pricing" },
   { label: "Blog", hasDropdown: false, href: "/blog" },
   { label: "Contact", hasDropdown: false, href: "/contact" },
 ];
@@ -66,16 +66,18 @@ export const NavigationSection = (): JSX.Element => {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-2">
-            <Button className="h-auto px-6 py-4 bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px]">
-              <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-                Sign up
-              </span>
-            </Button>
+            <a href="https://app.easyreserv.io/login" target="_blank" rel="noopener noreferrer">
+              <Button className="h-auto px-6 py-4 bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px]">
+                <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
+                  Sign In
+                </span>
+              </Button>
+            </a>
 
             <div className="flex items-center gap-3 px-3 py-2 rounded-lg border-[0.5px] border-solid border-[#28282880] cursor-pointer hover:bg-gray-50 transition-colors">
-              <img className="w-4 h-4" alt="Us" src="/figmaAssets/us.svg" />
+              <img className="w-4 h-4" alt="Ro" src="/figmaAssets/us.svg" />
               <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base leading-[22.4px] whitespace-nowrap">
-                EN
+                RO
               </div>
             </div>
           </div>
