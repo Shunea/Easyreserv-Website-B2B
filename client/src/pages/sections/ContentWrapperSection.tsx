@@ -467,7 +467,11 @@ export const ContentWrapperSection = (): JSX.Element => {
 
                   <div className="flex items-start gap-[15px] w-full">
                     <div className="inline-flex items-end gap-1">
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[55.2px] whitespace-nowrap">
+                      <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
+                        plan.monthlyPrice === null 
+                          ? "text-2xl leading-[30px]" 
+                          : "text-4xl md:text-5xl leading-[55.2px] whitespace-nowrap"
+                      }`}>
                         {calculatePrice(plan.monthlyPrice, isAnnual)}
                       </span>
                       {plan.monthlyPrice !== null && (
@@ -630,7 +634,11 @@ export const ContentWrapperSection = (): JSX.Element => {
 
                   <div className="flex items-start gap-[15px] w-full">
                     <div className="inline-flex items-end gap-1">
-                      <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-[32px] tracking-[0] leading-[36.8px] whitespace-nowrap">
+                      <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
+                        plan.monthlyPrice === null 
+                          ? "text-xl leading-[28px]" 
+                          : "text-[32px] leading-[36.8px] whitespace-nowrap"
+                      }`}>
                         {calculatePrice(plan.monthlyPrice, isAnnual)}
                       </span>
                       {plan.monthlyPrice !== null && (
