@@ -15,8 +15,8 @@ import { Container } from "@/components/Container";
 const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
   "Restaurante": { basic: 50, standard: 125, pro: 200 },
   "Cafenele": { basic: 50, standard: 125, pro: 200 },
-  "Saloane de frumusețe": { basic: 49, standard: 99, pro: 149 },
-  "Barbershopuri": { basic: 49, standard: 99, pro: 149 },
+  "Saloane de frumusețe": { basic: 40, standard: 85, pro: 140 },
+  "Barbershopuri": { basic: 40, standard: 85, pro: 140 },
   "Hotele & Pensiuni": { basic: 79, standard: 149, pro: 249 },
   "Chirii auto": { basic: 59, standard: 119, pro: 199 },
   "Fitness": { basic: 49, standard: 99, pro: 149 },
@@ -528,6 +528,78 @@ const getPricingPlans = (industry: string) => {
     ];
   }
   
+  if (industry === "Saloane de frumusețe" || industry === "Barbershopuri") {
+    return [
+      {
+        name: "Basic",
+        description: "1 specialist, salon mic",
+        monthlyPrice: 40,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a",
+        features: [
+          "1 specialist inclus",
+          "Programări online & walk-in manual",
+          "Gestionare servicii simplu",
+          "CRM clienți basic",
+          "Plăți manuale",
+          "Rapoarte simple",
+        ],
+      },
+      {
+        name: "Standard",
+        description: "2 specialiști, automatizări basic",
+        monthlyPrice: 85,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Basic",
+          "2 utilizatori + 5€/user suplimentar",
+          "Calendar cu confirmare SMS",
+          "Pachete promoționale & abonamente",
+          "Gestionare personal & ture",
+          "Vânzare produse & inventar",
+          "POS & bon fiscal",
+        ],
+      },
+      {
+        name: "Pro",
+        description: "4 specialiști, fidelizare avansată",
+        monthlyPrice: 140,
+        isPopular: true,
+        buttonVariant: "default" as const,
+        planId: "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33",
+        features: [
+          "Tot din Standard",
+          "4 utilizatori incluși",
+          "Alocare automată & Push notifications",
+          "Upsell & pachete personalizate",
+          "Bonusuri & card fidelizare",
+          "Stocuri per cabină",
+          "Marketing segmentat & cupoane",
+        ],
+      },
+      {
+        name: "Enterprise",
+        description: "5+ specialiști, multi-locație",
+        monthlyPrice: null,
+        isPopular: false,
+        buttonVariant: "outline" as const,
+        planId: null,
+        features: [
+          "Tot din Pro",
+          "5+ utilizatori scalabili",
+          "Integrare Google/Apple Calendar",
+          "AI suggestion servicii & recomandări",
+          "Rezervare din social media & QR",
+          "Export PowerBI/1C & rețea POS",
+          "Segmente dinamice omnichannel",
+        ],
+      },
+    ];
+  }
+  
   return [
     {
       name: "Basic",
@@ -599,6 +671,191 @@ const getPricingPlans = (industry: string) => {
 };
 
 const getComparisonCategories = (industry: string) => {
+  if (industry === "Saloane de frumusețe" || industry === "Barbershopuri") {
+    return [
+      {
+        title: "Utilizatori & Personal",
+        features: [
+          {
+            name: "Utilizatori incluși",
+            values: ["1 specialist", "2", "4", "5+ (scalabil)"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Utilizatori suplimentari",
+            values: ["-", "5€/user", "5€/user", "La cerere"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Gestionare personal & ture",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Ture, pauze, targeturi zilnice",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Evaluare productivitate per angajat",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Programări & Rezervări",
+        features: [
+          {
+            name: "Programări online & walk-in",
+            values: ["Manual", "Cu calendar", "Alocare automată", "Integrare Google/Apple"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Confirmare & notificări",
+            values: ["-", "SMS", "Push & Email", "Omnichannel"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Politici anulare & rescheduling",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Programări recurente",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Servicii & Pachete",
+        features: [
+          {
+            name: "Gestionare servicii & durate",
+            values: ["Simplu", "Avansat (per specialist)", "Pachete & upsell", "AI suggestion"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Categorii servicii (tuns, vopsit, etc.)",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Pachete promoționale/abonamente",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Upsell (tratamente extra)",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "CRM & Fidelizare",
+        features: [
+          {
+            name: "CRM clienți & profil",
+            values: ["Basic", "Complet", "Cu istoric", "Card fidelizare"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Istoric servicii, preferințe, alergii",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Reamintiri automate programări",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Bonusuri & recompense loialitate",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Vânzare Produse & Stocuri",
+        features: [
+          {
+            name: "Vânzare produse (șampon, ser, etc.)",
+            values: ["-", true, "Cu stocuri", "Recomandări AI"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Inventar & alerte low stock",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Stocuri comune/per cabină",
+            values: [false, false, true, true],
+          },
+        ],
+      },
+      {
+        title: "Rapoarte & Analitice",
+        features: [
+          {
+            name: "Rapoarte & analitice",
+            values: ["Simplu", "Cu segmente", "Customizabil", "PowerBI/1C export"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Programări per zi/specialist",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Top servicii/vânzări/produse",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Export PDF, CSV, XML",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Marketing & Promoții",
+        features: [
+          {
+            name: "Marketing & fidelizare",
+            values: ["-", "SMS promoționale", "Push & Email", "Segmente dinamice"],
+            muted: [true, false, false, false],
+          },
+          {
+            name: "Campanii per segment (tunsori, masaj)",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Cupoane & carduri cadou",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Plăți & Integrări Fiscale",
+        features: [
+          {
+            name: "Plăți & integrări fiscale",
+            values: ["Manuale", "Cu POS", "Integrat fiscal", "POS rețea + 1C"],
+            muted: [false, false, false, false],
+          },
+          {
+            name: "Emitere bon fiscal/factură",
+            values: [false, true, true, true],
+          },
+          {
+            name: "POS mobil/desktop",
+            values: [false, true, true, "Compatibil rețea"],
+          },
+        ],
+      },
+      {
+        title: "Canale Extra Rezervare",
+        features: [
+          {
+            name: "Canale extra rezervare",
+            values: ["-", "Link WhatsApp", "QR rezervare", "Social/Google"],
+            muted: [true, false, false, false],
+          },
+        ],
+      },
+    ];
+  }
+  
   if (industry === "Medical") {
     return [
       {
