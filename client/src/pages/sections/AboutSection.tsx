@@ -420,6 +420,90 @@ const getFeaturesByIndustry = (industry: string) => {
         content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
       },
     ],
+    "terenuri-sportive": [
+      {
+        id: "smart-reservations",
+        title: "Rezervări inteligente (Web & Mobile)",
+        content: "Rezervare terenuri, terenuri multiple, antrenori, echipamente (mingi, rachete) cu orar clar.",
+      },
+      {
+        id: "fiscal-pos",
+        title: "POS fiscal & comenzi rapide",
+        content: "Vânzare de ore, abonamente, apă, echipamente, accesorii direct din POS.",
+      },
+      {
+        id: "operations",
+        title: "Operațiuni & Calendar",
+        content: "Calendar multi-teren, administrare antrenori, meciuri, turnee și închiriere nocturnă.",
+      },
+      {
+        id: "inventory-cogs",
+        title: "Stocuri & Inventar",
+        content: "Gestionare echipamente, mingi, detergenți, accesorii, mentenanță teren.",
+      },
+      {
+        id: "real-time-reports",
+        title: "Rapoarte & KPI",
+        content: "Rapoarte zilnice pe ocupare teren, venit/teren, abonamente active și retenție clienți.",
+      },
+      {
+        id: "automations",
+        title: "Automatizări & Notificări",
+        content: "Confirmări automate, reamintiri, alerte vreme, și pachete promo (ex: Happy Hour).",
+      },
+      {
+        id: "team-management",
+        title: "Management echipă & permisiuni",
+        content: "Ture, antrenori, staff întreținere, salarii și bonusuri în funcție de ore prestate.",
+      },
+      {
+        id: "payments-accounting",
+        title: "Plăți & Contabilitate",
+        content: "Plată card, QR, cash, integrare contabilă, facturi automate pentru cluburi & persoane.",
+      },
+    ],
+    "spalatorii-auto": [
+      {
+        id: "smart-reservations",
+        title: "Rezervări inteligente (Web & Mobile)",
+        content: "Programare online pe rampă și tip de serviciu (exterior, interior, complet).",
+      },
+      {
+        id: "fiscal-pos",
+        title: "POS fiscal & comenzi rapide",
+        content: "Selectare servicii + extra (ceară, motor, tapițerie), bon fiscal, discounturi, promoții.",
+      },
+      {
+        id: "operations",
+        title: "Calendar & Operațiuni",
+        content: "Planificare rampă, timp estimat, status ('în lucru', 'gata'), alocare personal.",
+      },
+      {
+        id: "inventory-cogs",
+        title: "Stocuri & Rețetare (consumabile)",
+        content: "Scădere automată detergent, ceară, microfibre, filtre; alerte 'low stock'.",
+      },
+      {
+        id: "real-time-reports",
+        title: "Rapoarte & KPI în timp real",
+        content: "Număr spălări, venit/rampă, consum/lucrare, top servicii, ore de vârf.",
+      },
+      {
+        id: "automations",
+        title: "Automatizări & Notificări",
+        content: "SMS 'Mașina ta este gata', reminder programare, pachete recurente.",
+      },
+      {
+        id: "team-management",
+        title: "Management echipă & permisiuni",
+        content: "Fiecare spălător își vede lucrarea, pontaj automat, comision per lucrare.",
+      },
+      {
+        id: "payments-accounting",
+        title: "Plăți & Integrare contabilă",
+        content: "POS, QR, numerar, export 1C, reconciliere încasări zilnice.",
+      },
+    ],
   };
 
   return featuresByIndustry[industry] || featuresByIndustry.restaurante;
@@ -469,6 +553,8 @@ export const AboutSection = (): JSX.Element => {
     { value: "fitness", label: "Fitness" },
     { value: "medical", label: "Medical" },
     { value: "retail", label: "Retail" },
+    { value: "terenuri-sportive", label: "Terenuri sportive" },
+    { value: "spalatorii-auto", label: "Spălătorii Auto" },
   ];
 
   const handleIndustryChange = (value: string) => {
