@@ -8,6 +8,7 @@ import { PricingHeroSection } from "./sections/PricingHeroSection";
 import { NavigationSection } from "./sections/NavigationSection";
 import { PricingTableSection } from "./sections/PricingTableSection";
 import { SubscriptionOptionsSection } from "./sections/SubscriptionOptionsSection";
+import { WhatIsEasyReservSection } from "./sections/WhatIsEasyReservSection";
 
 export const Pricing = (): JSX.Element => {
   return (
@@ -61,6 +62,7 @@ export const Pricing = (): JSX.Element => {
       <CallToActionSection />
       <SubscriptionOptionsSection />
       <PricingTableSection />
+      <WhatIsEasyReservSection />
       <DescriptionTextSection />
       <FeatureImageSection />
       <FooterSection />
