@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 
 export const FeaturesSection = (): JSX.Element => {
   return (
-    <section className="w-full py-16 md:py-24">
+    <section className="relative z-10 w-full py-16 md:py-24">
       <Container>
         {/* Text Content - Left Side */}
         <div className="col-span-12 lg:col-span-5 flex flex-col justify-center gap-10">
