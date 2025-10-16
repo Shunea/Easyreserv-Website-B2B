@@ -719,76 +719,106 @@ export const AboutSection = (): JSX.Element => {
               </p>
             </div>
 
-            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
-              <div className="flex items-center justify-center p-4">
+            <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/pegas-logo.png"
                   alt="Pegas Restaurant"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Pegas Restaurant
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/royal-ranch-logo.jpg"
                   alt="Royal Ranch"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Royal Ranch
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/atypic-logo.jpg"
                   alt="Atypic - Taste that matters"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Atypic
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/chateau-vartely-logo.jpg"
                   alt="Chateau Vartely"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Château Vartely
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/mojo-restobar-logo.jpg"
                   alt="MOJO Restobar"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  MOJO Restobar
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/osho-logo.jpg"
                   alt="Osho Bar and Kitchen"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Osho Bar & Kitchen
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/anchiano-logo.jpg"
                   alt="Restaurant Anchiano"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  Restaurant Anchiano
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/puar-logo.jpg"
                   alt="PUER"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  PUER
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/wtf-logo.jpg"
                   alt="What The Food?"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  What The Food?
+                </span>
               </div>
-              <div className="flex items-center justify-center p-4">
+              <div className="flex flex-col items-center justify-center gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow duration-300">
                 <img
                   src="/figmaAssets/513-logo.png"
                   alt="513"
-                  className="max-h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-16 w-auto object-contain"
                 />
+                <span className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-sm text-center">
+                  513
+                </span>
               </div>
             </div>
           </div>
