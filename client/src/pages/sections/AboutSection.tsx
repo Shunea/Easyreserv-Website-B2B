@@ -516,6 +516,7 @@ const footerLinks = {
 export const AboutSection = (): JSX.Element => {
   const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
   const [openAccordion, setOpenAccordion] = React.useState("smart-reservations");
+  const [openFaqAccordion, setOpenFaqAccordion] = React.useState("faq-0");
 
   const industries = [
     { value: "restaurante", label: "Restaurante" },
@@ -789,7 +790,8 @@ export const AboutSection = (): JSX.Element => {
             <Accordion
               type="single"
               collapsible
-              defaultValue="faq-0"
+              value={openFaqAccordion}
+              onValueChange={setOpenFaqAccordion}
               className="w-full"
             >
               {faqItems.slice(0, 7).map((item, index) => (
@@ -799,7 +801,9 @@ export const AboutSection = (): JSX.Element => {
                   className="border-b border-[#3f4e5b]"
                 >
                   <AccordionTrigger className="px-0 py-5 hover:no-underline">
-                    <span className="text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px]">
+                    <span className={`text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal tracking-[-0.36px] transition-colors ${
+                      openFaqAccordion === `faq-${index}` ? 'text-white' : 'text-[#999999]'
+                    }`}>
                       {item.question}
                     </span>
                   </AccordionTrigger>
@@ -819,6 +823,8 @@ export const AboutSection = (): JSX.Element => {
             <Accordion
               type="single"
               collapsible
+              value={openFaqAccordion}
+              onValueChange={setOpenFaqAccordion}
               className="w-full"
             >
               {faqItems.slice(7).map((item, index) => (
@@ -828,7 +834,9 @@ export const AboutSection = (): JSX.Element => {
                   className="border-b border-[#3f4e5b]"
                 >
                   <AccordionTrigger className="px-0 py-5 hover:no-underline">
-                    <span className="text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px]">
+                    <span className={`text-left text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal tracking-[-0.36px] transition-colors ${
+                      openFaqAccordion === `faq-${index + 7}` ? 'text-white' : 'text-[#999999]'
+                    }`}>
                       {item.question}
                     </span>
                   </AccordionTrigger>
