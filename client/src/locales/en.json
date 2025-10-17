@@ -203,6 +203,28 @@
       "payments-accounting": { "title": "Payments & Accounting integration", "content": "POS, QR, cash, 1C export, daily revenue reconciliation." }
     }
   },
+  "what_is_section": {
+    "title": "What is EasyReserv?",
+    "description": "EasyReserv is a complete solution for managing and optimizing your business. Mobile reservations, employee management, business reports, inventory management and many other features are available. You can save time, increase sales, improve customer experience, reduce costs and increase productivity using our platform.",
+    "faq": {
+      "q1": {
+        "question": "Can I access EasyReserv on both web and mobile devices?",
+        "answer": "Yes, EasyReserv is available both as a web application (desktop and tablet) and as a native mobile application for iOS and Android. You can access all platform features from any device, with real-time synchronization between all your devices."
+      },
+      "q2": {
+        "question": "How long does it take to implement the EasyReserv platform?",
+        "answer": "EasyReserv implementation takes 2-5 days depending on the complexity of your business. Our team assists you at every step: initial setup, data import, team training and go-live. You don't need to change existing hardware."
+      },
+      "q3": {
+        "question": "Does EasyReserv integrate with my accounting system?",
+        "answer": "Yes, EasyReserv integrates natively with major accounting systems such as 1C, SAP and other popular solutions. Export of invoices, sales and financial reports is done automatically, eliminating manual data entry."
+      },
+      "q4": {
+        "question": "Does EasyReserv provide technical support and training for my team?",
+        "answer": "Absolutely! We offer 24/7 technical support via chat, email and phone. At implementation, we include training sessions for the entire team: managers, cashiers, waiters and cooks. Plus access to our knowledge base and video tutorials."
+      }
+    }
+  },
   "seo": {
     "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
     "home_description": "Automate reservations, POS, operational workflows and reports. Integrate payments, accounting, notifications and delivery — without changing hardware.",

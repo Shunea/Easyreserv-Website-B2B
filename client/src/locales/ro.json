@@ -203,6 +203,28 @@
       "payments-accounting": { "title": "Plăți & Integrare contabilă", "content": "POS, QR, numerar, export 1C, reconciliere încasări zilnice." }
     }
   },
+  "what_is_section": {
+    "title": "Ce este EasyReserv?",
+    "description": "EasyReserv este o soluție completă pentru gestionarea și optimizarea afacerii tale. Rezervări mobile, management angajați, rapoarte business, management inventar și multe alte funcționalități sunt disponibile. Poți economisi timp, crește vânzările, îmbunătăți experiența clienților, reduce costurile și crește productivitatea folosind platforma noastră.",
+    "faq": {
+      "q1": {
+        "question": "Pot accesa EasyReserv atât pe web cât și pe dispozitive mobile?",
+        "answer": "Da, EasyReserv este disponibil atât ca aplicație web (desktop și tabletă) cât și ca aplicație mobilă nativă pentru iOS și Android. Poți accesa toate funcționalitățile platformei de pe orice dispozitiv, cu sincronizare în timp real între toate device-urile tale."
+      },
+      "q2": {
+        "question": "Cât durează implementarea platformei EasyReserv?",
+        "answer": "Implementarea EasyReserv durează între 2-5 zile în funcție de complexitatea afacerii tale. Echipa noastră te asistă la fiecare pas: configurare inițială, import date, training echipă și go-live. Nu trebuie să schimbi hardware-ul existent."
+      },
+      "q3": {
+        "question": "Se integrează EasyReserv cu sistemul meu de contabilitate?",
+        "answer": "Da, EasyReserv se integrează nativ cu principalele sisteme de contabilitate precum 1C, SAP și alte soluții populare. Exportul de facturi, vânzări și rapoarte financiare se face automat, eliminând introducerea manuală a datelor."
+      },
+      "q4": {
+        "question": "Oferă EasyReserv suport tehnic și training pentru echipa mea?",
+        "answer": "Absolut! Oferim suport tehnic 24/7 prin chat, email și telefon. La implementare, includem sesiuni de training pentru întreaga echipă: manageri, casieri, ospătari și bucătari. Plus acces la baza noastră de cunoștințe și tutoriale video."
+      }
+    }
+  },
   "seo": {
     "home_title": "EasyReserv.io — Platformă all-in-one POS și Rezervări",
     "home_description": "Automatizezi rezervările, POS, fluxurile operaționale și rapoartele. Integrezi plăți, contabilitate, notificări și livrare — fără schimbare de hardware.",
