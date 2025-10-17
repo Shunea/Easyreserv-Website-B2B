@@ -192,7 +192,7 @@ export const BlogSection = (): JSX.Element => {
 
       <Link to={`/blog/${featuredArticle.slug}`}>
         <Card className="w-full border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow">
-          <CardContent className="p-0">
+          <CardContent className="p-4 md:p-6">
             <div className="flex flex-col lg:flex-row items-center gap-6">
               <div className="flex flex-col items-start justify-center gap-4 flex-1">
                 <div className="flex flex-col items-start gap-4 w-full">
@@ -229,7 +229,7 @@ export const BlogSection = (): JSX.Element => {
         {filteredAndSortedArticles.map((article, index) => (
           <Link key={index} to={`/blog/${article.slug}`}>
             <Card className="border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow">
-              <CardContent className="p-0 flex flex-col gap-2.5">
+              <CardContent className="p-4 flex flex-col gap-2.5">
                 <img
                   className="w-full h-60 rounded-[5px] object-cover"
                   alt={article.title}
