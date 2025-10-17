@@ -1,12 +1,29 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
+import type { Language } from "@/contexts/LanguageContext";
 
-const policyItems = [
-  { label: "Politica de confidențialitate", anchor: "#privacy-policy" },
-  { label: "Politica Cookie", anchor: "#cookies-policy" },
-  { label: "Termeni și condiții", anchor: "#terms-and-conditions" },
-];
+const getPolicyItems = (language: Language) => {
+  const items = {
+    ro: [
+      { label: "Politica de confidențialitate", anchor: "#privacy-policy" },
+      { label: "Politica Cookie", anchor: "#cookies-policy" },
+      { label: "Termeni și condiții", anchor: "#terms-and-conditions" },
+    ],
+    en: [
+      { label: "Privacy Policy", anchor: "#privacy-policy" },
+      { label: "Cookie Policy", anchor: "#cookies-policy" },
+      { label: "Terms and Conditions", anchor: "#terms-and-conditions" },
+    ],
+    ru: [
+      { label: "Политика конфиденциальности", anchor: "#privacy-policy" },
+      { label: "Политика использования файлов cookie", anchor: "#cookies-policy" },
+      { label: "Условия использования", anchor: "#terms-and-conditions" },
+    ],
+  };
+  return items[language] || items.ro;
+};
 
 const policies = [
   {
@@ -241,8 +258,10 @@ Pentru mai multe informații și termeni completi, vă rugăm să vizitați webs
 ];
 
 export const PoliciesSection = (): JSX.Element => {
+  const { language } = useLanguage();
   const [selectedPolicy, setSelectedPolicy] = React.useState("privacy-policy");
-
+  
+  const policyItems = getPolicyItems(language);
   const currentPolicy = policies.find((p) => p.id === selectedPolicy);
 
   return (
