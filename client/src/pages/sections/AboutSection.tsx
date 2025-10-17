@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Container } from "@/components/Container";
 import { FAQSection } from "./FAQSection";
+import googlePlayBadge from "@assets/google-play-badge.png";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -996,12 +997,12 @@ export const AboutSection = (): JSX.Element => {
                   href="https://bit.ly/49Ce2Q1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block hover:opacity-80 transition-opacity"
+                  className="block hover:opacity-80 transition-opacity"
                 >
                   <img
-                    className="h-14 w-auto object-contain"
+                    className="h-14 w-auto"
                     alt="Get it on Google Play"
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                    src={googlePlayBadge}
                   />
                 </a>
               </div>
