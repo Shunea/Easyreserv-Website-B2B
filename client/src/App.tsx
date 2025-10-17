@@ -30,14 +30,14 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogArticle} />
         
-        <Route path="/:lang(ru|en)" component={Homepage} />
-        <Route path="/:lang(ru|en)/about" component={AboutUs} />
-        <Route path="/:lang(ru|en)/solutions" component={Solutions} />
-        <Route path="/:lang(ru|en)/pricing" component={Pricing} />
-        <Route path="/:lang(ru|en)/contact" component={Contact} />
-        <Route path="/:lang(ru|en)/policies" component={Policies} />
-        <Route path="/:lang(ru|en)/blog" component={Blog} />
-        <Route path="/:lang(ru|en)/blog/:slug" component={BlogArticle} />
+        <Route path="/:lang(ro|ru|en)" component={Homepage} />
+        <Route path="/:lang(ro|ru|en)/about" component={AboutUs} />
+        <Route path="/:lang(ro|ru|en)/solutions" component={Solutions} />
+        <Route path="/:lang(ro|ru|en)/pricing" component={Pricing} />
+        <Route path="/:lang(ro|ru|en)/contact" component={Contact} />
+        <Route path="/:lang(ro|ru|en)/policies" component={Policies} />
+        <Route path="/:lang(ro|ru|en)/blog" component={Blog} />
+        <Route path="/:lang(ro|ru|en)/blog/:slug" component={BlogArticle} />
         
         <Route component={NotFound} />
       </Switch>

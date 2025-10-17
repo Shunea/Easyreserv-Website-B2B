@@ -47,7 +47,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const pathLang = location.split('/')[1] as Language;
     
-    if (pathLang === 'ru' || pathLang === 'en') {
+    if (pathLang === 'ro' || pathLang === 'ru' || pathLang === 'en') {
       setLanguageState(pathLang);
       localStorage.setItem('preferred-language', pathLang);
     } else {
