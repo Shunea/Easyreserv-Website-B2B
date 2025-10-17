@@ -95,7 +95,7 @@ export const NavigationSection = (): JSX.Element => {
           {/* Action Buttons */}
           <div className="flex items-center gap-2">
             <a href="https://app.easyreserv.io/login" target="_blank" rel="noopener noreferrer">
-              <Button className="h-auto px-6 py-4 bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px]">
+              <Button className="h-auto px-4 py-2 bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px]">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
                   {t('nav.sign_in')}
                 </span>
