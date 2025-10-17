@@ -1,6 +1,15 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "@/hooks/useTranslation";
+import icon1 from "/figmaAssets/icon-1.svg";
+import icon2 from "/figmaAssets/icon.svg";
+import icon3 from "/figmaAssets/icon-3.svg";
+
+const iconMap: Record<string, string> = {
+  "/figmaAssets/icon-1.svg": icon1,
+  "/figmaAssets/icon.svg": icon2,
+  "/figmaAssets/icon-3.svg": icon3,
+};
 
 export const PricingTableSection = (): JSX.Element => {
   const { t } = useTranslation();
@@ -30,7 +39,7 @@ export const PricingTableSection = (): JSX.Element => {
               <img
                 className="w-[58px] h-[58px]"
                 alt="Icon"
-                src={feature.icon}
+                src={iconMap[feature.icon] || feature.icon}
               />
 
               <div className="flex flex-col gap-1 w-full">
