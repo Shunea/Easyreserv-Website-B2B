@@ -2485,7 +2485,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                     }`}
                   >
                     <span className="[font-family:'Onest',Helvetica] font-bold text-sm">
-                      {t('navigation.start_free_trial')}
+                      {t('pricing_page.start_free_trial')}
                     </span>
                   </a>
                 ) : (
@@ -2617,7 +2617,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-xs tracking-[0] leading-[16px]">
-                        {t('navigation.start_free_trial')}
+                        {t('pricing_page.start_free_trial')}
                       </span>
                     </a>
                   ) : (
