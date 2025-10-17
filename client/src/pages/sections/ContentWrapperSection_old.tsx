@@ -133,23 +133,13 @@ const getPricingPlans = (industryKey: string, t: any) => {
   });
 };
 
-// Helper function to build categories with translated titles
-const buildCategories = (
-  translatedTitles: string[],
-  featureDefinitions: Array<{ features: any[] }>
-) => {
-  return featureDefinitions.map((def, index) => ({
-    title: translatedTitles[index] || `Category ${index + 1}`,
-    features: def.features
-  }));
-};
-
 const getComparisonCategories = (industryKey: string, t: any) => {
   const categories = t(`pricing_page.comparison.${industryKey}.categories`, { returnObjects: true, defaultValue: [] });
   
   if (industryKey === industryKeys.RETAIL) {
-    const featureDefinitions = [
+    return [
       {
+        title: categories[0] || "Vânzare & POS",
         features: [
           {
             name: "POS vânzare (cash/card), bon fiscal",
@@ -184,6 +174,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: categories[1] || "Stocuri, Achiziții & Furnizori",
         features: [
           {
             name: "Catalog produse (SKU, variante, lot)",
@@ -224,6 +215,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: categories[2] || "Omnichannel & E-commerce",
         features: [
           {
             name: "Catalog online (widget/mini-shop)",
@@ -249,6 +241,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: categories[3] || "CRM, Loialitate & Marketing",
         features: [
           {
             name: "Profil client, istoric cumpărări",
@@ -273,6 +266,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: categories[4] || "Plăți, Fiscal & Contabilitate",
         features: [
           {
             name: "POS card (gateway plăți)",
@@ -297,6 +291,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: categories[5] || "Personal, Ture & Permisiuni",
         features: [
           {
             name: "Roluri: Admin, Casier, Manager",
@@ -320,14 +315,67 @@ const getComparisonCategories = (industryKey: string, t: any) => {
           },
         ],
       },
-      // Continue with other categories...
-    ];
-    
-    return buildCategories(categories, featureDefinitions);
-  }
-  if (industryKey === industryKeys.SALOANE_BARBERSHOP) {
-    const featureDefinitions = [
       {
+        title: "Rapoarte & Analytics",
+        features: [
+          {
+            name: "Vânzări pe zi/POS/produs",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Top SKU, marje, coș mediu",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Rupturi stoc, rotație, pierderi",
+            values: [false, true, true, true],
+          },
+          {
+            name: "Forecast cerere/promo impact",
+            values: [false, false, true, true],
+          },
+          {
+            name: "Dashboard multi-magazin",
+            values: [false, false, false, true],
+          },
+          {
+            name: "Export CSV/PDF, 1C bridge",
+            values: [false, true, true, true],
+          },
+        ],
+      },
+      {
+        title: "Integrări & API",
+        features: [
+          {
+            name: "Procesatori plăți",
+            values: [true, true, true, true],
+          },
+          {
+            name: "Contabilitate/1C/ERP",
+            values: ["Add-on", "Add-on", "Add-on", true],
+          },
+          {
+            name: "Curieri (ShipX, Fan, DHL)",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "Marketplaces",
+            values: [false, false, "Add-on", true],
+          },
+          {
+            name: "API extern & Webhooks",
+            values: [false, false, "Add-on", "Prioritar"],
+          },
+        ],
+      },
+    ];
+  }
+  
+  if (industryKey === industryKeys.SALOANE_BARBERSHOP) {
+    return [
+      {
+        title: "Utilizatori & Personal",
         features: [
           {
             name: "Utilizatori incluși",
@@ -354,6 +402,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Programări & Rezervări",
         features: [
           {
             name: "Programări online & walk-in",
@@ -376,6 +425,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Servicii & Pachete",
         features: [
           {
             name: "Gestionare servicii & durate",
@@ -397,6 +447,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "CRM & Fidelizare",
         features: [
           {
             name: "CRM clienți & profil",
@@ -418,6 +469,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Vânzare Produse & Stocuri",
         features: [
           {
             name: "Vânzare produse (șampon, ser, etc.)",
@@ -435,6 +487,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analitice",
         features: [
           {
             name: "Rapoarte & analitice",
@@ -456,6 +509,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Marketing & Promoții",
         features: [
           {
             name: "Marketing & fidelizare",
@@ -473,6 +527,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & Integrări Fiscale",
         features: [
           {
             name: "Plăți & integrări fiscale",
@@ -490,6 +545,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Canale Extra Rezervare",
         features: [
           {
             name: "Canale extra rezervare",
@@ -499,13 +555,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.MEDICAL) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Acces",
         features: [
           {
             name: "Utilizatori incluși",
@@ -525,6 +580,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Programări & Flux Pacienți",
         features: [
           {
             name: "Programări online/call center",
@@ -558,6 +614,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "EMR / Dossier Pacient",
         features: [
           {
             name: "Fișă pacient, anamneză, alergii",
@@ -590,6 +647,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & Facturare",
         features: [
           {
             name: "Facturi, chitanțe, proforme",
@@ -622,6 +680,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Laborator & Imagistică",
         features: [
           {
             name: "Solicitări analize & rezultate",
@@ -646,6 +705,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Personal & HR",
         features: [
           {
             name: "Pontaj/ture/concedii",
@@ -666,6 +726,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Marketing & Retenție",
         features: [
           {
             name: "CRM pacienți & segmente",
@@ -686,6 +747,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Securitate & GDPR",
         features: [
           {
             name: "Control acces pe rol (RBAC)",
@@ -710,6 +772,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Integrări & API",
         features: [
           {
             name: "Procesatori plăți",
@@ -734,13 +797,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.TENIS_PADEL_FOTBAL) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Acces",
         features: [
           {
             name: "Utilizatori incluși",
@@ -760,6 +822,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rezervări & Sloturi",
         features: [
           {
             name: "Rezervare pe sloturi",
@@ -796,6 +859,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Sport-Specific",
         features: [
           {
             name: "Tenis: single/dublu",
@@ -824,6 +888,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Membri & Antrenori",
         features: [
           {
             name: "Profil membru & istoric",
@@ -852,6 +917,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Competiții & Turnee",
         features: [
           {
             name: "Ladder/league (tenis/padel)",
@@ -868,6 +934,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Operațiuni & Mentenanță",
         features: [
           {
             name: "Calendar mentenanță teren",
@@ -884,6 +951,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & POS",
         features: [
           {
             name: "Plăți online & facturi",
@@ -904,6 +972,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Marketing & Comunicare",
         features: [
           {
             name: "Reminder rezervare",
@@ -921,6 +990,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analytics",
         features: [
           {
             name: "Grad ocupare teren/oră",
@@ -945,6 +1015,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Integrări & Digital",
         features: [
           {
             name: "Widget rezervare pe site",
@@ -973,13 +1044,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.FITNESS) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Acces",
         features: [
           {
             name: "Utilizatori incluși",
@@ -999,6 +1069,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Operațiuni & Programări",
         features: [
           {
             name: "Programări clase & PT",
@@ -1027,6 +1098,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Membri & CRM",
         features: [
           {
             name: "Profil membru & istoric",
@@ -1052,6 +1124,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Instructori & Salarizare",
         features: [
           {
             name: "Orar antrenori/clase",
@@ -1076,6 +1149,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & Facturare",
         features: [
           {
             name: "POS recepție & factură",
@@ -1096,6 +1170,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Produse & Stoc (retail)",
         features: [
           {
             name: "Catalog produse & POS",
@@ -1116,6 +1191,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analytics",
         features: [
           {
             name: "Attendance & ocupare clase",
@@ -1140,6 +1216,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Digital & Conținut",
         features: [
           {
             name: "Pagina publică clase",
@@ -1160,6 +1237,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Integrări & API",
         features: [
           {
             name: "Integrare procesator plăți",
@@ -1180,13 +1258,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.CHIRII_AUTO) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Acces",
         features: [
           {
             name: "Utilizatori incluși",
@@ -1206,6 +1283,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Operațiuni & Rezervări",
         features: [
           {
             name: "Rezervări web/telefon & calendar",
@@ -1239,6 +1317,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Flotă & Telematică",
         features: [
           {
             name: "Catalog vehicule & status",
@@ -1263,6 +1342,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & Facturare",
         features: [
           {
             name: "Facturi, proforme, chitanțe",
@@ -1283,6 +1363,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Canale & Distribuție",
         features: [
           {
             name: "Booking Engine pe site",
@@ -1299,6 +1380,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Revenue & Pricing",
         features: [
           {
             name: "Sezoane & liste preț",
@@ -1315,6 +1397,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "CRM & Marketing B2B",
         features: [
           {
             name: "Profil client & istoric",
@@ -1335,6 +1418,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analitice",
         features: [
           {
             name: "Utilizare flotă",
@@ -1363,13 +1447,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.HOTELE) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Acces",
         features: [
           {
             name: "Utilizatori incluși",
@@ -1389,6 +1472,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "PMS - Management Rezervări",
         features: [
           {
             name: "Calendar disponibilitate",
@@ -1425,6 +1509,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Housekeeping & Mentenanță",
         features: [
           {
             name: "Status cameră (Clean/Dirty)",
@@ -1453,6 +1538,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Plăți & Facturare",
         features: [
           {
             name: "POS front desk & folio",
@@ -1477,6 +1563,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Vânzare Directă & Canale",
         features: [
           {
             name: "Booking Engine pe site",
@@ -1501,6 +1588,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Revenue & Rate Management",
         features: [
           {
             name: "Sezoane & rate plans",
@@ -1525,6 +1613,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "F&B & Upsell",
         features: [
           {
             name: "Room service (bridge Restaurant)",
@@ -1545,6 +1634,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "CRM & Marketing",
         features: [
           {
             name: "Profil client & istoric",
@@ -1569,6 +1659,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analitice",
         features: [
           {
             name: "Arrivals/Departures, Occupancy",
@@ -1593,6 +1684,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Integrări & Control Avansat",
         features: [
           {
             name: "Control chei (card/keycode)",
@@ -1613,13 +1705,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.SPALATORII_AUTO) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Personal",
         features: [
           {
             name: "Utilizatori incluși",
@@ -1646,6 +1737,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rezervări & Programări",
         features: [
           {
             name: "Rezervări online & walk-in",
@@ -1663,6 +1755,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Servicii & Prețuri",
         features: [
           {
             name: "Prețuri pe caroserie/lucrări",
@@ -1685,6 +1778,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Management Financiar",
         features: [
           {
             name: "Închidere de zi",
@@ -1697,6 +1791,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "CRM & Clienți",
         features: [
           {
             name: "CRM clienți",
@@ -1713,6 +1808,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Comenzi Mobile & Flotă",
         features: [
           {
             name: "Comenzi Pickup/mobil",
@@ -1725,6 +1821,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Stocuri & Consumabile",
         features: [
           {
             name: "Stocuri consumabile",
@@ -1741,6 +1838,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Marketing & Campanii",
         features: [
           {
             name: "Campanii marketing",
@@ -1758,6 +1856,7 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
       {
+        title: "Rapoarte & Analiză",
         features: [
           {
             name: "Rapoarte & analitice",
@@ -1779,13 +1878,12 @@ const getComparisonCategories = (industryKey: string, t: any) => {
         ],
       },
     ];
-    
-    return buildCategories(categories, featureDefinitions);
   }
   
   if (industryKey === industryKeys.CAFENELE) {
-    const featureDefinitions = [
+    return [
       {
+        title: "Utilizatori & Personal",
         features: [
           {
             name: "Utilizatori incluși",

@@ -809,7 +809,17 @@
       "Medical": "Medical",
       "Retail": "Retail",
       "Spălătorii auto": "Spălătorii auto",
-      "Tenis/Padel/Fotbal": "Tenis/Padel/Fotbal"
+      "Tenis/Padel/Fotbal": "Tenis/Padel/Fotbal",
+      "restaurante": "Restaurante",
+      "cafenele": "Cafenele",
+      "saloane_barbershop": "Saloane de frumusețe & Barbershopuri",
+      "hotele": "Hotele & Pensiuni",
+      "chirii_auto": "Chirii auto",
+      "fitness": "Fitness",
+      "medical": "Medical",
+      "retail": "Retail",
+      "spalatorii_auto": "Spălătorii auto",
+      "tenis_padel_fotbal": "Tenis/Padel/Fotbal"
     },
     "plans": {
       "cafenele": {

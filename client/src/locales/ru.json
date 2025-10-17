@@ -886,7 +886,17 @@
       "Medical": "Медицинские услуги",
       "Retail": "Розничная торговля",
       "Spălătorii auto": "Автомойки",
-      "Tenis/Padel/Fotbal": "Теннис/Падел/Футбол"
+      "Tenis/Padel/Fotbal": "Теннис/Падел/Футбол",
+      "restaurante": "Рестораны",
+      "cafenele": "Кафе",
+      "saloane_barbershop": "Салоны красоты и барбершопы",
+      "hotele": "Отели и пансионаты",
+      "chirii_auto": "Прокат автомобилей",
+      "fitness": "Фитнес",
+      "medical": "Медицинские услуги",
+      "retail": "Розничная торговля",
+      "spalatorii_auto": "Автомойки",
+      "tenis_padel_fotbal": "Теннис/Падел/Футбол"
     },
     "plans": {
       "cafenele": {
