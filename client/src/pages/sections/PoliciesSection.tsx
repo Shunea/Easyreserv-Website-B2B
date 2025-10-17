@@ -8,7 +8,11 @@ import {
   termsAndConditionsEN, 
   termsAndConditionsRU,
   privacyPolicyRO,
-  cookiesPolicyRO 
+  privacyPolicyEN,
+  privacyPolicyRU,
+  cookiesPolicyRO,
+  cookiesPolicyEN,
+  cookiesPolicyRU
 } from "./policies/policyContent";
 
 const getPolicyItems = (language: Language) => {
@@ -36,13 +40,13 @@ const getPolicyContent = (id: string, language: Language) => {
   const policies: Record<string, Record<Language, { title: string; content: string }>> = {
     "privacy-policy": {
       ro: { title: "Politica de confidențialitate", content: privacyPolicyRO },
-      en: { title: "Privacy Policy", content: privacyPolicyRO }, // Using RO until translation provided
-      ru: { title: "Политика конфиденциальности", content: privacyPolicyRO }, // Using RO until translation provided
+      en: { title: "Privacy Policy", content: privacyPolicyEN },
+      ru: { title: "Политика конфиденциальности", content: privacyPolicyRU },
     },
     "cookies-policy": {
       ro: { title: "Politica Cookie", content: cookiesPolicyRO },
-      en: { title: "Cookie Policy", content: cookiesPolicyRO }, // Using RO until translation provided
-      ru: { title: "Политика использования файлов cookie", content: cookiesPolicyRO }, // Using RO until translation provided
+      en: { title: "Cookie Policy", content: cookiesPolicyEN },
+      ru: { title: "Политика использования файлов cookie", content: cookiesPolicyRU },
     },
     "terms-and-conditions": {
       ro: { title: "Termeni și condiții", content: termsAndConditionsRO },
@@ -100,8 +104,8 @@ export const PoliciesSection = (): JSX.Element => {
 
       {currentPolicy && (
         <Card className="flex-1 border-0 shadow-sm">
-          <CardContent className="p-6 md:p-8">
-            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl md:text-3xl mb-6 tracking-[0] leading-normal">
+          <CardContent className="p-6 md:p-8 max-h-[calc(100vh-12rem)] overflow-y-auto">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl mb-6 tracking-[0] leading-normal">
               {currentPolicy.title}
             </h2>
             <div className="[font-family:'Onest',Helvetica] text-[#282828] text-base leading-relaxed whitespace-pre-wrap">

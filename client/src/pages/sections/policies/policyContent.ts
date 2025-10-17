@@ -72,3 +72,57 @@ Tipuri de cookie-uri utilizate:
 - Cookie-uri funcționale: permit platformei să rețină preferințele dumneavoastră
 
 Pentru mai multe informații despre utilizarea cookie-urilor, vă rugăm să ne contactați la easyreserv@ishunea.io.`;
+
+// Privacy Policy - English (Translation pending)
+export const privacyPolicyEN = `PRIVACY POLICY - INFORMATION ABOUT PERSONAL DATA PROTECTION
+
+Translation not yet available.
+
+For Shunea IT-Projects SRL ("EasyReserv.io"), your privacy and the security of your personal data are very important. We collect and manage your personal data with the utmost care and take specific measures to keep it safe.
+
+For more information, please contact us at easyreserv@ishunea.io.
+
+Note: Full English translation coming soon. In the meantime, please refer to the Romanian version for complete details.`;
+
+// Privacy Policy - Russian (Translation pending)
+export const privacyPolicyRU = `ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ - ИНФОРМАЦИЯ О ЗАЩИТЕ ПЕРСОНАЛЬНЫХ ДАННЫХ
+
+Перевод пока недоступен.
+
+Для Shunea IT-Projects SRL ("EasyReserv.io") ваша конфиденциальность и безопасность ваших персональных данных очень важны. Мы собираем и управляем вашими персональными данными с максимальной осторожностью и принимаем специальные меры для их безопасного хранения.
+
+Для получения дополнительной информации, пожалуйста, свяжитесь с нами по адресу easyreserv@ishunea.io.
+
+Примечание: Полный перевод на русский язык скоро будет доступен. А пока, пожалуйста, обратитесь к румынской версии для полной информации.`;
+
+// Cookie Policy - English (Translation pending)
+export const cookiesPolicyEN = `COOKIE POLICY
+
+Translation not yet available.
+
+EasyReserv.io uses cookies to improve user experience on the platform. Cookies are small text files that are stored on your device when you visit our website.
+
+Types of cookies used:
+- Essential cookies: necessary for platform operation
+- Performance cookies: help us understand how you use the platform
+- Functional cookies: allow the platform to remember your preferences
+
+For more information about cookie usage, please contact us at easyreserv@ishunea.io.
+
+Note: Full English translation coming soon. In the meantime, please refer to the Romanian version for complete details.`;
+
+// Cookie Policy - Russian (Translation pending)
+export const cookiesPolicyRU = `ПОЛИТИКА ИСПОЛЬЗОВАНИЯ ФАЙЛОВ COOKIE
+
+Перевод пока недоступен.
+
+EasyReserv.io использует файлы cookie для улучшения пользовательского опыта на платформе. Файлы cookie — это небольшие текстовые файлы, которые сохраняются на вашем устройстве при посещении нашего веб-сайта.
+
+Типы используемых файлов cookie:
+- Необходимые файлы cookie: необходимы для работы платформы
+- Файлы cookie производительности: помогают нам понять, как вы используете платформу
+- Функциональные файлы cookie: позволяют платформе запоминать ваши предпочтения
+
+Для получения дополнительной информации об использовании файлов cookie, пожалуйста, свяжитесь с нами по адресу easyreserv@ishunea.io.
+
+Примечание: Полный перевод на русский язык скоро будет доступен. А пока, пожалуйста, обратитесь к румынской версии для полной информации.`;
