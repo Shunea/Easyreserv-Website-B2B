@@ -54,7 +54,10 @@ const getPricingPlans = (industry: string, t: any) => {
   const tiers = industry === "Restaurante" ? ["basic", "standard", "enterprise"] : ["basic", "standard", "pro", "enterprise"];
   
   return tiers.map((tier, index) => {
-    const planData = t(`pricing_page.plans.${industryKey}.${tier}`, { returnObjects: true }) as {name: string, description: string, features: string[]};
+    const planData = t(`pricing_page.plans.${industryKey}.${tier}`, { returnObjects: true });
+    
+    // Check if planData is valid object with required fields
+    const isValidPlanData = planData && typeof planData === 'object' && planData.name && planData.features && Array.isArray(planData.features);
     
     let monthlyPrice: number | null;
     if (tier === "enterprise") {
@@ -68,13 +71,13 @@ const getPricingPlans = (industry: string, t: any) => {
     }
     
     return {
-      name: planData.name,
-      description: planData.description,
+      name: isValidPlanData ? planData.name : tier.charAt(0).toUpperCase() + tier.slice(1),
+      description: isValidPlanData ? planData.description : '',
       monthlyPrice,
       isPopular: tier === "pro",
       buttonVariant: (tier === "pro" ? "default" : "outline") as "default" | "outline",
       planId: tier === "enterprise" ? null : (index === 0 ? "1f900d0c-5ea1-49a0-bfb7-eb2411e5eb0a" : "0a4eb8ea-e0a0-49bc-aae9-8774f0693f33"),
-      features: planData.features
+      features: isValidPlanData ? planData.features : []
     };
   });
 };
