@@ -1187,7 +1187,7 @@ const getComparisonCategories = (industry: string) => {
           },
           {
             name: "Roluri acoperite",
-            values: ["Admin, Recepție, Medic", "+ Asistent, Contabil", "+ Manager Clinică, Laborant", "Toate + Integrări avansate"],
+            values: ["3 roluri de bază", "+ 2 roluri", "+ 2 roluri", "Toate + Integrări"],
             muted: [false, false, false, false],
           },
         ],
@@ -1676,7 +1676,7 @@ const getComparisonCategories = (industry: string) => {
           },
           {
             name: "Roluri acoperite",
-            values: ["Admin, Recepție", "+ Antrenor, Manager", "+ Coordonator Clase, Contabil", "Toate + Integrare avansată"],
+            values: ["2 roluri de bază", "+ 2 roluri", "+ 2 roluri", "Toate + Integrări"],
             muted: [false, false, false, false],
           },
         ],
@@ -1890,7 +1890,7 @@ const getComparisonCategories = (industry: string) => {
           },
           {
             name: "Roluri acoperite",
-            values: ["Admin, Agent Front Desk", "+ Fleet Manager, Contabil", "+ Service/Mecanic, Claims", "Toate + Integrări avansate"],
+            values: ["2 roluri de bază", "+ 2 roluri", "+ 2 roluri", "Toate + Integrări"],
             muted: [false, false, false, false],
           },
         ],
@@ -2079,7 +2079,7 @@ const getComparisonCategories = (industry: string) => {
           },
           {
             name: "Roluri acoperite",
-            values: ["Admin, Recepționer, Housekeeper", "+ Manager Operațiuni, Concierge", "+ Revenue Manager, F&B", "Toate + Integrări avansate"],
+            values: ["3 roluri de bază", "+ 2 roluri", "+ 2 roluri", "Toate + Integrări"],
             muted: [false, false, false, false],
           },
         ],
@@ -3171,7 +3171,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                         )
                       ) : (
                         <div
-                          className={`[font-family:'Inter',Helvetica] font-semibold text-base tracking-[0] leading-[18.4px] whitespace-nowrap ${
+                          className={`[font-family:'Inter',Helvetica] font-semibold text-base tracking-[0] leading-[18.4px] text-center ${
                             feature.muted && feature.muted[valueIndex]
                               ? "text-sementicscolorfgmuted"
                               : "text-[#282828]"
