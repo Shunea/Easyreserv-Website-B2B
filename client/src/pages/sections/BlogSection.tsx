@@ -4,9 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Link } from "wouter";
 import { Search } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 import blogImage from "@assets/blog-test-image.png";
 
-type Category = "Toate" | "Use Case" | "News" | "Updates" | "Divertisment";
+type Category = "all" | "use_case" | "news" | "updates" | "entertainment";
 
 const featuredArticle = {
   title: "Cum să îți transformi restaurantul într-un business de succes în 2025",
@@ -14,7 +15,7 @@ const featuredArticle = {
   date: "2024-08-20",
   displayDate: "20 August 2024",
   image: blogImage,
-  category: "Use Case" as Category,
+  category: "use_case" as Category,
   excerpt: "Descoperă cele mai eficiente strategii și tehnici moderne pentru a-ți dezvolta afacerea din industria HoReCa. De la digitalizare până la optimizarea experienței clienților, află cum să rămâi competitiv pe piața actuală.",
 };
 
@@ -25,7 +26,7 @@ const articles = [
     slug: "transformare-restaurant-business-succes",
     date: "2024-08-20",
     displayDate: "20 August 2024",
-    category: "Use Case" as Category,
+    category: "use_case" as Category,
     image: blogImage,
   },
   {
@@ -33,7 +34,7 @@ const articles = [
     slug: "termeni-horeca-2025",
     date: "2024-08-15",
     displayDate: "15 August 2024",
-    category: "News" as Category,
+    category: "news" as Category,
     image: blogImage,
   },
   {
@@ -42,7 +43,7 @@ const articles = [
     slug: "impact-tehnologie-afacere",
     date: "2024-08-10",
     displayDate: "10 August 2024",
-    category: "Updates" as Category,
+    category: "updates" as Category,
     image: blogImage,
   },
   {
@@ -50,7 +51,7 @@ const articles = [
     slug: "programe-fidelizare-implementare",
     date: "2024-08-05",
     displayDate: "5 August 2024",
-    category: "Use Case" as Category,
+    category: "use_case" as Category,
     image: blogImage,
   },
   {
@@ -58,7 +59,7 @@ const articles = [
     slug: "reducere-risipa-control-portii",
     date: "2024-08-01",
     displayDate: "1 August 2024",
-    category: "Use Case" as Category,
+    category: "use_case" as Category,
     image: blogImage,
   },
   {
@@ -66,7 +67,7 @@ const articles = [
     slug: "greseli-esec-restaurant",
     date: "2024-07-28",
     displayDate: "28 Iulie 2024",
-    category: "Divertisment" as Category,
+    category: "entertainment" as Category,
     image: blogImage,
   },
   {
@@ -75,7 +76,7 @@ const articles = [
     slug: "generatia-z-angajati-restaurant",
     date: "2024-07-25",
     displayDate: "25 Iulie 2024",
-    category: "News" as Category,
+    category: "news" as Category,
     image: blogImage,
   },
   {
@@ -83,7 +84,7 @@ const articles = [
     slug: "tehnologie-cloud-solutie-sustenabila",
     date: "2024-07-20",
     displayDate: "20 Iulie 2024",
-    category: "Updates" as Category,
+    category: "updates" as Category,
     image: blogImage,
   },
   {
@@ -91,22 +92,23 @@ const articles = [
     slug: "moral-motivatie-retentie-angajati",
     date: "2024-07-15",
     displayDate: "15 Iulie 2024",
-    category: "Use Case" as Category,
+    category: "use_case" as Category,
     image: blogImage,
   },
 ];
 
 export const BlogSection = (): JSX.Element => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<Category>("Toate");
+  const [selectedCategory, setSelectedCategory] = useState<Category>("all");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
 
-  const categories: Category[] = ["Toate", "Use Case", "News", "Updates", "Divertisment"];
+  const categories: Category[] = ["all", "use_case", "news", "updates", "entertainment"];
 
   const filteredAndSortedArticles = useMemo(() => {
     let filtered = articles.filter((article) => {
       const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === "Toate" || article.category === selectedCategory;
+      const matchesCategory = selectedCategory === "all" || article.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
 
@@ -124,7 +126,7 @@ export const BlogSection = (): JSX.Element => {
   return (
     <section className="flex flex-col w-full items-center gap-6 px-4 md:px-[10%] py-16">
       <h1 className="w-full [font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-[56px] text-center tracking-[0] leading-normal">
-        Poveștile noastre
+        {t('blog_page.title')}
       </h1>
 
       <div className="w-full flex flex-col gap-4">
@@ -132,7 +134,7 @@ export const BlogSection = (): JSX.Element => {
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
           <Input
             type="text"
-            placeholder="Caută articole..."
+            placeholder={t('blog_page.search_placeholder')}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 h-12 bg-white border border-gray-200 rounded-lg focus-visible:ring-1 focus-visible:ring-[#2d2c65]"
@@ -151,9 +153,10 @@ export const BlogSection = (): JSX.Element => {
                     ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                     : "bg-white text-[#282828] border-gray-200 hover:bg-gray-50"
                 } rounded-full px-4 py-2 h-auto`}
+                data-testid={`button-category-${category}`}
               >
                 <span className="[font-family:'Onest',Helvetica] font-medium text-sm">
-                  {category}
+                  {t(`blog_page.categories.${category}`)}
                 </span>
               </Button>
             ))}
@@ -168,9 +171,10 @@ export const BlogSection = (): JSX.Element => {
                   ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                   : "bg-white text-[#282828] border-gray-200 hover:bg-gray-50"
               } rounded-lg px-4 py-2 h-auto`}
+              data-testid="button-sort-newest"
             >
               <span className="[font-family:'Onest',Helvetica] font-medium text-sm">
-                Cele mai noi
+                {t('blog_page.sort.newest')}
               </span>
             </Button>
             <Button
@@ -181,9 +185,10 @@ export const BlogSection = (): JSX.Element => {
                   ? "bg-[#2d2c65] text-white hover:bg-[#2d2c65]/90"
                   : "bg-white text-[#282828] border-gray-200 hover:bg-gray-50"
               } rounded-lg px-4 py-2 h-auto`}
+              data-testid="button-sort-oldest"
             >
               <span className="[font-family:'Onest',Helvetica] font-medium text-sm">
-                Cele mai vechi
+                {t('blog_page.sort.oldest')}
               </span>
             </Button>
           </div>
@@ -197,7 +202,7 @@ export const BlogSection = (): JSX.Element => {
               <div className="flex flex-col items-start justify-center gap-4 flex-1">
                 <div className="flex flex-col items-start gap-4 w-full">
                   <span className="inline-block px-3 py-1 bg-[#2d2c65] text-white rounded-full text-xs font-medium">
-                    {featuredArticle.category}
+                    {t(`blog_page.categories.${featuredArticle.category}`)}
                   </span>
                   <h2 className="[font-family:'Onest',Helvetica] text-[#282828] text-2xl md:text-[32px] leading-normal font-semibold tracking-[0]">
                     {featuredArticle.title}
@@ -238,7 +243,7 @@ export const BlogSection = (): JSX.Element => {
 
                 <div className="flex flex-col items-start gap-4">
                   <span className="inline-block px-3 py-1 bg-[#2d2c65] text-white rounded-full text-xs font-medium">
-                    {article.category}
+                    {t(`blog_page.categories.${article.category}`)}
                   </span>
                   <h3 className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-xl tracking-[0] leading-[28px]">
                     {article.title}
@@ -258,13 +263,13 @@ export const BlogSection = (): JSX.Element => {
 
       {filteredAndSortedArticles.length === 0 && (
         <p className="text-center text-gray-500 py-8">
-          Nu au fost găsite articole care să corespundă criteriilor de căutare.
+          {t('blog_page.no_results')}
         </p>
       )}
 
-      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4">
+      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" data-testid="button-load-more">
         <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-          Încarcă mai multe
+          {t('blog_page.load_more')}
         </span>
       </Button>
     </section>
