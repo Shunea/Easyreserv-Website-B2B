@@ -92,16 +92,16 @@ export function CookieConsent() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-md z-50" data-testid="cookie-consent-banner">
+    <div className="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 md:max-w-5xl md:mx-auto z-50" data-testid="cookie-consent-banner">
       <Card className="shadow-2xl border-2 bg-white dark:bg-gray-900">
-        <CardHeader className="pb-3">
-          <div className="flex items-start gap-3">
+        <div className="flex flex-col md:flex-row md:items-center gap-4 p-4">
+          <div className="flex items-start gap-3 flex-1">
             <Cookie className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
             <div className="flex-1">
-              <CardTitle className="text-base font-semibold text-gray-900 dark:text-white mb-1.5">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
                 {t('cookie_consent.title')}
-              </CardTitle>
-              <CardDescription className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+              </h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                 {t('cookie_consent.description')}{' '}
                 <Link 
                   href={language === 'ro' ? '/policies' : `/${language}/policies`} 
@@ -110,24 +110,15 @@ export function CookieConsent() {
                 >
                   {t('cookie_consent.learn_more')}
                 </Link>
-              </CardDescription>
+              </p>
             </div>
           </div>
-        </CardHeader>
-        <CardFooter className="flex flex-col gap-2 pt-0 pb-4">
-          <Button
-            onClick={acceptAll}
-            className="w-full bg-primary hover:bg-primary/90 text-white"
-            data-testid="button-accept-all"
-          >
-            {t('cookie_consent.accept_all')}
-          </Button>
-          <div className="flex gap-2 w-full">
+          <div className="flex gap-2 md:flex-shrink-0">
             <Button
               variant="outline"
               onClick={rejectAll}
               size="sm"
-              className="flex-1 text-xs"
+              className="text-xs"
               data-testid="button-reject-all"
             >
               {t('cookie_consent.reject_all')}
@@ -136,14 +127,22 @@ export function CookieConsent() {
               variant="outline"
               onClick={() => setShowCustomize(true)}
               size="sm"
-              className="flex-1 text-xs"
+              className="text-xs"
               data-testid="button-customize"
             >
               <Settings className="w-3 h-3 mr-1.5" />
               {t('cookie_consent.customize')}
             </Button>
+            <Button
+              onClick={acceptAll}
+              size="sm"
+              className="bg-primary hover:bg-primary/90 text-white text-xs"
+              data-testid="button-accept-all"
+            >
+              {t('cookie_consent.accept_all')}
+            </Button>
           </div>
-        </CardFooter>
+        </div>
       </Card>
     </div>
   );
