@@ -1128,24 +1128,30 @@ export const SolutionsContentSection = (): JSX.Element => {
               data-testid={`business-card-${business.number}`}
             >
               <div 
-                className="relative h-[280px] md:h-[320px] rounded-[12px] overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+                className="relative h-[280px] md:h-[320px] rounded-[12px] overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${business.backgroundImage})`,
+                  backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url(${business.backgroundImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}
               >
-                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                  <div className="[font-family:'Onest',Helvetica] font-bold text-[#fe9800] text-5xl md:text-6xl tracking-[0] leading-none mb-4">
+                {/* Orange bottom border/underline */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#fe9800] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 pb-8">
+                  <div className="[font-family:'Onest',Helvetica] font-bold text-[#fe9800] text-5xl md:text-6xl tracking-[0] leading-none mb-4 transform group-hover:-translate-y-1 transition-transform duration-300">
                     {business.number}
                   </div>
-                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-white text-lg md:text-xl tracking-[0] leading-tight mb-2">
+                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-white text-lg md:text-xl tracking-[0] leading-tight mb-2 transform group-hover:-translate-y-1 transition-transform duration-300">
                     {business.name}
                   </h3>
-                  <p className="[font-family:'Onest',Helvetica] font-normal text-white/90 text-sm md:text-base tracking-[0] leading-relaxed">
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-white/90 text-sm md:text-base tracking-[0] leading-relaxed transform group-hover:-translate-y-1 transition-transform duration-300">
                     {business.description}
                   </p>
                 </div>
+                
+                {/* Hover overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#fe9800]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </Link>
           ))}
