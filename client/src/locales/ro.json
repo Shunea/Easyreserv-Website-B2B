@@ -1303,20 +1303,32 @@
           "name": "Standard",
           "description": "Mai mulți angajați, dashboarduri, planificare ture, analiză simplă",
           "features": [
+            "Toate din Basic",
             "1 Admin, 1 Hostess, 2 Ospătari",
             "Gestionare meniu",
             "Adăugare/Activare promoții",
             "Gestionare program",
             "Gestionare stoc & furnizori",
-            "Ture/concedii/pontaj & Intrare/Ieșire",
-            "2 articole marketing/lună",
-            "Segmentare avansată"
+            "Ture/concedii/pontaj"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Control complet pe operațiuni, stocuri și automatizări",
+          "features": [
+            "Toate din Standard",
+            "3 Admini, 3 Hostes, 5 Ospătari",
+            "Management stocuri & rețetar complet",
+            "Scădere automată stoc la vânzare",
+            "Alerte low stock & inventare",
+            "Rețetar băuturi & cost/porție",
+            "Segmentare avansată & cupoane",
+            "Rapoarte PDF & exporturi"
           ]
         },
         "enterprise": {
           "name": "Enterprise",
           "description": "Personalizabil",
-          "monthlyPrice": null,
           "features": [
             "Toate din Pro",
             "Roluri utilizatori nelimitate",

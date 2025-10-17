@@ -1303,20 +1303,32 @@
           "name": "Standard",
           "description": "Multiple employees, dashboards, shift scheduling, simple analytics",
           "features": [
+            "All from Basic",
             "1 Admin, 1 Hostess, 2 Waiters",
             "Menu management",
             "Add/Activate promotions",
             "Schedule management",
             "Inventory & suppliers management",
-            "Shifts/holidays/time tracking & Check-in/Check-out",
-            "2 marketing articles/month",
-            "Advanced segmentation"
+            "Shifts/holidays/time tracking"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Complete control over operations, inventory and automations",
+          "features": [
+            "All from Standard",
+            "3 Admins, 3 Hostess, 5 Waiters",
+            "Complete inventory & recipe management",
+            "Automatic stock deduction on sale",
+            "Low stock alerts & inventory",
+            "Drink recipes & cost/portion",
+            "Advanced segmentation & coupons",
+            "PDF reports & exports"
           ]
         },
         "enterprise": {
           "name": "Enterprise",
           "description": "Customizable",
-          "monthlyPrice": null,
           "features": [
             "All from Pro",
             "Unlimited user roles",

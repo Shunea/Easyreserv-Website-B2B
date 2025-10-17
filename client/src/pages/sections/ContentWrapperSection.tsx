@@ -51,7 +51,7 @@ const getPricingPlans = (industry: string, t: any) => {
   const industryKey = industryToKeyMap[industry] || "cafenele";
   const pricing = industryPricing[industry] || industryPricing["Cafenele"];
   
-  const tiers = industry === "Restaurante" ? ["basic", "standard", "enterprise"] : ["basic", "standard", "pro", "enterprise"];
+  const tiers = ["basic", "standard", "pro", "enterprise"];
   
   return tiers.map((tier, index) => {
     const planData = t(`pricing_page.plans.${industryKey}.${tier}`, { returnObjects: true });
