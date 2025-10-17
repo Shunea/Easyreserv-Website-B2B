@@ -55,12 +55,12 @@ export function SEO({
     }
 
     Object.entries(metaTags).forEach(([name, content]) => {
-      const property = name.startsWith('og:') || name.startsWith('twitter:') ? 'property' : 'name';
-      let element = document.querySelector(`meta[${property}="${name}"]`) as HTMLMetaElement;
+      const attribute = name.startsWith('og:') ? 'property' : 'name';
+      let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
       
       if (!element) {
         element = document.createElement('meta');
-        element.setAttribute(property, name);
+        element.setAttribute(attribute, name);
         document.head.appendChild(element);
       }
       

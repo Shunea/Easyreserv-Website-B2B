@@ -28,7 +28,7 @@ export const websiteSchema = {
 
 export const seoConfig: Record<string, SEOProps> = {
   home: {
-    title: 'EasyReserv.io — Platformă all-in-one pentru rezervări, POS și operațiuni',
+    title: 'EasyReserv.io — Platformă all-in-one POS și Rezervări',
     description: 'Automatizezi rezervările, POS, fluxurile operaționale și rapoartele. Integrezi plăți, contabilitate, notificări și livrare — fără schimbare de hardware.',
     canonical: baseUrl,
     og: {
@@ -68,7 +68,7 @@ export const seoConfig: Record<string, SEOProps> = {
   },
 
   about: {
-    title: 'Despre Noi — EasyReserv.io | Misiunea și viziunea noastră',
+    title: 'Despre Noi — EasyReserv.io | Misiunea noastră',
     description: 'Aflați povestea EasyReserv.io: cum ajutăm afacerile să automatizeze operațiunile, să crească eficiența și să îmbunătățească experiența clienților.',
     canonical: `${baseUrl}/about`,
     og: {
@@ -84,7 +84,7 @@ export const seoConfig: Record<string, SEOProps> = {
   },
 
   solutions: {
-    title: 'Soluții pentru Industrii — EasyReserv.io | Restaurante, Auto, Saloane',
+    title: 'Soluții Multi-Industrie — EasyReserv.io',
     description: 'Soluții personalizate pentru restaurante, saloane de înfrumusețare, chirie auto, fitness, spălătorii auto, terenuri sportive și alte industrii.',
     canonical: `${baseUrl}/solutions`,
     og: {
@@ -156,7 +156,7 @@ export const seoConfig: Record<string, SEOProps> = {
   },
 
   contact: {
-    title: 'Contact — EasyReserv.io | Programează un demo sau cere suport',
+    title: 'Contact — EasyReserv.io | Demo și Suport',
     description: 'Contactează echipa EasyReserv pentru demo personalizat, suport tehnic sau întrebări despre platformă. Răspundem în maxim 24 de ore.',
     canonical: `${baseUrl}/contact`,
     og: {
@@ -172,7 +172,7 @@ export const seoConfig: Record<string, SEOProps> = {
   },
 
   policies: {
-    title: 'Politici și Termeni — EasyReserv.io | Confidențialitate și Termeni',
+    title: 'Politici — EasyReserv.io | Termeni și Confidențialitate',
     description: 'Politica de confidențialitate, politica cookie și termenii și condițiile platformei EasyReserv.io. Protecția datelor conform GDPR.',
     canonical: `${baseUrl}/policies`,
     robots: 'noindex, follow',
@@ -189,7 +189,7 @@ export const seoConfig: Record<string, SEOProps> = {
   },
 
   blog: {
-    title: 'Blog — EasyReserv.io | Știri, Ghiduri și Resurse pentru Afaceri',
+    title: 'Blog — EasyReserv.io | Ghiduri și Resurse Business',
     description: 'Articole despre managementul afacerilor, automatizare, tips & tricks pentru restaurante, saloane, fitness și alte industrii.',
     canonical: `${baseUrl}/blog`,
     og: {

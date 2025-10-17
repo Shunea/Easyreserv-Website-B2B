@@ -123,3 +123,103 @@ Preferred communication style: Simple, everyday language.
 - **esbuild** - Backend bundling for production
 - **TypeScript** - Type checking and compilation
 - **tsx** - TypeScript execution for development server
+
+## SEO Implementation
+
+### Overview
+Comprehensive SEO system implemented across all pages with meta tags, Open Graph, Twitter Cards, and Schema.org JSON-LD structured data.
+
+### Architecture
+- **SEO Component** (`/client/src/components/SEO.tsx`) - Reusable component that dynamically updates document head with meta tags
+- **SEO Configuration** (`/client/src/lib/seo-config.ts`) - Centralized configuration for all pages with defaults and helpers
+- **Integration** - SEO component integrated on all pages (Homepage, About, Solutions, Pricing, Contact, Policies, Blog, BlogArticle)
+
+### Features Implemented
+**Meta Tags:**
+- Page title (≤60 characters, unique per page)
+- Meta description (140-160 characters, optimized for search)
+- Robots directives (index/noindex, follow/nofollow)
+- Canonical URLs (absolute, proper format)
+- Theme color (#2d2c65 - brand color)
+- Language (lang="ro" for Romanian)
+
+**Open Graph Tags:**
+- og:title, og:description, og:image, og:type, og:url, og:site_name
+- Proper locale (ro_RO)
+- Image format optimization (1200×630 recommended)
+
+**Twitter Cards:**
+- twitter:card (summary_large_image)
+- twitter:title, twitter:description, twitter:image
+- Enhanced social media sharing
+
+**Schema.org JSON-LD:**
+- Organization schema (company information)
+- WebSite schema (website structure)
+- SoftwareApplication schema (product details, pricing, ratings)
+- BlogPosting schema (dynamic per article with author, date, publisher)
+- Service schema (industry-specific services)
+- Product schema (pricing plans with offers)
+
+### Page-Specific SEO
+
+**Homepage:**
+- Focus: Brand positioning, all-in-one platform
+- Schema: Organization, WebSite, SoftwareApplication
+- Title: "EasyReserv.io — Platformă all-in-one pentru rezervări, POS și operațiuni"
+
+**About:**
+- Focus: Company story, mission, vision
+- Schema: Organization
+- Title: "Despre Noi — EasyReserv.io | Misiunea și viziunea noastră"
+
+**Solutions:**
+- Focus: Industry-specific solutions
+- Schema: Organization, Service
+- Title: "Soluții pentru Industrii — EasyReserv.io | Restaurante, Auto, Saloane"
+
+**Pricing:**
+- Focus: Plans and pricing transparency
+- Schema: Organization, Product (with multiple offers)
+- Title: "Prețuri și Planuri — EasyReserv.io | De la 50€/lună"
+
+**Contact:**
+- Focus: Contact information, demo booking
+- Schema: Organization
+- Title: "Contact — EasyReserv.io | Programează un demo sau cere suport"
+
+**Policies:**
+- Focus: Privacy policy, terms, cookies
+- Robots: noindex, follow (prevent indexing of legal pages)
+- Title: "Politici și Termeni — EasyReserv.io | Confidențialitate și Termeni"
+
+**Blog:**
+- Focus: Articles, guides, resources
+- Schema: Organization, Blog
+- Title: "Blog — EasyReserv.io | Știri, Ghiduri și Resurse pentru Afaceri"
+
+**Blog Article (Dynamic):**
+- Focus: Individual article content
+- Schema: Organization, BlogPosting (with author, date, publisher)
+- Title: "{Article Title} — EasyReserv Blog"
+- Dynamic meta based on article data (title, excerpt, author, date, image)
+
+### Helper Functions
+- `getBlogArticleSEO()` - Generates dynamic SEO for blog articles
+- Base URL detection from window.location.origin
+- Fallback OG image for pages without specific images
+
+### Font Rendering Optimization
+- `-webkit-font-smoothing: antialiased` - Better text rendering on WebKit browsers
+- `-moz-osx-font-smoothing: grayscale` - Better text rendering on Firefox
+- `text-rendering: optimizeLegibility` - Enhanced legibility across browsers
+- Resolves blur/fuzzy text issues on mobile devices (iPhone, iPad)
+
+### Best Practices Followed
+- Unique titles per page (no duplicates)
+- Description length: 140-160 characters
+- Canonical URLs: absolute format, same domain
+- OG images: recommended 1200×630px
+- Schema validation: proper required fields per type
+- Robots meta: appropriate for content type
+- Romanian language (lang="ro", og:locale="ro_RO")
