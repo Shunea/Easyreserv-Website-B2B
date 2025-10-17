@@ -992,11 +992,18 @@ export const AboutSection = (): JSX.Element => {
                   Optimizează-ți afacerea chiar azi!
                 </h2>
 
-                <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
-                  <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                    Începe călătoria ta
-                  </span>
-                </Link>
+                <a
+                  href="https://bit.ly/49Ce2Q1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block hover:opacity-80 transition-opacity"
+                >
+                  <img
+                    className="h-14 w-auto object-contain"
+                    alt="Get it on Google Play"
+                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  />
+                </a>
               </div>
 
               <img
