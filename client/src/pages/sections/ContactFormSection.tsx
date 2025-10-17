@@ -463,6 +463,7 @@ export const ContactFormSection = (): JSX.Element => {
                           placeholder="XX XXX XXX"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
+                          autoComplete="off"
                           className="flex-1 h-full border-0 shadow-none pr-3 bg-transparent font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
                         />
                       </div>
@@ -478,6 +479,7 @@ export const ContactFormSection = (): JSX.Element => {
                           placeholder={field.placeholder}
                           value={formData[getFieldName(field.label) as keyof typeof formData]}
                           onChange={(e) => handleInputChange(getFieldName(field.label), e.target.value)}
+                          autoComplete="off"
                           className="flex-1 h-full border-0 shadow-none p-0 bg-transparent font-text-md-regular font-[number:var(--text-md-regular-font-weight)] text-black text-[length:var(--text-md-regular-font-size)] tracking-[var(--text-md-regular-letter-spacing)] leading-[var(--text-md-regular-line-height)] focus-visible:outline-none focus-visible:ring-0 focus:outline-none focus:ring-0"
                         />
                         {field.icon === "mail" && (
