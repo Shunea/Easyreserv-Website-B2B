@@ -9,31 +9,34 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/Container";
+import { useTranslation } from "@/hooks/useTranslation";
 
-const heroFeatures = [
-  {
-    icon: "/figmaAssets/icon-5.svg",
-    title: "Eficiență în timp",
-    description: "Concentrează-te pe livrarea serviciilor de calitate. Noi automatizăm pașii repetitivi și scurtăm timpii operaționali.",
-    height: "h-auto min-h-[200px]",
-  },
-  {
-    icon: "/figmaAssets/icon-5.svg",
-    title: "Accesibilitate",
-    description:
-      "Ajungi la un public mai larg, inclusiv la persoane cu dizabilități, cu interfețe moderne și procese simple de rezervare.",
-    height: "h-auto min-h-[221px]",
-  },
-  {
-    icon: "/figmaAssets/icon-5.svg",
-    title: "Control acces",
-    description:
-      "Controlează accesul angajaților în sistem prin roluri și permisiuni. Datele rămân în siguranță și respectă confidențialitatea.",
-    height: "h-auto",
-  },
-];
+const getFeaturesByIndustry = (industry: string, t: any) => {
+  // Map the display values to translation keys
+  const industryKeyMap: Record<string, string> = {
+    'restaurante': 'restaurante',
+    'cafenele': 'cafenele',
+    'saloane': 'saloane',
+    'barbershop': 'barbershop',
+    'hoteluri': 'hoteluri',
+    'chirii-auto': 'chirii_auto',
+    'fitness': 'fitness',
+    'medical': 'medical',
+    'retail': 'retail',
+    'spalatorii-auto': 'spalatorii_auto'
+  };
 
-const getFeaturesByIndustry = (industry: string) => {
+  const translationKey = industryKeyMap[industry] || 'restaurante';
+  
+  return {
+    employeeManagement: t(`solutions_page.${translationKey}.employee_management`, { returnObjects: true }) || [],
+    businessInsights: t(`solutions_page.${translationKey}.business_insights`, { returnObjects: true }) || [],
+    inventoryManagement: t(`solutions_page.${translationKey}.inventory_management`, { returnObjects: true }) || [],
+    customerEngagement: t(`solutions_page.${translationKey}.customer_engagement`, { returnObjects: true }) || []
+  };
+};
+
+const getFeaturesByIndustryOld = (industry: string) => {
   const featuresByIndustry: Record<string, {
     employeeManagement: Array<{title: string, description: string}>,
     businessInsights: Array<{title: string, description: string}>,
@@ -851,46 +854,73 @@ const benefitsRow2 = [
 
 export const SolutionsContentSection = (): JSX.Element => {
   const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
+  const { t } = useTranslation();
 
-  const industries = [
-    { value: "restaurante", label: "Restaurante" },
-    { value: "cafenele", label: "Cafenele" },
-    { value: "saloane", label: "Saloane de frumusețe" },
-    { value: "barbershop", label: "Barbershopuri" },
-    { value: "hoteluri", label: "Hotele & Pensiuni" },
-    { value: "chirii-auto", label: "Chirii auto" },
-    { value: "fitness", label: "Fitness" },
-    { value: "medical", label: "Medical" },
-    { value: "retail", label: "Retail" },
-    { value: "spalatorii-auto", label: "Spălătorii auto" },
+  const heroFeatures = [
+    {
+      icon: "/figmaAssets/icon-5.svg",
+      title: t("solutions_page.hero_features.feature1_title"),
+      description: t("solutions_page.hero_features.feature1_description"),
+      height: "h-auto min-h-[200px]",
+    },
+    {
+      icon: "/figmaAssets/icon-5.svg",
+      title: t("solutions_page.hero_features.feature2_title"),
+      description: t("solutions_page.hero_features.feature2_description"),
+      height: "h-auto min-h-[221px]",
+    },
+    {
+      icon: "/figmaAssets/icon-5.svg",
+      title: t("solutions_page.hero_features.feature3_title"),
+      description: t("solutions_page.hero_features.feature3_description"),
+      height: "h-auto",
+    },
   ];
 
-  const currentFeatures = getFeaturesByIndustry(selectedIndustry);
+  const industries = [
+    { value: "restaurante", label: t("solutions_page.industries.restaurante") },
+    { value: "cafenele", label: t("solutions_page.industries.cafenele") },
+    { value: "saloane", label: t("solutions_page.industries.saloane") },
+    { value: "barbershop", label: t("solutions_page.industries.barbershop") },
+    { value: "hoteluri", label: t("solutions_page.industries.hoteluri") },
+    { value: "chirii-auto", label: t("solutions_page.industries.chirii_auto") },
+    { value: "fitness", label: t("solutions_page.industries.fitness") },
+    { value: "medical", label: t("solutions_page.industries.medical") },
+    { value: "retail", label: t("solutions_page.industries.retail") },
+    { value: "spalatorii-auto", label: t("solutions_page.industries.spalatorii_auto") },
+  ];
+
+  const currentFeatures = getFeaturesByIndustry(selectedIndustry, t);
   const employeeManagementFeatures = currentFeatures.employeeManagement;
   const businessInsightsFeatures = currentFeatures.businessInsights;
   const inventoryManagementFeatures = currentFeatures.inventoryManagement;
   const customerEngagementFeatures = currentFeatures.customerEngagement;
+  
+  const howItWorksSteps = t("solutions_page.how_it_works.steps", { returnObjects: true }) as Array<{title: string, description: string}>;
+  const businessTypes = t("solutions_page.business_types.types", { returnObjects: true }) as Array<{number: string, name: string, description: string}>;
+  const benefitsItems = t("solutions_page.benefits.items", { returnObjects: true }) as Array<{title: string, description: string}>;
+  const whatIsFaq = t("solutions_page.what_is.faq", { returnObjects: true }) as Array<{question: string, answer: string}>;
 
   return (
     <section className="relative z-10 flex flex-col w-full items-center">
       <Container className="py-8 md:py-[50px]">
         <div className="relative z-20 col-span-12 md:col-span-6 flex flex-col items-start justify-center gap-5">
           <h1 className="[font-family:'Onest',Helvetica] font-bold text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[normal]">
-            <span className="text-[#282828]">Crește-ți afacerea și </span>
-            <span className="text-[#fe9800]">eficiența</span>
+            <span className="text-[#282828]">{t("solutions_page.hero.title")} </span>
+            <span className="text-[#fe9800]">{t("solutions_page.hero.title_highlight")}</span>
             <span className="text-[#282828]">
               {" "}
-              în multiple industrii
+              {t("solutions_page.hero.title_end")}
             </span>
           </h1>
 
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-[20.8px]">
-            Fie că ai un restaurant, un salon sau orice alt tip de business, EasyReserv se adaptează nevoilor tale: rezervări, POS, stocuri, rapoarte și automatizări – totul într-o singură platformă.
+            {t("solutions_page.hero.description")}
           </p>
 
           <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center" data-testid="button-explore-plans">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-              Explorează planurile
+              {t("solutions_page.hero.cta")}
             </span>
           </Link>
         </div>
@@ -940,7 +970,7 @@ export const SolutionsContentSection = (): JSX.Element => {
       <Container className="py-8 md:py-[50px]">
         <div className="col-span-12 flex flex-col items-center justify-center gap-4 md:gap-6 mb-8">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
-            Descoperă funcționalitățile care ne diferențiază pentru
+            {t("solutions_page.industries.title")}
           </h2>
           <select
             value={selectedIndustry}
@@ -964,7 +994,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
-                Managementul angajaților și al afacerii
+                {t("solutions_page.sections.employee_management")}
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -992,7 +1022,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
-                Perspective de business și analitice
+                {t("solutions_page.sections.business_insights")}
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -1022,7 +1052,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
-                Managementul stocurilor și al lanțului de aprovizionare
+                {t("solutions_page.sections.inventory_management")}
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -1050,7 +1080,7 @@ export const SolutionsContentSection = (): JSX.Element => {
           <Card className="w-full bg-[#2d2c650d] rounded-[20px] border-0">
             <CardContent className="flex flex-col items-start gap-6 p-6 md:p-[50px]">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl md:text-2xl tracking-[0] leading-[normal]">
-                Implicarea clienților și marketing
+                {t("solutions_page.sections.customer_engagement")}
               </h3>
 
               <div className="flex flex-col items-start gap-5 w-full">
@@ -1081,7 +1111,7 @@ export const SolutionsContentSection = (): JSX.Element => {
         <Container>
           <div className="col-span-12">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-              Cum funcționează
+              {t("solutions_page.how_it_works.title")}
             </h2>
           </div>
 
@@ -1089,24 +1119,33 @@ export const SolutionsContentSection = (): JSX.Element => {
             <div className="flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-4 w-full relative">
               <div className="absolute top-[40px] left-[40px] right-[40px] h-2 bg-[#2d2c65] hidden lg:block" />
 
-              {howItWorksSteps.map((step, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center gap-4 flex-1 max-w-full lg:max-w-[200px]"
-                >
-                  <img
-                    className="relative w-20 h-20 z-10"
-                    alt="Frame"
-                    src={step.icon}
-                  />
-                  <h3 className="[font-family:'Inter',Helvetica] font-bold text-[#282828] text-lg md:text-xl text-center tracking-[0] leading-tight md:leading-[26px]">
-                    {step.title}
-                  </h3>
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#282828] text-sm md:text-base text-center tracking-[0] leading-relaxed opacity-70">
-                    {step.description}
-                  </p>
-                </div>
-              ))}
+              {howItWorksSteps.map((step, index) => {
+                const stepIcons = [
+                  "/figmaAssets/frame-1894.svg",
+                  "/figmaAssets/frame-2147223393.svg",
+                  "/figmaAssets/frame-2147223396.svg",
+                  "/figmaAssets/frame-2147223394.svg",
+                  "/figmaAssets/frame-2147223395.svg"
+                ];
+                return (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center gap-4 flex-1 max-w-full lg:max-w-[200px]"
+                  >
+                    <img
+                      className="relative w-20 h-20 z-10"
+                      alt="Frame"
+                      src={stepIcons[index]}
+                    />
+                    <h3 className="[font-family:'Inter',Helvetica] font-bold text-[#282828] text-lg md:text-xl text-center tracking-[0] leading-tight md:leading-[26px]">
+                      {step.title}
+                    </h3>
+                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#282828] text-sm md:text-base text-center tracking-[0] leading-relaxed opacity-70">
+                      {step.description}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Container>
@@ -1116,25 +1155,39 @@ export const SolutionsContentSection = (): JSX.Element => {
         <Container>
           <div className="col-span-12 mb-8 md:mb-12">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
-              Ce tip de afacere ai?
+              {t("solutions_page.business_types.title")}
             </h2>
           </div>
 
-          {businessTypes.map((business, index) => (
-            <Link 
-              key={index} 
-              href={`/pricing?industry=${encodeURIComponent(business.pricingIndustry)}`}
-              className="col-span-12 md:col-span-6 lg:col-span-4"
-              data-testid={`business-card-${business.number}`}
-            >
-              <div 
-                className="relative h-[280px] md:h-[320px] rounded-[12px] overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
-                style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url(${business.backgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
+          {businessTypes.map((business, index) => {
+            const businessBackgrounds = [
+              "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+              "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+              "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+              "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
+              "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+              "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+              "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+              "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
+              "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+              "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80"
+            ];
+            const pricingIndustries = ["Restaurante", "Cafenele", "Saloane de frumusețe", "Barbershopuri", "Hotele & Pensiuni", "Chirii auto", "Fitness", "Medical", "Retail", "Spălătorii auto"];
+            return (
+              <Link 
+                key={index} 
+                href={`/pricing?industry=${encodeURIComponent(pricingIndustries[index])}`}
+                className="col-span-12 md:col-span-6 lg:col-span-4"
+                data-testid={`business-card-${business.number}`}
               >
+                <div 
+                  className="relative h-[280px] md:h-[320px] rounded-[12px] overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+                  style={{
+                    backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%), url(${businessBackgrounds[index]})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
                 {/* Orange bottom border/underline */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#fe9800] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 
@@ -1154,125 +1207,99 @@ export const SolutionsContentSection = (): JSX.Element => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fe9800]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </Container>
       </div>
 
       <Container className="py-[50px]">
         <div className="col-span-12">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[72px]">
-            Simplifică-ți operațiunile,
+            {t("solutions_page.benefits.title")}
             <br />
-            Amplifică-ți succesul
+            {t("solutions_page.benefits.title_line2")}
           </h2>
         </div>
 
-        {benefitsRow1.map((benefit, index) => (
-          <div key={index} className="col-span-12 md:col-span-4">
-            <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
-              <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
-                <img
-                  className="w-[58px] h-[58px]"
-                  alt="Icon"
-                  src={benefit.icon}
-                />
-                <div className="flex flex-col gap-1 w-full">
-                  <h3 className="font-bold text-[#282828] text-xl leading-[30px] [font-family:'Onest',Helvetica] tracking-[0]">
-                    {benefit.title}
-                  </h3>
-                  <p className="opacity-50 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                    {benefit.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+        {benefitsItems.slice(0, 3).map((benefit, index) => {
+          const benefitIcons = ["/figmaAssets/icon.svg", "/figmaAssets/icon-1.svg", "/figmaAssets/icon-1.svg", "/figmaAssets/icon.svg", "/figmaAssets/icon-1.svg", "/figmaAssets/icon-1.svg"];
+          return (
+            <div key={index} className="col-span-12 md:col-span-4">
+              <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
+                <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
+                  <img
+                    className="w-[58px] h-[58px]"
+                    alt="Icon"
+                    src={benefitIcons[index]}
+                  />
+                  <div className="flex flex-col gap-1 w-full">
+                    <h3 className="font-bold text-[#282828] text-xl leading-[30px] [font-family:'Onest',Helvetica] tracking-[0]">
+                      {benefit.title}
+                    </h3>
+                    <p className="opacity-50 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          );
+        })}
 
-        {benefitsRow2.map((benefit, index) => (
-          <div key={index} className="col-span-12 md:col-span-4">
-            <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
-              <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
-                <img
-                  className="w-[58px] h-[58px]"
-                  alt="Icon"
-                  src={benefit.icon}
-                />
-                <div className="flex flex-col gap-1 w-full">
-                  <h3 className="font-bold text-[#282828] text-xl leading-[30px] [font-family:'Onest',Helvetica] tracking-[0]">
-                    {benefit.title}
-                  </h3>
-                  <p className="opacity-50 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                    {benefit.description}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+        {benefitsItems.slice(3, 6).map((benefit, index) => {
+          const benefitIcons = ["/figmaAssets/icon.svg", "/figmaAssets/icon-1.svg", "/figmaAssets/icon-1.svg"];
+          return (
+            <div key={index} className="col-span-12 md:col-span-4">
+              <Card className="w-full bg-brandsnowy rounded-[20px] border-[#8aa2a980] shadow-[8px_28px_30px_#00000008]">
+                <CardContent className="flex flex-col items-start gap-4 pl-10 pr-8 py-10">
+                  <img
+                    className="w-[58px] h-[58px]"
+                    alt="Icon"
+                    src={benefitIcons[index]}
+                  />
+                  <div className="flex flex-col gap-1 w-full">
+                    <h3 className="font-bold text-[#282828] text-xl leading-[30px] [font-family:'Onest',Helvetica] tracking-[0]">
+                      {benefit.title}
+                    </h3>
+                    <p className="opacity-50 [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          );
+        })}
       </Container>
 
       <div className="w-full py-16 bg-[#282828]">
         <Container>
           <div className="col-span-12 lg:col-span-6 flex flex-col items-start gap-8">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              Ce este EasyReserv?
+              {t("solutions_page.what_is.title")}
             </h2>
 
             <p className="[font-family:'Onest',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-[27px]">
-              EasyReserv este o soluție completă pentru gestionarea și optimizarea afacerii tale. Rezervări mobile, management angajați, rapoarte business, management inventar și multe alte funcționalități sunt disponibile. Poți economisi timp, crește vânzările, îmbunătăți experiența clienților, reduce costurile și crește productivitatea folosind platforma noastră.
+              {t("solutions_page.what_is.description")}
             </p>
           </div>
 
           <div className="col-span-12 lg:col-span-6 flex flex-col items-start">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem
-                value="item-1"
-                className="border-b border-[#3f4e5b]"
-              >
-                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
-                  Pot accesa EasyReserv atât pe web cât și pe dispozitive mobile?
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
-                  Da, EasyReserv este disponibil atât ca aplicație web (desktop și tabletă) cât și ca aplicație mobilă nativă pentru iOS și Android. Poți accesa toate funcționalitățile platformei de pe orice dispozitiv, cu sincronizare în timp real între toate device-urile tale.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-2"
-                className="border-b border-[#3f4e5b]"
-              >
-                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
-                  Cât durează implementarea platformei EasyReserv?
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
-                  Implementarea EasyReserv durează între 2-5 zile în funcție de complexitatea afacerii tale. Echipa noastră te asistă la fiecare pas: configurare inițială, import date, training echipă și go-live. Nu trebuie să schimbi hardware-ul existent.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-3"
-                className="border-b border-[#3f4e5b]"
-              >
-                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
-                  Se integrează EasyReserv cu sistemul meu de contabilitate?
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
-                  Da, EasyReserv se integrează nativ cu principalele sisteme de contabilitate precum 1C, SAP și alte soluții populare. Exportul de facturi, vânzări și rapoarte financiare se face automat, eliminând introducerea manuală a datelor.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem
-                value="item-4"
-                className="border-b border-[#3f4e5b]"
-              >
-                <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
-                  Oferă EasyReserv suport tehnic și training pentru echipa mea?
-                </AccordionTrigger>
-                <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
-                  Absolut! Oferim suport tehnic 24/7 prin chat, email și telefon. La implementare, includem sesiuni de training pentru întreaga echipă: manageri, casieri, ospătari și bucătari. Plus acces la baza noastră de cunoștințe și tutoriale video.
-                </AccordionContent>
-              </AccordionItem>
+              {(t("solutions_page.what_is.faq", { returnObjects: true }) as Array<{question: string, answer: string}>).map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index + 1}`}
+                  className="border-b border-[#3f4e5b]"
+                >
+                  <AccordionTrigger className="text-lg leading-[27px] [font-family:'Onest',Helvetica] font-normal text-white tracking-[-0.36px] hover:no-underline px-0 py-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base leading-6 [font-family:'Onest',Helvetica] font-normal text-white tracking-[0] px-0 pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </Container>
@@ -1283,13 +1310,13 @@ export const SolutionsContentSection = (): JSX.Element => {
           <div className="flex flex-col items-start justify-center gap-8 p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
             <div className="flex flex-col items-start gap-4 w-full relative z-10">
               <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-                Începe să-ți optimizezi afacerea astăzi!
+                {t("solutions_page.cta_final.title")}
               </h2>
             </div>
 
             <Button className="h-auto bg-white rounded-xl p-4 hover:bg-white/90 relative z-10">
               <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-base tracking-[0] leading-4">
-                Devino partener
+                {t("solutions_page.cta_final.button")}
               </span>
             </Button>
 
