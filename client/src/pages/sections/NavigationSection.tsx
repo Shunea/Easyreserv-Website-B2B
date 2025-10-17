@@ -84,7 +84,6 @@ export const NavigationSection = (): JSX.Element => {
             </a>
 
             <div className="flex items-center gap-3 px-3 py-2 rounded-lg border-[0.5px] border-solid border-[#28282880] cursor-pointer hover:bg-gray-50 transition-colors">
-              <img className="w-4 h-4" alt="Ro" src="/figmaAssets/us.svg" />
               <div className="flex items-center justify-center [font-family:'Onest',Helvetica] font-normal text-[#282828] text-base leading-[22.4px] whitespace-nowrap">
                 RO
               </div>
@@ -149,7 +148,6 @@ export const NavigationSection = (): JSX.Element => {
 
                 {/* Language Selector */}
                 <div className="flex items-center gap-3 px-3 py-2 rounded-lg border-[0.5px] border-solid border-[#28282880] cursor-pointer hover:bg-gray-50 transition-colors w-fit">
-                  <img className="w-4 h-4" alt="Ro" src="/figmaAssets/us.svg" />
                   <div className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base">
                     RO
                   </div>
