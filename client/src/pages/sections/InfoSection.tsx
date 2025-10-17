@@ -12,6 +12,17 @@ import { FAQSection } from "./FAQSection";
 import { Container } from "@/components/Container";
 import { useTranslation } from "@/hooks/useTranslation";
 
+// Import icon images
+import icon1 from "/figmaAssets/icon-1.svg";
+import icon2 from "/figmaAssets/icon-2.svg";
+import icon3 from "/figmaAssets/icon-3.svg";
+import iconGlobal from "/figmaAssets/vuesax-broken-global.png";
+import iconSvg from "/figmaAssets/icon.svg";
+import iconInnovation from "/figmaAssets/innovation.png";
+import iconProfile from "/figmaAssets/vuesax-linear-profile.png";
+import iconStatus from "/figmaAssets/vuesax-linear-status-up.png";
+import iconHeart from "/figmaAssets/vuesax-linear-heart.png";
+
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
   const currentDate = new Date();
@@ -79,25 +90,25 @@ export const InfoSection = (): JSX.Element => {
 
   const whyChooseUsData = [
     {
-      icon: "/figmaAssets/icon-1.svg",
+      icon: icon1,
       title: t("about_page.why_choose.reason1_title"),
       description: t("about_page.why_choose.reason1_text"),
       number: "01",
     },
     {
-      icon: "/figmaAssets/icon-3.svg",
+      icon: icon3,
       title: t("about_page.why_choose.reason2_title"),
       description: t("about_page.why_choose.reason2_text"),
       number: "02",
     },
     {
-      icon: "/figmaAssets/icon-3.svg",
+      icon: icon3,
       title: t("about_page.why_choose.reason3_title"),
       description: t("about_page.why_choose.reason3_text"),
       number: "03",
     },
     {
-      icon: "/figmaAssets/icon-2.svg",
+      icon: icon2,
       title: t("about_page.why_choose.reason4_title"),
       description: t("about_page.why_choose.reason4_text"),
       number: "04",
@@ -106,32 +117,32 @@ export const InfoSection = (): JSX.Element => {
 
   const featuresData = [
     {
-      icon: "/figmaAssets/vuesax-broken-global.png",
+      icon: iconGlobal,
       title: t("about_page.features.feature1_title"),
       description: t("about_page.features.feature1_text"),
     },
     {
-      icon: "/figmaAssets/icon.svg",
+      icon: iconSvg,
       title: t("about_page.features.feature2_title"),
       description: t("about_page.features.feature2_text"),
     },
     {
-      icon: "/figmaAssets/innovation.png",
+      icon: iconInnovation,
       title: t("about_page.features.feature3_title"),
       description: t("about_page.features.feature3_text"),
     },
     {
-      icon: "/figmaAssets/vuesax-linear-profile.png",
+      icon: iconProfile,
       title: t("about_page.features.feature4_title"),
       description: t("about_page.features.feature4_text"),
     },
     {
-      icon: "/figmaAssets/vuesax-linear-status-up.png",
+      icon: iconStatus,
       title: t("about_page.features.feature5_title"),
       description: t("about_page.features.feature5_text"),
     },
     {
-      icon: "/figmaAssets/vuesax-linear-heart.png",
+      icon: iconHeart,
       title: t("about_page.features.feature6_title"),
       description: t("about_page.features.feature6_text"),
     },
