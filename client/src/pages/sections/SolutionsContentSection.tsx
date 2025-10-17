@@ -737,59 +737,73 @@ const howItWorksSteps = [
 const businessTypes = [
   {
     number: "01",
-    name: "RESTAURANT & CATERING",
+    name: "RESTAURANTE",
     description: "Gestionare rezervări, comenzi și mese fără efort",
     backgroundImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
     pricingIndustry: "Restaurante",
   },
   {
     number: "02",
-    name: "BEAUTY & WELLNESS",
+    name: "CAFENELE",
+    description: "Sistem complet pentru comenzi rapide și management de cafenea",
+    backgroundImage: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+    pricingIndustry: "Cafenele",
+  },
+  {
+    number: "03",
+    name: "SALOANE DE FRUMUSEȚE",
     description: "Programări inteligente pentru saloane, spa-uri și clinici de înfrumusețare",
     backgroundImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
     pricingIndustry: "Saloane de frumusețe",
   },
   {
-    number: "03",
-    name: "MEDICAL & DENTAL",
-    description: "Managementul profesional al programărilor pentru furnizori de servicii medicale",
-    backgroundImage: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
-    pricingIndustry: "Medical",
+    number: "04",
+    name: "BARBERSHOPURI",
+    description: "Soluție completă pentru programări și management de barbershop",
+    backgroundImage: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80",
+    pricingIndustry: "Barbershopuri",
   },
   {
-    number: "04",
-    name: "FITNESS & SPORTS",
-    description: "Rezervări eficiente de cursuri și soluții de management pentru membri",
+    number: "05",
+    name: "HOTELE & PENSIUNI",
+    description: "Sistem complet pentru rezervări hoteliere și management cazare",
+    backgroundImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+    pricingIndustry: "Hotele & Pensiuni",
+  },
+  {
+    number: "06",
+    name: "CHIRII AUTO",
+    description: "Platformă pentru rezervări și management închirieri auto",
+    backgroundImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    pricingIndustry: "Chirii auto",
+  },
+  {
+    number: "07",
+    name: "FITNESS",
+    description: "Rezervări de cursuri și soluții de management pentru săli de sport",
     backgroundImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
     pricingIndustry: "Fitness",
   },
   {
-    number: "05",
-    name: "RETAIL & MAGAZINE",
+    number: "08",
+    name: "MEDICAL",
+    description: "Managementul profesional al programărilor pentru cabinete medicale",
+    backgroundImage: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
+    pricingIndustry: "Medical",
+  },
+  {
+    number: "09",
+    name: "RETAIL",
     description: "Sisteme moderne de rezervări și POS pentru magazine",
     backgroundImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
     pricingIndustry: "Retail",
   },
   {
-    number: "06",
-    name: "ENTERTAINMENT & EVENTS",
-    description: "Platformă completă pentru rezervări la terenuri sportive și evenimente",
-    backgroundImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
-    pricingIndustry: "Tenis/Padel/Fotbal",
-  },
-  {
-    number: "07",
-    name: "AUTOMOTIVE & RENT",
-    description: "Sistem de rezervări pentru închirieri auto și servicii auto",
-    backgroundImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
-    pricingIndustry: "Chirii auto",
-  },
-  {
-    number: "08",
-    name: "HOTELS & ACCOMMODATION",
-    description: "Soluție completă pentru hoteluri, pensiuni și cazare",
-    backgroundImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
-    pricingIndustry: "Hotele & Pensiuni",
+    number: "10",
+    name: "SPĂLĂTORII AUTO",
+    description: "Sistem de programări și management pentru spălătorii auto",
+    backgroundImage: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
+    pricingIndustry: "Spălătorii auto",
   },
 ];
 
@@ -1110,7 +1124,7 @@ export const SolutionsContentSection = (): JSX.Element => {
             <Link 
               key={index} 
               href={`/pricing?industry=${encodeURIComponent(business.pricingIndustry)}`}
-              className="col-span-12 md:col-span-6 lg:col-span-3"
+              className="col-span-12 md:col-span-6 lg:col-span-4"
               data-testid={`business-card-${business.number}`}
             >
               <div 
