@@ -8,10 +8,12 @@ import { getArticleBySlug } from "@/data/articles";
 import NotFound from "@/pages/not-found";
 import { SEO } from "@/components/SEO";
 import { getBlogArticleSEO } from "@/lib/seo-config";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const BlogArticle = (): JSX.Element => {
   const params = useParams<{ slug: string }>();
   const article = getArticleBySlug(params.slug);
+  const { language } = useLanguage();
 
   if (!article) {
     return <NotFound />;
@@ -19,14 +21,17 @@ export const BlogArticle = (): JSX.Element => {
 
   return (
     <div className="relative w-full bg-white overflow-hidden">
-      <SEO {...getBlogArticleSEO(
-        article.title,
-        article.excerpt,
-        article.slug,
-        article.author.name,
-        article.date,
-        article.image
-      )} />
+      <SEO 
+        {...getBlogArticleSEO(
+          article.title,
+          article.excerpt,
+          article.slug,
+          article.author.name,
+          article.date,
+          article.image
+        )} 
+        language={language}
+      />
       <NavigationSection />
       <BlogArticleSection article={article} />
       <RelatedArticlesSection currentSlug={params.slug} />

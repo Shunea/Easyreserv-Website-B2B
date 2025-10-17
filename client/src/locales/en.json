@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "About us",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "sign_in": "Sign In",
+    "menu": "Menu",
+    "language": "EN"
+  },
+  "footer": {
+    "description": "EasyReserv is an All-in-One platform for reservations, fiscal POS, operations and reports — optimized for restaurants, cafes, beauty salons, hotels & guesthouses, car rentals, fitness, medical and retail. Connects teams and data in one place, with 1C integrations and payments.",
+    "about_us": "About Us",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy_policy": "Privacy Policy",
+    "cookies_policy": "Cookies Policy",
+    "terms_conditions": "Terms & Conditions",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "available_on": "Available on",
+    "copyright": "All rights reserved.",
+    "developed_by": "Developed by",
+    "developer_name": "iShunea Tech Solutions"
+  },
+  "hero": {
+    "title": "From Reservations to POS, Reports and Automation — on a single platform",
+    "description": "A single platform for reservations, POS, operations and analytics — built for restaurants, cafes, beauty salons, barbershops, hotels, guesthouses, car rentals, fitness, medical, retail. Configure roles, menus/services and start workflows with rapid go-live. Automation reduces times and increases conversions, while dashboards show you the situation in real-time, daily or monthly. Integrate accounting, payments and notifications without changing hardware.",
+    "cta_button": "Start free trial",
+    "features": "All-in-One • POS available • Fiscal ready • Rapid go-live"
+  },
+  "stats": {
+    "founded": "FOUNDED",
+    "founded_value": "2023",
+    "professionals": "RENOWNED PROFESSIONALS",
+    "professionals_value": "15+",
+    "years": "YEARS",
+    "widgets": "EASYRESERV WIDGETS CREATED",
+    "widgets_value": "101+",
+    "locations": "LOCATIONS USED THE PRODUCT IN THE FIRST YEAR",
+    "locations_value": "40",
+    "time_optimized": "OF EMPLOYEE TIME CAN BE OPTIMIZED",
+    "time_optimized_value": "30%+",
+    "notifications": "NOTIFICATIONS SENT MONTHLY",
+    "notifications_value": "80,000",
+    "users": "USERS ON THE PLATFORM",
+    "users_value": "4,600+"
+  },
+  "features_section": {
+    "title": "Best features",
+    "industries": {
+      "restaurante": "Restaurants",
+      "cafenele": "Cafes",
+      "saloane": "Beauty salons",
+      "barbershop": "Barbershops",
+      "hotel": "Hotels & Guesthouses",
+      "chirii_auto": "Car rentals",
+      "fitness": "Fitness",
+      "medical": "Medical",
+      "retail": "Retail",
+      "terenuri_sportive": "Sports fields",
+      "spalatorii_auto": "Car washes"
+    }
+  },
+  "seo": {
+    "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
+    "home_description": "Automate reservations, POS, operational workflows and reports. Integrate payments, accounting, notifications and delivery — without changing hardware.",
+    "about_title": "About Us — EasyReserv.io | Our Mission",
+    "about_description": "Discover the EasyReserv.io story: how we help businesses automate operations, increase efficiency and improve customer experience.",
+    "solutions_title": "Multi-Industry Solutions — EasyReserv.io",
+    "solutions_description": "Customized solutions for restaurants, beauty salons, car rentals, fitness, car washes, sports fields and other industries.",
+    "pricing_title": "Pricing & Plans — EasyReserv.io | From €50/month",
+    "pricing_description": "Flexible plans for businesses of all sizes. Start from €50/month, no hidden costs. 14-day free trial.",
+    "contact_title": "Contact — EasyReserv.io | Demo & Support",
+    "contact_description": "Contact the EasyReserv team for a personalized demo, technical support or questions about the platform. We respond within 24 hours.",
+    "policies_title": "Policies — EasyReserv.io | Terms & Privacy",
+    "policies_description": "Privacy policy, cookie policy and terms and conditions of the EasyReserv.io platform. Data protection in accordance with GDPR.",
+    "blog_title": "Blog — EasyReserv.io | Business Guides & Resources",
+    "blog_description": "Articles about business management, automation, tips & tricks for restaurants, salons, fitness and other industries."
+  }
+}

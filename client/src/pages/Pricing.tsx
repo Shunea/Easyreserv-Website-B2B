@@ -10,11 +10,21 @@ import { SubscriptionOptionsSection } from "./sections/SubscriptionOptionsSectio
 import { WhatIsEasyReservSection } from "./sections/WhatIsEasyReservSection";
 import { SEO } from "@/components/SEO";
 import { seoConfig } from "@/lib/seo-config";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const Pricing = (): JSX.Element => {
+  const { language } = useLanguage();
+  const { t } = useTranslation();
+  
   return (
     <div className="relative w-full bg-white overflow-hidden">
-      <SEO {...seoConfig.pricing} />
+      <SEO 
+        {...seoConfig.pricing} 
+        language={language}
+        title={t('seo.pricing_title')}
+        description={t('seo.pricing_description')}
+      />
       <img
         className="absolute top-[4538px] left-[500px] w-[1512px] h-[416px] pointer-events-none"
         alt="Vector"

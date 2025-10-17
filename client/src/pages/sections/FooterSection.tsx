@@ -2,29 +2,32 @@ import React from "react";
 import { Link } from "wouter";
 import { Container } from "@/components/Container";
 import googlePlayBadge from "@assets/google-play-badge.png";
+import { useTranslation } from "@/hooks/useTranslation";
 
-const footerLinks = {
+const getFooterLinks = (t: (key: string) => string) => ({
   column1: [
-    { text: "About Us", href: "/about" },
-    { text: "Solutions", href: "/solutions" },
-    { text: "Pricing", href: "/pricing" },
-    { text: "Blog", href: "/blog" },
-    { text: "Contact", href: "/contact" },
+    { text: t('footer.about_us'), href: "/about" },
+    { text: t('footer.solutions'), href: "/solutions" },
+    { text: t('footer.pricing'), href: "/pricing" },
+    { text: t('footer.blog'), href: "/blog" },
+    { text: t('footer.contact'), href: "/contact" },
   ],
   column2: [
-    { text: "Privacy Policy", href: "/policies#privacy-policy" },
-    { text: "Cookies Policy", href: "/policies#cookies-policy" },
-    { text: "Terms & Conditions", href: "/policies#terms-and-conditions" },
+    { text: t('footer.privacy_policy'), href: "/policies#privacy-policy" },
+    { text: t('footer.cookies_policy'), href: "/policies#cookies-policy" },
+    { text: t('footer.terms_conditions'), href: "/policies#terms-and-conditions" },
   ],
   column3: [
-    { text: "LinkedIn", href: "https://www.linkedin.com/company/easyreserv" },
-    { text: "Facebook", href: "https://www.facebook.com/easyreserv.io" },
-    { text: "Instagram", href: "https://www.instagram.com/easyreserv.io/" },
+    { text: t('footer.linkedin'), href: "https://www.linkedin.com/company/easyreserv" },
+    { text: t('footer.facebook'), href: "https://www.facebook.com/easyreserv.io" },
+    { text: t('footer.instagram'), href: "https://www.instagram.com/easyreserv.io/" },
   ],
-};
+});
 
 export const FooterSection = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
+  const footerLinks = getFooterLinks(t);
   
   return (
     <footer className="w-full py-16 bg-[#191a24]">
@@ -45,7 +48,7 @@ export const FooterSection = (): JSX.Element => {
           </Link>
 
           <p className="opacity-75 [font-family:'Inter',Helvetica] font-normal text-white text-sm tracking-[0] leading-normal max-w-md">
-            EasyReserv este o platformă All-in-One pentru rezervări, POS fiscal, operațiuni și rapoarte — optimizată pentru restaurante, cafenele, beauty, hoteluri & pensiuni, chirii auto, fitness, medical și retail. Conectează echipa și datele într-un singur loc, cu integrări 1C și plăți.
+            {t('footer.description')}
           </p>
         </div>
 
@@ -89,7 +92,7 @@ export const FooterSection = (): JSX.Element => {
 
             <div className="flex flex-col gap-4">
               <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[0]">
-                Disponibil pe
+                {t('footer.available_on')}
               </div>
 
               <div className="flex flex-col gap-3">
@@ -124,12 +127,12 @@ export const FooterSection = (): JSX.Element => {
 
         <div className="col-span-12 flex flex-col md:flex-row items-center justify-between gap-4 mt-12 pt-8 border-t border-[#ffffff20]">
           <div className="[font-family:'Inter',Helvetica] font-normal text-white text-base text-center tracking-[-0.32px] leading-7">
-            © EasyReserv.io {currentYear}. All rights reserved.
+            © EasyReserv.io {currentYear}. {t('footer.copyright')}
           </div>
 
           <div className="opacity-50 [font-family:'Inter',Helvetica] font-normal text-white text-base text-center">
             <span className="tracking-[-0.05px] leading-7">
-              Developed by
+              {t('footer.developed_by')}
             </span>
             <span className="font-medium tracking-[0]">
               &nbsp;
@@ -140,7 +143,7 @@ export const FooterSection = (): JSX.Element => {
               rel="noopener noreferrer"
               className="font-bold tracking-[-0.05px] leading-7 underline hover:opacity-80 transition-opacity"
             >
-              iShunea Tech Solutions
+              {t('footer.developer_name')}
             </a>
           </div>
         </div>

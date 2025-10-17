@@ -5,11 +5,21 @@ import { NavigationSection } from "./sections/NavigationSection";
 import { FooterSection } from "./sections/FooterSection";
 import { SEO } from "@/components/SEO";
 import { seoConfig } from "@/lib/seo-config";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const Contact = (): JSX.Element => {
+  const { language } = useLanguage();
+  const { t } = useTranslation();
+  
   return (
     <div className="relative w-full min-h-screen bg-white overflow-hidden">
-      <SEO {...seoConfig.contact} />
+      <SEO 
+        {...seoConfig.contact} 
+        language={language}
+        title={t('seo.contact_title')}
+        description={t('seo.contact_description')}
+      />
       <img
         className="absolute top-[-77699px] left-[-9755px] w-[416px] h-[1512px]"
         alt="Vector"

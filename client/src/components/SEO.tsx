@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
 
+export type Language = 'ro' | 'ru' | 'en';
+
 export interface SEOProps {
   title: string;
   description: string;
   canonical?: string;
   robots?: string;
+  language?: Language;
   og?: {
     title?: string;
     description?: string;
@@ -21,17 +24,29 @@ export interface SEOProps {
   schema?: object[];
 }
 
+const getLocaleForLanguage = (lang: Language): string => {
+  const localeMap: Record<Language, string> = {
+    ro: 'ro_RO',
+    ru: 'ru_RU',
+    en: 'en_US'
+  };
+  return localeMap[lang];
+};
+
 export function SEO({
   title,
   description,
   canonical,
   robots = 'index, follow',
+  language = 'ro',
   og,
   twitter,
   schema,
 }: SEOProps) {
   useEffect(() => {
     document.title = title;
+    
+    document.documentElement.setAttribute('lang', language);
 
     const metaTags: { [key: string]: string } = {
       description,
@@ -45,6 +60,7 @@ export function SEO({
       if (og.image) metaTags['og:image'] = og.image;
       if (og.url) metaTags['og:url'] = og.url;
       metaTags['og:site_name'] = 'EasyReserv.io';
+      metaTags['og:locale'] = getLocaleForLanguage(language);
     }
 
     if (twitter) {
@@ -77,6 +93,26 @@ export function SEO({
       link.setAttribute('href', canonical);
     }
 
+    const baseUrl = window.location.origin;
+    const currentPath = window.location.pathname.replace(/^\/(ro|ru|en)/, '') || '/';
+    
+    const hreflangs: Array<{ lang: Language | 'x-default'; href: string }> = [
+      { lang: 'ro', href: `${baseUrl}${currentPath}` },
+      { lang: 'ru', href: `${baseUrl}/ru${currentPath}` },
+      { lang: 'en', href: `${baseUrl}/en${currentPath}` },
+      { lang: 'x-default', href: `${baseUrl}${currentPath}` }
+    ];
+
+    document.querySelectorAll('link[rel="alternate"]').forEach(link => link.remove());
+
+    hreflangs.forEach(({ lang, href }) => {
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', lang);
+      link.setAttribute('href', href);
+      document.head.appendChild(link);
+    });
+
     if (schema && schema.length > 0) {
       schema.forEach((schemaItem, index) => {
         const id = `schema-${index}`;
@@ -96,8 +132,9 @@ export function SEO({
     return () => {
       const existingSchemas = document.querySelectorAll('script[type="application/ld+json"]');
       existingSchemas.forEach(script => script.remove());
+      document.querySelectorAll('link[rel="alternate"]').forEach(link => link.remove());
     };
-  }, [title, description, canonical, robots, og, twitter, schema]);
+  }, [title, description, canonical, robots, language, og, twitter, schema]);
 
   return null;
 }

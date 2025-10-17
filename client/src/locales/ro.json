@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "Despre noi",
+    "solutions": "Soluții",
+    "pricing": "Prețuri",
+    "blog": "Blog",
+    "contact": "Contact",
+    "sign_in": "Sign In",
+    "menu": "Meniu",
+    "language": "RO"
+  },
+  "footer": {
+    "description": "EasyReserv este o platformă All-in-One pentru rezervări, POS fiscal, operațiuni și rapoarte — optimizată pentru restaurante, cafenele, beauty, hoteluri & pensiuni, chirii auto, fitness, medical și retail. Conectează echipa și datele într-un singur loc, cu integrări 1C și plăți.",
+    "about_us": "About Us",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy_policy": "Privacy Policy",
+    "cookies_policy": "Cookies Policy",
+    "terms_conditions": "Terms & Conditions",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "available_on": "Disponibil pe",
+    "copyright": "All rights reserved.",
+    "developed_by": "Developed by",
+    "developer_name": "iShunea Tech Solutions"
+  },
+  "hero": {
+    "title": "De la Rezervări la POS, Rapoarte și Automatizări — într-o singură platformă",
+    "description": "O singură platformă pentru rezervări, POS, operațiuni și analitică — creată pentru restaurante, cafenele, saloane de frumusețe, barbershopuri, hotele, pensiuni, chirii auto, fitness, medical, retail. Configurezi roluri, meniuri/servicii și pornești fluxurile cu go-live rapid. Automatizările reduc timpii și cresc conversiile, iar dashboardurile îți arată situația pe loc, pe zi sau pe lună. Integrezi contabilitatea, plățile și notificările fără a schimba hardware-ul.",
+    "cta_button": "Începe perioada de probă",
+    "features": "All-in-One • POS disponibil • Fiscal ready • Go-live rapid"
+  },
+  "stats": {
+    "founded": "ÎNFIINȚAT",
+    "founded_value": "2023",
+    "professionals": "PROFESIONIȘTI DE RENUME",
+    "professionals_value": "15+",
+    "years": "ANI",
+    "widgets": "WIDGETURI EASYRESERV CREATE",
+    "widgets_value": "101+",
+    "locations": "LOCAȚII AU FOLOSIT PRODUSUL ÎN PRIMUL AN",
+    "locations_value": "40",
+    "time_optimized": "DIN TIMPUL ANGAJAȚILOR POATE FI OPTIMIZAT",
+    "time_optimized_value": "30%+",
+    "notifications": "NOTIFICĂRI SUNT TRIMISE LUNAR",
+    "notifications_value": "80,000",
+    "users": "UTILIZATORI ÎN PLATFORMĂ",
+    "users_value": "4,600+"
+  },
+  "features_section": {
+    "title": "Cele mai bune funcționalități",
+    "industries": {
+      "restaurante": "Restaurante",
+      "cafenele": "Cafenele",
+      "saloane": "Saloane de frumusețe",
+      "barbershop": "Barbershopuri",
+      "hotel": "Hotele & Pensiuni",
+      "chirii_auto": "Chirii auto",
+      "fitness": "Fitness",
+      "medical": "Medical",
+      "retail": "Retail",
+      "terenuri_sportive": "Terenuri sportive",
+      "spalatorii_auto": "Spălătorii Auto"
+    }
+  },
+  "seo": {
+    "home_title": "EasyReserv.io — Platformă all-in-one POS și Rezervări",
+    "home_description": "Automatizezi rezervările, POS, fluxurile operaționale și rapoartele. Integrezi plăți, contabilitate, notificări și livrare — fără schimbare de hardware.",
+    "about_title": "Despre Noi — EasyReserv.io | Misiunea noastră",
+    "about_description": "Aflați povestea EasyReserv.io: cum ajutăm afacerile să automatizeze operațiunile, să crească eficiența și să îmbunătățească experiența clienților.",
+    "solutions_title": "Soluții Multi-Industrie — EasyReserv.io",
+    "solutions_description": "Soluții personalizate pentru restaurante, saloane de înfrumusețare, chirie auto, fitness, spălătorii auto, terenuri sportive și alte industrii.",
+    "pricing_title": "Prețuri și Planuri — EasyReserv.io | De la 50€/lună",
+    "pricing_description": "Planuri flexibile pentru afaceri de toate dimensiunile. Începe cu 50€/lună, fără costuri ascunse. Trial gratuit 14 zile.",
+    "contact_title": "Contact — EasyReserv.io | Demo și Suport",
+    "contact_description": "Contactează echipa EasyReserv pentru demo personalizat, suport tehnic sau întrebări despre platformă. Răspundem în maxim 24 de ore.",
+    "policies_title": "Politici — EasyReserv.io | Termeni și Confidențialitate",
+    "policies_description": "Politica de confidențialitate, politica cookie și termenii și condițiile platformei EasyReserv.io. Protecția datelor conform GDPR.",
+    "blog_title": "Blog — EasyReserv.io | Ghiduri și Resurse Business",
+    "blog_description": "Articole despre managementul afacerilor, automatizare, tips & tricks pentru restaurante, saloane, fitness și alte industrii."
+  }
+}

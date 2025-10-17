@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import NotFound from "@/pages/not-found";
 
 import { Homepage } from "@/pages/Homepage";
@@ -20,7 +21,6 @@ function Router() {
     <>
       <ScrollToTop />
       <Switch>
-        {/* Add pages below */}
         <Route path="/" component={Homepage} />
         <Route path="/about" component={AboutUs} />
         <Route path="/solutions" component={Solutions} />
@@ -29,7 +29,16 @@ function Router() {
         <Route path="/policies" component={Policies} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogArticle} />
-        {/* Fallback to 404 */}
+        
+        <Route path="/:lang(ru|en)" component={Homepage} />
+        <Route path="/:lang(ru|en)/about" component={AboutUs} />
+        <Route path="/:lang(ru|en)/solutions" component={Solutions} />
+        <Route path="/:lang(ru|en)/pricing" component={Pricing} />
+        <Route path="/:lang(ru|en)/contact" component={Contact} />
+        <Route path="/:lang(ru|en)/policies" component={Policies} />
+        <Route path="/:lang(ru|en)/blog" component={Blog} />
+        <Route path="/:lang(ru|en)/blog/:slug" component={BlogArticle} />
+        
         <Route component={NotFound} />
       </Switch>
     </>
@@ -39,10 +48,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
