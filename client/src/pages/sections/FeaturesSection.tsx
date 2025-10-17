@@ -24,7 +24,7 @@ export const FeaturesSection = (): JSX.Element => {
             De la Rezervări la POS, Rapoarte și Automatizări — într-o singură platformă
           </h1>
 
-          <p className="[font-family:'Onest',Helvetica] font-medium text-[#282828] text-base tracking-[-0.32px] leading-6">
+          <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[-0.32px] leading-6">
             O singură platformă pentru rezervări, POS, operațiuni și analitică — creată pentru restaurante, cafenele, saloane de frumusețe, barbershopuri, hotele, pensiuni, chirii auto, fitness, medical, retail. Configurezi roluri, meniuri/servicii și pornești fluxurile cu go-live rapid. Automatizările reduc timpii și cresc conversiile, iar dashboardurile îți arată situația pe loc, pe zi sau pe lună. Integrezi contabilitatea, plățile și notificările fără a schimba hardware-ul.
           </p>
 
