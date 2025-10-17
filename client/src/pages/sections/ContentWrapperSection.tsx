@@ -2583,7 +2583,7 @@ export const ContentWrapperSection = (): JSX.Element => {
             <div key={`cta-${index}`} className="col-span-6 md:col-span-2">
               <Card className={`h-full rounded-none border border-zinc-200 ${index === 2 ? "bg-[#2d2c6505]" : ""}`}>
                 <CardContent className="flex flex-col items-start gap-4 p-5">
-                  <div className="flex flex-col items-start gap-1 w-full h-[60px]">
+                  <div className="flex flex-col items-start gap-1 w-full min-h-[60px]">
                     <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
                       {plan.name}
                     </h3>
@@ -2592,8 +2592,8 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </p>
                   </div>
 
-                  <div className="flex items-baseline gap-1 w-full h-[40px]">
-                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] whitespace-nowrap ${
+                  <div className="flex items-baseline gap-1 w-full min-h-[40px]">
+                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
                       plan.monthlyPrice === null 
                         ? "text-xl leading-[28px]" 
                         : "text-[32px] leading-[36.8px]"
