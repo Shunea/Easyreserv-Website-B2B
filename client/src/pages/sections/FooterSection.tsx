@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { Container } from "@/components/Container";
+import googlePlayBadge from "@assets/google-play-badge.png";
 
 const footerLinks = {
   column1: [
@@ -113,7 +114,7 @@ export const FooterSection = (): JSX.Element => {
                   <img
                     className="h-full w-auto object-contain"
                     alt="Get it on Google Play"
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                    src={googlePlayBadge}
                   />
                 </a>
               </div>
