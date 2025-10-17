@@ -810,6 +810,523 @@
       "Retail": "Retail",
       "Spălătorii auto": "Car washes",
       "Tenis/Padel/Fotbal": "Tennis/Padel/Football"
+    },
+    "plans": {
+      "cafenele": {
+        "basic": {
+          "name": "Basic",
+          "description": "Perfect for small and simple cafes",
+          "features": [
+            "2 users included",
+            "Customizable Basic POS",
+            "Simplified cash management",
+            "Static digital menu",
+            "Simple analytics and KPIs"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Multiple employees, shift scheduling, analytics",
+          "features": [
+            "All from Basic",
+            "Additional users (€5/user)",
+            "Employee management and time tracking",
+            "Personalized POS layout",
+            "Dynamic menu and variable products",
+            "Customer profiles and order history",
+            "Push/SMS marketing and Happy Hour"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Cost control, inventory and automation",
+          "features": [
+            "All from Standard",
+            "Inventory management and recipes",
+            "Automatic stock reduction",
+            "Low stock alerts and inventory",
+            "Beverage recipes and portion cost",
+            "Advanced segmentation and coupons",
+            "PDF reports and export"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Multi-location, fiscal integration, AI automation",
+          "features": [
+            "All from Pro",
+            "2 scalable users",
+            "Multi-location and courier fleet",
+            "1C integration with fiscalization",
+            "AI marketing automation",
+            "External backup and extended storage"
+          ]
+        }
+      },
+      "spalatorii_auto": {
+        "basic": {
+          "name": "Basic",
+          "description": "For small car washes",
+          "features": [
+            "1 user included",
+            "Online booking and Basic walk-in",
+            "Static customizable services",
+            "Simplified financial management",
+            "Simple reports"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Team and customer management",
+          "features": [
+            "All from Basic",
+            "2 users + €5/additional user",
+            "Employee management and time tracking",
+            "Booking with calendar",
+            "Pricing per body/work type",
+            "Customer CRM and vehicle history",
+            "SMS promotions and Reminders"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Inventory, mobile orders and automation",
+          "features": [
+            "All from Standard",
+            "3 users included",
+            "Priority booking",
+            "Promo packages and upselling",
+            "Pickup/mobile orders with geolocation",
+            "Consumables inventory and alerts",
+            "Push, Reminders and segmentation"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Mobile fleet, fiscal integration, AI",
+          "features": [
+            "All from Pro",
+            "3+ scalable users",
+            "Automatic booking redistribution",
+            "Mobile fleet and route management",
+            "AI pricing suggestions",
+            "1C and PowerBI integration",
+            "Triggered campaigns and loyalty"
+          ]
+        }
+      },
+      "hotele": {
+        "basic": {
+          "name": "Basic",
+          "description": "Guesthouses/Boutique ≤ 20 rooms",
+          "features": [
+            "3 users included",
+            "Availability calendar and room matrix",
+            "Check-in/Check-out with folio",
+            "Room types and basic rates",
+            "Housekeeping: room status and tasks",
+            "Front desk POS and invoicing"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Small-medium hotel 21-60 rooms",
+          "features": [
+            "All from Basic",
+            "6 users + €5/additional user",
+            "Split/merge bookings and room moves",
+            "Packages (accommodation + services)",
+            "Housekeeping mobile app",
+            "CRM and email/SMS marketing",
+            "ADR, RevPAR and extended reports"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Hotel 61-150 rooms",
+          "features": [
+            "All from Standard",
+            "10 users included",
+            "Booking Engine on website",
+            "Service ticketing with SLA",
+            "Card guarantees/pre-authorizations",
+            "Pick-up, pace and forecast",
+            "Segmentation and automated campaigns"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "150+ rooms or Multi-property",
+          "features": [
+            "All from Pro",
+            "Unlimited users",
+            "Channel Manager (integrated OTA)",
+            "AI assistant dynamic recommendations",
+            "Multi-property dashboard",
+            "SSO, advanced audit and API webhooks",
+            "Key control and self check-in kiosk"
+          ]
+        }
+      },
+      "chirii_auto": {
+        "basic": {
+          "name": "Basic",
+          "description": "Micro/local ≤ 25 vehicles",
+          "features": [
+            "2 users included",
+            "Web/phone booking and calendar",
+            "Contracts with e-signature",
+            "Simple seasonal rates",
+            "Vehicle catalog and status",
+            "Invoices and receipts"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "26-80 vehicles",
+          "features": [
+            "All from Basic",
+            "5 users + €5/additional user",
+            "Deposits and card pre-authorizations",
+            "Service and scheduled maintenance",
+            "Check-in/out with photo and checklist",
+            "Booking Engine on website",
+            "CRM and email/SMS reminders"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "81-250 vehicles",
+          "features": [
+            "All from Standard",
+            "10 users included",
+            "Dynamic pricing and forecast",
+            "Rate parity and allotment",
+            "Telematics/GPS tracking (add-on)",
+            "B2B/B2C segmented campaigns",
+            "Yield per class reports"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "250+ vehicles/multi-office",
+          "features": [
+            "All from Pro",
+            "Unlimited users",
+            "Integrated OTA Channel Manager",
+            "AI assistant dynamic pricing",
+            "Telematics/GPS included",
+            "Multi-office/country dashboard",
+            "API/Integrations and ERP"
+          ]
+        }
+      },
+      "fitness": {
+        "basic": {
+          "name": "Basic",
+          "description": "Small studio up to ~100 members",
+          "features": [
+            "2 users included",
+            "Class booking and personal training",
+            "Member registration (code/QR)",
+            "Memberships and cards",
+            "Member profile and history",
+            "Front desk POS and invoicing"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "100-250 active members",
+          "features": [
+            "All from Basic",
+            "5 users + €5/additional user",
+            "Trainer schedule and time tracking",
+            "SMS reminders and member segments",
+            "Recurring card auto-renewal",
+            "Product inventory and alerts",
+            "MRR/ARR and performance reports"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "250-500 active members",
+          "features": [
+            "All from Standard",
+            "10 users included",
+            "Waiting lists and anti-fraud",
+            "Personal training/class commission calculation",
+            "Automatic dunning and payment retry",
+            "Branded member app",
+            "Churn and cohort reports"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "500+ members/multi-location",
+          "features": [
+            "All from Pro",
+            "Unlimited users",
+            "Multi-location and SSO",
+            "White-label app (gym brand)",
+            "AI churn risk scoring",
+            "Multi-location/country dashboard",
+            "Priority API and DRM video"
+          ]
+        }
+      },
+      "tenis_padel_fotbal": {
+        "basic": {
+          "name": "Basic",
+          "description": "1-2 courts/small venue",
+          "features": [
+            "2 users included",
+            "Flexible slot booking",
+            "Sport-specific settings",
+            "Member profile and history",
+            "Online payments and invoicing",
+            "Booking widget on website"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "3-6 courts",
+          "features": [
+            "All from Basic",
+            "5 users + €5/additional user",
+            "Peak/off-peak pricing",
+            "Recurring bookings and memberships",
+            "Equipment rental",
+            "Trainer booking and commissions",
+            "Court maintenance calendar"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "7-12 courts/multi-sport",
+          "features": [
+            "All from Standard",
+            "10 users included",
+            "Waiting lists and auto-fill",
+            "Automatic weather rescheduling",
+            "Partner search and multi-sport packages",
+            "Tournament and league organization",
+            "Branded player app"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "12+ courts/multi-location",
+          "features": [
+            "All from Pro",
+            "Unlimited users",
+            "IoT access control and lighting",
+            "White-label app (club brand)",
+            "Multi-site heatmap reports",
+            "Fiscal integration and ERP",
+            "Priority API and webhooks"
+          ]
+        }
+      },
+      "medical": {
+        "starter": {
+          "name": "Starter",
+          "description": "Individual practice/micro-clinic (1-3 doctors)",
+          "features": [
+            "3 users included",
+            "Online/phone appointments",
+            "Multi-doctor calendar",
+            "Patient record and history",
+            "Front desk POS and invoicing",
+            "Email confirmations"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Small clinic (4-10 doctors)",
+          "features": [
+            "All from Starter",
+            "6 users + €5/additional user",
+            "Specialty templates",
+            "Prescriptions and referrals",
+            "Room check-in and SMS reminders",
+            "Patient CRM and reminder campaigns",
+            "Lab test requests and results"
+          ]
+        },
+        "business": {
+          "name": "Business",
+          "description": "Medium clinic (11-30 doctors)",
+          "features": [
+            "All from Standard",
+            "12 users included",
+            "Corporate/insurance settlements",
+            "Shift tracking and commissions",
+            "Automatic dunning and medical packages",
+            "Patient results portal",
+            "Waiting room screens"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Network/Private hospital (31+ doctors)",
+          "features": [
+            "All from Business",
+            "Unlimited users",
+            "LIS (HL7) and PACS (DICOM) integration",
+            "E-prescription and SIUI/CNAS",
+            "White-label patient app",
+            "SSO, external backup and advanced audit",
+            "Priority API and webhooks"
+          ]
+        }
+      },
+      "saloane_barbershop": {
+        "basic": {
+          "name": "Basic",
+          "description": "1 specialist, small salon",
+          "features": [
+            "1 specialist included",
+            "Online booking and manual walk-in",
+            "Simple service management",
+            "Basic customer CRM",
+            "Manual payments",
+            "Simple reports"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "2 specialists, basic automation",
+          "features": [
+            "All from Basic",
+            "2 users + €5/additional user",
+            "Calendar with SMS confirmation",
+            "Promo packages and memberships",
+            "Staff management and shifts",
+            "Product sales and inventory",
+            "POS and fiscal receipt"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "4 specialists, advanced loyalty",
+          "features": [
+            "All from Standard",
+            "4 users included",
+            "Automatic allocation and Push notifications",
+            "Upselling and personalized packages",
+            "Bonuses and loyalty card",
+            "Per-room inventory",
+            "Segmented marketing and coupons"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "5+ specialists, multi-location",
+          "features": [
+            "All from Pro",
+            "5+ scalable users",
+            "Google/Apple calendar integration",
+            "AI service suggestions and recommendations",
+            "Social media and QR booking",
+            "PowerBI/1C export and POS network",
+            "Dynamic omnichannel segments"
+          ]
+        }
+      },
+      "retail": {
+        "basic": {
+          "name": "Basic",
+          "description": "Boutique/single store (up to 1 POS)",
+          "features": [
+            "2 users (Admin, Cashier)",
+            "POS sales and fiscal receipt",
+            "Returns, exchanges, void",
+            "Simple discounts",
+            "Product catalog (SKU, variants)",
+            "Customer profile and purchase history"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Small-medium store (1-3 POS)",
+          "features": [
+            "All from Basic",
+            "5 users + €5/additional user",
+            "Multi-POS (max 3) and offline mode",
+            "Goods receiving and supplier orders",
+            "Inter-location transfers and inventory",
+            "Loyalty card and SMS/Email campaigns",
+            "Top SKU, margins, average receipt"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Large store/multi-POS (4-8 POS)",
+          "features": [
+            "All from Standard",
+            "10 users included",
+            "Multi-POS (max 8) and FIFO/LOT",
+            "Click & Collect, unified warehouse",
+            "RFM segments and personalized coupons",
+            "Time tracking, shifts, sales targets",
+            "Demand forecast and advanced dashboard"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Multi-store network/omnichannel",
+          "features": [
+            "All from Pro",
+            "Unlimited users",
+            "Unlimited POS and WMS light",
+            "Marketplaces (eMAG, Amazon)",
+            "Courier integration and centralized AWB",
+            "SSO, advanced audit and priority API",
+            "Multi-store dashboard and 1C/ERP"
+          ]
+        }
+      },
+      "restaurante": {
+        "basic": {
+          "name": "Basic",
+          "description": "Perfect for small and simple locations",
+          "features": [
+            "1 Admin, 1 Hostess",
+            "Accept/Decline reservations",
+            "Create/Modify new reservations",
+            "CRUD Employees",
+            "1 marketing article/month",
+            "Push/SMS targeting"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Multiple employees, dashboards, shift scheduling, simple analytics",
+          "features": [
+            "1 Admin, 1 Hostess, 2 Waiters",
+            "Menu management",
+            "Add/Activate promotions",
+            "Schedule management",
+            "Inventory & suppliers management",
+            "Shifts/holidays/time tracking & Check-in/Check-out",
+            "2 marketing articles/month",
+            "Advanced segmentation"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Customizable",
+          "monthlyPrice": null,
+          "features": [
+            "All from Pro",
+            "Unlimited user roles",
+            "Advanced targeting",
+            "Multi-location management",
+            "API Access",
+            "White label support"
+          ]
+        }
+      }
     }
   },
   "seo": {

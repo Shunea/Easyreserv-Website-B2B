@@ -810,6 +810,523 @@
       "Retail": "Retail",
       "Spălătorii auto": "Spălătorii auto",
       "Tenis/Padel/Fotbal": "Tenis/Padel/Fotbal"
+    },
+    "plans": {
+      "cafenele": {
+        "basic": {
+          "name": "Basic",
+          "description": "Perfect pentru cafenele mici și simple",
+          "features": [
+            "2 utilizatori incluși",
+            "POS Basic personalizabil",
+            "Gestionare cash simplificată",
+            "Meniu digital static",
+            "Analiză simplă și KPI-uri"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Mai mulți angajați, planificare ture, analiză",
+          "features": [
+            "Toate din Basic",
+            "Utilizatori adiționali (5€/utilizator)",
+            "Gestionare angajați și pontaj",
+            "Layout POS personalizat",
+            "Meniu dinamic și produse variabile",
+            "Profile clienți și istoric comenzi",
+            "Marketing Push/SMS și Happy Hour"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Control costuri, stocuri și automatizare",
+          "features": [
+            "Toate din Standard",
+            "Gestionare inventar și rețetare",
+            "Scădere automată stocuri",
+            "Alerte stoc redus și inventariere",
+            "Rețetare băuturi și cost porție",
+            "Segmentare avansată și cupoane",
+            "Rapoarte PDF și export"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Multi-locație, integrare fiscală, automatizare AI",
+          "features": [
+            "Toate din Pro",
+            "2 utilizatori scalabili",
+            "Multi-locație și flotă curierat",
+            "Integrare 1C cu fiscalizare",
+            "Automatizare marketing AI",
+            "Backup extern și stocare extinsă"
+          ]
+        }
+      },
+      "spalatorii_auto": {
+        "basic": {
+          "name": "Basic",
+          "description": "Pentru spălătorii auto mici",
+          "features": [
+            "1 utilizator inclus",
+            "Rezervare online și walk-in Basic",
+            "Servicii personalizate statice",
+            "Gestionare financiară simplificată",
+            "Rapoarte simple"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Gestionare echipe și clienți",
+          "features": [
+            "Toate din Basic",
+            "2 utilizatori + 5€/utilizator adițional",
+            "Gestionare angajați și pontaj",
+            "Rezervare cu calendar",
+            "Prețuri per caroserie/lucrări",
+            "CRM clienți și istoric auto",
+            "Promoții SMS și Reamintiri"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Stocuri, comenzi mobile și automatizare",
+          "features": [
+            "Toate din Standard",
+            "3 utilizatori incluși",
+            "Rezervare cu prioritate",
+            "Pachete promo și upselling",
+            "Comenzi Pickup/mobile cu geolocație",
+            "Inventar consumabile și alerte",
+            "Push, Reamintiri și segmentare"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Flotă mobilă, integrare fiscală, AI",
+          "features": [
+            "Toate din Pro",
+            "3+ utilizatori scalabili",
+            "Redistribuire automată rezervări",
+            "Gestionare flotă mobilă și rute",
+            "AI propunere prețuri",
+            "Integrare 1C și PowerBI",
+            "Campanii cu trigger-uri și loialitate"
+          ]
+        }
+      },
+      "hotele": {
+        "basic": {
+          "name": "Basic",
+          "description": "Pensiuni/Boutique ≤ 20 camere",
+          "features": [
+            "3 utilizatori incluși",
+            "Calendar disponibilitate și matrice camere",
+            "Check-in/Check-out cu folio",
+            "Tipuri camere și tarife de bază",
+            "Housekeeping: status cameră și sarcini",
+            "POS la recepție și facturare"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Hotel mic-mediu 21-60 camere",
+          "features": [
+            "Toate din Basic",
+            "6 utilizatori + 5€/utilizator adițional",
+            "Împărțire/combinare rezervări și mutare camere",
+            "Pachete (cazare + servicii)",
+            "Aplicație mobilă Housekeeping",
+            "CRM și marketing email/SMS",
+            "ADR, RevPAR și rapoarte extinse"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Hotel 61-150 camere",
+          "features": [
+            "Toate din Standard",
+            "10 utilizatori incluși",
+            "Booking Engine pe site",
+            "Ticketing servicii cu SLA",
+            "Garanții card/preautorizări",
+            "Pick-up, ritm și prognoză",
+            "Segmentare și campanii automate"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "150+ camere sau Multi-proprietate",
+          "features": [
+            "Toate din Pro",
+            "Utilizatori nelimitați",
+            "Channel Manager (OTA integrat)",
+            "Asistent AI recomandări dinamice",
+            "Dashboard multi-proprietate",
+            "SSO, audit avansat și API webhooks",
+            "Control chei și self check-in kiosk"
+          ]
+        }
+      },
+      "chirii_auto": {
+        "basic": {
+          "name": "Basic",
+          "description": "Micro/local ≤ 25 mașini",
+          "features": [
+            "2 utilizatori incluși",
+            "Rezervare web/telefon și calendar",
+            "Contracte cu semnătură electronică",
+            "Tarife sezoniere simple",
+            "Catalog vehicule și status",
+            "Facturi și chitanțe"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "26-80 mașini",
+          "features": [
+            "Toate din Basic",
+            "5 utilizatori + 5€/utilizator adițional",
+            "Depozite și preautorizări card",
+            "Service și întreținere planificată",
+            "Check-in/out cu foto și checklist",
+            "Booking Engine pe site",
+            "CRM și reamintiri email/SMS"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "81-250 mașini",
+          "features": [
+            "Toate din Standard",
+            "10 utilizatori incluși",
+            "Dynamic pricing și prognoză",
+            "Paritate tarife și allotment",
+            "Telematică/GPS tracking (add-on)",
+            "Campanii segmentate B2B/B2C",
+            "Rapoarte yield per clasă"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "250+ mașini/multi-birou",
+          "features": [
+            "Toate din Pro",
+            "Utilizatori nelimitați",
+            "Channel Manager OTA integrat",
+            "Asistent AI dynamic pricing",
+            "Telematică/GPS inclus",
+            "Dashboard multi-birou/țară",
+            "API/Integrări și ERP"
+          ]
+        }
+      },
+      "fitness": {
+        "basic": {
+          "name": "Basic",
+          "description": "Studio mic până la ~100 membri",
+          "features": [
+            "2 utilizatori incluși",
+            "Înscriere la cursuri și antrenamente personale",
+            "Înregistrare membru (cod/QR)",
+            "Abonamente și carduri",
+            "Profil membru și istoric",
+            "POS la recepție și facturare"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "100-250 membri activi",
+          "features": [
+            "Toate din Basic",
+            "5 utilizatori + 5€/utilizator adițional",
+            "Program antrenori și pontaj",
+            "Reamintiri SMS și segmente membri",
+            "Card recurent auto-reînnoire",
+            "Inventar produse și alerte",
+            "Rapoarte MRR/ARR și performanță"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "250-500 membri activi",
+          "features": [
+            "Toate din Standard",
+            "10 utilizatori incluși",
+            "Liste așteptare și antifraudă",
+            "Calcul comisioane antrenamente/cursuri",
+            "Dunning automat și reîncercare plăți",
+            "Aplicație membru cu branding",
+            "Rapoarte churn și cohorte"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "500+ membri/multi-locație",
+          "features": [
+            "Toate din Pro",
+            "Utilizatori nelimitați",
+            "Multi-locație și SSO",
+            "Aplicație white-label (brand sală)",
+            "AI scor risc churn",
+            "Dashboard multi-locație/țară",
+            "API prioritar și DRM video"
+          ]
+        }
+      },
+      "tenis_padel_fotbal": {
+        "basic": {
+          "name": "Basic",
+          "description": "1-2 terenuri/sală mică",
+          "features": [
+            "2 utilizatori incluși",
+            "Rezervare pe sloturi flexibile",
+            "Setări specific sport",
+            "Profil membru și istoric",
+            "Plăți online și facturare",
+            "Widget rezervare pe site"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "3-6 terenuri",
+          "features": [
+            "Toate din Basic",
+            "5 utilizatori + 5€/utilizator adițional",
+            "Prețuri peak/off-peak",
+            "Rezervări recurente și abonamente",
+            "Închiriere echipament",
+            "Rezervare antrenor și comisioane",
+            "Calendar întreținere terenuri"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "7-12 terenuri/multi-sport",
+          "features": [
+            "Toate din Standard",
+            "10 utilizatori incluși",
+            "Liste așteptare și auto-completare",
+            "Replanificare automată pe vreme",
+            "Căutare partener și pachete multi-sport",
+            "Organizare turnee și ligi",
+            "Aplicație jucători cu branding"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "12+ terenuri/multi-locație",
+          "features": [
+            "Toate din Pro",
+            "Utilizatori nelimitați",
+            "Control acces și iluminat IoT",
+            "Aplicație white-label (brand club)",
+            "Rapoarte heatmap multi-site",
+            "Integrare fiscală și ERP",
+            "API prioritar și webhooks"
+          ]
+        }
+      },
+      "medical": {
+        "starter": {
+          "name": "Starter",
+          "description": "Cabinet individual/micro-clinică (1-3 medici)",
+          "features": [
+            "3 utilizatori incluși",
+            "Programări online/telefon",
+            "Calendar multi-medic",
+            "Fișă pacient și istoric medical",
+            "POS la recepție și facturare",
+            "Confirmări email"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Clinică mică (4-10 medici)",
+          "features": [
+            "Toate din Starter",
+            "6 utilizatori + 5€/utilizator adițional",
+            "Template-uri pe specialități",
+            "Rețete și trimiteri",
+            "Checkin cabinet și reamintiri SMS",
+            "CRM pacienți și campanii reamintiri",
+            "Solicitări analize și rezultate"
+          ]
+        },
+        "business": {
+          "name": "Business",
+          "description": "Clinică medie (11-30 medici)",
+          "features": [
+            "Toate din Standard",
+            "12 utilizatori incluși",
+            "Decontări cu corporații/asigurări",
+            "Pontaj ture și comisioane",
+            "Dunning automat și pachete medicale",
+            "Portal rezultate pacient",
+            "Ecrane sală așteptare"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Rețea/Spital privat (31+ medici)",
+          "features": [
+            "Toate din Business",
+            "Utilizatori nelimitați",
+            "Integrare LIS (HL7) și PACS (DICOM)",
+            "Rețetă electronică și SIUI/CNAS",
+            "Aplicație white-label pacient",
+            "SSO, backup extern și audit avansat",
+            "API prioritar și webhooks"
+          ]
+        }
+      },
+      "saloane_barbershop": {
+        "basic": {
+          "name": "Basic",
+          "description": "1 specialist, salon mic",
+          "features": [
+            "1 specialist inclus",
+            "Programare online și walk-in manual",
+            "Gestionare servicii simplă",
+            "CRM clienți de bază",
+            "Plăți manuale",
+            "Rapoarte simple"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "2 specialiști, automatizare de bază",
+          "features": [
+            "Toate din Basic",
+            "2 utilizatori + 5€/utilizator adițional",
+            "Calendar cu confirmare SMS",
+            "Pachete promo și abonamente",
+            "Gestionare personal și ture",
+            "Vânzare produse și inventariere",
+            "POS și bon fiscal"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "4 specialiști, loialitate avansată",
+          "features": [
+            "Toate din Standard",
+            "4 utilizatori incluși",
+            "Alocare automată și notificări Push",
+            "Upselling și pachete personalizate",
+            "Bonusuri și card loialitate",
+            "Inventar per cabine",
+            "Marketing segmentat și cupoane"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "5+ specialiști, multi-locație",
+          "features": [
+            "Toate din Pro",
+            "5+ utilizatori scalabili",
+            "Integrare calendar Google/Apple",
+            "AI propuneri servicii și recomandări",
+            "Rezervare din social media și QR",
+            "Export PowerBI/1C și rețea POS",
+            "Segmente dinamice omnicanal"
+          ]
+        }
+      },
+      "retail": {
+        "basic": {
+          "name": "Basic",
+          "description": "Boutique/un magazin (până la 1 POS)",
+          "features": [
+            "2 utilizatori (Admin, Casier)",
+            "Vânzare POS și bon fiscal",
+            "Retur, schimb, storno",
+            "Reduceri simple",
+            "Catalog produse (SKU, variante)",
+            "Profil client și istoric cumpărături"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Magazin mic-mediu (1-3 POS)",
+          "features": [
+            "Toate din Basic",
+            "5 utilizatori + 5€/utilizator adițional",
+            "Multi-POS (max 3) și mod offline",
+            "Recepție marfă și comenzi furnizori",
+            "Transfer între locații și inventariere",
+            "Card loialitate și campanii SMS/Email",
+            "Top SKU, marje, bon mediu"
+          ]
+        },
+        "pro": {
+          "name": "Pro",
+          "description": "Magazin mare/multi-POS (4-8 POS)",
+          "features": [
+            "Toate din Standard",
+            "10 utilizatori incluși",
+            "Multi-POS (max 8) și FIFO/LOT",
+            "Click & Collect, depozit unificat",
+            "Segmente RFM și cupoane personalizate",
+            "Pontaj, ture, obiective vânzări",
+            "Prognoză cerere și dashboard avansat"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Rețea multi-magazin/omnicanal",
+          "features": [
+            "Toate din Pro",
+            "Utilizatori nelimitați",
+            "POS-uri nelimitate și WMS light",
+            "Marketplace-uri (eMAG, Amazon)",
+            "Integrare curierat și AWB centralizat",
+            "SSO, audit avansat și API prioritar",
+            "Dashboard multi-magazin și 1C/ERP"
+          ]
+        }
+      },
+      "restaurante": {
+        "basic": {
+          "name": "Basic",
+          "description": "Perfect pentru locații mici și simple",
+          "features": [
+            "1 Admin, 1 Hostess",
+            "Acceptare/Respingere rezervări",
+            "Creare/Modificare rezervări noi",
+            "CRUD Angajați",
+            "1 articol marketing/lună",
+            "Targeting Push/SMS"
+          ]
+        },
+        "standard": {
+          "name": "Standard",
+          "description": "Mai mulți angajați, dashboarduri, planificare ture, analiză simplă",
+          "features": [
+            "1 Admin, 1 Hostess, 2 Ospătari",
+            "Gestionare meniu",
+            "Adăugare/Activare promoții",
+            "Gestionare program",
+            "Gestionare stoc & furnizori",
+            "Ture/concedii/pontaj & Intrare/Ieșire",
+            "2 articole marketing/lună",
+            "Segmentare avansată"
+          ]
+        },
+        "enterprise": {
+          "name": "Enterprise",
+          "description": "Personalizabil",
+          "monthlyPrice": null,
+          "features": [
+            "Toate din Pro",
+            "Roluri utilizatori nelimitate",
+            "Targeting avansat",
+            "Gestionare multi-locații",
+            "Acces API",
+            "Suport White label"
+          ]
+        }
+      }
     }
   },
   "seo": {

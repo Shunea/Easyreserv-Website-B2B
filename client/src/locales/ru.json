@@ -844,14 +844,24 @@
     "common": {
       "per_month": "/месяц",
       "popular": "Популярный",
+      "most_popular": "Самый популярный",
       "custom": "По запросу",
+      "custom_price": "Индивидуальная цена",
       "select_plan": "Выбрать план",
       "contact_us": "Связаться",
+      "contact_us_full": "Свяжитесь с нами",
       "select_industry": "Выберите отрасль",
       "compare_plans": "Сравнить планы",
       "included": "Включено",
       "add_on": "Дополнительно",
-      "priority": "Приоритетный"
+      "priority": "Приоритетный",
+      "pricing_plans_for": "Тарифные планы для",
+      "save_with_annual": "Экономьте с годовой оплатой",
+      "save_10_percent": "ЭКОНОМИЯ 10%",
+      "start_free_trial": "Начать бесплатный пробный период",
+      "what_you_get": "Что вы получаете",
+      "see_all_features": "Посмотреть все функции",
+      "hide_features": "Скрыть функции"
     },
     "industries": {
       "Restaurante": "Рестораны",
