@@ -123,7 +123,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
 
         <footer className="inline-flex items-center gap-8 flex-wrap">
           <span className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-normal">
-            Distribuie pe
+            Distribuie pe:
           </span>
 
           <div className="flex items-center gap-4">
@@ -134,7 +134,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               data-testid="button-share-facebook"
             >
               <img
-                className="w-10 h-10"
+                className="w-10 h-10 object-contain"
                 alt="Distribuie pe Facebook"
                 src="/figmaAssets/fb.svg"
               />
@@ -147,7 +147,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               data-testid="button-share-linkedin"
             >
               <img
-                className="w-10 h-10"
+                className="w-10 h-10 object-contain"
                 alt="Distribuie pe LinkedIn"
                 src="/figmaAssets/Linkedin.svg"
               />
@@ -160,7 +160,7 @@ export const BlogArticleSection = ({ article }: BlogArticleSectionProps): JSX.El
               data-testid="button-share-instagram"
             >
               <img
-                className="w-10 h-10"
+                className="w-10 h-10 object-contain"
                 alt="Distribuie pe Instagram"
                 src="/figmaAssets/insta.svg"
               />
