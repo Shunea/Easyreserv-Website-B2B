@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FAQSection } from "./FAQSection";
 import { Container } from "@/components/Container";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -23,94 +24,6 @@ const calculateYearsSince2023 = (): string => {
   return totalYears.toFixed(1) + "+";
 };
 
-const statsData = [
-  {
-    label: "ÎNFIINȚAT",
-    value: "2023",
-  },
-  {
-    label: "PROFESIONIȘTI DE RENUME",
-    value: "15+",
-  },
-  {
-    label: "ANI",
-    value: calculateYearsSince2023(),
-  },
-  {
-    label: "WIDGETURI EASYRESERV CREATE",
-    value: "101+",
-  },
-];
-
-const whyChooseUsData = [
-  {
-    icon: "/figmaAssets/icon-1.svg",
-    title: "Simplificăm operațiunile",
-    description:
-      "All-in-One pentru rezervări, POS, KDS, stocuri, rapoarte și automatizări. Mai puține sisteme, mai puține erori, −30% timp operațional.",
-    number: "01",
-  },
-  {
-    icon: "/figmaAssets/icon-3.svg",
-    title: "Atragere & conversie clienți",
-    description:
-      "Platformă publică de listare & booking B2C, remindere anti no-show, loyalty și campanii. Mai multe rezervări, reveniri și vânzări.",
-    number: "02",
-  },
-  {
-    icon: "/figmaAssets/icon-3.svg",
-    title: "Decizii pe date reale",
-    description:
-      "KPI live (vânzări, COGS, timpi, rotație), alerte 'late'/'low stock' și rapoarte pe locații. Vizibilitate completă, acțiuni rapide.",
-    number: "03",
-  },
-  {
-    icon: "/figmaAssets/icon-2.svg",
-    title: "Implementare rapidă & suport local",
-    description:
-      "Go-live în zile, integrare 1C & plăți, compatibil cu hardware existent. Suport dedicat — de la onboarding la scalare.",
-    number: "04",
-  },
-];
-
-const featuresData = [
-  {
-    icon: "/figmaAssets/vuesax-broken-global.png",
-    title: "Soluție completă",
-    description:
-      "De la rezervări la managementul echipei, îți oferim o soluție all-in-one pentru businessul tău.",
-  },
-  {
-    icon: "/figmaAssets/icon.svg",
-    title: "Securitatea datelor",
-    description:
-      "Datele tale sunt prioritatea noastră. Implementăm măsuri avansate de securitate pentru a le proteja.",
-  },
-  {
-    icon: "/figmaAssets/innovation.png",
-    title: "Inovație",
-    description:
-      "Îmbunătățim constant platforma pentru a rămâne înaintea schimbărilor din mediul de afaceri.",
-  },
-  {
-    icon: "/figmaAssets/vuesax-linear-profile.png",
-    title: "Interfață prietenoasă",
-    description:
-      "Platforma este concepută pentru utilizare fără fricțiuni, atât de către proprietari, cât și de către clienții lor.",
-  },
-  {
-    icon: "/figmaAssets/vuesax-linear-status-up.png",
-    title: "Scalabilitate",
-    description:
-      "Pe măsură ce afacerea ta crește, crește și platforma. Suntem pregătiți să-ți susținem expansiunea.",
-  },
-  {
-    icon: "/figmaAssets/vuesax-linear-heart.png",
-    title: "Suport 24/7",
-    description:
-      "Echipa noastră de suport este disponibilă non-stop pentru orice întrebare sau nelămurire.",
-  },
-];
 
 const faqData = [
   {
@@ -143,6 +56,87 @@ const footerLinks = {
 };
 
 export const InfoSection = (): JSX.Element => {
+  const { t } = useTranslation();
+  
+  const statsData = [
+    {
+      label: t("about_page.stats.founded_label"),
+      value: t("about_page.stats.founded_value"),
+    },
+    {
+      label: t("about_page.stats.professionals_label"),
+      value: t("about_page.stats.professionals_value"),
+    },
+    {
+      label: t("about_page.stats.years_label"),
+      value: calculateYearsSince2023(),
+    },
+    {
+      label: t("about_page.stats.widgets_label"),
+      value: t("about_page.stats.widgets_value"),
+    },
+  ];
+
+  const whyChooseUsData = [
+    {
+      icon: "/figmaAssets/icon-1.svg",
+      title: t("about_page.why_choose.reason1_title"),
+      description: t("about_page.why_choose.reason1_text"),
+      number: "01",
+    },
+    {
+      icon: "/figmaAssets/icon-3.svg",
+      title: t("about_page.why_choose.reason2_title"),
+      description: t("about_page.why_choose.reason2_text"),
+      number: "02",
+    },
+    {
+      icon: "/figmaAssets/icon-3.svg",
+      title: t("about_page.why_choose.reason3_title"),
+      description: t("about_page.why_choose.reason3_text"),
+      number: "03",
+    },
+    {
+      icon: "/figmaAssets/icon-2.svg",
+      title: t("about_page.why_choose.reason4_title"),
+      description: t("about_page.why_choose.reason4_text"),
+      number: "04",
+    },
+  ];
+
+  const featuresData = [
+    {
+      icon: "/figmaAssets/vuesax-broken-global.png",
+      title: t("about_page.features.feature1_title"),
+      description: t("about_page.features.feature1_text"),
+    },
+    {
+      icon: "/figmaAssets/icon.svg",
+      title: t("about_page.features.feature2_title"),
+      description: t("about_page.features.feature2_text"),
+    },
+    {
+      icon: "/figmaAssets/innovation.png",
+      title: t("about_page.features.feature3_title"),
+      description: t("about_page.features.feature3_text"),
+    },
+    {
+      icon: "/figmaAssets/vuesax-linear-profile.png",
+      title: t("about_page.features.feature4_title"),
+      description: t("about_page.features.feature4_text"),
+    },
+    {
+      icon: "/figmaAssets/vuesax-linear-status-up.png",
+      title: t("about_page.features.feature5_title"),
+      description: t("about_page.features.feature5_text"),
+    },
+    {
+      icon: "/figmaAssets/vuesax-linear-heart.png",
+      title: t("about_page.features.feature6_title"),
+      description: t("about_page.features.feature6_text"),
+    },
+  ];
+  
   return (
     <section className="flex flex-col items-center w-full">
       {/* Povestea Noastră Section */}
@@ -161,21 +155,20 @@ export const InfoSection = (): JSX.Element => {
 
               <div className="flex-1 flex flex-col gap-6">
                 <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-                  Povestea noastră
+                  {t("about_page.story.title")}
                 </h2>
 
                 <div className="flex flex-col gap-4">
                   <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                    Într-o seară de ianuarie 2023, Elena Roșca a pus întrebarea care a aprins fitilul:
-                    „De ce în Chișinău e aproape imposibil să faci o rezervare online la restaurante?"
+                    {t("about_page.story.paragraph1")}
                   </p>
                   
                   <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                    Răspunsul n-a fost un „încă un formular". Împreună cu Alexandru Iaroslavschi, am documentat pas cu pas cum ar trebui să arate procesul digital de rezervare: de la solicitare, confirmare și alocarea mesei, până la notificări și actualizarea automată a disponibilității. În timp ce mapam fluxul, ne-a lovit realitatea: rezervarea este doar începutul. POS-ul, bucătăria (KDS), stocurile, contabilitatea și rapoartele trăiau în insule separate.
+                    {t("about_page.story.paragraph2")}
                   </p>
                   
                   <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                    Așa s-a născut EasyReserv — ideea unei platforme care leagă rezervările de operațiuni în timp real, pentru ca echipele să lucreze mai repede și cu mai puține erori.
+                    {t("about_page.story.paragraph3")}
                   </p>
                 </div>
               </div>
@@ -184,30 +177,30 @@ export const InfoSection = (): JSX.Element => {
             {/* Card Cronologie */}
             <div className="bg-gray-50 rounded-[20px] p-8 border border-gray-200">
               <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-6">
-                Cronologie
+                {t("about_page.story.timeline_title")}
               </h3>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3">
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Ziua 1</span> — Primul flow de rezervare (solicitare → confirmare).
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_day1")}</span> — {t("about_page.story.timeline_day1_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Luna 3</span> — Începem web app-ul care centralizează datele (în paralel cu dezvoltarea mobile).
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month3")}</span> — {t("about_page.story.timeline_month3_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Luna 8</span> — Prima versiune de Mobile App (beta) pentru clienți pilot.
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month8")}</span> — {t("about_page.story.timeline_month8_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Luna 13 (1 martie 2024)</span> — Mobile App în producție; în primele 48h, intrăm în Top 2 la rating în categoria ei.
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month13")}</span> — {t("about_page.story.timeline_month13_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Luna 14</span> — Integrare POS fiscal: bon, split note, reduceri, imprimante.
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month14")}</span> — {t("about_page.story.timeline_month14_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  <span className="font-semibold text-[#fe9800]">Luna 18</span> — Primul restaurant full-cycle în ecosistem (rezervări → POS → KDS → stocuri → rapoarte) cu ~30.000 € profit suplimentar după lansare.
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month18")}</span> — {t("about_page.story.timeline_month18_text")}
                 </p>
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6 lg:col-span-2">
-                  <span className="font-semibold text-[#fe9800]">Luna 20</span> — Extindem cu KDS & Timere, Stocuri & Rețetare (COGS), Rapoarte live, Automatizări & Notificări și integrări locale.
+                  <span className="font-semibold text-[#fe9800]">{t("about_page.story.timeline_month20")}</span> — {t("about_page.story.timeline_month20_text")}
                 </p>
               </div>
             </div>
@@ -216,42 +209,41 @@ export const InfoSection = (): JSX.Element => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
               <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
-                  Cine suntem azi
+                  {t("about_page.story.who_we_are_title")}
                 </h3>
                 
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  EasyReserv este o platformă All-in-One care unește rezervări, POS, comenzi/KDS, stocuri & rețetare, rapoarte în timp real și automatizări — plus o platformă publică de listare a partnerilor & booking B2C, ca utilizatorii să descopere și să rezerve direct.
-                  Go-live în zile, nu luni, integrare 1C și plăți, compatibilitate cu hardware existent.
+                  {t("about_page.story.who_we_are_text")}
                 </p>
               </div>
 
               <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
-                  Optimizări pe industrie
+                  {t("about_page.story.optimizations_title")}
                 </h3>
                 
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  Restaurante & cafenele/kiosk, saloane & barbershop, hoteluri & pensiuni, chirii auto, fitness & wellness, medical (clinici/cabinete), retail — fiecare cu fluxuri și KPI dedicate (timere KDS, abonamente, tarife pe interval, ocupare resurse, loturi/expirări, coduri de bare etc.).
+                  {t("about_page.story.optimizations_text")}
                 </p>
               </div>
 
               <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
-                  Impact
+                  {t("about_page.story.impact_title")}
                 </h3>
                 
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  40 locații în primul an • 4.600+ utilizatori • 80.000+ notificări/lună • 30%+ timp optimizat pentru echipe • 99.9% uptime.
+                  {t("about_page.story.impact_text")}
                 </p>
               </div>
 
               <div className="bg-white rounded-[20px] p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                 <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-8 mb-4">
-                  Misiune
+                  {t("about_page.story.mission_title")}
                 </h3>
                 
                 <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                  Să simplificăm operațiunile și să creștem profitabilitatea, legând rezervările de procesele zilnice și automatizând repetitivul, cu vizibilitate în timp real pentru decizii pe date — nu pe presupuneri.
+                  {t("about_page.story.mission_text")}
                 </p>
               </div>
             </div>
@@ -259,7 +251,7 @@ export const InfoSection = (): JSX.Element => {
             <div className="flex justify-center mt-4">
               <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-8 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center shadow-sm">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                  Începe călătoria ta
+                  {t("about_page.story.start_journey_cta")}
                 </span>
               </Link>
             </div>
@@ -289,7 +281,7 @@ export const InfoSection = (): JSX.Element => {
       <div className="flex flex-col items-start gap-6 md:gap-8 px-4 md:px-[180px] py-8 md:py-[50px] w-full max-w-[1440px]">
         <div className="flex flex-col items-center justify-center gap-4 w-full">
           <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[72px] text-center">
-            De ce să ne alegi?
+            {t("about_page.why_choose.title")}
           </h2>
         </div>
 
@@ -323,22 +315,22 @@ export const InfoSection = (): JSX.Element => {
 
       <div className="flex flex-col items-center gap-5 px-4 md:px-0 py-8 md:py-[50px] w-full max-w-[1138px]">
         <h2 className="w-full max-w-[974px] [font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
-          Ești gata să-ți transformi afacerea?
+          {t("about_page.transform.title")}
         </h2>
 
         <div className="flex flex-col items-start gap-2.5 w-full max-w-[674px]">
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base text-center tracking-[0] leading-[20.8px]">
-            Alătură-te nouă și intră într-o nouă eră a eficienței și creșterii. Într-o lume în care schimbarea este singura constantă, să fii cu un pas înainte nu e o opțiune – e o necesitate.
+            {t("about_page.transform.paragraph1")}
           </p>
 
           <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base text-center tracking-[0] leading-[20.8px]">
-            Hai să construim împreună un viitor mai bun pentru afacerea ta.
+            {t("about_page.transform.paragraph2")}
           </p>
         </div>
 
         <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
           <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-            Află mai multe
+            {t("about_page.transform.cta")}
           </span>
         </Link>
       </div>
@@ -374,14 +366,14 @@ export const InfoSection = (): JSX.Element => {
         <div className="flex flex-col items-start gap-10 flex-1">
           <div className="flex flex-col items-start gap-4 w-full max-w-[530px]">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[52.8px]">
-              Simte diferența
+              {t("about_page.feel_difference.title_line1")}
               <br />
-              Astăzi!
+              {t("about_page.feel_difference.title_line2")}
             </h2>
 
             <Link href="/pricing" className="h-auto bg-[#2d2c65] rounded-[5px] px-6 py-4 hover:bg-[#2d2c65]/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base tracking-[0] leading-5">
-                Începe acum
+                {t("about_page.feel_difference.cta")}
               </span>
             </Link>
           </div>
@@ -400,12 +392,12 @@ export const InfoSection = (): JSX.Element => {
         <div className="flex flex-col items-start justify-center gap-8 p-6 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
           <div className="flex flex-col items-start gap-4 w-full z-10 max-w-xl">
             <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-2xl md:text-4xl tracking-[0] leading-tight md:leading-10">
-              Începe să-ți optimizezi afacerea astăzi!
+              {t("about_page.optimize_cta.title")}
             </h2>
 
             <Link href="/pricing" className="h-auto bg-white rounded-[5px] px-6 py-4 hover:bg-white/90 inline-flex items-center justify-center">
               <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base tracking-[0] leading-5">
-                Devino partener
+                {t("about_page.optimize_cta.cta")}
               </span>
             </Link>
           </div>

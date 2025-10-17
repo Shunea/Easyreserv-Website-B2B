@@ -299,6 +299,94 @@
       }
     }
   },
+  "about_page": {
+    "hero": {
+      "title_part1": "How does ",
+      "title_highlight": "EasyReserv",
+      "title_part2": " stand out in the market?",
+      "description": "We started with a simple idea — easy online reservations — and built an All-in-One platform that connects reservations to POS, inventory, reports and automations. We optimize industry workflows (restaurants, cafes, beauty, hotels, car rental, fitness, medical, retail) so teams work faster and with fewer errors. Go-live in days, not months, 1C and payment integration, no exotic hardware. Additionally, EasyReserv is not just a management system: we have a public platform for partner listing and B2C booking, so users can discover, book and interact directly with your business. The result: less time, reduced costs and decisions based on real data.",
+      "cta": "Request Demo"
+    },
+    "story": {
+      "title": "Our story",
+      "paragraph1": "One evening in January 2023, Elena Roșca asked the question that sparked it all: \"Why is it almost impossible to make an online restaurant reservation in Chisinau?\"",
+      "paragraph2": "The answer wasn't \"another form\". Together with Alexandru Iaroslavschi, we documented step by step what the digital reservation process should look like: from request, confirmation and table allocation, to notifications and automatic availability updates. While mapping the flow, reality hit us: reservation is just the beginning. POS, kitchen (KDS), inventory, accounting and reports lived in separate islands.",
+      "paragraph3": "That's how EasyReserv was born — the idea of a platform that connects reservations to real-time operations, so teams work faster and with fewer errors.",
+      "timeline_title": "Timeline",
+      "timeline_day1": "Day 1",
+      "timeline_day1_text": "First reservation flow (request → confirmation).",
+      "timeline_month3": "Month 3",
+      "timeline_month3_text": "We start the web app that centralizes data (in parallel with mobile development).",
+      "timeline_month8": "Month 8",
+      "timeline_month8_text": "First Mobile App version (beta) for pilot clients.",
+      "timeline_month13": "Month 13 (March 1, 2024)",
+      "timeline_month13_text": "Mobile App in production; in the first 48h, we reach Top 2 rating in its category.",
+      "timeline_month14": "Month 14",
+      "timeline_month14_text": "Fiscal POS integration: receipt, split bills, discounts, printers.",
+      "timeline_month18": "Month 18",
+      "timeline_month18_text": "First full-cycle restaurant in the ecosystem (reservations → POS → KDS → inventory → reports) with ~€30,000 additional profit after launch.",
+      "timeline_month20": "Month 20",
+      "timeline_month20_text": "We expand with KDS & Timers, Inventory & Recipes (COGS), Live Reports, Automations & Notifications and local integrations.",
+      "who_we_are_title": "Who we are today",
+      "who_we_are_text": "EasyReserv is an All-in-One platform that unites reservations, POS, orders/KDS, inventory & recipes, real-time reports and automations — plus a public platform for partner listing & B2C booking, so users can discover and book directly. Go-live in days, not months, 1C and payment integration, compatibility with existing hardware.",
+      "optimizations_title": "Industry optimizations",
+      "optimizations_text": "Restaurants & cafes/kiosks, salons & barbershops, hotels & guesthouses, car rental, fitness & wellness, medical (clinics/offices), retail — each with dedicated workflows and KPIs (KDS timers, subscriptions, interval pricing, resource occupancy, batches/expiries, barcodes, etc.).",
+      "impact_title": "Impact",
+      "impact_text": "40 locations in the first year • 4,600+ users • 80,000+ notifications/month • 30%+ optimized time for teams • 99.9% uptime.",
+      "mission_title": "Mission",
+      "mission_text": "To simplify operations and increase profitability by connecting reservations to daily processes and automating the repetitive, with real-time visibility for data-driven decisions — not assumptions.",
+      "start_journey_cta": "Start your journey"
+    },
+    "stats": {
+      "founded_label": "FOUNDED",
+      "founded_value": "2023",
+      "professionals_label": "RENOWNED PROFESSIONALS",
+      "professionals_value": "15+",
+      "years_label": "YEARS",
+      "widgets_label": "EASYRESERV WIDGETS CREATED",
+      "widgets_value": "101+"
+    },
+    "why_choose": {
+      "title": "Why choose us?",
+      "reason1_title": "We simplify operations",
+      "reason1_text": "All-in-One for reservations, POS, KDS, inventory, reports and automations. Fewer systems, fewer errors, −30% operational time.",
+      "reason2_title": "Customer attraction & conversion",
+      "reason2_text": "Public platform for listing & B2C booking, anti no-show reminders, loyalty and campaigns. More reservations, returns and sales.",
+      "reason3_title": "Real data decisions",
+      "reason3_text": "Live KPIs (sales, COGS, times, rotation), 'late'/'low stock' alerts and location reports. Complete visibility, fast actions.",
+      "reason4_title": "Fast implementation & local support",
+      "reason4_text": "Go-live in days, 1C & payment integration, compatible with existing hardware. Dedicated support — from onboarding to scaling."
+    },
+    "transform": {
+      "title": "Ready to transform your business?",
+      "paragraph1": "Join us and enter a new era of efficiency and growth. In a world where change is the only constant, being one step ahead is not an option – it's a necessity.",
+      "paragraph2": "Let's build a better future for your business together.",
+      "cta": "Learn more"
+    },
+    "features": {
+      "feature1_title": "Complete solution",
+      "feature1_text": "From reservations to team management, we offer an all-in-one solution for your business.",
+      "feature2_title": "Data security",
+      "feature2_text": "Your data is our priority. We implement advanced security measures to protect it.",
+      "feature3_title": "Innovation",
+      "feature3_text": "We constantly improve the platform to stay ahead of changes in the business environment.",
+      "feature4_title": "Friendly interface",
+      "feature4_text": "The platform is designed for frictionless use by both owners and their customers.",
+      "feature5_title": "Scalability",
+      "feature5_text": "As your business grows, so does the platform. We're ready to support your expansion.",
+      "feature6_title": "24/7 Support",
+      "feature6_text": "Our support team is available around the clock for any questions or concerns."
+    },
+    "feel_difference": {
+      "title_line1": "Feel the difference",
+      "title_line2": "Today!",
+      "cta": "Start now"
+    },
+    "optimize_cta": {
+      "title": "Start optimizing your business today!",
+      "cta": "Become a partner"
+    }
+  },
   "seo": {
     "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
     "home_description": "Automate reservations, POS, operational workflows and reports. Integrate payments, accounting, notifications and delivery — without changing hardware.",
