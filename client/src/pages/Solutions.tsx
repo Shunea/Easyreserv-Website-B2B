@@ -2,10 +2,13 @@ import React from "react";
 import { NavigationSection } from "./sections/NavigationSection";
 import { SolutionsContentSection } from "./sections/SolutionsContentSection";
 import { FooterSection } from "./sections/FooterSection";
+import { SEO } from "@/components/SEO";
+import { seoConfig } from "@/lib/seo-config";
 
 export function Solutions() {
   return (
     <div className="relative w-full bg-white overflow-hidden">
+      <SEO {...seoConfig.solutions} />
       <img
         className="hidden md:block absolute top-[4538px] left-[500px] w-[1512px] h-[416px] -z-10 pointer-events-none"
         alt="Vector"

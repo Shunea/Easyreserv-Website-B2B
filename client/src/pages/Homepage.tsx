@@ -3,10 +3,13 @@ import { AboutSection } from "./sections/AboutSection";
 import { FeaturesSection } from "./sections/FeaturesSection";
 import { NavigationSection } from "./sections/NavigationSection";
 import { FooterSection } from "./sections/FooterSection";
+import { SEO } from "@/components/SEO";
+import { seoConfig } from "@/lib/seo-config";
 
 export const Homepage = (): JSX.Element => {
   return (
     <div className="relative w-full bg-white overflow-hidden">
+      <SEO {...seoConfig.home} />
       <img
         className="absolute top-[1286px] left-[-707px] w-[1512px] h-[416px] -z-10 pointer-events-none"
         alt="Vector"

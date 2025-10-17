@@ -8,10 +8,13 @@ import { NavigationSection } from "./sections/NavigationSection";
 import { PricingTableSection } from "./sections/PricingTableSection";
 import { SubscriptionOptionsSection } from "./sections/SubscriptionOptionsSection";
 import { WhatIsEasyReservSection } from "./sections/WhatIsEasyReservSection";
+import { SEO } from "@/components/SEO";
+import { seoConfig } from "@/lib/seo-config";
 
 export const Pricing = (): JSX.Element => {
   return (
     <div className="relative w-full bg-white overflow-hidden">
+      <SEO {...seoConfig.pricing} />
       <img
         className="absolute top-[4538px] left-[500px] w-[1512px] h-[416px] pointer-events-none"
         alt="Vector"

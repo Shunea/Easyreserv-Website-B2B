@@ -3,10 +3,13 @@ import { ContactFormSection } from "./sections/ContactFormSection";
 import { LocationInfoSection } from "./sections/LocationInfoSection";
 import { NavigationSection } from "./sections/NavigationSection";
 import { FooterSection } from "./sections/FooterSection";
+import { SEO } from "@/components/SEO";
+import { seoConfig } from "@/lib/seo-config";
 
 export const Contact = (): JSX.Element => {
   return (
     <div className="relative w-full min-h-screen bg-white overflow-hidden">
+      <SEO {...seoConfig.contact} />
       <img
         className="absolute top-[-77699px] left-[-9755px] w-[416px] h-[1512px]"
         alt="Vector"
