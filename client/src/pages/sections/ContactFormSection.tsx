@@ -1,5 +1,5 @@
 import { MailIcon, ChevronsUpDown, Check } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -304,6 +304,22 @@ export const ContactFormSection = (): JSX.Element => {
     message: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  // Detect user's country on component mount
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const userCountryCode = data.country_code;
+        const userCountry = countries.find(c => c.code === userCountryCode);
+        if (userCountry) {
+          setSelectedCountry(userCountry);
+        }
+      })
+      .catch(() => {
+        // If geolocation fails, keep default (first country)
+      });
+  }, []);
 
   const getFieldName = (label: string): string => {
     const mapping: Record<string, string> = {
