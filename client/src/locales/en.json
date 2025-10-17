@@ -203,6 +203,80 @@
       "payments-accounting": { "title": "Payments & Accounting integration", "content": "POS, QR, cash, 1C export, daily revenue reconciliation." }
     }
   },
+  "faq_section": {
+    "title": "What is EasyReserv?",
+    "description": "EasyReserv is an All-in-One platform for reservations, fiscal POS, orders/KDS, inventory & recipes, real-time reports and automations. It is built on industry-optimized workflows (restaurants, cafes/kiosks, beauty, hotels/guesthouses, car rental, fitness, medical, retail) and integrates quickly with 1C, payments and existing hardware.",
+    "items": [
+      {
+        "question": "Can I access EasyReserv on both web and mobile devices?",
+        "answer": "Yes, EasyReserv is available both as a web application (desktop and tablet) and as a native mobile application for iOS and Android. You can access all platform features from any device, with real-time synchronization between all your devices."
+      },
+      {
+        "question": "How long does it take to implement the EasyReserv platform?",
+        "answer": "EasyReserv implementation takes 2-5 days depending on the complexity of your business. Our team assists you at every step: initial setup, data import, team training and go-live. You don't need to change existing hardware."
+      },
+      {
+        "question": "Does EasyReserv integrate with my accounting system?",
+        "answer": "Yes, EasyReserv integrates natively with major accounting systems such as 1C, SAP and other popular solutions. Export of invoices, sales and financial reports is done automatically, eliminating manual data entry."
+      },
+      {
+        "question": "Does EasyReserv provide technical support and training for my team?",
+        "answer": "Absolutely! We offer 24/7 technical support via chat, email and phone. At implementation, we include training sessions for the entire team: managers, cashiers, waiters and cooks. Plus access to our knowledge base and video tutorials."
+      },
+      {
+        "question": "What devices can I use EasyReserv on?",
+        "answer": "Web (desktop/laptop) and mobile (iOS/Android). We also have dedicated extensions (eg smartwatch for waiters) and support for compatible printers/scanners."
+      },
+      {
+        "question": "Do you have fiscal POS available?",
+        "answer": "Yes. EasyReserv POS issues fiscal receipt, supports split bills, discounts, offline mode and multiple printers. Connects with inventory and reports in real time."
+      },
+      {
+        "question": "How does it help my industry?",
+        "answer": "We have industry optimizations: from KDS timers and table rotation in restaurants, to subscriptions & bookings in beauty/fitness, room occupancy in hotels, interval pricing in car rental, batches/expiries in medical and barcodes in retail."
+      },
+      {
+        "question": "Do I need to change hardware?",
+        "answer": "Usually no. We work with current tablets/PCs and compatible printers. If needed, we recommend models tested by us."
+      },
+      {
+        "question": "Does it integrate with 1C and card payments?",
+        "answer": "Yes. Accounting export to 1C, document reconciliation and integration with payment processors (online & at POS), plus SMS/Email for notifications."
+      },
+      {
+        "question": "What reports does the platform provide?",
+        "answer": "Sales, margins, table rotation, service times, employee productivity, KPIs by location/period, COGS per recipe, resource utilization (vehicle/room/device) – live."
+      },
+      {
+        "question": "How do you reduce no-shows and delays?",
+        "answer": "With automatic confirmations & reminders, waitlist, '5 min remaining' alerts, production timers and notifications for ready/late orders."
+      },
+      {
+        "question": "What pricing plans do you have? (eg Restaurants)",
+        "answer": "Subscription per location + add-ons per user/module. For Restaurants: Basic €50, Standard €125, Pro €200, Enterprise on request – all with free trial. (For other industries, plans appear after you select the industry.)"
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. Role-based access, audit log, encryption in transit, regular backups and data export on request. You own your data."
+      },
+      {
+        "question": "What support do you provide?",
+        "answer": "Assisted onboarding, team training, priority support via email/chat/phone and working materials (guides & videos)."
+      },
+      {
+        "question": "Can I easily migrate from another system?",
+        "answer": "Yes. We import menus/services, customers, inventory and essential history from files or through integrations, with checks at pre-go-live."
+      },
+      {
+        "question": "Can I start for free?",
+        "answer": "Yes. We offer a trial period on one location so you can test the workflows before contracting."
+      },
+      {
+        "question": "Can it be customized for my needs?",
+        "answer": "In addition to standard settings, we have configurable add-ons and automations; for advanced requirements, we offer Enterprise projects."
+      }
+    ]
+  },
   "what_is_section": {
     "title": "What is EasyReserv?",
     "description": "EasyReserv is a complete solution for managing and optimizing your business. Mobile reservations, employee management, business reports, inventory management and many other features are available. You can save time, increase sales, improve customer experience, reduce costs and increase productivity using our platform.",
