@@ -1421,5 +1421,21 @@
     "policies_description": "Politica de confidențialitate, politica cookie și termenii și condițiile platformei EasyReserv.io. Protecția datelor conform GDPR.",
     "blog_title": "Blog — EasyReserv.io | Ghiduri și Resurse Business",
     "blog_description": "Articole despre managementul afacerilor, automatizare, tips & tricks pentru restaurante, saloane, fitness și alte industrii."
+  },
+  "cookie_consent": {
+    "title": "Respectăm confidențialitatea ta",
+    "description": "Folosim cookie-uri pentru a îmbunătăți experiența ta pe site și pentru a analiza traficul. Cookie-urile esențiale sunt necesare pentru funcționarea site-ului, în timp ce cookie-urile de analiză ne ajută să înțelegem cum folosești platforma.",
+    "accept_all": "Acceptă toate",
+    "reject_all": "Refuză toate",
+    "customize": "Personalizează",
+    "save_preferences": "Salvează preferințele",
+    "essential": "Esențiale",
+    "essential_desc": "Necesare pentru funcționarea site-ului",
+    "analytics": "Analiză",
+    "analytics_desc": "Ne ajută să înțelegem cum folosești site-ul",
+    "settings_title": "Setări Cookie",
+    "settings_desc": "Gestionează preferințele tale de cookie",
+    "learn_more": "Află mai multe",
+    "cookie_policy": "Politica Cookie"
   }
 }

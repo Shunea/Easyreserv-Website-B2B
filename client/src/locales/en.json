@@ -1421,5 +1421,21 @@
     "policies_description": "Privacy policy, cookie policy and terms and conditions of the EasyReserv.io platform. Data protection in accordance with GDPR.",
     "blog_title": "Blog — EasyReserv.io | Business Guides & Resources",
     "blog_description": "Articles about business management, automation, tips & tricks for restaurants, salons, fitness and other industries."
+  },
+  "cookie_consent": {
+    "title": "We respect your privacy",
+    "description": "We use cookies to improve your experience on our site and to analyze traffic. Essential cookies are necessary for the site to function, while analytics cookies help us understand how you use the platform.",
+    "accept_all": "Accept all",
+    "reject_all": "Reject all",
+    "customize": "Customize",
+    "save_preferences": "Save preferences",
+    "essential": "Essential",
+    "essential_desc": "Required for site functionality",
+    "analytics": "Analytics",
+    "analytics_desc": "Helps us understand how you use the site",
+    "settings_title": "Cookie Settings",
+    "settings_desc": "Manage your cookie preferences",
+    "learn_more": "Learn more",
+    "cookie_policy": "Cookie Policy"
   }
 }

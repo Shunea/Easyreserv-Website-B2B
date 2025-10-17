@@ -3,8 +3,11 @@ import { Link } from "wouter";
 import { Container } from "@/components/Container";
 import googlePlayBadge from "@assets/google-play-badge.png";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useCookieConsent } from "@/contexts/CookieConsentContext";
 
-const getFooterLinks = (t: (key: string) => string) => ({
+type FooterLink = { text: string; href: string; action?: string };
+
+const getFooterLinks = (t: (key: string) => string): { column1: FooterLink[]; column2: FooterLink[]; column3: FooterLink[] } => ({
   column1: [
     { text: t('footer.about_us'), href: "/about" },
     { text: t('footer.solutions'), href: "/solutions" },
@@ -16,6 +19,7 @@ const getFooterLinks = (t: (key: string) => string) => ({
     { text: t('footer.privacy_policy'), href: "/policies#privacy-policy" },
     { text: t('footer.cookies_policy'), href: "/policies#cookies-policy" },
     { text: t('footer.terms_conditions'), href: "/policies#terms-and-conditions" },
+    { text: t('cookie_consent.cookie_policy'), href: "#", action: 'cookie-settings' },
   ],
   column3: [
     { text: t('footer.linkedin'), href: "https://www.linkedin.com/company/easyreserv" },
@@ -27,6 +31,7 @@ const getFooterLinks = (t: (key: string) => string) => ({
 export const FooterSection = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation();
+  const { resetConsent } = useCookieConsent();
   const footerLinks = getFooterLinks(t);
   
   return (
@@ -66,13 +71,24 @@ export const FooterSection = (): JSX.Element => {
 
             <nav className="flex flex-col gap-4">
               {footerLinks.column2.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
-                >
-                  {link.text}
-                </a>
+                link.action === 'cookie-settings' ? (
+                  <button
+                    key={index}
+                    onClick={resetConsent}
+                    className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline text-left"
+                    data-testid="button-cookie-settings"
+                  >
+                    {link.text}
+                  </button>
+                ) : (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="[font-family:'Inter',Helvetica] font-normal text-white text-base tracking-[-0.32px] hover:underline"
+                  >
+                    {link.text}
+                  </a>
+                )
               ))}
             </nav>
 
