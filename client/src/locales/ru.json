@@ -1404,6 +1404,44 @@
           ]
         }
       }
+    },
+    "comparison": {
+      "categories": {
+        "user_roles": "Роли пользователей",
+        "reservations": "Бронирования и столы",
+        "inventory": "Управление запасами",
+        "reports": "Отчеты",
+        "staff": "Управление персоналом",
+        "delivery": "Доставка и транспорт",
+        "marketing": "Маркетинговые инструменты"
+      },
+      "features": {
+        "admin": "Админ",
+        "hostess": "Хостес",
+        "waiter": "Официант",
+        "cook": "Повар",
+        "courier": "Курьер",
+        "unlimited": "Неограничено",
+        "accept_reject": "Принять/Отклонить бронирования",
+        "calendar_access": "Доступ к календарю",
+        "create_modify": "Создать новое/Изменить",
+        "pre_order": "Предзаказ",
+        "recipe_auto": "Рецепты/автоматическое списание",
+        "crud_supplier": "CRUD Поставщик/Заказ/История",
+        "sales_reservations": "Продажи и бронирования",
+        "kpi_employees": "KPI сотрудников/продуктивность",
+        "cost_margin": "Стоимость/Маржа продукта",
+        "crud_employee": "CRUD Сотрудник",
+        "shifts_holidays": "Смены/отпуска/учет времени",
+        "check_in_out": "Вход/Выход",
+        "delivery_orders": "Заказы доставки",
+        "courier_app": "Приложение для курьера",
+        "routes_allocation": "Маршруты/распределение курьеров",
+        "crud_articles": "CRUD Статьи",
+        "targeting_push": "Таргетинг Push/SMS",
+        "advanced_segmentation": "Расширенная сегментация",
+        "per_month": "/месяц"
+      }
     }
   },
   "seo": {

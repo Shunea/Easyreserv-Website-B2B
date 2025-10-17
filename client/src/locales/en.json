@@ -1339,6 +1339,44 @@
           ]
         }
       }
+    },
+    "comparison": {
+      "categories": {
+        "user_roles": "User Roles",
+        "reservations": "Reservations & Tables",
+        "inventory": "Inventory Management",
+        "reports": "Reports",
+        "staff": "Staff Management",
+        "delivery": "Delivery & Transport",
+        "marketing": "Marketing Tools"
+      },
+      "features": {
+        "admin": "Admin",
+        "hostess": "Hostess",
+        "waiter": "Waiter",
+        "cook": "Cook",
+        "courier": "Courier",
+        "unlimited": "Unlimited",
+        "accept_reject": "Accept/Reject reservations",
+        "calendar_access": "Calendar Access",
+        "create_modify": "Create New/Modify",
+        "pre_order": "Pre-order",
+        "recipe_auto": "Recipe/auto deduction",
+        "crud_supplier": "CRUD Supplier/Order/History",
+        "sales_reservations": "Sales & reservations",
+        "kpi_employees": "KPI employees/productivity",
+        "cost_margin": "Cost/Margin product",
+        "crud_employee": "CRUD Employee",
+        "shifts_holidays": "Shifts/holidays/time tracking",
+        "check_in_out": "Check-in/Check-out",
+        "delivery_orders": "Delivery orders",
+        "courier_app": "Courier App",
+        "routes_allocation": "Routes/courier allocation",
+        "crud_articles": "CRUD Articles",
+        "targeting_push": "Targeting Push/SMS",
+        "advanced_segmentation": "Advanced segmentation",
+        "per_month": "/month"
+      }
     }
   },
   "seo": {

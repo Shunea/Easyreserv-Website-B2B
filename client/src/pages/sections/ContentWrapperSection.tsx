@@ -133,7 +133,7 @@ const getPricingPlans = (industryKey: string, t: any) => {
   });
 };
 
-const getComparisonCategories = (industryKey: string) => {
+const getComparisonCategories = (industryKey: string, t: any) => {
   if (industryKey === industryKeys.RETAIL) {
     return [
       {
@@ -2046,136 +2046,139 @@ const getComparisonCategories = (industryKey: string) => {
     ];
   }
 
+  const unlimited = t('pricing_page.comparison.features.unlimited');
+  const perMonth = t('pricing_page.comparison.features.per_month');
+  
   return [
   {
-    title: "Roluri Utilizatori",
+    title: t('pricing_page.comparison.categories.user_roles'),
     features: [
       {
-        name: "Admin",
-        values: ["1", "1", "1", "Nelimitat"],
+        name: t('pricing_page.comparison.features.admin'),
+        values: ["1", "1", "1", unlimited],
         muted: [false, false, false, false],
       },
       {
-        name: "Hostess",
-        values: ["1", "1", "1", "Nelimitat"],
+        name: t('pricing_page.comparison.features.hostess'),
+        values: ["1", "1", "1", unlimited],
         muted: [false, false, false, false],
       },
       {
-        name: "Waiter",
-        values: ["-", "2", "5", "Nelimitat"],
+        name: t('pricing_page.comparison.features.waiter'),
+        values: ["-", "2", "5", unlimited],
         muted: [true, false, false, false],
       },
       {
-        name: "Cook",
-        values: ["-", "-", "3", "Nelimitat"],
+        name: t('pricing_page.comparison.features.cook'),
+        values: ["-", "-", "3", unlimited],
         muted: [true, true, false, false],
       },
       {
-        name: "Curier",
-        values: ["-", "-", "-", "Nelimitat"],
+        name: t('pricing_page.comparison.features.courier'),
+        values: ["-", "-", "-", unlimited],
         muted: [true, true, true, false],
       },
     ],
   },
   {
-    title: "Rezervări & Mese",
+    title: t('pricing_page.comparison.categories.reservations'),
     features: [
       {
-        name: "Accept/Reject rezervări",
+        name: t('pricing_page.comparison.features.accept_reject'),
         values: [true, true, true, true],
       },
       {
-        name: "Calendar Access",
+        name: t('pricing_page.comparison.features.calendar_access'),
         values: [false, true, true, true],
       },
       {
-        name: "Create New/Modify",
+        name: t('pricing_page.comparison.features.create_modify'),
         values: [true, true, true, true],
       },
       {
-        name: "Pre-order",
+        name: t('pricing_page.comparison.features.pre_order'),
         values: [false, false, true, true],
       },
     ],
   },
   {
-    title: "Management Stocuri",
+    title: t('pricing_page.comparison.categories.inventory'),
     features: [
       {
-        name: "Rețetar/scădere automată",
+        name: t('pricing_page.comparison.features.recipe_auto'),
         values: [false, false, true, true],
       },
       {
-        name: "CRUD Supplier/Order/History",
+        name: t('pricing_page.comparison.features.crud_supplier'),
         values: [false, false, true, true],
       },
     ],
   },
   {
-    title: "Rapoarte",
+    title: t('pricing_page.comparison.categories.reports'),
     features: [
       {
-        name: "Vânzări & rezervări",
+        name: t('pricing_page.comparison.features.sales_reservations'),
         values: [false, false, true, true],
       },
       {
-        name: "KPI angajați/productivitate",
+        name: t('pricing_page.comparison.features.kpi_employees'),
         values: [false, false, true, true],
       },
       {
-        name: "Cost/Marjă produs",
+        name: t('pricing_page.comparison.features.cost_margin'),
         values: [false, false, true, true],
       },
     ],
   },
   {
-    title: "Staff Management",
+    title: t('pricing_page.comparison.categories.staff'),
     features: [
       {
-        name: "CRUD Employee",
+        name: t('pricing_page.comparison.features.crud_employee'),
         values: [true, true, true, true],
       },
       {
-        name: "Ture/vacanțe/pontaj",
+        name: t('pricing_page.comparison.features.shifts_holidays'),
         values: [false, false, true, true],
       },
       {
-        name: "Intrare/Ieșire",
+        name: t('pricing_page.comparison.features.check_in_out'),
         values: [false, false, true, true],
       },
     ],
   },
   {
-    title: "Livrare & Transport",
+    title: t('pricing_page.comparison.categories.delivery'),
     features: [
       {
-        name: "Comenzi livrare",
+        name: t('pricing_page.comparison.features.delivery_orders'),
         values: [false, false, false, true],
       },
       {
-        name: "Curier App",
+        name: t('pricing_page.comparison.features.courier_app'),
         values: [false, false, false, true],
       },
       {
-        name: "Rute/alocare curieri",
+        name: t('pricing_page.comparison.features.routes_allocation'),
         values: [false, false, false, true],
       },
     ],
   },
   {
-    title: "Marketing Tools",
+    title: t('pricing_page.comparison.categories.marketing'),
     features: [
       {
-        name: "CRUD Articole",
-        values: ["1/lună", "1/lună", "2/lună", "2+/lună"],
+        name: t('pricing_page.comparison.features.crud_articles'),
+        values: [`1${perMonth}`, `1${perMonth}`, `2${perMonth}`, `2+${perMonth}`],
         muted: [false, false, false, false],
       },
       {
-        name: "Targeting Push/SMS",
+        name: t('pricing_page.comparison.features.targeting_push'),
         values: [true, true, true, true],
       },
       {
-        name: "Segmentare avansată",
+        name: t('pricing_page.comparison.features.advanced_segmentation'),
         values: [false, false, true, true],
       },
     ],
@@ -2194,7 +2197,7 @@ export const ContentWrapperSection = (): JSX.Element => {
   const [selectedBusiness, setSelectedBusiness] = React.useState(normalizedIndustry);
 
   const pricingPlans = getPricingPlans(selectedBusiness, t);
-  const comparisonCategories = getComparisonCategories(selectedBusiness);
+  const comparisonCategories = getComparisonCategories(selectedBusiness, t);
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {

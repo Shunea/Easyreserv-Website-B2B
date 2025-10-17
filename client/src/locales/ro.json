@@ -1339,6 +1339,44 @@
           ]
         }
       }
+    },
+    "comparison": {
+      "categories": {
+        "user_roles": "Roluri Utilizatori",
+        "reservations": "Rezervări & Mese",
+        "inventory": "Management Stocuri",
+        "reports": "Rapoarte",
+        "staff": "Staff Management",
+        "delivery": "Livrare & Transport",
+        "marketing": "Marketing Tools"
+      },
+      "features": {
+        "admin": "Admin",
+        "hostess": "Hostess",
+        "waiter": "Waiter",
+        "cook": "Cook",
+        "courier": "Curier",
+        "unlimited": "Nelimitat",
+        "accept_reject": "Accept/Reject rezervări",
+        "calendar_access": "Calendar Access",
+        "create_modify": "Create New/Modify",
+        "pre_order": "Pre-order",
+        "recipe_auto": "Rețetar/scădere automată",
+        "crud_supplier": "CRUD Supplier/Order/History",
+        "sales_reservations": "Vânzări & rezervări",
+        "kpi_employees": "KPI angajați/productivitate",
+        "cost_margin": "Cost/Marjă produs",
+        "crud_employee": "CRUD Employee",
+        "shifts_holidays": "Ture/vacanțe/pontaj",
+        "check_in_out": "Intrare/Ieșire",
+        "delivery_orders": "Comenzi livrare",
+        "courier_app": "Curier App",
+        "routes_allocation": "Rute/alocare curieri",
+        "crud_articles": "CRUD Articole",
+        "targeting_push": "Targeting Push/SMS",
+        "advanced_segmentation": "Segmentare avansată",
+        "per_month": "/lună"
+      }
     }
   },
   "seo": {
