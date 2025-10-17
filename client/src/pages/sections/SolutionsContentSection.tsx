@@ -736,100 +736,60 @@ const howItWorksSteps = [
 
 const businessTypes = [
   {
-    icon: "/figmaAssets/frame-12.svg",
-    name: "IT Company",
-    decorativeIcon: "/figmaAssets/frame-6.svg",
-    pricingIndustry: "Retail",
+    number: "01",
+    name: "RESTAURANT & CATERING",
+    description: "Gestionare rezervări, comenzi și mese fără efort",
+    backgroundImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    pricingIndustry: "Restaurante",
   },
   {
-    icon: "/figmaAssets/frame-2.svg",
-    name: "Beauty Clinic",
-    decorativeIcon: "/figmaAssets/frame-1.svg",
+    number: "02",
+    name: "BEAUTY & WELLNESS",
+    description: "Programări inteligente pentru saloane, spa-uri și clinici de înfrumusețare",
+    backgroundImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
     pricingIndustry: "Saloane de frumusețe",
   },
   {
-    icon: "/figmaAssets/frame.svg",
-    name: "Medical Clinic",
-    decorativeIcon: "/figmaAssets/frame.svg",
+    number: "03",
+    name: "MEDICAL & DENTAL",
+    description: "Managementul profesional al programărilor pentru furnizori de servicii medicale",
+    backgroundImage: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80",
     pricingIndustry: "Medical",
   },
   {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Restaurant",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
-    pricingIndustry: "Restaurante",
+    number: "04",
+    name: "FITNESS & SPORTS",
+    description: "Rezervări eficiente de cursuri și soluții de management pentru membri",
+    backgroundImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    pricingIndustry: "Fitness",
   },
   {
-    icon: "/figmaAssets/frame-12.svg",
-    name: "Catering",
-    decorativeIcon: "/figmaAssets/frame-6.svg",
-    pricingIndustry: "Restaurante",
+    number: "05",
+    name: "RETAIL & MAGAZINE",
+    description: "Sisteme moderne de rezervări și POS pentru magazine",
+    backgroundImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+    pricingIndustry: "Retail",
   },
   {
-    icon: "/figmaAssets/frame-2.svg",
-    name: "Entertainment",
-    decorativeIcon: "/figmaAssets/frame-1.svg",
+    number: "06",
+    name: "ENTERTAINMENT & EVENTS",
+    description: "Platformă completă pentru rezervări la terenuri sportive și evenimente",
+    backgroundImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80",
     pricingIndustry: "Tenis/Padel/Fotbal",
   },
   {
-    icon: "/figmaAssets/frame.svg",
-    name: "Beauty Salon",
-    decorativeIcon: "/figmaAssets/frame.svg",
-    pricingIndustry: "Saloane de frumusețe",
+    number: "07",
+    name: "AUTOMOTIVE & RENT",
+    description: "Sistem de rezervări pentru închirieri auto și servicii auto",
+    backgroundImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80",
+    pricingIndustry: "Chirii auto",
   },
   {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Dental Clinic",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
-    pricingIndustry: "Medical",
-  },
-  {
-    icon: "/figmaAssets/frame-12.svg",
-    name: "Barbershop",
-    decorativeIcon: "/figmaAssets/frame-6.svg",
-    pricingIndustry: "Barbershopuri",
-  },
-  {
-    icon: "/figmaAssets/frame-2.svg",
-    name: "Co-Working Space Rent",
-    decorativeIcon: "/figmaAssets/frame-1.svg",
-    pricingIndustry: "Retail",
-  },
-  {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Accounting Firm",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
-    pricingIndustry: "Retail",
-  },
-  {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Hotel",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
+    number: "08",
+    name: "HOTELS & ACCOMMODATION",
+    description: "Soluție completă pentru hoteluri, pensiuni și cazare",
+    backgroundImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
     pricingIndustry: "Hotele & Pensiuni",
-  },
-  {
-    icon: "/figmaAssets/frame-12.svg",
-    name: "Pet Grooming Service",
-    decorativeIcon: "/figmaAssets/frame-6.svg",
-    pricingIndustry: "Saloane de frumusețe",
-  },
-  {
-    icon: "/figmaAssets/frame-2.svg",
-    name: "Conference Hall Rent",
-    decorativeIcon: "/figmaAssets/frame-1.svg",
-    pricingIndustry: "Retail",
-  },
-  {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Fitness Center",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
-    pricingIndustry: "Fitness",
-  },
-  {
-    icon: "/figmaAssets/frame-4.svg",
-    name: "Wellness Center",
-    decorativeIcon: "/figmaAssets/frame-7.svg",
-    pricingIndustry: "Fitness",
   },
 ];
 
@@ -1138,35 +1098,45 @@ export const SolutionsContentSection = (): JSX.Element => {
         </Container>
       </div>
 
-      <Container className="py-[50px]">
-        <div className="col-span-12">
-          <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-5xl text-center tracking-[0] leading-[normal]">
-            Ce tip de afacere ai?
-          </h2>
-        </div>
+      <div className="w-full py-12 md:py-16 bg-[#2d2c65]">
+        <Container>
+          <div className="col-span-12 mb-8 md:mb-12">
+            <h2 className="[font-family:'Onest',Helvetica] font-bold text-white text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[normal]">
+              Ce tip de afacere ai?
+            </h2>
+          </div>
 
-        {businessTypes.map((business, index) => (
-          <Link 
-            key={index} 
-            href={`/pricing?industry=${encodeURIComponent(business.pricingIndustry)}`}
-            className="col-span-12 md:col-span-6 lg:col-span-4"
-          >
-            <Card className="w-full bg-white rounded-[20px] border-[#8aa2a980] shadow-[0px_13px_24px_#0000000d] overflow-hidden relative hover:shadow-[0px_13px_24px_#0000001a] transition-shadow cursor-pointer">
-              <CardContent className="flex flex-col items-start gap-4 p-8">
-                <img className="w-12 h-12" alt="Frame" src={business.icon} />
-                <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-2xl tracking-[0] leading-[normal]">
-                  {business.name}
-                </h3>
-                <img
-                  className="absolute top-[93px] left-[199px] w-[148px] h-[66px]"
-                  alt="Frame"
-                  src={business.decorativeIcon}
-                />
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </Container>
+          {businessTypes.map((business, index) => (
+            <Link 
+              key={index} 
+              href={`/pricing?industry=${encodeURIComponent(business.pricingIndustry)}`}
+              className="col-span-12 md:col-span-6 lg:col-span-3"
+              data-testid={`business-card-${business.number}`}
+            >
+              <div 
+                className="relative h-[280px] md:h-[320px] rounded-[12px] overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${business.backgroundImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              >
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+                  <div className="[font-family:'Onest',Helvetica] font-bold text-[#fe9800] text-5xl md:text-6xl tracking-[0] leading-none mb-4">
+                    {business.number}
+                  </div>
+                  <h3 className="[font-family:'Onest',Helvetica] font-bold text-white text-lg md:text-xl tracking-[0] leading-tight mb-2">
+                    {business.name}
+                  </h3>
+                  <p className="[font-family:'Onest',Helvetica] font-normal text-white/90 text-sm md:text-base tracking-[0] leading-relaxed">
+                    {business.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </Container>
+      </div>
 
       <Container className="py-[50px]">
         <div className="col-span-12">
