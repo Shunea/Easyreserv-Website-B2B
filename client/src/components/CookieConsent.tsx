@@ -23,13 +23,13 @@ export function CookieConsent() {
 
   if (showCustomize) {
     return (
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-black/50 backdrop-blur-sm" data-testid="cookie-customize-modal">
-        <Card className="max-w-2xl mx-auto shadow-2xl border-2">
-          <CardHeader>
-            <div className="flex items-start justify-between">
+      <div className="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 md:max-w-5xl md:mx-auto z-50" data-testid="cookie-customize-modal">
+        <Card className="shadow-2xl border-2 bg-white dark:bg-gray-900">
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Settings className="w-5 h-5 text-primary" />
-                <CardTitle className="text-xl">{t('cookie_consent.settings_title')}</CardTitle>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{t('cookie_consent.settings_title')}</h3>
               </div>
               <Button
                 variant="ghost"
@@ -40,52 +40,56 @@ export function CookieConsent() {
                 <X className="w-4 h-4" />
               </Button>
             </div>
-            <CardDescription>{t('cookie_consent.settings_desc')}</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center justify-between p-4 border rounded-lg bg-muted/50">
-              <div className="space-y-1 flex-1">
-                <Label className="text-base font-medium">{t('cookie_consent.essential')}</Label>
-                <p className="text-sm text-muted-foreground">{t('cookie_consent.essential_desc')}</p>
+            <p className="text-xs text-gray-600 dark:text-gray-300 mb-4">{t('cookie_consent.settings_desc')}</p>
+            
+            <div className="space-y-3 mb-4">
+              <div className="flex items-center justify-between p-3 border rounded-lg bg-gray-50 dark:bg-gray-800">
+                <div className="flex-1">
+                  <Label className="text-sm font-medium text-gray-900 dark:text-white">{t('cookie_consent.essential')}</Label>
+                  <p className="text-xs text-gray-600 dark:text-gray-300 mt-0.5">{t('cookie_consent.essential_desc')}</p>
+                </div>
+                <Switch
+                  checked={true}
+                  disabled={true}
+                  data-testid="switch-essential"
+                />
               </div>
-              <Switch
-                checked={true}
-                disabled={true}
-                data-testid="switch-essential"
-              />
-            </div>
-            <div className="flex items-center justify-between p-4 border rounded-lg">
-              <div className="space-y-1 flex-1">
-                <Label className="text-base font-medium">{t('cookie_consent.analytics')}</Label>
-                <p className="text-sm text-muted-foreground">{t('cookie_consent.analytics_desc')}</p>
+              <div className="flex items-center justify-between p-3 border rounded-lg">
+                <div className="flex-1">
+                  <Label className="text-sm font-medium text-gray-900 dark:text-white">{t('cookie_consent.analytics')}</Label>
+                  <p className="text-xs text-gray-600 dark:text-gray-300 mt-0.5">{t('cookie_consent.analytics_desc')}</p>
+                </div>
+                <Switch
+                  checked={customPrefs.analytics}
+                  onCheckedChange={(checked) => setCustomPrefs({ ...customPrefs, analytics: checked })}
+                  data-testid="switch-analytics"
+                />
               </div>
-              <Switch
-                checked={customPrefs.analytics}
-                onCheckedChange={(checked) => setCustomPrefs({ ...customPrefs, analytics: checked })}
-                data-testid="switch-analytics"
-              />
             </div>
-          </CardContent>
-          <CardFooter className="flex flex-col sm:flex-row gap-2">
-            <Button
-              variant="outline"
-              onClick={() => setShowCustomize(false)}
-              className="w-full sm:w-auto"
-              data-testid="button-cancel-customize"
-            >
-              {t('nav.menu')}
-            </Button>
-            <Button
-              onClick={() => {
-                setCustomPreferences(customPrefs);
-                setShowCustomize(false);
-              }}
-              className="w-full sm:flex-1"
-              data-testid="button-save-preferences"
-            >
-              {t('cookie_consent.save_preferences')}
-            </Button>
-          </CardFooter>
+
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => setShowCustomize(false)}
+                size="sm"
+                className="text-xs"
+                data-testid="button-cancel-customize"
+              >
+                {t('nav.menu')}
+              </Button>
+              <Button
+                onClick={() => {
+                  setCustomPreferences(customPrefs);
+                  setShowCustomize(false);
+                }}
+                size="sm"
+                className="flex-1 bg-primary hover:bg-primary/90 text-white text-xs"
+                data-testid="button-save-preferences"
+              >
+                {t('cookie_consent.save_preferences')}
+              </Button>
+            </div>
+          </div>
         </Card>
       </div>
     );
