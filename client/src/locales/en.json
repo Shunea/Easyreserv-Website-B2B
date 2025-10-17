@@ -1389,6 +1389,23 @@
       }
     }
   },
+  "blog_page": {
+    "title": "Our Stories",
+    "search_placeholder": "Search articles...",
+    "categories": {
+      "all": "All",
+      "use_case": "Use Case",
+      "news": "News",
+      "updates": "Updates",
+      "entertainment": "Entertainment"
+    },
+    "sort": {
+      "newest": "Newest",
+      "oldest": "Oldest"
+    },
+    "no_results": "No articles found matching your search criteria.",
+    "load_more": "Load more"
+  },
   "seo": {
     "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
     "home_description": "Automate reservations, POS, operational workflows and reports. Integrate payments, accounting, notifications and delivery — without changing hardware.",

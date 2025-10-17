@@ -1389,6 +1389,23 @@
       }
     }
   },
+  "blog_page": {
+    "title": "Poveștile noastre",
+    "search_placeholder": "Caută articole...",
+    "categories": {
+      "all": "Toate",
+      "use_case": "Use Case",
+      "news": "News",
+      "updates": "Updates",
+      "entertainment": "Divertisment"
+    },
+    "sort": {
+      "newest": "Cele mai noi",
+      "oldest": "Cele mai vechi"
+    },
+    "no_results": "Nu au fost găsite articole care să corespundă criteriilor de căutare.",
+    "load_more": "Încarcă mai multe"
+  },
   "seo": {
     "home_title": "EasyReserv.io — Platformă all-in-one POS și Rezervări",
     "home_description": "Automatizezi rezervările, POS, fluxurile operaționale și rapoartele. Integrezi plăți, contabilitate, notificări și livrare — fără schimbare de hardware.",
