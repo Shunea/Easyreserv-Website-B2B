@@ -52,18 +52,155 @@
   },
   "features_section": {
     "title": "Cele mai bune funcționalități",
+    "request_demo": "Solicită Demo",
     "industries": {
       "restaurante": "Restaurante",
       "cafenele": "Cafenele",
       "saloane": "Saloane de frumusețe",
       "barbershop": "Barbershopuri",
       "hotel": "Hotele & Pensiuni",
-      "chirii_auto": "Chirii auto",
+      "chirii-auto": "Chirii auto",
       "fitness": "Fitness",
       "medical": "Medical",
       "retail": "Retail",
-      "terenuri_sportive": "Terenuri sportive",
-      "spalatorii_auto": "Spălătorii Auto"
+      "terenuri-sportive": "Terenuri sportive",
+      "spalatorii-auto": "Spălătorii Auto"
+    }
+  },
+  "about": {
+    "title": "Despre EasyReserv",
+    "paragraph1": "Am început cu o întrebare simplă: de ce e atât de complicat să faci o rezervare online? Când am conectat primul formular la un restaurant, am realizat că rezervarea e doar vârful aisbergului. Lipseau legăturile dintre rezervări, casă (POS), bucătărie, stocuri, contabilitate și rapoarte.",
+    "paragraph2": "De aici a pornit EasyReserv: o platformă All-in-One care aduce totul la un loc — rezervări și waitlist, POS fiscal, comenzi & KDS, stocuri & rețetare (COGS), rapoarte în timp real și automatizări. Am construit-o pentru echipe reale, cu go-live în zile, nu luni, integrare cu 1C și plăți, fără să schimbi hardware-ul.",
+    "paragraph3": "Astăzi optimizăm operațiuni în industrii diverse: restaurante și cafenele, saloane & barbershop, hoteluri & pensiuni, chirie auto, fitness & wellness, medical și retail. Misiunea noastră rămâne aceeași: mai puține sisteme, mai puține erori, decizii mai bune pe date reale – ca tu să vinzi mai mult și echipa să lucreze mai simplu."
+  },
+  "partners": {
+    "title": "Partenerii noștri",
+    "description": "Un ecosistem de încredere pentru plăți, contabilitate, hardware fiscal și comunicare."
+  },
+  "cta": {
+    "optimize_business": "Optimizează-ți afacerea chiar azi!",
+    "become_partner": "Devino partener",
+    "all_in_one": "All-in-One & rezultate",
+    "unlock_future": "Dezleagă viitorul managementului de business",
+    "unlock_description": "Treci la o platformă All-in-One pentru rezervări, POS, stocuri, rapoarte și automatizări. Simplifici fluxurile, reduci timpii morți și iei decizii pe date reale. Alătură-te companiilor care și-au crescut veniturile și controlul operațional cu EasyReserv.",
+    "start_journey": "Începe călătoria ta",
+    "request_demo": "Solicită demo"
+  },
+  "mobile_app": {
+    "title": "Aplicația mobilă EasyReserv",
+    "description": "Ia operațiunile cu tine, în teren sau în sală. Procesezi rezervări, emiți bonuri, urmărești comenzi și inventar, iar dashboard-urile îți arată vânzările și KPI-urile în timp real. Notificările te anunță când sunt întârzieri, comenzi gata sau stocuri pe cale să se termine. Funcționează pe iOS și Android, cu permisiuni pe roluri pentru ospătari, casieri, manageri sau tehnicieni.",
+    "available_on": "Disponibil pe"
+  },
+  "features": {
+    "restaurante": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Booking online + hartă mese, waitlist și confirmări automate → −20–35% no-shows." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Bon fiscal, split note, meniuri/combos, mod offline, imprimante multiple." },
+      "digital-kitchen": { "title": "Bucătărie digitală & Timere (KDS)", "content": "Tichete pe ecran, countdown per fel, alerte 'late' → −25% timp de servire." },
+      "inventory-cogs": { "title": "Stocuri & Rețetare (COGS)", "content": "Scădere automată la vânzare, rețetar și inventar ghidat → 0 erori la final." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Vânzări, marjă, rotație mese, timpi servire, comparații pe locații." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Confirmări/remindere, '5 min rămase', alerte stoc & 'late'." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "cafenele": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Pre-comenzi din mobil și ridicare la oră fixă, cozi mai scurte în orele de vârf." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Vânzare ultra-rapidă cu preset-uri; bon fiscal în <2 secunde." },
+      "operations": { "title": "Operațiuni & Pregătire", "content": "Ecran barista/patiserie, prioritizare automată pe comenzi rapide." },
+      "inventory-cogs": { "title": "Stocuri & Ingrediente", "content": "Dozare ingrediente, alerte 'low stock' pentru orele de vârf." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Vânzări pe oră/produse, waste, productivitate casieri." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Ready-for-pickup, happy hour, push la off-peak." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "saloane": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Programări cu selectare specialist/serviciu, pachete și abonamente." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Pachete/abonamente, vânzare produse retail, pontaj servicii." },
+      "operations": { "title": "Calendar operațional", "content": "Calendar operațional pe fotolii/săli, timp ocupat vs liber." },
+      "inventory-cogs": { "title": "Stocuri & Consum", "content": "Consum pe serviciu (vopsea, tratamente), inventar trasabil." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Venit/ora specialist, rate no-show, top servicii & CLV." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Reamintiri înainte/după, follow-up recurență." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "barbershop": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Programări cu selectare specialist/serviciu, pachete și abonamente." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Pachete/abonamente, vânzare produse retail, pontaj servicii." },
+      "operations": { "title": "Calendar operațional", "content": "Calendar operațional pe fotolii/săli, timp ocupat vs liber." },
+      "inventory-cogs": { "title": "Stocuri & Consum", "content": "Consum pe serviciu (vopsea, tratamente), inventar trasabil." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Venit/ora specialist, rate no-show, top servicii & CLV." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Reamintiri înainte/după, follow-up recurență." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "hotel": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Calendar camere, restricții smart (min-stay/late-checkout), cereri speciale." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Încasare camere + extra-servicii (mic dejun, spa), taxe locale din POS." },
+      "operations": { "title": "Housekeeping & Mentenanță", "content": "Taskboard housekeeping & mentenanță cu statusuri live." },
+      "inventory-cogs": { "title": "Stocuri & Consumabile", "content": "Consum pe cameră (mini-bar, consumabile), stocuri pe zone." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "ADR, RevPAR, ocupare, canale & pachete." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Pre-check-in, upsell (late checkout/spa), review post-sejur." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "chirii-auto": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Rezervare vehicul pe interval, extra-opțiuni (scaun copil, GPS), depozit." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Facturare cu depozit, extra-kilometri, asigurări și accesorii pe linie." },
+      "operations": { "title": "Planificare & Service", "content": "Planificare revizii/ITP, status disponibil/în service/închiriat." },
+      "inventory-cogs": { "title": "Stocuri & Piese", "content": "Piese/consumabile, stoc accesorii (lanțuri, scaune, suporturi)." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Utilizare flotă, venit/vehicul, cost/km, downtime." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Reminder ridicare/return, alerte depășire orar/kilometri." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "fitness": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Rezervări la clase, locuri limitate, listă de așteptare și check-in din aplicație." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Abonamente, freeze, top-up credit, PT/masaj pe bon." },
+      "operations": { "title": "Capacitate & Program", "content": "Capacitate sală, program antrenori, ocupare pe intervale." },
+      "inventory-cogs": { "title": "Stocuri & Consumabile", "content": "Stoc suplimente & proshop, consumabile spa." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Retenție, frecvență, încărcare clase, venit/abonat." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Reamintiri clase, freeze expirare, reactivare." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "medical": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Programări pe medic/specialitate/sală, chestionar pre-vizită și reamintiri." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Servicii compuse, coplată, tipuri de plată diverse pe același bon." },
+      "operations": { "title": "Flux pacient & Cabinet", "content": "Flux recepție → investigație → încasare, timp mediu per serviciu." },
+      "inventory-cogs": { "title": "Stocuri & Materiale medicale", "content": "Loturi/expirări, trasabilitate materiale & consumabile." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Venit/medic, servicii profitabile, timpi de așteptare." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Remindere vizită, pregătire analiză, follow-up." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "retail": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Sloturi de ridicare/instalare, programare consultanță în showroom." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Discounturi promo, bundle-uri, retururi și schimb pe bon." },
+      "operations": { "title": "Operațiuni zilnice", "content": "Taskuri zilnice pentru recepție marfă, facing, etichetare." },
+      "inventory-cogs": { "title": "Stocuri & Inventar", "content": "Coduri de bare, recepții rapide, inventare parțiale, FIFO." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Marjă pe SKU, rotație, shrink, coș mediu." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Stoc revenit, coș abandonat, cupoane segmentate." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid." },
+      "payments-accounting": { "title": "Plăți & Integrare soft de contabilitate", "content": "Plăți card/online, export 1C, reconciliere, documente fiscale." }
+    },
+    "terenuri-sportive": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Rezervare terenuri, terenuri multiple, antrenori, echipamente (mingi, rachete) cu orar clar." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Vânzare de ore, abonamente, apă, echipamente, accesorii direct din POS." },
+      "operations": { "title": "Operațiuni & Calendar", "content": "Calendar multi-teren, administrare antrenori, meciuri, turnee și închiriere nocturnă." },
+      "inventory-cogs": { "title": "Stocuri & Inventar", "content": "Gestionare echipamente, mingi, detergenți, accesorii, mentenanță teren." },
+      "real-time-reports": { "title": "Rapoarte & KPI", "content": "Rapoarte zilnice pe ocupare teren, venit/teren, abonamente active și retenție clienți." },
+      "automations": { "title": "Automatizări & Notificări", "content": "Confirmări automate, reamintiri, alerte vreme, și pachete promo (ex: Happy Hour)." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Ture, antrenori, staff întreținere, salarii și bonusuri în funcție de ore prestate." },
+      "payments-accounting": { "title": "Plăți & Contabilitate", "content": "Plată card, QR, cash, integrare contabilă, facturi automate pentru cluburi & persoane." }
+    },
+    "spalatorii-auto": {
+      "smart-reservations": { "title": "Rezervări inteligente (Web & Mobile)", "content": "Programare online pe rampă și tip de serviciu (exterior, interior, complet)." },
+      "fiscal-pos": { "title": "POS fiscal & comenzi rapide", "content": "Selectare servicii + extra (ceară, motor, tapițerie), bon fiscal, discounturi, promoții." },
+      "operations": { "title": "Calendar & Operațiuni", "content": "Planificare rampă, timp estimat, status ('în lucru', 'gata'), alocare personal." },
+      "inventory-cogs": { "title": "Stocuri & Rețetare (consumabile)", "content": "Scădere automată detergent, ceară, microfibre, filtre; alerte 'low stock'." },
+      "real-time-reports": { "title": "Rapoarte & KPI în timp real", "content": "Număr spălări, venit/rampă, consum/lucrare, top servicii, ore de vârf." },
+      "automations": { "title": "Automatizări & Notificări", "content": "SMS 'Mașina ta este gata', reminder programare, pachete recurente." },
+      "team-management": { "title": "Management echipă & permisiuni", "content": "Fiecare spălător își vede lucrarea, pontaj automat, comision per lucrare." },
+      "payments-accounting": { "title": "Plăți & Integrare contabilă", "content": "POS, QR, numerar, export 1C, reconciliere încasări zilnice." }
     }
   },
   "seo": {

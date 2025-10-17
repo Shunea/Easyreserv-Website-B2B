@@ -52,18 +52,155 @@
   },
   "features_section": {
     "title": "Best features",
+    "request_demo": "Request Demo",
     "industries": {
       "restaurante": "Restaurants",
       "cafenele": "Cafes",
       "saloane": "Beauty salons",
       "barbershop": "Barbershops",
       "hotel": "Hotels & Guesthouses",
-      "chirii_auto": "Car rentals",
+      "chirii-auto": "Car rentals",
       "fitness": "Fitness",
       "medical": "Medical",
       "retail": "Retail",
-      "terenuri_sportive": "Sports fields",
-      "spalatorii_auto": "Car washes"
+      "terenuri-sportive": "Sports fields",
+      "spalatorii-auto": "Car washes"
+    }
+  },
+  "about": {
+    "title": "About EasyReserv",
+    "paragraph1": "We started with a simple question: why is online booking so complicated? When we connected the first form to a restaurant, we realized that booking is just the tip of the iceberg. The links between bookings, POS, kitchen, inventory, accounting and reports were missing.",
+    "paragraph2": "That's how EasyReserv was born: an All-in-One platform that brings everything together — bookings and waitlist, fiscal POS, orders & KDS, inventory & recipe costing (COGS), real-time reports and automation. We built it for real teams, with go-live in days, not months, integration with 1C and payments, without changing hardware.",
+    "paragraph3": "Today we optimize operations in diverse industries: restaurants and cafes, beauty salons & barbershops, hotels & guesthouses, car rentals, fitness & wellness, medical and retail. Our mission remains the same: fewer systems, fewer errors, better decisions on real data – so you sell more and your team works smarter."
+  },
+  "partners": {
+    "title": "Our partners",
+    "description": "A trusted ecosystem for payments, accounting, fiscal hardware and communication."
+  },
+  "cta": {
+    "optimize_business": "Optimize your business today!",
+    "become_partner": "Become a partner",
+    "all_in_one": "All-in-One & results",
+    "unlock_future": "Unlock the future of business management",
+    "unlock_description": "Switch to an All-in-One platform for bookings, POS, inventory, reports and automation. Simplify workflows, reduce downtime and make decisions based on real data. Join companies that have grown their revenue and operational control with EasyReserv.",
+    "start_journey": "Start your journey",
+    "request_demo": "Request demo"
+  },
+  "mobile_app": {
+    "title": "EasyReserv mobile app",
+    "description": "Take operations with you, in the field or in the hall. Process bookings, issue receipts, track orders and inventory, while dashboards show you sales and KPIs in real-time. Notifications alert you when there are delays, orders ready, or stocks running low. Works on iOS and Android, with role-based permissions for waiters, cashiers, managers or technicians.",
+    "available_on": "Available on"
+  },
+  "features": {
+    "restaurante": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Online booking + table map, waitlist and automatic confirmations → −20–35% no-shows." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Fiscal receipt, split bills, menus/combos, offline mode, multiple printers." },
+      "digital-kitchen": { "title": "Digital Kitchen & Timers (KDS)", "content": "Tickets on screen, countdown per dish, 'late' alerts → −25% serving time." },
+      "inventory-cogs": { "title": "Inventory & Recipe costing (COGS)", "content": "Automatic deduction on sale, recipe and guided inventory → 0 errors at close." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Sales, margin, table turnover, serving times, location comparisons." },
+      "automations": { "title": "Automation & Notifications", "content": "Confirmations/reminders, '5 min left', stock & 'late' alerts." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "cafenele": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Mobile pre-orders and pickup at set time, shorter queues at peak hours." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Ultra-fast sale with presets; fiscal receipt in <2 seconds." },
+      "operations": { "title": "Operations & Preparation", "content": "Barista/pastry screen, auto-prioritize quick orders." },
+      "inventory-cogs": { "title": "Inventory & Ingredients", "content": "Ingredient dosing, 'low stock' alerts for peak hours." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Sales per hour/products, waste, cashier productivity." },
+      "automations": { "title": "Automation & Notifications", "content": "Ready-for-pickup, happy hour, push at off-peak." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "saloane": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Appointments with specialist/service selection, packages and subscriptions." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Packages/subscriptions, retail product sales, service tracking." },
+      "operations": { "title": "Operational calendar", "content": "Calendar by chairs/rooms, occupied vs free time." },
+      "inventory-cogs": { "title": "Inventory & Consumption", "content": "Consumption per service (dye, treatments), traceable inventory." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Revenue/hour specialist, no-show rates, top services & CLV." },
+      "automations": { "title": "Automation & Notifications", "content": "Before/after reminders, recurrence follow-up." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "barbershop": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Appointments with specialist/service selection, packages and subscriptions." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Packages/subscriptions, retail product sales, service tracking." },
+      "operations": { "title": "Operational calendar", "content": "Calendar by chairs/rooms, occupied vs free time." },
+      "inventory-cogs": { "title": "Inventory & Consumption", "content": "Consumption per service (dye, treatments), traceable inventory." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Revenue/hour specialist, no-show rates, top services & CLV." },
+      "automations": { "title": "Automation & Notifications", "content": "Before/after reminders, recurrence follow-up." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "hotel": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Room calendar, smart restrictions (min-stay/late-checkout), special requests." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Room charges + extra services (breakfast, spa), local taxes from POS." },
+      "operations": { "title": "Housekeeping & Maintenance", "content": "Housekeeping & maintenance taskboard with live statuses." },
+      "inventory-cogs": { "title": "Inventory & Consumables", "content": "Consumption per room (mini-bar, consumables), zoned stocks." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "ADR, RevPAR, occupancy, channels & packages." },
+      "automations": { "title": "Automation & Notifications", "content": "Pre-check-in, upsell (late checkout/spa), post-stay review." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "chirii-auto": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Vehicle booking by period, extra options (child seat, GPS), deposit." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Billing with deposit, extra km, insurance and accessories on line." },
+      "operations": { "title": "Planning & Service", "content": "Revision/MOT planning, status available/in service/rented." },
+      "inventory-cogs": { "title": "Inventory & Parts", "content": "Parts/consumables, accessory stock (chains, seats, mounts)." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Fleet usage, revenue/vehicle, cost/km, downtime." },
+      "automations": { "title": "Automation & Notifications", "content": "Pick-up/return reminders, time/km overrun alerts." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "fitness": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Class bookings, limited spots, waiting list and app check-in." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Memberships, freeze, credit top-up, PT/massage on receipt." },
+      "operations": { "title": "Capacity & Schedule", "content": "Room capacity, trainer schedule, slot occupancy." },
+      "inventory-cogs": { "title": "Inventory & Consumables", "content": "Supplement & proshop stock, spa consumables." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Retention, frequency, class load, revenue/subscriber." },
+      "automations": { "title": "Automation & Notifications", "content": "Class reminders, freeze expiration, reactivation." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "medical": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Doctor/specialty/room bookings, pre-visit questionnaire and reminders." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Composite services, copay, diverse payment types on same receipt." },
+      "operations": { "title": "Patient Flow & Cabinet", "content": "Flow reception → investigation → payment, average time per service." },
+      "inventory-cogs": { "title": "Inventory & Medical supplies", "content": "Batches/expiries, material & consumable traceability." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Revenue/doctor, profitable services, wait times." },
+      "automations": { "title": "Automation & Notifications", "content": "Visit reminders, analysis prep, follow-up." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "retail": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Pick-up/installation slots, showroom consultation booking." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Promo discounts, bundles, returns and exchange on receipt." },
+      "operations": { "title": "Daily operations", "content": "Daily tasks for goods reception, facing, labeling." },
+      "inventory-cogs": { "title": "Inventory & Stock", "content": "Barcodes, quick receiving, partial inventories, FIFO." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Margin per SKU, turnover, shrink, average basket." },
+      "automations": { "title": "Automation & Notifications", "content": "Back in stock, abandoned cart, segmented coupons." },
+      "team-management": { "title": "Team Management & permissions", "content": "Roles/permissions, shifts, targets, audit log, rapid onboarding." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "Card/online payments, 1C export, reconciliation, fiscal documents." }
+    },
+    "terenuri-sportive": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Field bookings, multiple fields, coaches, equipment (balls, rackets) with clear schedule." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Hour sales, subscriptions, water, equipment, accessories directly from POS." },
+      "operations": { "title": "Operations & Calendar", "content": "Multi-field calendar, coach admin, matches, tournaments and night rental." },
+      "inventory-cogs": { "title": "Inventory & Stock", "content": "Equipment management, balls, detergents, accessories, field maintenance." },
+      "real-time-reports": { "title": "Reports & KPIs", "content": "Daily reports on field occupancy, revenue/field, active subscriptions and customer retention." },
+      "automations": { "title": "Automation & Notifications", "content": "Auto confirmations, reminders, weather alerts, and promo packages (eg Happy Hour)." },
+      "team-management": { "title": "Team Management & permissions", "content": "Shifts, coaches, maintenance staff, salaries and bonuses based on hours worked." },
+      "payments-accounting": { "title": "Payments & Accounting", "content": "Card, QR, cash payment, accounting integration, auto invoices for clubs & individuals." }
+    },
+    "spalatorii-auto": {
+      "smart-reservations": { "title": "Smart Reservations (Web & Mobile)", "content": "Online booking per ramp and service type (exterior, interior, full)." },
+      "fiscal-pos": { "title": "Fiscal POS & quick orders", "content": "Service selection + extras (wax, engine, upholstery), fiscal receipt, discounts, promotions." },
+      "operations": { "title": "Calendar & Operations", "content": "Ramp planning, estimated time, status ('in progress', 'ready'), staff allocation." },
+      "inventory-cogs": { "title": "Inventory & Recipe (consumables)", "content": "Auto-deduction detergent, wax, microfiber, filters; 'low stock' alerts." },
+      "real-time-reports": { "title": "Real-time Reports & KPIs", "content": "Number of washes, revenue/ramp, consumption/job, top services, peak hours." },
+      "automations": { "title": "Automation & Notifications", "content": "SMS 'Your car is ready', booking reminder, recurring packages." },
+      "team-management": { "title": "Team Management & permissions", "content": "Each washer sees their job, auto time-tracking, commission per job." },
+      "payments-accounting": { "title": "Payments & Accounting integration", "content": "POS, QR, cash, 1C export, daily revenue reconciliation." }
     }
   },
   "seo": {
