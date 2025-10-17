@@ -6,7 +6,7 @@ export type Language = 'ro' | 'ru' | 'en';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: { returnObjects?: boolean }) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -76,8 +76,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     setLocation(newPath);
   };
 
-  const t = (key: string): string => {
-    if (!translationsLoaded) return key;
+  const t = (key: string, options?: { returnObjects?: boolean }): any => {
+    if (!translationsLoaded) return options?.returnObjects ? {} : key;
     
     const keys = key.split('.');
     let value: any = translations[language];
@@ -86,8 +86,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       if (value && typeof value === 'object' && k in value) {
         value = value[k];
       } else {
-        return key;
+        return options?.returnObjects ? {} : key;
       }
+    }
+    
+    if (options?.returnObjects) {
+      return typeof value === 'object' ? value : {};
     }
     
     return typeof value === 'string' ? value : key;
