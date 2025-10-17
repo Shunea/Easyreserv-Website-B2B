@@ -9,6 +9,7 @@ import {
 import { Container } from "@/components/Container";
 import { FAQSection } from "./FAQSection";
 import googlePlayBadge from "@assets/google-play-badge.png";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const calculateYearsSince2023 = (): string => {
   const startDate = new Date(2023, 0, 1); // January 2023
@@ -22,541 +23,47 @@ const calculateYearsSince2023 = (): string => {
   return totalYears.toFixed(1) + "+";
 };
 
-const topStats = [
-  {
-    label: "ÎNFIINȚAT",
-    value: "2023",
-  },
-  {
-    label: "PROFESIONIȘTI DE RENUME",
-    value: "15+",
-  },
-  {
-    label: "ANI",
-    value: calculateYearsSince2023(),
-  },
-  {
-    label: "WIDGETURI EASYRESERV CREATE",
-    value: "101+",
-  },
-];
-
-const getFeaturesByIndustry = (industry: string) => {
-  const featuresByIndustry: Record<string, Array<{id: string, title: string, content: string}>> = {
-    restaurante: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Booking online + hartă mese, waitlist și confirmări automate → −20–35% no-shows.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Bon fiscal, split note, meniuri/combos, mod offline, imprimante multiple.",
-      },
-      {
-        id: "digital-kitchen",
-        title: "Bucătărie digitală & Timere (KDS)",
-        content: "Tichete pe ecran, countdown per fel, alerte \"late\" → −25% timp de servire.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Rețetare (COGS)",
-        content: "Scădere automată la vânzare, rețetar și inventar ghidat → 0 erori la final.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Vânzări, marjă, rotație mese, timpi servire, comparații pe locații.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Confirmări/remindere, \"5 min rămase\", alerte stoc & \"late\".",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    cafenele: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Pre-comenzi din mobil și ridicare la oră fixă, cozi mai scurte în orele de vârf.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Vânzare ultra-rapidă cu preset-uri; bon fiscal în <2 secunde.",
-      },
-      {
-        id: "operations",
-        title: "Operațiuni & Pregătire",
-        content: "Ecran barista/patiserie, prioritizare automată pe comenzi rapide.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Ingrediente",
-        content: "Dozare ingrediente, alerte \"low stock\" pentru orele de vârf.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Vânzări pe oră/produse, waste, productivitate casieri.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Ready-for-pickup, happy hour, push la off-peak.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    saloane: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Programări cu selectare specialist/serviciu, pachete și abonamente.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Pachete/abonamente, vânzare produse retail, pontaj servicii.",
-      },
-      {
-        id: "operations",
-        title: "Calendar operațional",
-        content: "Calendar operațional pe fotolii/săli, timp ocupat vs liber.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Consum",
-        content: "Consum pe serviciu (vopsea, tratamente), inventar trasabil.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Venit/ora specialist, rate no-show, top servicii & CLV.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Reamintiri înainte/după, follow-up recurență.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    barbershop: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Programări cu selectare specialist/serviciu, pachete și abonamente.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Pachete/abonamente, vânzare produse retail, pontaj servicii.",
-      },
-      {
-        id: "operations",
-        title: "Calendar operațional",
-        content: "Calendar operațional pe fotolii/săli, timp ocupat vs liber.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Consum",
-        content: "Consum pe serviciu (vopsea, tratamente), inventar trasabil.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Venit/ora specialist, rate no-show, top servicii & CLV.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Reamintiri înainte/după, follow-up recurență.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    hotel: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Calendar camere, restricții smart (min-stay/late-checkout), cereri speciale.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Încasare camere + extra-servicii (mic dejun, spa), taxe locale din POS.",
-      },
-      {
-        id: "operations",
-        title: "Housekeeping & Mentenanță",
-        content: "Taskboard housekeeping & mentenanță cu statusuri live.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Consumabile",
-        content: "Consum pe cameră (mini-bar, consumabile), stocuri pe zone.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "ADR, RevPAR, ocupare, canale & pachete.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Pre-check-in, upsell (late checkout/spa), review post-sejur.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    "chirii-auto": [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Rezervare vehicul pe interval, extra-opțiuni (scaun copil, GPS), depozit.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Facturare cu depozit, extra-kilometri, asigurări și accesorii pe linie.",
-      },
-      {
-        id: "operations",
-        title: "Planificare & Service",
-        content: "Planificare revizii/ITP, status disponibil/în service/închiriat.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Piese",
-        content: "Piese/consumabile, stoc accesorii (lanțuri, scaune, suporturi).",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Utilizare flotă, venit/vehicul, cost/km, downtime.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Reminder ridicare/return, alerte depășire orar/kilometri.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    fitness: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Rezervări la clase, locuri limitate, listă de așteptare și check-in din aplicație.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Abonamente, freeze, top-up credit, PT/masaj pe bon.",
-      },
-      {
-        id: "operations",
-        title: "Capacitate & Program",
-        content: "Capacitate sală, program antrenori, ocupare pe intervale.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Consumabile",
-        content: "Stoc suplimente & proshop, consumabile spa.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Retenție, frecvență, încărcare clase, venit/abonat.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Reamintiri clase, freeze expirare, reactivare.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    medical: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Programări pe medic/specialitate/sală, chestionar pre-vizită și reamintiri.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Servicii compuse, coplată, tipuri de plată diverse pe același bon.",
-      },
-      {
-        id: "operations",
-        title: "Flux pacient & Cabinet",
-        content: "Flux recepție → investigație → încasare, timp mediu per serviciu.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Materiale medicale",
-        content: "Loturi/expirări, trasabilitate materiale & consumabile.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Venit/medic, servicii profitabile, timpi de așteptare.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Remindere vizită, pregătire analiză, follow-up.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    retail: [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Sloturi de ridicare/instalare, programare consultanță în showroom.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Discounturi promo, bundle-uri, retururi și schimb pe bon.",
-      },
-      {
-        id: "operations",
-        title: "Operațiuni zilnice",
-        content: "Taskuri zilnice pentru recepție marfă, facing, etichetare.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Inventar",
-        content: "Coduri de bare, recepții rapide, inventare parțiale, FIFO.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Marjă pe SKU, rotație, shrink, coș mediu.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Stoc revenit, coș abandonat, cupoane segmentate.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Roluri/permisiuni, ture, targeturi, audit log, onboarding rapid.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare soft de contabilitate",
-        content: "Plăți card/online, export 1C, reconciliere, documente fiscale.",
-      },
-    ],
-    "terenuri-sportive": [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Rezervare terenuri, terenuri multiple, antrenori, echipamente (mingi, rachete) cu orar clar.",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Vânzare de ore, abonamente, apă, echipamente, accesorii direct din POS.",
-      },
-      {
-        id: "operations",
-        title: "Operațiuni & Calendar",
-        content: "Calendar multi-teren, administrare antrenori, meciuri, turnee și închiriere nocturnă.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Inventar",
-        content: "Gestionare echipamente, mingi, detergenți, accesorii, mentenanță teren.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI",
-        content: "Rapoarte zilnice pe ocupare teren, venit/teren, abonamente active și retenție clienți.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "Confirmări automate, reamintiri, alerte vreme, și pachete promo (ex: Happy Hour).",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Ture, antrenori, staff întreținere, salarii și bonusuri în funcție de ore prestate.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Contabilitate",
-        content: "Plată card, QR, cash, integrare contabilă, facturi automate pentru cluburi & persoane.",
-      },
-    ],
-    "spalatorii-auto": [
-      {
-        id: "smart-reservations",
-        title: "Rezervări inteligente (Web & Mobile)",
-        content: "Programare online pe rampă și tip de serviciu (exterior, interior, complet).",
-      },
-      {
-        id: "fiscal-pos",
-        title: "POS fiscal & comenzi rapide",
-        content: "Selectare servicii + extra (ceară, motor, tapițerie), bon fiscal, discounturi, promoții.",
-      },
-      {
-        id: "operations",
-        title: "Calendar & Operațiuni",
-        content: "Planificare rampă, timp estimat, status ('în lucru', 'gata'), alocare personal.",
-      },
-      {
-        id: "inventory-cogs",
-        title: "Stocuri & Rețetare (consumabile)",
-        content: "Scădere automată detergent, ceară, microfibre, filtre; alerte 'low stock'.",
-      },
-      {
-        id: "real-time-reports",
-        title: "Rapoarte & KPI în timp real",
-        content: "Număr spălări, venit/rampă, consum/lucrare, top servicii, ore de vârf.",
-      },
-      {
-        id: "automations",
-        title: "Automatizări & Notificări",
-        content: "SMS 'Mașina ta este gata', reminder programare, pachete recurente.",
-      },
-      {
-        id: "team-management",
-        title: "Management echipă & permisiuni",
-        content: "Fiecare spălător își vede lucrarea, pontaj automat, comision per lucrare.",
-      },
-      {
-        id: "payments-accounting",
-        title: "Plăți & Integrare contabilă",
-        content: "POS, QR, numerar, export 1C, reconciliere încasări zilnice.",
-      },
-    ],
-  };
-
-  return featuresByIndustry[industry] || featuresByIndustry.restaurante;
-};
-
-const bottomStats = [
-  {
-    value: "40",
-    label: "LOCAȚII AU FOLOSIT PRODUSUL ÎN PRIMUL AN",
-  },
-  {
-    value: "30%+",
-    label: "DIN TIMPUL ANGAJAȚILOR POATE FI OPTIMIZAT",
-  },
-  {
-    value: "80,000",
-    label: "NOTIFICĂRI SUNT TRIMISE LUNAR",
-  },
-  {
-    value: "4,600+",
-    label: "UTILIZATORI ÎN PLATFORMĂ",
-  },
-];
-
-const footerLinks = {
-  column1: [
-    "About Us",
-    "Solutions",
-    "Pricing",
-    "Contact",
-    "Terms & Conditions",
-  ],
-  column2: ["LinkedIn", "Facebook", "Instagram"],
-};
-
 export const AboutSection = (): JSX.Element => {
+  const { t } = useTranslation();
   const [selectedIndustry, setSelectedIndustry] = React.useState("restaurante");
   const [openAccordion, setOpenAccordion] = React.useState("smart-reservations");
 
   const industries = [
-    { value: "restaurante", label: "Restaurante" },
-    { value: "cafenele", label: "Cafenele" },
-    { value: "saloane", label: "Saloane de frumusețe" },
-    { value: "barbershop", label: "Barbershopuri" },
-    { value: "hotel", label: "Hotele & Pensiuni" },
-    { value: "chirii-auto", label: "Chirii auto" },
-    { value: "fitness", label: "Fitness" },
-    { value: "medical", label: "Medical" },
-    { value: "retail", label: "Retail" },
-    { value: "terenuri-sportive", label: "Terenuri sportive" },
-    { value: "spalatorii-auto", label: "Spălătorii Auto" },
+    { value: "restaurante", label: t("features_section.industries.restaurante") },
+    { value: "cafenele", label: t("features_section.industries.cafenele") },
+    { value: "saloane", label: t("features_section.industries.saloane") },
+    { value: "barbershop", label: t("features_section.industries.barbershop") },
+    { value: "hotel", label: t("features_section.industries.hotel") },
+    { value: "chirii-auto", label: t("features_section.industries.chirii-auto") },
+    { value: "fitness", label: t("features_section.industries.fitness") },
+    { value: "medical", label: t("features_section.industries.medical") },
+    { value: "retail", label: t("features_section.industries.retail") },
+    { value: "terenuri-sportive", label: t("features_section.industries.terenuri-sportive") },
+    { value: "spalatorii-auto", label: t("features_section.industries.spalatorii-auto") },
   ];
+
+  const topStats = [
+    { label: t("stats.founded"), value: t("stats.founded_value") },
+    { label: t("stats.professionals"), value: t("stats.professionals_value") },
+    { label: t("stats.years"), value: calculateYearsSince2023() },
+    { label: t("stats.widgets"), value: t("stats.widgets_value") },
+  ];
+
+  const bottomStats = [
+    { label: t("stats.locations"), value: t("stats.locations_value") },
+    { label: t("stats.time_optimized"), value: t("stats.time_optimized_value") },
+    { label: t("stats.notifications"), value: t("stats.notifications_value") },
+    { label: t("stats.users"), value: t("stats.users_value") },
+  ];
+
+  const getFeaturesByIndustry = (industry: string) => {
+    const featuresData = t(`features.${industry}`, { returnObjects: true }) as Record<string, { title: string; content: string }>;
+    return Object.entries(featuresData).map(([id, data]) => ({
+      id,
+      title: data.title,
+      content: data.content,
+    }));
+  };
 
   const handleIndustryChange = (value: string) => {
     setSelectedIndustry(value);
@@ -595,7 +102,7 @@ export const AboutSection = (): JSX.Element => {
         <Container>
           <div className="col-span-12 flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl text-center tracking-[0] leading-[52.8px]">
-              Cele mai bune funcționalități
+              {t("features_section.title")}
             </h2>
             <select
               value={selectedIndustry}
@@ -646,7 +153,7 @@ export const AboutSection = (): JSX.Element => {
                           </p>
                           <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-5 py-2.5 shadow-sm inline-flex items-center justify-center w-fit">
                             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                              Solicită Demo
+                              {t("features_section.request_demo")}
                             </span>
                           </Link>
                         </div>
@@ -681,27 +188,27 @@ export const AboutSection = (): JSX.Element => {
 
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              Despre EasyReserv
+              {t("about.title")}
             </h2>
 
             <div className="flex flex-col gap-5">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Am început cu o întrebare simplă: de ce e atât de complicat să faci o rezervare online? Când am conectat primul formular la un restaurant, am realizat că rezervarea e doar vârful aisbergului. Lipseau legăturile dintre rezervări, casă (POS), bucătărie, stocuri, contabilitate și rapoarte.
+                {t("about.paragraph1")}
               </p>
 
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                De aici a pornit EasyReserv: o platformă All-in-One care aduce totul la un loc — rezervări și waitlist, POS fiscal, comenzi & KDS, stocuri & rețetare (COGS), rapoarte în timp real și automatizări. Am construit-o pentru echipe reale, cu go-live în zile, nu luni, integrare cu 1C și plăți, fără să schimbi hardware-ul.
+                {t("about.paragraph2")}
               </p>
 
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-base tracking-[0] leading-6">
-                Astăzi optimizăm operațiuni în industrii diverse: restaurante și cafenele, saloane & barbershop, hoteluri & pensiuni, chirie auto, fitness & wellness, medical și retail. Misiunea noastră rămâne aceeași: mai puține sisteme, mai puține erori, decizii mai bune pe date reale – ca tu să vinzi mai mult și echipa să lucreze mai simplu.
+                {t("about.paragraph3")}
               </p>
             </div>
 
             <div>
               <Link href="/contact" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                  Solicită Demo
+                  {t("features_section.request_demo")}
                 </span>
               </Link>
             </div>
@@ -740,10 +247,10 @@ export const AboutSection = (): JSX.Element => {
           <div className="col-span-12 flex flex-col items-center gap-12">
             <div className="flex flex-col items-center gap-4 text-center">
               <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-                Partenerii noștri
+                {t("partners.title")}
               </h2>
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px] max-w-3xl">
-                Un ecosistem de încredere pentru plăți, contabilitate, hardware fiscal și comunicare.
+                {t("partners.description")}
               </p>
             </div>
 
@@ -860,12 +367,12 @@ export const AboutSection = (): JSX.Element => {
             <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
               <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
                 <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
-                  Optimizează-ți afacerea chiar azi!
+                  {t("cta.optimize_business")}
                 </h2>
 
                 <Link href="/pricing" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                   <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                    Devino partener
+                    {t("cta.become_partner")}
                   </span>
                 </Link>
               </div>
@@ -892,23 +399,23 @@ export const AboutSection = (): JSX.Element => {
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10">
             <div className="flex flex-col gap-4">
               <p className="[font-family:'Onest',Helvetica] font-semibold text-[#fe9800] text-lg tracking-[0] leading-6">
-                All-in-One & rezultate
+                {t("cta.all_in_one")}
               </p>
               <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-                Dezleagă viitorul managementului de business
+                {t("cta.unlock_future")}
               </h2>
             </div>
 
             <div className="flex flex-col gap-4">
               <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-                Treci la o platformă All-in-One pentru rezervări, POS, stocuri, rapoarte și automatizări. Simplifici fluxurile, reduci timpii morți și iei decizii pe date reale. Alătură-te companiilor care și-au crescut veniturile și controlul operațional cu EasyReserv.
+                {t("cta.unlock_description")}
               </p>
             </div>
 
             <div>
               <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base">
-                  Începe călătoria ta
+                  {t("cta.start_journey")}
                 </span>
               </Link>
             </div>
@@ -940,16 +447,16 @@ export const AboutSection = (): JSX.Element => {
 
           <div className="col-span-12 lg:col-span-6 flex flex-col justify-center gap-10 order-1 lg:order-2">
             <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-4xl md:text-5xl tracking-[0] leading-[52.8px]">
-              Aplicația mobilă EasyReserv
+              {t("mobile_app.title")}
             </h2>
 
             <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-              Ia operațiunile cu tine, în teren sau în sală. Procesezi rezervări, emiți bonuri, urmărești comenzi și inventar, iar dashboard-urile îți arată vânzările și KPI-urile în timp real. Notificările te anunță când sunt întârzieri, comenzi gata sau stocuri pe cale să se termine. Funcționează pe iOS și Android, cu permisiuni pe roluri pentru ospătari, casieri, manageri sau tehnicieni.
+              {t("mobile_app.description")}
             </p>
 
             <div className="flex flex-col gap-4">
               <div className="[font-family:'Onest',Helvetica] font-semibold text-[#282828] text-xl tracking-[0]">
-                Disponibil pe
+                {t("mobile_app.available_on")}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -990,12 +497,12 @@ export const AboutSection = (): JSX.Element => {
             <div className="flex flex-col items-start justify-center gap-8 p-8 md:p-12 w-full rounded-[20px] overflow-hidden bg-[linear-gradient(19deg,rgba(254,152,0,1)_0%,rgba(254,187,1,0.5)_100%)] relative">
               <div className="flex flex-col items-start gap-4 w-full relative z-10 max-w-xl">
                 <h2 className="[font-family:'Onest',Helvetica] font-extrabold text-white text-3xl md:text-4xl tracking-[0] leading-10">
-                  Optimizează-ți afacerea chiar azi!
+                  {t("cta.optimize_business")}
                 </h2>
 
                 <Link href="/contact" className="h-auto bg-white hover:bg-white/90 rounded-[5px] px-6 py-4 shadow-sm inline-flex items-center justify-center">
                   <span className="[font-family:'Onest',Helvetica] font-bold text-[#2d2c65] text-base">
-                    Devino partener
+                    {t("cta.request_demo")}
                   </span>
                 </Link>
               </div>
