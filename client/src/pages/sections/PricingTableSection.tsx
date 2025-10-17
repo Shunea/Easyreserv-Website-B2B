@@ -1,47 +1,22 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-
-const features = [
-  {
-    icon: "/figmaAssets/icon-1.svg",
-    title: "Simplifică Operațiunile",
-    description:
-      "Centralizăm și eficientizăm toate nevoile tale de rezervări, făcând afacerea ta mai eficientă.",
-    number: "01",
-    numberLeft: "left-[calc(50.00%_-_104px)]",
-  },
-  {
-    icon: "/figmaAssets/icon.svg",
-    title: "Atrage Clienți",
-    description:
-      "Platforma noastră te ajută să construiești relații puternice cu clienții, asigurând loialitatea lor.",
-    number: "02",
-    numberLeft: "left-[calc(50.00%_-_120px)]",
-  },
-  {
-    icon: "/figmaAssets/icon.svg",
-    title: "Depășește Competiția",
-    description:
-      "Folosește tehnologii de ultimă generație pentru a ridica managementul afacerii tale.",
-    number: "03",
-    numberLeft: "left-[calc(50.00%_-_120px)]",
-  },
-  {
-    icon: "/figmaAssets/icon-3.svg",
-    title: "Suport Dedicat",
-    description:
-      "Suntem alături de tine, oferind asistența și expertiza de care ai nevoie pentru a avea succes.",
-    number: "04",
-    numberLeft: "left-[calc(50.00%_-_130px)]",
-  },
-];
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const PricingTableSection = (): JSX.Element => {
+  const { t } = useTranslation();
+  const features = t('pricing_page.why_choose.features', { returnObjects: true }) as Array<{
+    icon: string;
+    title: string;
+    description: string;
+    number: string;
+    numberLeft: string;
+  }>;
+
   return (
     <section className="flex flex-col items-start gap-8 px-4 md:px-[180px] py-8 md:py-[50px] w-full">
       <header className="flex flex-col items-center justify-center gap-4 w-full">
         <h2 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl tracking-[0] leading-tight md:leading-[72px] text-center">
-          De Ce Să Ne Alegi?
+          {t('pricing_page.why_choose.title')}
         </h2>
       </header>
 

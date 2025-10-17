@@ -2,8 +2,11 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/Container";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const CallToActionSection = (): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <section className="flex flex-col w-full items-center justify-center gap-2.5 px-4 md:px-20 py-12 bg-white">
       <Container>
@@ -12,18 +15,17 @@ export const CallToActionSection = (): JSX.Element => {
             <CardContent className="flex flex-col items-start justify-center gap-8 px-8 py-12">
               <div className="flex flex-col items-start gap-4 w-full">
                 <h2 className="w-full [font-family:'Onest',Helvetica] font-extrabold text-white text-4xl tracking-[0] leading-10">
-                  Acționează Înainte Să Fie Prea Târziu!
+                  {t('pricing_page.cta.title')}
                 </h2>
 
                 <p className="w-full [font-family:'Onest',Helvetica] font-normal text-white text-base tracking-[0] leading-6">
-                  Alătură-te miilor de afaceri care și-au transformat deja operațiunile cu EasyReserv. 
-                  Începe astăzi și beneficiază de toate funcționalitățile premium!
+                  {t('pricing_page.cta.description')}
                 </p>
               </div>
 
               <Button className="h-auto bg-white hover:bg-white/90 text-[#2d2c65] px-6 py-4 rounded-[5px]" data-testid="button-get-started">
                 <span className="[font-family:'Onest',Helvetica] font-bold text-base text-center tracking-[0] leading-5">
-                  Începe Acum
+                  {t('pricing_page.cta.cta')}
                 </span>
               </Button>
             </CardContent>

@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "wouter";
 import { Container } from "@/components/Container";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export const PricingHeroSection = (): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <section className="flex items-center gap-5 px-4 md:px-20 py-12 md:py-16 w-full">
       <Container>
@@ -10,21 +13,21 @@ export const PricingHeroSection = (): JSX.Element => {
           <div className="flex flex-col items-start gap-4 w-full">
             <h1 className="[font-family:'Onest',Helvetica] font-bold text-4xl md:text-5xl tracking-[0] leading-tight">
               <span className="text-[#282828]">
-                Alege excelența.
+                {t('pricing_page.hero.title_line1')}
                 <br />
-                Alege{" "}
+                {t('pricing_page.hero.title_line2')}{" "}
               </span>
-              <span className="text-[#fe9800]">EasyReserv.io</span>
+              <span className="text-[#fe9800]">{t('pricing_page.hero.title_highlight')}</span>
             </h1>
 
             <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-lg tracking-[-0.36px] leading-[27px]">
-              Încearcă perioada de test gratuită și găsește abonamentul perfect pentru nevoile tale.
+              {t('pricing_page.hero.description')}
             </p>
           </div>
 
           <Link href="/pricing" className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 inline-flex items-center justify-center">
             <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-              Începe acum
+              {t('pricing_page.hero.cta')}
             </span>
           </Link>
         </div>

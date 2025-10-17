@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
   "Restaurante": { basic: 50, standard: 125, pro: 200 },
@@ -2799,6 +2800,7 @@ const getComparisonCategories = (industry: string) => {
 };
 
 export const ContentWrapperSection = (): JSX.Element => {
+  const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = React.useState(true);
   const [isAnnual, setIsAnnual] = React.useState(false);
   
@@ -2811,7 +2813,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
   const calculatePrice = (monthlyPrice: number | null, isAnnual: boolean) => {
     if (monthlyPrice === null) {
-      return "Preț personalizat";
+      return t('pricing_page.common.custom_price');
     }
     
     const price = isAnnual ? monthlyPrice * 0.9 : monthlyPrice;
@@ -2826,7 +2828,7 @@ export const ContentWrapperSection = (): JSX.Element => {
         <div className="col-span-12 flex flex-col items-center gap-[43px]">
           <div className="flex items-center justify-center gap-6 w-full flex-wrap">
             <h1 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-3xl md:text-5xl text-center tracking-[0] leading-[normal]">
-              Planuri de abonament pentru
+              {t('pricing_page.common.pricing_plans_for')}
             </h1>
 
             <select 
@@ -2838,23 +2840,23 @@ export const ContentWrapperSection = (): JSX.Element => {
                 backgroundPosition: 'right 1rem center'
               }}
             >
-              <option value="Restaurante">Restaurante</option>
-              <option value="Cafenele">Cafenele</option>
-              <option value="Saloane de frumusețe">Saloane de frumusețe</option>
-              <option value="Barbershopuri">Barbershopuri</option>
-              <option value="Hotele & Pensiuni">Hotele & Pensiuni</option>
-              <option value="Chirii auto">Chirii auto</option>
-              <option value="Fitness">Fitness</option>
-              <option value="Medical">Medical</option>
-              <option value="Retail">Retail</option>
-              <option value="Spălătorii auto">Spălătorii auto</option>
-              <option value="Tenis/Padel/Fotbal">Tenis/Padel/Fotbal</option>
+              <option value="Restaurante">{t('pricing_page.industries.Restaurante')}</option>
+              <option value="Cafenele">{t('pricing_page.industries.Cafenele')}</option>
+              <option value="Saloane de frumusețe">{t('pricing_page.industries.Saloane de frumusețe')}</option>
+              <option value="Barbershopuri">{t('pricing_page.industries.Barbershopuri')}</option>
+              <option value="Hotele & Pensiuni">{t('pricing_page.industries.Hotele & Pensiuni')}</option>
+              <option value="Chirii auto">{t('pricing_page.industries.Chirii auto')}</option>
+              <option value="Fitness">{t('pricing_page.industries.Fitness')}</option>
+              <option value="Medical">{t('pricing_page.industries.Medical')}</option>
+              <option value="Retail">{t('pricing_page.industries.Retail')}</option>
+              <option value="Spălătorii auto">{t('pricing_page.industries.Spălătorii auto')}</option>
+              <option value="Tenis/Padel/Fotbal">{t('pricing_page.industries.Tenis/Padel/Fotbal')}</option>
             </select>
           </div>
 
           <div className="inline-flex items-center justify-center gap-6 flex-wrap">
             <div className="[font-family:'Inter',Helvetica] font-medium text-[#282828] text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-              Economisește cu plata anuală
+              {t('pricing_page.common.save_with_annual')}
             </div>
 
             <button
@@ -2872,7 +2874,7 @@ export const ContentWrapperSection = (): JSX.Element => {
 
             <Badge className="inline-flex items-center justify-center gap-2.5 p-2.5 bg-[#282828] rounded-[10px] h-auto">
               <span className="[font-family:'Inter',Helvetica] font-bold text-white text-sm tracking-[0] leading-[17.5px] whitespace-nowrap">
-                ECONOMISEȘTE 10%
+                {t('pricing_page.common.save_10_percent')}
               </span>
             </Badge>
           </div>
@@ -2893,7 +2895,7 @@ export const ContentWrapperSection = (): JSX.Element => {
               }`}
             >
               <div className="[font-family:'Onest',Helvetica] font-semibold text-white text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                Cel mai popular
+                {t('pricing_page.common.most_popular')}
               </div>
               {plan.isPopular && (
                 <SparklesIcon className="w-3.5 h-3.5 text-white" />
@@ -2931,7 +2933,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </span>
                     {plan.monthlyPrice !== null && (
                       <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                        / lună
+                        {t('pricing_page.common.per_month')}
                       </span>
                     )}
                   </div>
@@ -2946,7 +2948,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
-                        Începe perioada de test gratuită
+                        {t('pricing_page.common.start_free_trial')}
                       </span>
                     </a>
                   ) : (
@@ -2959,14 +2961,14 @@ export const ContentWrapperSection = (): JSX.Element => {
                       }`}
                     >
                       <span className="[font-family:'Onest',Helvetica] font-bold text-sm tracking-[0] leading-5 whitespace-nowrap">
-                        Contactează-ne
+                        {t('pricing_page.common.contact_us_full')}
                       </span>
                     </Link>
                   )}
 
                   <div className="flex flex-col items-start gap-2 w-full">
                     <div className="[font-family:'Onest',Helvetica] font-semibold text-[#909090] text-base tracking-[0] leading-[18.4px]">
-                      Ce primești
+                      {t('pricing_page.common.what_you_get')}
                     </div>
 
                     {plan.features.map((feature, featureIndex) => (
@@ -2993,7 +2995,7 @@ export const ContentWrapperSection = (): JSX.Element => {
               className="flex items-center justify-center gap-2 p-4 w-full bg-white border border-zinc-200 hover:bg-gray-50 transition-colors"
             >
               <span className="[font-family:'Onest',Helvetica] font-normal text-black text-base text-center tracking-[0] leading-[17.6px] whitespace-nowrap">
-                {isExpanded ? 'Ascunde caracteristicile' : 'Vezi toate caracteristicile'}
+                {isExpanded ? t('pricing_page.common.hide_features') : t('pricing_page.common.see_all_features')}
               </span>
               <ChevronDownIcon className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
             </button>
@@ -3212,7 +3214,7 @@ export const ContentWrapperSection = (): JSX.Element => {
                     </span>
                     {plan.monthlyPrice !== null && (
                       <span className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[13.8px] whitespace-nowrap">
-                        / lună
+                        {t('pricing_page.common.per_month')}
                       </span>
                     )}
                   </div>

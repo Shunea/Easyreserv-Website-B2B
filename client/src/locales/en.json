@@ -725,6 +725,93 @@
       "button": "Become a partner"
     }
   },
+  "pricing_page": {
+    "hero": {
+      "title_line1": "Choose excellence.",
+      "title_line2": "Choose",
+      "title_highlight": "EasyReserv.io",
+      "description": "Try the free trial period and find the perfect subscription for your needs.",
+      "cta": "Start now"
+    },
+    "why_choose": {
+      "title": "Why Choose Us?",
+      "features": [
+        {
+          "icon": "/figmaAssets/icon-1.svg",
+          "title": "Simplify Operations",
+          "description": "We centralize and streamline all your booking needs, making your business more efficient.",
+          "number": "01",
+          "numberLeft": "left-[calc(50.00%_-_104px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon.svg",
+          "title": "Attract Customers",
+          "description": "Our platform helps you build strong customer relationships, ensuring their loyalty.",
+          "number": "02",
+          "numberLeft": "left-[calc(50.00%_-_120px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon.svg",
+          "title": "Outpace Competition",
+          "description": "Use cutting-edge technology to elevate your business management.",
+          "number": "03",
+          "numberLeft": "left-[calc(50.00%_-_120px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon-3.svg",
+          "title": "Dedicated Support",
+          "description": "We're with you, providing the assistance and expertise you need to succeed.",
+          "number": "04",
+          "numberLeft": "left-[calc(50.00%_-_130px)]"
+        }
+      ]
+    },
+    "subscription_options": {
+      "title": "Not Sure Which Plan Is Right For You?",
+      "description": "We understand that every business is unique with specific needs. If you're not sure which plan is right for you or have questions, our team is here to help. We offer personalized guidance to ensure you get the most out of the platform's capabilities.",
+      "cta": "Contact us"
+    },
+    "cta": {
+      "title": "Act Before It's Too Late!",
+      "description": "Join thousands of businesses that have already transformed their operations with EasyReserv. Start today and benefit from all premium features!",
+      "cta": "Start Now"
+    },
+    "common": {
+      "per_month": "/month",
+      "popular": "Popular",
+      "most_popular": "Most popular",
+      "custom": "On request",
+      "custom_price": "Custom price",
+      "select_plan": "Select plan",
+      "contact_us": "Contact",
+      "contact_us_full": "Contact us",
+      "start_free_trial": "Start free trial period",
+      "select_industry": "Select industry",
+      "compare_plans": "Compare plans",
+      "pricing_plans_for": "Subscription plans for",
+      "save_with_annual": "Save with annual payment",
+      "save_10_percent": "SAVE 10%",
+      "what_you_get": "What you get",
+      "see_all_features": "See all features",
+      "hide_features": "Hide features",
+      "included": "Included",
+      "add_on": "Add-on",
+      "priority": "Priority"
+    },
+    "industries": {
+      "Restaurante": "Restaurants",
+      "Cafenele": "Cafes",
+      "Saloane de frumusețe": "Beauty salons",
+      "Barbershopuri": "Barbershops",
+      "Hotele & Pensiuni": "Hotels & Guesthouses",
+      "Chirii auto": "Car rentals",
+      "Fitness": "Fitness",
+      "Medical": "Medical",
+      "Retail": "Retail",
+      "Spălătorii auto": "Car washes",
+      "Tenis/Padel/Fotbal": "Tennis/Padel/Football"
+    }
+  },
   "seo": {
     "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
     "home_description": "Automate reservations, POS, operational workflows and reports. Integrate payments, accounting, notifications and delivery — without changing hardware.",

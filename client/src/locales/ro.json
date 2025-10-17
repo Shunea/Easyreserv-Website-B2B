@@ -725,6 +725,93 @@
       "button": "Devino partener"
     }
   },
+  "pricing_page": {
+    "hero": {
+      "title_line1": "Alege excelența.",
+      "title_line2": "Alege",
+      "title_highlight": "EasyReserv.io",
+      "description": "Încearcă perioada de test gratuită și găsește abonamentul perfect pentru nevoile tale.",
+      "cta": "Începe acum"
+    },
+    "why_choose": {
+      "title": "De Ce Să Ne Alegi?",
+      "features": [
+        {
+          "icon": "/figmaAssets/icon-1.svg",
+          "title": "Simplifică Operațiunile",
+          "description": "Centralizăm și eficientizăm toate nevoile tale de rezervări, făcând afacerea ta mai eficientă.",
+          "number": "01",
+          "numberLeft": "left-[calc(50.00%_-_104px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon.svg",
+          "title": "Atrage Clienți",
+          "description": "Platforma noastră te ajută să construiești relații puternice cu clienții, asigurând loialitatea lor.",
+          "number": "02",
+          "numberLeft": "left-[calc(50.00%_-_120px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon.svg",
+          "title": "Depășește Competiția",
+          "description": "Folosește tehnologii de ultimă generație pentru a ridica managementul afacerii tale.",
+          "number": "03",
+          "numberLeft": "left-[calc(50.00%_-_120px)]"
+        },
+        {
+          "icon": "/figmaAssets/icon-3.svg",
+          "title": "Suport Dedicat",
+          "description": "Suntem alături de tine, oferind asistența și expertiza de care ai nevoie pentru a avea succes.",
+          "number": "04",
+          "numberLeft": "left-[calc(50.00%_-_130px)]"
+        }
+      ]
+    },
+    "subscription_options": {
+      "title": "Nu Ești Sigur Care Plan Este Potrivit Pentru Tine?",
+      "description": "Înțelegem că fiecare afacere este unică cu nevoi specifice. Dacă nu ești sigur care este planul potrivit pentru tine sau ai întrebări, echipa noastră este aici să te ajute. Oferim îndrumare personalizată pentru a te asigura că valorifici la maximum capabilitățile platformei.",
+      "cta": "Contactează-ne"
+    },
+    "cta": {
+      "title": "Acționează Înainte Să Fie Prea Târziu!",
+      "description": "Alătură-te miilor de afaceri care și-au transformat deja operațiunile cu EasyReserv. Începe astăzi și beneficiază de toate funcționalitățile premium!",
+      "cta": "Începe Acum"
+    },
+    "common": {
+      "per_month": "/lună",
+      "popular": "Popular",
+      "most_popular": "Cel mai popular",
+      "custom": "La cerere",
+      "custom_price": "Preț personalizat",
+      "select_plan": "Alege planul",
+      "contact_us": "Contactează",
+      "contact_us_full": "Contactează-ne",
+      "start_free_trial": "Începe perioada de test gratuită",
+      "select_industry": "Selectează industria",
+      "compare_plans": "Compară planurile",
+      "pricing_plans_for": "Planuri de abonament pentru",
+      "save_with_annual": "Economisește cu plata anuală",
+      "save_10_percent": "ECONOMISEȘTE 10%",
+      "what_you_get": "Ce primești",
+      "see_all_features": "Vezi toate caracteristicile",
+      "hide_features": "Ascunde caracteristicile",
+      "included": "Inclus",
+      "add_on": "Add-on",
+      "priority": "Prioritar"
+    },
+    "industries": {
+      "Restaurante": "Restaurante",
+      "Cafenele": "Cafenele",
+      "Saloane de frumusețe": "Saloane de frumusețe",
+      "Barbershopuri": "Barbershopuri",
+      "Hotele & Pensiuni": "Hotele & Pensiuni",
+      "Chirii auto": "Chirii auto",
+      "Fitness": "Fitness",
+      "Medical": "Medical",
+      "Retail": "Retail",
+      "Spălătorii auto": "Spălătorii auto",
+      "Tenis/Padel/Fotbal": "Tenis/Padel/Fotbal"
+    }
+  },
   "seo": {
     "home_title": "EasyReserv.io — Platformă all-in-one POS și Rezervări",
     "home_description": "Automatizezi rezervările, POS, fluxurile operaționale și rapoartele. Integrezi plăți, contabilitate, notificări și livrare — fără schimbare de hardware.",
