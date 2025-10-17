@@ -19,37 +19,88 @@ import {
 } from "@/components/ui/accordion";
 import { useTranslation } from "@/hooks/useTranslation";
 
-const industryToKeyMap: Record<string, string> = {
-  "Restaurante": "restaurante",
-  "Cafenele": "cafenele",
-  "Saloane de frumusețe": "saloane_barbershop",
-  "Barbershopuri": "saloane_barbershop",
-  "Hotele & Pensiuni": "hotele",
-  "Chirii auto": "chirii_auto",
-  "Fitness": "fitness",
-  "Medical": "medical",
-  "Retail": "retail",
-  "Spălătorii auto": "spalatorii_auto",
-  "Tenis/Padel/Fotbal": "tenis_padel_fotbal",
+// Stable industry keys (language-independent)
+const industryKeys = {
+  RESTAURANTE: "restaurante",
+  CAFENELE: "cafenele",
+  SALOANE_BARBERSHOP: "saloane_barbershop",
+  HOTELE: "hotele",
+  CHIRII_AUTO: "chirii_auto",
+  FITNESS: "fitness",
+  MEDICAL: "medical",
+  RETAIL: "retail",
+  SPALATORII_AUTO: "spalatorii_auto",
+  TENIS_PADEL_FOTBAL: "tenis_padel_fotbal",
+} as const;
+
+// Map display names (Romanian, English, Russian, URL params, slugs) to stable keys
+const normalizeIndustryKey = (displayName: string): string => {
+  const normalized = displayName.toLowerCase().trim();
+  
+  // URL slugs and stable keys (check first for exact matches)
+  if (normalized === "restaurante") return industryKeys.RESTAURANTE;
+  if (normalized === "cafenele") return industryKeys.CAFENELE;
+  if (normalized === "saloane_barbershop" || normalized === "saloane" || normalized === "barbershop") return industryKeys.SALOANE_BARBERSHOP;
+  if (normalized === "hotele" || normalized === "hotel") return industryKeys.HOTELE;
+  if (normalized === "chirii_auto" || normalized === "chirii-auto") return industryKeys.CHIRII_AUTO;
+  if (normalized === "fitness") return industryKeys.FITNESS;
+  if (normalized === "medical") return industryKeys.MEDICAL;
+  if (normalized === "retail") return industryKeys.RETAIL;
+  if (normalized === "spalatorii_auto" || normalized === "spalatorii-auto") return industryKeys.SPALATORII_AUTO;
+  if (normalized === "tenis_padel_fotbal" || normalized === "terenuri-sportive") return industryKeys.TENIS_PADEL_FOTBAL;
+  
+  // Romanian display names
+  if (normalized === "saloane de frumusețe" || normalized === "barbershopuri") return industryKeys.SALOANE_BARBERSHOP;
+  if (normalized === "hotele & pensiuni") return industryKeys.HOTELE;
+  if (normalized === "chirii auto") return industryKeys.CHIRII_AUTO;
+  if (normalized === "spălătorii auto") return industryKeys.SPALATORII_AUTO;
+  if (normalized === "tenis/padel/fotbal") return industryKeys.TENIS_PADEL_FOTBAL;
+  
+  // English display names
+  if (normalized === "restaurants") return industryKeys.RESTAURANTE;
+  if (normalized === "cafes") return industryKeys.CAFENELE;
+  if (normalized === "beauty salons" || normalized === "barbershops") return industryKeys.SALOANE_BARBERSHOP;
+  if (normalized === "hotels & guesthouses") return industryKeys.HOTELE;
+  if (normalized === "car rentals") return industryKeys.CHIRII_AUTO;
+  if (normalized === "car washes") return industryKeys.SPALATORII_AUTO;
+  if (normalized === "sports fields") return industryKeys.TENIS_PADEL_FOTBAL;
+  
+  // Russian display names
+  if (normalized === "рестораны") return industryKeys.RESTAURANTE;
+  if (normalized === "кафе") return industryKeys.CAFENELE;
+  if (normalized === "салоны красоты" || normalized === "барбершопы") return industryKeys.SALOANE_BARBERSHOP;
+  if (normalized === "отели и пансионаты") return industryKeys.HOTELE;
+  if (normalized === "прокат автомобилей") return industryKeys.CHIRII_AUTO;
+  if (normalized === "фитнес") return industryKeys.FITNESS;
+  if (normalized === "медицинские услуги") return industryKeys.MEDICAL;
+  if (normalized === "розничная торговля") return industryKeys.RETAIL;
+  if (normalized === "автомойки") return industryKeys.SPALATORII_AUTO;
+  if (normalized === "спортивные площадки") return industryKeys.TENIS_PADEL_FOTBAL;
+  
+  // If already a stable key, return it
+  if (Object.values(industryKeys).includes(displayName as any)) {
+    return displayName;
+  }
+  
+  // Default fallback
+  return industryKeys.RESTAURANTE;
 };
 
 const industryPricing: Record<string, { basic: number; standard: number; pro: number }> = {
-  "Restaurante": { basic: 50, standard: 125, pro: 200 },
-  "Cafenele": { basic: 50, standard: 125, pro: 200 },
-  "Saloane de frumusețe": { basic: 40, standard: 85, pro: 140 },
-  "Barbershopuri": { basic: 40, standard: 85, pro: 140 },
-  "Hotele & Pensiuni": { basic: 79, standard: 149, pro: 249 },
-  "Chirii auto": { basic: 59, standard: 119, pro: 199 },
-  "Fitness": { basic: 49, standard: 99, pro: 149 },
-  "Medical": { basic: 49, standard: 99, pro: 199 },
-  "Retail": { basic: 49, standard: 99, pro: 159 },
-  "Spălătorii auto": { basic: 35, standard: 75, pro: 125 },
-  "Tenis/Padel/Fotbal": { basic: 39, standard: 79, pro: 129 },
+  [industryKeys.RESTAURANTE]: { basic: 50, standard: 125, pro: 200 },
+  [industryKeys.CAFENELE]: { basic: 50, standard: 125, pro: 200 },
+  [industryKeys.SALOANE_BARBERSHOP]: { basic: 40, standard: 85, pro: 140 },
+  [industryKeys.HOTELE]: { basic: 79, standard: 149, pro: 249 },
+  [industryKeys.CHIRII_AUTO]: { basic: 59, standard: 119, pro: 199 },
+  [industryKeys.FITNESS]: { basic: 49, standard: 99, pro: 149 },
+  [industryKeys.MEDICAL]: { basic: 49, standard: 99, pro: 199 },
+  [industryKeys.RETAIL]: { basic: 49, standard: 99, pro: 159 },
+  [industryKeys.SPALATORII_AUTO]: { basic: 35, standard: 75, pro: 125 },
+  [industryKeys.TENIS_PADEL_FOTBAL]: { basic: 39, standard: 79, pro: 129 },
 };
 
-const getPricingPlans = (industry: string, t: any) => {
-  const industryKey = industryToKeyMap[industry] || "cafenele";
-  const pricing = industryPricing[industry] || industryPricing["Cafenele"];
+const getPricingPlans = (industryKey: string, t: any) => {
+  const pricing = industryPricing[industryKey] || industryPricing[industryKeys.CAFENELE];
   
   const tiers = ["basic", "standard", "pro", "enterprise"];
   
@@ -82,8 +133,8 @@ const getPricingPlans = (industry: string, t: any) => {
   });
 };
 
-const getComparisonCategories = (industry: string) => {
-  if (industry === "Retail") {
+const getComparisonCategories = (industryKey: string) => {
+  if (industryKey === industryKeys.RETAIL) {
     return [
       {
         title: "Vânzare & POS",
@@ -319,7 +370,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Saloane de frumusețe" || industry === "Barbershopuri") {
+  if (industryKey === industryKeys.SALOANE_BARBERSHOP) {
     return [
       {
         title: "Utilizatori & Personal",
@@ -504,7 +555,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Medical") {
+  if (industryKey === industryKeys.MEDICAL) {
     return [
       {
         title: "Utilizatori & Acces",
@@ -746,7 +797,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Tenis/Padel/Fotbal") {
+  if (industryKey === industryKeys.TENIS_PADEL_FOTBAL) {
     return [
       {
         title: "Utilizatori & Acces",
@@ -993,7 +1044,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Fitness") {
+  if (industryKey === industryKeys.FITNESS) {
     return [
       {
         title: "Utilizatori & Acces",
@@ -1207,7 +1258,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Chirii auto") {
+  if (industryKey === industryKeys.CHIRII_AUTO) {
     return [
       {
         title: "Utilizatori & Acces",
@@ -1396,7 +1447,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Hotele & Pensiuni") {
+  if (industryKey === industryKeys.HOTELE) {
     return [
       {
         title: "Utilizatori & Acces",
@@ -1654,7 +1705,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Spălătorii auto") {
+  if (industryKey === industryKeys.SPALATORII_AUTO) {
     return [
       {
         title: "Utilizatori & Personal",
@@ -1827,7 +1878,7 @@ const getComparisonCategories = (industry: string) => {
     ];
   }
   
-  if (industry === "Cafenele") {
+  if (industryKey === industryKeys.CAFENELE) {
     return [
       {
         title: "Utilizatori & Personal",
@@ -2139,7 +2190,8 @@ export const ContentWrapperSection = (): JSX.Element => {
   
   const searchParams = new URLSearchParams(window.location.search);
   const industryFromUrl = searchParams.get('industry');
-  const [selectedBusiness, setSelectedBusiness] = React.useState(industryFromUrl || "Restaurante");
+  const normalizedIndustry = industryFromUrl ? normalizeIndustryKey(industryFromUrl) : industryKeys.RESTAURANTE;
+  const [selectedBusiness, setSelectedBusiness] = React.useState(normalizedIndustry);
 
   const pricingPlans = getPricingPlans(selectedBusiness, t);
   const comparisonCategories = getComparisonCategories(selectedBusiness);
@@ -2173,17 +2225,17 @@ export const ContentWrapperSection = (): JSX.Element => {
                 backgroundPosition: 'right 1rem center'
               }}
             >
-              <option value="Restaurante">{t('pricing_page.industries.Restaurante')}</option>
-              <option value="Cafenele">{t('pricing_page.industries.Cafenele')}</option>
-              <option value="Saloane de frumusețe">{t('pricing_page.industries.Saloane de frumusețe')}</option>
-              <option value="Barbershopuri">{t('pricing_page.industries.Barbershopuri')}</option>
-              <option value="Hotele & Pensiuni">{t('pricing_page.industries.Hotele & Pensiuni')}</option>
-              <option value="Chirii auto">{t('pricing_page.industries.Chirii auto')}</option>
-              <option value="Fitness">{t('pricing_page.industries.Fitness')}</option>
-              <option value="Medical">{t('pricing_page.industries.Medical')}</option>
-              <option value="Retail">{t('pricing_page.industries.Retail')}</option>
-              <option value="Spălătorii auto">{t('pricing_page.industries.Spălătorii auto')}</option>
-              <option value="Tenis/Padel/Fotbal">{t('pricing_page.industries.Tenis/Padel/Fotbal')}</option>
+              <option value={industryKeys.RESTAURANTE}>{t('pricing_page.industries.Restaurante')}</option>
+              <option value={industryKeys.CAFENELE}>{t('pricing_page.industries.Cafenele')}</option>
+              <option value={industryKeys.SALOANE_BARBERSHOP}>{t('pricing_page.industries.Saloane de frumusețe')}</option>
+              <option value={industryKeys.SALOANE_BARBERSHOP}>{t('pricing_page.industries.Barbershopuri')}</option>
+              <option value={industryKeys.HOTELE}>{t('pricing_page.industries.Hotele & Pensiuni')}</option>
+              <option value={industryKeys.CHIRII_AUTO}>{t('pricing_page.industries.Chirii auto')}</option>
+              <option value={industryKeys.FITNESS}>{t('pricing_page.industries.Fitness')}</option>
+              <option value={industryKeys.MEDICAL}>{t('pricing_page.industries.Medical')}</option>
+              <option value={industryKeys.RETAIL}>{t('pricing_page.industries.Retail')}</option>
+              <option value={industryKeys.SPALATORII_AUTO}>{t('pricing_page.industries.Spălătorii auto')}</option>
+              <option value={industryKeys.TENIS_PADEL_FOTBAL}>{t('pricing_page.industries.Tenis/Padel/Fotbal')}</option>
             </select>
           </div>
 
@@ -2247,20 +2299,20 @@ export const ContentWrapperSection = (): JSX.Element => {
                 }`}
               >
                 <CardContent className="flex flex-col items-start gap-4 p-5">
-                  <div className="flex flex-col items-start gap-1 w-full h-[60px]">
+                  <div className="flex flex-col items-start gap-1 w-full min-h-[60px]">
                     <h3 className="[font-family:'Onest',Helvetica] font-bold text-[#282828] text-xl tracking-[0] leading-[23px]">
                       {plan.name}
                     </h3>
-                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[15px]">
+                    <p className="[font-family:'Onest',Helvetica] font-normal text-[#282828] text-xs tracking-[0] leading-[15px] break-words">
                       {plan.description}
                     </p>
                   </div>
 
-                  <div className="flex items-baseline gap-1 w-full h-[55px]">
-                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] whitespace-nowrap ${
+                  <div className="flex items-baseline gap-1 w-full min-h-[55px]">
+                    <span className={`[font-family:'Onest',Helvetica] font-bold text-[#282828] tracking-[0] ${
                       plan.monthlyPrice === null 
-                        ? "text-2xl leading-[30px]" 
-                        : "text-4xl md:text-5xl leading-[55.2px]"
+                        ? "text-2xl leading-[30px] break-words" 
+                        : "text-4xl md:text-5xl leading-[55.2px] whitespace-nowrap"
                     }`}>
                       {calculatePrice(plan.monthlyPrice, isAnnual)}
                     </span>
