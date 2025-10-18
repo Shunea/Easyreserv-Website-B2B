@@ -25,6 +25,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 type Country = {
   code: string;
@@ -290,6 +291,7 @@ const formFields = [
 ];
 
 export const ContactFormSection = (): JSX.Element => {
+  const { toast } = useToast();
   const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -374,7 +376,48 @@ export const ContactFormSection = (): JSX.Element => {
     setErrors(newErrors);
     
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
+      // Push form_submit event to Google Tag Manager for Analytics and Pixel tracking
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "form_submit",
+        form_name: "contact_form",
+        form_data: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          businessType: formData.businessType,
+          companyName: formData.companyName,
+          role: formData.role,
+          companySize: formData.companySize,
+          message: formData.message,
+          country: selectedCountry.code,
+          countryName: selectedCountry.name,
+          countryPrefix: selectedCountry.prefix
+        }
+      });
+      
+      // Show success notification
+      toast({
+        title: "Formularul a fost trimis cu succes!",
+        description: "Îți mulțumim pentru interes. Te vom contacta în curând.",
+      });
+      
+      // Reset form completely
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        businessType: "",
+        companyName: "",
+        role: "",
+        companySize: "",
+        message: ""
+      });
+      
+      // Reset country selector to default (first country)
+      setSelectedCountry(countries[0]);
     }
   };
 
