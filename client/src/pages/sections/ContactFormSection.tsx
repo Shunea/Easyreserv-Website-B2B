@@ -1,4 +1,4 @@
-import { MailIcon, ChevronsUpDown, Check } from "lucide-react";
+import { MailIcon, ChevronsUpDown, Check, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -294,6 +294,7 @@ export const ContactFormSection = (): JSX.Element => {
   const { toast } = useToast();
   const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
   const [open, setOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -363,7 +364,7 @@ export const ContactFormSection = (): JSX.Element => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const newErrors: Record<string, string> = {};
     
     if (!formData.email.includes("@")) {
@@ -376,48 +377,95 @@ export const ContactFormSection = (): JSX.Element => {
     setErrors(newErrors);
     
     if (Object.keys(newErrors).length === 0) {
-      // Push form_submit event to Google Tag Manager for Analytics and Pixel tracking
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "form_submit",
-        form_name: "contact_form",
-        form_data: {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          businessType: formData.businessType,
-          companyName: formData.companyName,
-          role: formData.role,
-          companySize: formData.companySize,
-          message: formData.message,
-          country: selectedCountry.code,
-          countryName: selectedCountry.name,
-          countryPrefix: selectedCountry.prefix
+      setIsSubmitting(true);
+      
+      try {
+        // Get backend URL from environment variable
+        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
+        
+        // Submit form data to backend
+        const response = await fetch(`${backendUrl}/custom-forms/contact-form/submit`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            fullName: `${formData.firstName} ${formData.lastName}`.trim(),
+            email: formData.email,
+            phone: `${selectedCountry.prefix} ${formData.phone}`,
+            message: formData.message,
+            businessType: formData.businessType,
+            companyName: formData.companyName,
+            role: formData.role,
+            companySize: formData.companySize,
+            country: selectedCountry.name,
+            countryCode: selectedCountry.code
+          })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          // Push form_submit event to Google Tag Manager for Analytics and Pixel tracking
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "form_submit",
+            form_name: "contact_form",
+            form_data: {
+              firstName: formData.firstName,
+              lastName: formData.lastName,
+              email: formData.email,
+              phone: formData.phone,
+              businessType: formData.businessType,
+              companyName: formData.companyName,
+              role: formData.role,
+              companySize: formData.companySize,
+              message: formData.message,
+              country: selectedCountry.code,
+              countryName: selectedCountry.name,
+              countryPrefix: selectedCountry.prefix
+            }
+          });
+          
+          // Show success notification with backend message
+          toast({
+            title: "Succes!",
+            description: result.message || "Formularul a fost trimis cu succes! Te vom contacta în curând.",
+          });
+          
+          // Reset form completely
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            businessType: "",
+            companyName: "",
+            role: "",
+            companySize: "",
+            message: ""
+          });
+          
+          // Reset country selector to default (first country)
+          setSelectedCountry(countries[0]);
+        } else {
+          // Show error notification
+          toast({
+            title: "Eroare",
+            description: result.message || "A apărut o eroare. Te rugăm să încerci din nou.",
+            variant: "destructive"
+          });
         }
-      });
-      
-      // Show success notification
-      toast({
-        title: "Formularul a fost trimis cu succes!",
-        description: "Îți mulțumim pentru interes. Te vom contacta în curând.",
-      });
-      
-      // Reset form completely
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        businessType: "",
-        companyName: "",
-        role: "",
-        companySize: "",
-        message: ""
-      });
-      
-      // Reset country selector to default (first country)
-      setSelectedCountry(countries[0]);
+      } catch (error) {
+        console.error('Form submission error:', error);
+        toast({
+          title: "Eroare de conexiune",
+          description: "Nu s-a putut trimite formularul. Verifică conexiunea la internet și încearcă din nou.",
+          variant: "destructive"
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -592,12 +640,22 @@ export const ContactFormSection = (): JSX.Element => {
 
       <Button 
         onClick={handleSubmit}
-        className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" 
+        disabled={isSubmitting}
+        className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4 disabled:opacity-50 disabled:cursor-not-allowed" 
         data-testid="button-send-contact"
       >
-        <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-          Trimite
-        </span>
+        {isSubmitting ? (
+          <div className="flex items-center gap-2">
+            <Loader2 className="w-5 h-5 animate-spin" />
+            <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
+              Se trimite...
+            </span>
+          </div>
+        ) : (
+          <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
+            Trimite
+          </span>
+        )}
       </Button>
     </section>
   );
