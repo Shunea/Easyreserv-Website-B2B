@@ -1,127 +1,90 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "wouter";
-import { Search } from "lucide-react";
+import { Search, AlertCircle } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import blogImage from "@assets/blog-test-image.png";
+import { blogApi, type BlogCategory, type BlogArticle } from "@/lib/blogApi";
 
-type Category = "all" | "use_case" | "news" | "updates" | "entertainment";
-
-const featuredArticle = {
-  title: "Cum să îți transformi restaurantul într-un business de succes în 2025",
-  slug: "transformare-restaurant-business-succes",
-  date: "2024-08-20",
-  displayDate: "20 August 2024",
-  image: blogImage,
-  category: "use_case" as Category,
-  excerpt: "Descoperă cele mai eficiente strategii și tehnici moderne pentru a-ți dezvolta afacerea din industria HoReCa. De la digitalizare până la optimizarea experienței clienților, află cum să rămâi competitiv pe piața actuală.",
-};
-
-const articles = [
-  {
-    title:
-      "Cum să îți transformi restaurantul într-un business de succes în 2025",
-    slug: "transformare-restaurant-business-succes",
-    date: "2024-08-20",
-    displayDate: "20 August 2024",
-    category: "use_case" as Category,
-    image: blogImage,
-  },
-  {
-    title: "Termeni esențiali pentru industria HoReCa în 2025",
-    slug: "termeni-horeca-2025",
-    date: "2024-08-15",
-    displayDate: "15 August 2024",
-    category: "news" as Category,
-    image: blogImage,
-  },
-  {
-    title:
-      "Impactul tehnologiei asupra afacerii: Cum tehnologia schimbă industria",
-    slug: "impact-tehnologie-afacere",
-    date: "2024-08-10",
-    displayDate: "10 August 2024",
-    category: "updates" as Category,
-    image: blogImage,
-  },
-  {
-    title: "Programele de fidelizare - Ce sunt și cum le implementezi",
-    slug: "programe-fidelizare-implementare",
-    date: "2024-08-05",
-    displayDate: "5 August 2024",
-    category: "use_case" as Category,
-    image: blogImage,
-  },
-  {
-    title: "Reducerea risipei alimentare prin control al porțiilor - Ghid în 5 pași",
-    slug: "reducere-risipa-control-portii",
-    date: "2024-08-01",
-    displayDate: "1 August 2024",
-    category: "use_case" as Category,
-    image: blogImage,
-  },
-  {
-    title: "5 greșeli care pot duce la eșecul restaurantului tău",
-    slug: "greseli-esec-restaurant",
-    date: "2024-07-28",
-    displayDate: "28 Iulie 2024",
-    category: "entertainment" as Category,
-    image: blogImage,
-  },
-  {
-    title:
-      "Generația Z - Cum să atragi și să reții tinerii angajați în restaurant",
-    slug: "generatia-z-angajati-restaurant",
-    date: "2024-07-25",
-    displayDate: "25 Iulie 2024",
-    category: "news" as Category,
-    image: blogImage,
-  },
-  {
-    title: "Tehnologia Cloud - O soluție sustenabilă pentru restaurantul tău",
-    slug: "tehnologie-cloud-solutie-sustenabila",
-    date: "2024-07-20",
-    displayDate: "20 Iulie 2024",
-    category: "updates" as Category,
-    image: blogImage,
-  },
-  {
-    title: "Moralul și Motivația - Îmbunătățirea retenției angajaților",
-    slug: "moral-motivatie-retentie-angajati",
-    date: "2024-07-15",
-    displayDate: "15 Iulie 2024",
-    category: "use_case" as Category,
-    image: blogImage,
-  },
-];
+type Category = "all" | BlogCategory;
 
 export const BlogSection = (): JSX.Element => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category>("all");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [allArticles, setAllArticles] = useState<BlogArticle[]>([]);
+  const perPage = 9;
 
   const categories: Category[] = ["all", "use_case", "news", "updates", "entertainment"];
 
+  // Fetch featured article
+  const { data: featuredData, isLoading: featuredLoading } = useQuery({
+    queryKey: ['/api/blog/featured'],
+    queryFn: () => blogApi.getFeaturedArticle(),
+  });
+
+  // Fetch articles list
+  const { data: articlesData, isLoading: articlesLoading, error } = useQuery({
+    queryKey: ['/api/blog/articles', currentPage, perPage, selectedCategory],
+    queryFn: () => blogApi.getArticles({
+      page: currentPage,
+      perPage,
+      category: selectedCategory === "all" ? undefined : selectedCategory
+    }),
+  });
+
+  // Accumulate articles when new page is loaded
+  useEffect(() => {
+    if (articlesData?.articles) {
+      setAllArticles(prev => {
+        if (currentPage === 1) {
+          return articlesData.articles;
+        }
+        // Merge new articles, avoiding duplicates
+        const existingIds = new Set(prev.map(a => a.id));
+        const newArticles = articlesData.articles.filter(a => !existingIds.has(a.id));
+        return [...prev, ...newArticles];
+      });
+    }
+  }, [articlesData, currentPage]);
+
+  // Reset articles when category changes
+  useEffect(() => {
+    setAllArticles([]);
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
   const filteredAndSortedArticles = useMemo(() => {
-    let filtered = articles.filter((article) => {
+    if (!allArticles.length) return [];
+
+    let filtered = allArticles.filter((article) => {
       const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === "all" || article.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      return matchesSearch;
     });
 
     filtered.sort((a, b) => {
       if (sortOrder === "newest") {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
       } else {
-        return new Date(a.date).getTime() - new Date(b.date).getTime();
+        return new Date(a.publishedAt).getTime() - new Date(b.publishedAt).getTime();
       }
     });
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortOrder]);
+  }, [allArticles, searchTerm, sortOrder]);
+
+  const hasMoreArticles = articlesData ? (currentPage * perPage) < articlesData.total : false;
+
+  const handleLoadMore = () => {
+    setCurrentPage(prev => prev + 1);
+  };
+
+  const featuredArticle = featuredData?.article;
 
   return (
     <section className="flex flex-col w-full items-center gap-6 px-4 md:px-[10%] py-16">
@@ -138,6 +101,7 @@ export const BlogSection = (): JSX.Element => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 h-12 bg-white border border-gray-200 rounded-lg focus-visible:ring-1 focus-visible:ring-[#2d2c65]"
+            data-testid="input-search-blog"
           />
         </div>
 
@@ -195,45 +159,80 @@ export const BlogSection = (): JSX.Element => {
         </div>
       </div>
 
-      <Link to={`/blog/${featuredArticle.slug}`}>
-        <Card className="w-full border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow">
+      {/* Featured Article */}
+      {featuredLoading ? (
+        <Card className="w-full border-0 shadow-none">
           <CardContent className="p-4 md:p-6">
             <div className="flex flex-col lg:flex-row items-center gap-6">
-              <div className="flex flex-col items-start justify-center gap-4 flex-1">
-                <div className="flex flex-col items-start gap-4 w-full">
-                  <span className="inline-block px-3 py-1 bg-[#2d2c65] text-white rounded-full text-xs font-medium">
-                    {t(`blog_page.categories.${featuredArticle.category}`)}
-                  </span>
-                  <h2 className="[font-family:'Onest',Helvetica] text-[#282828] text-2xl md:text-[32px] leading-normal font-semibold tracking-[0]">
-                    {featuredArticle.title}
-                  </h2>
-                </div>
-
-                <p className="[font-family:'Onest',Helvetica] text-[#909090] leading-normal font-normal text-base tracking-[0]">
-                  {featuredArticle.excerpt}
-                </p>
-
-                <div className="flex items-center gap-5">
-                  <time className="[font-family:'Onest',Helvetica] text-[#282828] leading-normal font-normal text-base tracking-[0]">
-                    {featuredArticle.displayDate}
-                  </time>
-                </div>
+              <div className="flex flex-col items-start gap-4 flex-1 w-full">
+                <Skeleton className="h-6 w-24" />
+                <Skeleton className="h-10 w-full" />
+                <Skeleton className="h-20 w-full" />
+                <Skeleton className="h-5 w-32" />
               </div>
-
-              <img
-                className="flex-1 w-full lg:w-auto h-64 lg:h-[355px] rounded-[5px] object-cover"
-                alt="Featured article"
-                src={featuredArticle.image}
-              />
+              <Skeleton className="flex-1 w-full lg:w-auto h-64 lg:h-[355px] rounded-[5px]" />
             </div>
           </CardContent>
         </Card>
-      </Link>
+      ) : featuredArticle ? (
+        <Link to={`/blog/${featuredArticle.slug}`}>
+          <Card className="w-full border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow" data-testid="card-featured-article">
+            <CardContent className="p-4 md:p-6">
+              <div className="flex flex-col lg:flex-row items-center gap-6">
+                <div className="flex flex-col items-start justify-center gap-4 flex-1">
+                  <div className="flex flex-col items-start gap-4 w-full">
+                    <span className="inline-block px-3 py-1 bg-[#2d2c65] text-white rounded-full text-xs font-medium">
+                      {t(`blog_page.categories.${featuredArticle.category}`)}
+                    </span>
+                    <h2 className="[font-family:'Onest',Helvetica] text-[#282828] text-2xl md:text-[32px] leading-normal font-semibold tracking-[0]">
+                      {featuredArticle.title}
+                    </h2>
+                  </div>
 
+                  <p className="[font-family:'Onest',Helvetica] text-[#909090] leading-normal font-normal text-base tracking-[0]">
+                    {featuredArticle.excerpt}
+                  </p>
+
+                  <div className="flex items-center gap-5">
+                    <time className="[font-family:'Onest',Helvetica] text-[#282828] leading-normal font-normal text-base tracking-[0]">
+                      {featuredArticle.displayDate}
+                    </time>
+                  </div>
+                </div>
+
+                <img
+                  className="flex-1 w-full lg:w-auto h-64 lg:h-[355px] rounded-[5px] object-cover"
+                  alt="Featured article"
+                  src={featuredArticle.image}
+                />
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+      ) : null}
+
+      {/* Error State */}
+      {error && (
+        <div className="w-full flex flex-col items-center justify-center gap-4 py-12">
+          <AlertCircle className="w-12 h-12 text-red-500" />
+          <p className="text-center text-gray-700">
+            {t('blog_page.error_loading')}
+          </p>
+          <Button 
+            onClick={() => window.location.reload()} 
+            variant="outline"
+            className="border-[#2d2c65] text-[#2d2c65] hover:bg-[#2d2c65]/10"
+          >
+            {t('blog_page.retry')}
+          </Button>
+        </div>
+      )}
+
+      {/* Articles Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-        {filteredAndSortedArticles.map((article, index) => (
-          <Link key={index} to={`/blog/${article.slug}`}>
-            <Card className="border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow">
+        {filteredAndSortedArticles.map((article) => (
+          <Link key={article.id} to={`/blog/${article.slug}`}>
+            <Card className="border-0 shadow-none cursor-pointer hover:shadow-lg transition-shadow" data-testid={`card-article-${article.slug}`}>
               <CardContent className="p-4 flex flex-col gap-2.5">
                 <img
                   className="w-full h-60 rounded-[5px] object-cover"
@@ -259,19 +258,41 @@ export const BlogSection = (): JSX.Element => {
             </Card>
           </Link>
         ))}
+
+        {/* Loading more articles */}
+        {articlesLoading && currentPage > 1 && (
+          <>
+            {[...Array(3)].map((_, index) => (
+              <Card key={`skeleton-${index}`} className="border-0 shadow-none">
+                <CardContent className="p-4 flex flex-col gap-2.5">
+                  <Skeleton className="w-full h-60 rounded-[5px]" />
+                  <Skeleton className="h-6 w-20" />
+                  <Skeleton className="h-7 w-full" />
+                  <Skeleton className="h-5 w-32" />
+                </CardContent>
+              </Card>
+            ))}
+          </>
+        )}
       </div>
 
-      {filteredAndSortedArticles.length === 0 && (
+      {filteredAndSortedArticles.length === 0 && !articlesLoading && !error && (
         <p className="text-center text-gray-500 py-8">
           {t('blog_page.no_results')}
         </p>
       )}
 
-      <Button className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" data-testid="button-load-more">
-        <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
-          {t('blog_page.load_more')}
-        </span>
-      </Button>
+      {hasMoreArticles && !articlesLoading && (
+        <Button 
+          onClick={handleLoadMore}
+          className="h-auto bg-[#2d2c65] hover:bg-[#2d2c65]/90 rounded-[5px] px-6 py-4" 
+          data-testid="button-load-more"
+        >
+          <span className="[font-family:'Onest',Helvetica] font-bold text-white text-base text-center tracking-[0] leading-5">
+            {t('blog_page.load_more')}
+          </span>
+        </Button>
+      )}
     </section>
   );
 };
