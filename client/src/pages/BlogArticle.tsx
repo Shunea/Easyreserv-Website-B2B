@@ -18,8 +18,8 @@ export const BlogArticle = (): JSX.Element => {
   const { language } = useLanguage();
   
   const { data, isLoading, error } = useQuery({
-    queryKey: ['/api/blog/articles', params.slug],
-    queryFn: () => blogApi.getArticleBySlug(params.slug),
+    queryKey: ['/api/blog/articles', params.slug, language],
+    queryFn: () => blogApi.getArticleBySlug(params.slug, language),
     enabled: !!params.slug
   });
 

@@ -46,6 +46,7 @@ export const blogApi = {
     perPage?: number;
     category?: BlogCategory;
     featured?: boolean;
+    lang?: string;
   }): Promise<BlogListResponse> {
     const queryParams = new URLSearchParams();
     
@@ -53,6 +54,7 @@ export const blogApi = {
     if (params?.perPage) queryParams.append('perPage', params.perPage.toString());
     if (params?.category) queryParams.append('category', params.category);
     if (params?.featured !== undefined) queryParams.append('featured', params.featured.toString());
+    if (params?.lang) queryParams.append('lang', params.lang);
 
     const url = `${BACKEND_URL}/api/blog/articles${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
     
@@ -65,8 +67,12 @@ export const blogApi = {
     return response.json();
   },
 
-  async getArticleBySlug(slug: string): Promise<BlogArticleResponse> {
-    const response = await fetch(`${BACKEND_URL}/api/blog/articles/${slug}`);
+  async getArticleBySlug(slug: string, lang?: string): Promise<BlogArticleResponse> {
+    const queryParams = new URLSearchParams();
+    if (lang) queryParams.append('lang', lang);
+    
+    const url = `${BACKEND_URL}/api/blog/articles/${slug}${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch article: ${response.statusText}`);
@@ -75,8 +81,12 @@ export const blogApi = {
     return response.json();
   },
 
-  async getFeaturedArticle(): Promise<BlogFeaturedResponse> {
-    const response = await fetch(`${BACKEND_URL}/api/blog/featured`);
+  async getFeaturedArticle(lang?: string): Promise<BlogFeaturedResponse> {
+    const queryParams = new URLSearchParams();
+    if (lang) queryParams.append('lang', lang);
+    
+    const url = `${BACKEND_URL}/api/blog/featured${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+    const response = await fetch(url);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch featured article: ${response.statusText}`);

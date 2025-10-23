@@ -12,7 +12,7 @@ import { blogApi, type BlogCategory, type BlogArticle } from "@/lib/blogApi";
 type Category = "all" | BlogCategory;
 
 export const BlogSection = (): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category>("all");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
@@ -24,17 +24,18 @@ export const BlogSection = (): JSX.Element => {
 
   // Fetch featured article
   const { data: featuredData, isLoading: featuredLoading } = useQuery({
-    queryKey: ['/api/blog/featured'],
-    queryFn: () => blogApi.getFeaturedArticle(),
+    queryKey: ['/api/blog/featured', language],
+    queryFn: () => blogApi.getFeaturedArticle(language),
   });
 
   // Fetch articles list
   const { data: articlesData, isLoading: articlesLoading, error } = useQuery({
-    queryKey: ['/api/blog/articles', currentPage, perPage, selectedCategory],
+    queryKey: ['/api/blog/articles', currentPage, perPage, selectedCategory, language],
     queryFn: () => blogApi.getArticles({
       page: currentPage,
       perPage,
-      category: selectedCategory === "all" ? undefined : selectedCategory
+      category: selectedCategory === "all" ? undefined : selectedCategory,
+      lang: language
     }),
   });
 
@@ -53,11 +54,11 @@ export const BlogSection = (): JSX.Element => {
     }
   }, [articlesData, currentPage]);
 
-  // Reset articles when category changes
+  // Reset articles when category or language changes
   useEffect(() => {
     setAllArticles([]);
     setCurrentPage(1);
-  }, [selectedCategory]);
+  }, [selectedCategory, language]);
 
   const filteredAndSortedArticles = useMemo(() => {
     if (!allArticles.length) return [];
