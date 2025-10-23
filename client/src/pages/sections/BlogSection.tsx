@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "wouter";
-import { Search, AlertCircle } from "lucide-react";
+import { Search, FileText } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { blogApi, type BlogCategory, type BlogArticle } from "@/lib/blogApi";
 
@@ -211,20 +211,13 @@ export const BlogSection = (): JSX.Element => {
         </Link>
       ) : null}
 
-      {/* Error State */}
+      {/* No Articles Yet State */}
       {error && (
-        <div className="w-full flex flex-col items-center justify-center gap-4 py-12">
-          <AlertCircle className="w-12 h-12 text-red-500" />
-          <p className="text-center text-gray-700">
-            {t('blog_page.error_loading')}
+        <div className="w-full flex flex-col items-center justify-center gap-4 py-16">
+          <FileText className="w-16 h-16 text-[#2d2c65] opacity-30" />
+          <p className="text-center text-[#282828] [font-family:'Onest',Helvetica] font-medium text-lg">
+            {t('blog_page.no_articles_yet')}
           </p>
-          <Button 
-            onClick={() => window.location.reload()} 
-            variant="outline"
-            className="border-[#2d2c65] text-[#2d2c65] hover:bg-[#2d2c65]/10"
-          >
-            {t('blog_page.retry')}
-          </Button>
         </div>
       )}
 

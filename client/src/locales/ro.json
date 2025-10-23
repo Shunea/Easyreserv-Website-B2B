@@ -1404,7 +1404,8 @@
       "oldest": "Cele mai vechi"
     },
     "no_results": "Nu au fost găsite articole care să corespundă criteriilor de căutare.",
-    "load_more": "Încarcă mai multe"
+    "load_more": "Încarcă mai multe",
+    "no_articles_yet": "Încă nu sunt articole disponibile. Revino în curând pentru conținut nou!"
   },
   "seo": {
     "home_title": "EasyReserv.io — Platformă all-in-one POS și Rezervări",

@@ -1404,7 +1404,8 @@
       "oldest": "Oldest"
     },
     "no_results": "No articles found matching your search criteria.",
-    "load_more": "Load more"
+    "load_more": "Load more",
+    "no_articles_yet": "No articles available yet. Check back soon for new content!"
   },
   "seo": {
     "home_title": "EasyReserv.io — All-in-one POS and Reservations Platform",
